@@ -1,10 +1,10 @@
-name: Deploy Static Website to Github Pages
+name: Deploy Portfolio Website to Github Pages
 on:
   workflow_dispatch:
 
 jobs:
   deploy:
-    name: Deploy Static Website
+    name: Deploy Portfolio Website
     runs-on: ubuntu-latest
     steps:
       - name: "📥 checkout repository"
@@ -33,23 +33,23 @@ jobs:
         run: |
           bash scripts/assets-install.bash
 
-      - name: "📦  Install Static Website Development dependencies"
+      - name: "📦  Install Portfolio Website Development dependencies"
         run: |
-          bash scripts/frontend-static-website-install.bash
+          bash scripts/frontend-portfolio-website-install.bash
 
-      - name: "🏗️  Build Frontend Static Website"
+      - name: "🏗️  Build Frontend Portfolio Website"
         run: |
           bash scripts/assets-process.bash
-          bash scripts/frontend-static-website-build.bash production
+          bash scripts/frontend-portfolio-website-build.bash production
 
-      - name: "🚚  Package Static Website"
+      - name: "🚚  Package Portfolio Website"
         run: |
           bash scripts/package-clean.bash
-          bash scripts/package-static-website.bash
+          bash scripts/package-portfolio-website.bash
 
       - name: "🚀 Deploy to GitHub Pages"
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          branch: gh-pages-static-website
-          folder: package/static-website
+          branch: gh-pages-portfolio-website
+          folder: package/portfolio-website
 

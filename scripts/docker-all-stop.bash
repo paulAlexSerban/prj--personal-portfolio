@@ -5,5 +5,5 @@ cd "$(dirname "$0")" || exit
 echo " 🛑  🐳  STOP all docker containers"
 docker compose --env-file ../config.env \
   --file ../docker/docker-compose.traefik-proxy.yml \
-  --file ../docker/docker-compose.static-website.yml \
+  --file ../docker/docker-compose.portfolio-website.yml \
   down
