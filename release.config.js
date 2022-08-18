@@ -1,6 +1,6 @@
 module.exports = {
   branches: "release",
-  repositoryUrl: "https://github.com/paulAlexSerban/tpl--static-website",
+  repositoryUrl: "https://github.com/paulAlexSerban/prj--personal-portfolio",
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -15,8 +15,7 @@ module.exports = {
       "@semantic-release/git",
       {
         assets: ["wiki/CHANGELOG.md", "package.json"],
-        message:
-          "chore(release): version ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+        message: "chore(release): version ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
       },
     ],
   ],

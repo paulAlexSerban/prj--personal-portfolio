@@ -1,11 +1,11 @@
 {
-  "name": "tpl--static-website",
+  "name": "prj--personal-portfolio",
   "version": "1.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "bash scripts/frontend-living-style-guide-test.bash",
-    "lint": "shellcheck ./**/*.bash && bash scripts/frontend-static-website-lint.bash",
+    "lint": "shellcheck ./**/*.bash && bash scripts/frontend-portfolio-website-lint.bash",
     "install:ci": "npm ci --omit=dev --ignore-scripts",
     "install:root": "npm install",
     "prepare": "husky install"

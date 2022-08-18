@@ -46,7 +46,7 @@ module.exports = {
     "selector-max-specificity": null,
     "selector-max-type": 2,
     "selector-max-universal": 1,
-    "selector-no-qualifying-type": false,
+    "selector-no-qualifying-type": null,
     "selector-no-vendor-prefix": true,
     "shorthand-property-no-redundant-values": true,
     "string-quotes": "double",
