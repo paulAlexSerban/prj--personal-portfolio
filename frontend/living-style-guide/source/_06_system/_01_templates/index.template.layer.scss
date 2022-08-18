@@ -1,0 +1,118 @@
+/* ------------------------------------ *\
+  * INDEX TEMPLATE LAYER
+\* ------------------------------------ */
+
+@import "../../_01_abstracts/abstracts.scss";
+
+@import "../../_04_layouts/grid/minimalist/minimalist.scss";
+
+@import "../../_05_library/_01_components/image.scss";
+@import "../../_05_library/_01_components/typography/link.scss";
+@import "../../_05_library/_01_components/typography/heading.scss";
+@import "../../_05_library/_01_components/typography/list-unordered.scss";
+@import "../../_05_library/_01_components/link-icon.scss";
+
+@import "../../_05_library/_02_patterns/reference-list.scss";
+@import "../../_05_library/_02_patterns/address.scss";
+
+@import "../../_05_library/_03_modules/header.scss";
+@import "../../_05_library/_03_modules/footer.scss";
+@import "../../_05_library/_03_modules/navigation-bar.scss";
+
+// #header {
+//   margin: 0 auto;
+//   max-width: 1200px;
+//   height: 50px;
+//   width: 100%;
+//   position: fixed;
+//   top: 0px;
+//   right: 0px;
+//   left: 0px;
+//   border: 1px solid black;
+//   background-color: #ddd;
+// }
+
+// .section {
+//   height: 100vh;
+//   min-height: 800px;
+//   overflow: hidden;
+//   padding-top: 60px;
+//   /*position: relative;*/
+//   border: 1px solid black;
+//   background-size: cover;
+//   background-position: center center;
+// }
+
+// .section h2 {
+//   font-family: "Indie Flower", cursive;
+//   background-color: white;
+//   padding: 5px;
+//   font-size: 2em;
+//   text-transform: uppercase;
+//   text-align: center;
+// }
+
+// .section article {
+//   background-color: rgb(255, 255, 255);
+//   background-color: rgba(255, 255, 255, 0.8);
+//   padding: 10px;
+//   border-radius: 20px;
+//   margin: 0 10px;
+// }
+
+// #home {
+//   background-image: url("http://lorempixel.com/1200/600/sports");
+//   background-color: chartreuse;
+// }
+
+// #about {
+//   background-image: url("http://lorempixel.com/1200/600/city");
+//   background-color: darkmagenta;
+// }
+
+// #services {
+//   background-color: get-color($c-blue, indigo-blue);
+// }
+
+// #portfolio {
+//   background-color: darkgray;
+// }
+
+// #portfolio ul li {
+//   display: inline-block;
+//   width: 48%;
+//   min-height: 200px;
+// }
+
+// #portfolio ul {
+//   padding: 10px;
+//   list-style-type: none;
+// }
+
+// #contact {
+//   background-image: url("http://lorempixel.com/1200/600/people");
+//   background-color: white;
+// }
+
+// footer {
+//   background-color: black;
+//   color: white;
+//   text-align: center;
+//   height: 200px;
+// }
+
+// @media screen and (max-width: 640px) {
+//   #menu .navicon {
+//     display: block;
+//   }
+//   #menu nav {
+//     /* display: none;*/
+//     width: 100%;
+//   }
+//   #menu nav ul li {
+//     width: 100%;
+//   }
+//   #portfolio ul li {
+//     width: 100%;
+//   }
+// }

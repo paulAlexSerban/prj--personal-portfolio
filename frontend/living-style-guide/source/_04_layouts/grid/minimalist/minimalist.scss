@@ -10,13 +10,14 @@ $margin-left: 1%;
   position: relative;
   margin: 0 auto;
   padding: 0 10px;
-  @media (min-width: $tablet) {
-    padding: 0;
-    width: 85%;
-  }
   width: 100%;
   max-width: $max-width;
   box-sizing: border-box;
+
+  @include breakpoint($tablet) {
+    padding: 0;
+    width: 85%;
+  }
 }
 
 .row {

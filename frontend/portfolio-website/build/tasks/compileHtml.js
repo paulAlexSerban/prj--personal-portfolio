@@ -7,6 +7,7 @@ import { onError } from "../utils/onError";
 import prettier from "gulp-prettier";
 import gulpif from "gulp-if";
 import size from "gulp-size";
+import embedSvg from "gulp-embed-svg";
 
 const nodeEnv = process.env.NODE_ENV || "development";
 
@@ -22,6 +23,13 @@ export const compileHtml = () => {
         })
       )
       .pipe(prettier())
+      .pipe(
+        embedSvg({
+          selectors: ".inline-svg",
+          root: `${paths.src.assets.svgFiles}`,
+          xmlMode: true,
+        })
+      )
       .pipe(gulpif(nodeEnv !== "development", htmlmin({ collapseWhitespace: true })))
       // .pipe(debug({ title: "@debug compileHtml : " }))
       .pipe(
