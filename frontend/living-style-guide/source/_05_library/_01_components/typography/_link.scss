@@ -5,16 +5,12 @@ $block:  "#{$type}-link";
   @include e("base"){
     @include font($link);
     @include on-event() {
-      color: get-color($c-gray, sonic-silver);
+      color: var(--color-link-hover);
       text-decoration: none;
-      box-shadow: 0 1px 0 0 get-color($c-gray, sonic-silver);
+      box-shadow: 0 1px 0 0 var(--color-link-hover);
       transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
 
-    color: get-color($c-blue, rhythm);
-
-    @include m("navigation") {
-      color: get-color($c-gray, davys-grey);
-    }
+    color: var(--color-link);
   }
 }

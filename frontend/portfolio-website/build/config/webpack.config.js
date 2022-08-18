@@ -8,7 +8,7 @@ const plugins = [new webpack.ProgressPlugin()];
 const nodeEnv = process.env.NODE_ENV || "development";
 
 export const webpackDevConfig = {
-  mode: nodeEnv === "watch" ? "development" :  "production",
+  mode: nodeEnv === "watch" ? "development" : "production",
   cache: true,
   watch: nodeEnv !== "development" && nodeEnv !== "production",
   // devtool: false, /* uncomment if source mapping is not desired */
@@ -17,7 +17,7 @@ export const webpackDevConfig = {
   },
   optimization: {
     minimize: nodeEnv !== "development" && nodeEnv !== "production" ,
-    minimizer: [new TerserPlugin()],
+    minimizer: nodeEnv === "production"  ? [new TerserPlugin()] : [],
   },
   plugins: [...plugins],
 };
