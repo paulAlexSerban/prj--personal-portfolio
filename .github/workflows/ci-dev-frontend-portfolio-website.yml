@@ -64,11 +64,16 @@ jobs:
         run: |
           bash scripts/frontend-portfolio-website-install.bash
           bash scripts/frontend-living-style-guide-install.bash
+          bash scripts/frontend-js-component-library-install.bash
           bash scripts/assets-install.bash
 
       - name: "🔍  Lint Frontend Portfolio Website"
         if: steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
         run: bash scripts/frontend-portfolio-website-lint.bash
+
+      - name: '🧪  Test Frontend JavaScript Component Library'
+        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
+        run: bash scripts/frontend-js-component-library-test.bash
 
       - name: '🧪  Test Frontend Living Style Guide'
         if: steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
