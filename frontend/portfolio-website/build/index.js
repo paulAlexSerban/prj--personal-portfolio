@@ -4,9 +4,12 @@ import { clean } from "./tasks/clean";
 
 import { lintHtml } from "./tasks/lintHtml";
 import { lintScss } from "./tasks/lintScss";
+import { lintJavaScript } from "./tasks/lintJavaScript";
 
 import { compileHtml } from "./tasks/compileHtml";
 import { compileScss } from "./tasks/compileScss";
+
+import { transpileJavaScript } from "./tasks/transpileJavaScript"; 
 
 import { processMetaFiles } from "./tasks/processMetaFiles";
 import { processAssets } from "./tasks/processAssets";
@@ -19,10 +22,11 @@ import { processAssets } from "./tasks/processAssets";
 // | Main tasks                                                        |
 // ---------------------------------------------------------------------
 
-task("lint", parallel(lintHtml, lintScss));
-task("build", series(clean, processAssets, parallel(processMetaFiles, compileHtml, compileScss)));
+task("lint", parallel(lintHtml, lintScss, lintJavaScript));
+task("build", series(clean, processAssets, parallel(processMetaFiles, compileHtml, compileScss, transpileJavaScript)));
 
 task("watch", () => {
   watch(paths.src.html.htmlFiles, series(lintHtml, compileHtml));
   watch(paths.src.styles.scssFiles, series(lintScss, compileScss));
+  watch(paths.src.scripts.javaScriptFiles, series(lintJavaScript, transpileJavaScript));
 });
