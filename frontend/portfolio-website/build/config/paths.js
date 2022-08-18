@@ -5,6 +5,7 @@ export const paths = {
     },
     assets: {
       assetFiles: ["../../assets/dist/**/*"],
+      svgFiles: ["dist/assets/svgs"]
     },
     html: {
       htmlDir: "./source",
@@ -19,7 +20,9 @@ export const paths = {
     scripts: {
       javaScriptDir: `../js-component-library/source/`,
       javaScriptFiles: [`../js-component-library/source/**/*.js`],
-      javaScriptEntry: [`../js-component-library/source/**/*.entry.js`],
+      javaScriptPages: [`../js-component-library/source/**/*.page.js`],
+      javaScriptPages: [`../js-component-library/source/**/*.page.js`],
+      javaScriptLayers: [`../js-component-library/source/**/*.layer.js`]
     }
   },
   dist: {

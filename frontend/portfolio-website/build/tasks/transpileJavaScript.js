@@ -14,10 +14,10 @@ const nodeEnv = process.env.NODE_ENV || "development";
 
 export const transpileJavaScript = () => {
   console.log(
-    `Executing TRANSPILE:JAVASCRIPT on '${paths.src.scripts.javaScriptEntry}' in MODE: ${nodeEnv}`
+    `Executing TRANSPILE:JAVASCRIPT on '${paths.src.scripts.javaScriptLayers}' in MODE: ${nodeEnv}`
   );
   return new Promise((resolve, reject) => {
-    return src(paths.src.scripts.javaScriptEntry, { since: lastRun(transpileJavaScript) })
+    return src(paths.src.scripts.javaScriptLayers, { since: lastRun(transpileJavaScript) })
     .pipe(debug({title: 'transpileJavaScript :'}))
     .pipe(
       plumber({

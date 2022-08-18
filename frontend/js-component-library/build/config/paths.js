@@ -3,7 +3,7 @@ export const paths = {
     scripts: {
       javaScriptDir: `source/`,
       javaScriptFiles: [`source/**/*.js`],
-      javaScriptEntry: [`source/**/*.entry.js`],
+      javaScriptPages: [`source/**/*.page.js`],
     }
   },
   dist: {
