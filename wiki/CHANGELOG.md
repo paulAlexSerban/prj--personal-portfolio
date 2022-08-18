@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.0.0...v1.1.0) (2022-08-18)
+
+
+### Features
+
+* **wip:** portfolio ([ffc0cfc](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/ffc0cfccbd595695c42eb6a4d876a41937520cc7))
+
 # 1.0.0 (2022-08-18)
 
 
