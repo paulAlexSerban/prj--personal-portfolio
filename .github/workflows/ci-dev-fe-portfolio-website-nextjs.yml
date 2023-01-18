@@ -59,19 +59,13 @@ jobs:
           bash scripts/assets/install.bash
           bash scripts/frontend/portfolio-website-nextjs/install.bash
 
-      - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
-        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
-        run: |
-          bash scripts/assets/process.bash
-          bash scripts/frontend/portfolio-website-nextjs/build.bash
-
       - name: "🔍  Lint Frontend NextJS SSG Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/frontend/portfolio-website-nextjs/lint.bash
         continue-on-error: true
 
-      - name: "🏗️  Build Frontend NextJS Portfolio Website"
+      - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/assets/process.bash
