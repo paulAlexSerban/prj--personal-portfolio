@@ -50,7 +50,7 @@ jobs:
         run: npm i -g npm@latest
 
       - name: "Install GraphicsMagick"
-        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: sudo apt-get install -y graphicsmagick
 
       - name: "📦  Install Frontend NextJS Portfolio Website dependencies"
