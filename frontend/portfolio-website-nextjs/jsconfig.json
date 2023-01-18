@@ -10,7 +10,7 @@
       "@/core/atoms/*": ["core/library/atoms/*"],
       "@/core/molecules/*": ["core/library/molecules/*"],
       "@/core/organisms/*": ["core/library/organisms/*"],
-      "@/core/templates/*": ["core/templates/*"],
+      "@/core/templates/*": ["src/core/templates/*"],
 
       "@/styles/base/*": ["styles/_03_base/*"],
       "@/styles/layouts/*": ["styles/_04_layouts/*"],
