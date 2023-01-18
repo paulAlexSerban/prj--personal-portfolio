@@ -84,7 +84,7 @@ jobs:
           bash scripts/package/portfolio-website.bash
 
       - name: "🚀 Deploy to Test on GitHub Pages"
-        if: ${{ github.event_name == 'pull_request' }}
+        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request' }}
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages-test
