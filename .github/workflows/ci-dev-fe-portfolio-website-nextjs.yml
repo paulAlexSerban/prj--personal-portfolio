@@ -18,12 +18,8 @@ jobs:
     name: Build Frontend NextJS SSG Portfolio Website
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'event name is:' ${{ github.event_name }} 
-      - run: echo 'event type is:' ${{ github.event.action }} 
       - name: "📥  checkout repository"
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: "🔍  Verify Changed Files"
         uses: tj-actions/changed-files@v23.1
