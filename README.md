@@ -17,3 +17,8 @@
 
 - [traefik dashboard](http://localhost:8080/dashboard)
 - [portfolio-website-service](https://nginx-portfolio-website-server.localhost/)
+
+
+## Prerequisites
+### `./assets`
+- for image renditions on MacOS run `brew install graphicsmagick`
