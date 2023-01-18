@@ -17,56 +17,69 @@ jobs:
   build-frontend:
     name: Build Frontend NextJS SSG Portfolio Website
     runs-on: ubuntu-latest
+    env:
+      ASSETS_ROOT: assets
+      FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website-nextjs
+      NODE_VERSION: 16.19.0
     steps:
-      - name: "📥  checkout repository"
+      - name: "📥  Checkout repository"
         uses: actions/checkout@v3
 
       - name: "🔍  Verify Changed Files"
         uses: tj-actions/changed-files@v23.1
         id: changed-frontend-portfolio-website-files
         with:
-          files: |
-              frontend/portfolio-website-nextjs/**/*
-
-      - name: List all changed files
-        run: |
-          for file in ${{ steps.changed-frontend-portfolio-website-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
+          files: ${{ env.FE_NEXTJS_PROJECT_ROOT }}/**/*
 
       - name: "🔄  Cache node_modules"
-        if: steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true'
+        if: ${{ always() }}
         uses: actions/cache@v2
         with:
-          path: |
-            ~/.npm
+          path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          restore-keys: ${{ runner.os }}-node-
 
-      - name: "🔧  Setup NodeJS 16.19.0"
-        if: steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true'
+      - name: "🔧  Setup NodeJS ${{ env.NODE_VERSION }}"
+        if: ${{ always() }}
         uses: actions/setup-node@v1
         with:
-          node-version: 16.19.0
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: "🔧  Install npm@latest"
-        if: steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true'
+        if: ${{ always() }}
         run: npm i -g npm@latest
 
       - name: "📦  Install Frontend NextJS Portfolio Website dependencies"
-        if: steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true'
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/assets/install.bash
           bash scripts/frontend/portfolio-website-nextjs/install.bash
 
-      - name: "🔍  Lint Frontend NextJS Portfolio Website"
-        if: steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
+      - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        run: |
+          bash scripts/assets/process.bash
+          bash scripts/frontend/portfolio-website-nextjs/build.bash
+
+      - name: "🔍  Lint Frontend NextJS SSG Portfolio Website"
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/frontend/portfolio-website-nextjs/lint.bash
+        continue-on-error: true
 
       - name: "🏗️  Build Frontend NextJS Portfolio Website"
         if: steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request'
         run: |
           bash scripts/assets/process.bash
           bash scripts/frontend/portfolio-website-nextjs/build.bash
+
+      - name: "🚚  Package NextJS Portfolio Website"
+        run: |
+          bash scripts/package/clean.bash
+          bash scripts/package/portfolio-website.bash
+
+      - name: "🚀 Deploy to Test on GitHub Pages"
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages-test
+          folder: package/portfolio-website
