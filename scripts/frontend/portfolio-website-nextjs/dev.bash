@@ -6,7 +6,7 @@ if [ -d "../../../frontend/portfolio-website-nextjs/public/assets" ]; then
     rm -rfv ../../../frontend/portfolio-website-nextjs/public/assets/*
     rsync --progress -auv ../../../assets/dist ../../../frontend/portfolio-website-nextjs/public/assets/
 else
-    mkdir ../../../frontend/portfolio-website-nextjs/public/assets
+    mkdir -p ../../../frontend/portfolio-website-nextjs/public/assets
     rsync --progress -auv ../../../assets/dist ../../../frontend/portfolio-website-nextjs/public/assets/
 fi
 
