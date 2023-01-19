@@ -77,9 +77,14 @@ jobs:
           bash scripts/package/clean.bash
           bash scripts/package/portfolio-website.bash
 
-      - name: "🚀 Deploy to Test on GitHub Pages"
+      - name: "🚀 Deploy to Test (GitHub Pages)"
         # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request' }}
-        uses: JamesIves/github-pages-deploy-action@4.4.1
-        with:
-          branch: gh-pages-test
-          folder: package/portfolio-website-nextjs
+        run: npx gh-pages -d package/portfolio-website-nextjs -t true
+
+      - name: Configure git
+        run: |
+          git config --global user.email "paul.alex.serban@gmail.com"
+          git config --global user.name "paulAlexSerban"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
+          git branch -M gh-pages-test
+          git push -f origin gh-pages-test
