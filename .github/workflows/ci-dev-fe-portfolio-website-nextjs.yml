@@ -69,7 +69,7 @@ jobs:
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/assets/process.bash
-          bash scripts/frontend/portfolio-website-nextjs/build.bash
+          bash scripts/frontend/portfolio-website-nextjs/build-dev.bash
 
       - name: "🚚  Package NextJS Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}

@@ -10,4 +10,6 @@ else
     rsync --progress -auv ../../../assets/dist/* ../../../frontend/portfolio-website-nextjs/public/assets/
 fi
 
+export BASE_PATH=""
+
 npm --prefix ../../../frontend/portfolio-website-nextjs run dev
