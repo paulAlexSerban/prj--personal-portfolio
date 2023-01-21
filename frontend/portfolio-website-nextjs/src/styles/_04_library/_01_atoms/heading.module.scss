@@ -50,7 +50,7 @@ $block: "heading";
     }
 
     @include e("separator") {
-        padding-bottom: var(--dynamic-70);
+        padding-bottom: var(--dynamic-60);
 
         &:after {
             @include absolute();
