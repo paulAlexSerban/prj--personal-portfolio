@@ -10,31 +10,43 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1;
-  margin-bottom: ($baseline * 3);
-  font-weight: 400;
+    @include relative();
+    width: 100%;
+    text-align: left;
 }
 
 h1 {
-  font-size: convert-rem($font-size--xxxl);
+    @include font($heading-100);
+
+    margin-bottom: ($baseline * 3.5);
 }
 
 h2 {
-  font-size: convert-rem($font-size--xxl);
+    @include font($heading-200);
+
+    margin-bottom: ($baseline * 3);
 }
 
 h3 {
-  font-size: convert-rem($font-size--xl);
+    @include font($heading-300);
+
+    margin-bottom: ($baseline * 2.5);
 }
 
 h4 {
-  font-size: convert-rem($font-size--l);
+    @include font($heading-400);
+
+    margin-bottom: ($baseline * 2);
 }
 
 h5 {
-  font-size: convert-rem($font-size--m);
+    @include font($heading-500);
+
+    margin-bottom: ($baseline * 1.5);
 }
 
 h6 {
-  font-size: convert-rem($font-size--s);
+    @include font($heading-600);
+
+    margin-bottom: ($baseline);
 }

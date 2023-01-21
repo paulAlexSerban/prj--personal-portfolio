@@ -3,6 +3,7 @@ import Generic from "@/core/templates/Generic/Generic.template.js";
 
 import Paragraph from "@/core/library/atoms/Paragraph.atom";
 import Heading from "@/core/atoms/Heading.atom";
+import Link from "@/core/library/atoms/Link.atom";
 
 export default function Elements() {
     return (
@@ -68,6 +69,8 @@ export default function Elements() {
                     hasSeparator={true}
                     level="3"
                 />
+
+                <Link label="Link text"/>
             </Generic>
         </div>
     );

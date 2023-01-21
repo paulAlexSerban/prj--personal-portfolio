@@ -8,37 +8,6 @@ $block: "heading";
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        @include relative();
-
-        width: 100%;
-        text-align: left;
-
-        @include m("1") {
-            @include font($heading-100);
-        }
-
-        @include m("2") {
-            @include font($heading-200);
-        }
-
-        @include m("3") {
-            @include font($heading-300);
-        }
-
-        @include m("4") {
-            @include font($heading-400);
-        }
-
-        @include m("5") {
-            @include font($heading-500);
-        }
-
-        @include m("6") {
-            @include font($heading-600);
-        }
-    }
-
     @include e("main", "subheading") {
         display: block;
     }
