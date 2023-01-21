@@ -11,7 +11,7 @@ function Generic({
     pageProperties,
 }) {
     const ID = useId();
-    return <div data-next-cmp={`${config.name}-${ID}`}>Elements template</div>;
+    return <div data-next-cmp={`${config.name}-${ID}`}>{children}</div>;
 }
 
 Generic.defaultProps = { ...config.defaultProps };

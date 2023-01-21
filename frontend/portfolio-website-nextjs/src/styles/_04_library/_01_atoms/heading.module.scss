@@ -8,53 +8,68 @@ $block: "heading";
 \* ------------------------------------ */
 
 .#{$block} {
-  @include e("heading") {
-    @include relative();
+    @include e("base") {
+        @include relative();
 
-    width: 100%;
-    text-align: center;
+        width: 100%;
+        text-align: left;
 
-    @include m("2") {
-      @include font($heading-200);
-      margin-bottom: var(--dynamic-70);
+        @include m("1") {
+            @include font($heading-100);
+        }
+
+        @include m("2") {
+            @include font($heading-200);
+        }
+
+        @include m("3") {
+            @include font($heading-300);
+        }
+
+        @include m("4") {
+            @include font($heading-400);
+        }
+
+        @include m("5") {
+            @include font($heading-500);
+        }
+
+        @include m("6") {
+            @include font($heading-600);
+        }
     }
 
-    @include m("3") {
-      @include font($heading-300);
-      margin-bottom: var(--dynamic-70);
+    @include e("main", "subheading") {
+        display: block;
     }
 
-    @include m("4") {
-      @include font($heading-400);
+    @include e("subheading") {
+        @include font($subheading);
+
+        margin-top: var(--dynamic-30);
     }
-  }
 
-  @include e("main", "subheading") {
-    display: block;
-  }
+    @include e("separator") {
+        padding-bottom: var(--dynamic-70);
 
-  @include e("main") {
-    margin-bottom: var(--dynamic-30);
-  }
+        &:after {
+            @include absolute();
 
-  @include e("subheading") {
-    @include font($subheading);
-  }
+            background: var(--brand-color);
+            content: "";
+            display: inline-block;
+            height: 4px;
+            left: 0;
+            max-width: convert-rem(400px);
+            width: 75%;
+            bottom: 0;
+        }
 
-  @include e("separator") {
-    padding-bottom: var(--dynamic-70);
-    &:after {
-      @include absolute();
-
-      background: var(--brand-color);
-      content: "";
-      display: inline-block;
-      height: 4px;
-      max-width: convert-rem(400px);
-      width: 75%;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
+        // @include m("center") {
+        //   &:after {
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //   }
+        // }
     }
-  }
 }

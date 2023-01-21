@@ -10,4 +10,45 @@
   --background-color: #{get-color($c-light, light)};
   --text-regular: #{$font-family-openSans};
   --text-code: #{$font-family-courierPrime};
+
+  --dynamic-10: 5px;
+  --dynamic-20: 10px;
+  --dynamic-30: 15px;
+  --dynamic-40: 20px;
+  --dynamic-50: 25px;
+  --dynamic-60: 30px;
+  --dynamic-70: 35px;
+  --dynamic-80: 40px;
+  --dynamic-90: 50px;
+  --dynamic-100: 70px;
+  --dynamic-110: 90px;
+  --static-0: 0;
+  --static-10: 5px;
+  --static-20: 10px;
+  --static-30: 15px;
+  --static-40: 20px;
+  --static-50: 25px;
+  --static-60: 30px;
+  --static-70: 35px;
+  --static-80: 40px;
+  --static-90: 60px;
+  --static-100: 80px;
+  --static-110: 120px;
+
+  @include breakpoint($tablet) {
+    --dynamic-80: 45px;
+    --dynamic-90: 55px;
+    --dynamic-100: 80px;
+    --dynamic-110: 120px;
+  }
+
+  @include breakpoint($desktop-xl) {
+    --dynamic-50: 30px;
+    --dynamic-60: 40px;
+    --dynamic-70: 50px;
+    --dynamic-80: 70px;
+    --dynamic-90: 80px;
+    --dynamic-100: 110px;
+    --dynamic-110: 150px;
+  }
 }

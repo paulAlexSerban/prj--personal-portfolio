@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Generic from "@/core/templates/Generic/Generic.template.js";
 
+import Heading from "@/core/atoms/Heading.atom";
+
 export default function Elements() {
     return (
         <div>
@@ -16,7 +18,48 @@ export default function Elements() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Generic></Generic>
+            <Generic>
+                <Heading mainText="Heading Level 1" level="1" />
+                <Heading mainText="Heading Level 2" />
+                <Heading mainText="Heading Level 3" level="3" />
+                <Heading mainText="Heading Level 4" level="4" />
+                <Heading mainText="Heading Level 5" level="5" />
+                <Heading mainText="Heading Level 6" level="6" />
+
+                <Heading
+                    mainText="Heading Level 1 with subheading"
+                    subheadingText="Subheading text"
+                    level="1"
+                />
+                <Heading
+                    mainText="Heading Level 2 with subheading"
+                    subheadingText="Subheading text"
+                    level="2"
+                />
+                <Heading
+                    mainText="Heading Level 3 with subheading"
+                    subheadingText="Subheading text"
+                    level="3"
+                />
+                <Heading
+                    mainText="Heading Level 4 with subheading"
+                    subheadingText="Subheading text"
+                    level="4"
+                />
+
+                <Heading
+                    mainText="Heading Level 2 with subheading"
+                    subheadingText="Subheading text and separator aligned to left"
+                    hasSeparator={true}
+                    level="2"
+                />
+                <Heading
+                    mainText="Heading Level 3 with subheading and separator"
+                    subheadingText="Subheading text and separator aligned to left"
+                    hasSeparator={true}
+                    level="3"
+                />
+            </Generic>
         </div>
     );
 }
