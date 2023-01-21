@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import Heading from "@/core/atoms/Heading.atom";
+
 export default function Home() {
     return (
         <div>
@@ -17,8 +19,31 @@ export default function Home() {
             </Head>
             <main>
                 <header>
-                    <h1>Header</h1>
+                    <h1>Paul Serban</h1>
+                    <nav>
+                        <ul>
+                            <li>PORTFOLIO</li>
+                            <li>BLOG</li>
+                            <li>CV</li>
+                        </ul>
+                    </nav>
                 </header>
+                <aside>
+                    <nav>
+                        <ul>
+                            <li>ABOUT ME</li>
+                            <li>SKILLS</li>
+                            <li>PROJECTS</li>
+                            <li>ACHIEVEMENTS</li>
+                            <li>CONTACT ME</li>
+                        </ul>
+                    </nav>
+                    <ul>
+                        <li>LinkedIn</li>
+                        <li>GitHub</li>
+                        <li>CodePen</li>
+                    </ul>
+                </aside>
                 <main>
                     <h2>Main</h2>
                 </main>
