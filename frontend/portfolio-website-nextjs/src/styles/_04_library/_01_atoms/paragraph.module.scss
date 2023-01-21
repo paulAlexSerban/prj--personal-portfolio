@@ -1,14 +1,17 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "paragraph";
+
 /* ------------------------------------ *\
- * #PARAGRAPH
+ * PARAGRAPH ATOM
 \* ------------------------------------ */
-$type: "cmp";
-$block: "#{$type}-paragraph";
 
 .#{$block} {
   @include e("base") {
     @include font($body);
 
     color: var(--text-color);
-    margin-bottom: $baseline * 2;
+    margin-top: $baseline * 2;
   }
 }

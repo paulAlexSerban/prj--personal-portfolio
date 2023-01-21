@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Generic from "@/core/templates/Generic/Generic.template.js";
 
+import Paragraph from "@/core/library/atoms/Paragraph.atom";
 import Heading from "@/core/atoms/Heading.atom";
 
 export default function Elements() {
@@ -18,7 +19,15 @@ export default function Elements() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
             <Generic>
+                <Paragraph
+                    text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Magna etiam tempor orci eu. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Cras ornare arcu dui vivamus arcu 
+                    felis bibendum ut tristique. Sed turpis tincidunt id aliquet risus feugiat in ante. Ornare lectus sit amet est. Sodales ut etiam 
+                    sit amet nisl. Fringilla urna porttitor rhoncus dolor purus non enim praesent elementum. Egestas dui id ornare arcu odio ut sem 
+                    nulla pharetra. Massa ultricies mi quis hendrerit dolor.`}
+                />
                 <Heading mainText="Heading Level 1" level="1" />
                 <Heading mainText="Heading Level 2" />
                 <Heading mainText="Heading Level 3" level="3" />
