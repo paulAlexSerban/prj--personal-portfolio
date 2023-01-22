@@ -15,10 +15,10 @@
       "@/styles/base/*": ["src/styles/_02_base/*"],
       "@/styles/layouts/*": ["src/styles/_04_layouts/*"],
       "@/styles/atoms/*": ["src/styles/_04_library/_01_atoms/*"],
-      "@/styles/molecules/*": ["src/styles/_05_library/molecules/*"],
-      "@/styles/organisms/*": ["src/styles/_05_library/organisms/*"],
-      "@/styles/templates/*": ["src/styles/_06_system/templates/*"],
-      "@/styles/pages/*": ["src/styles/_06_system/pages/*"],
+      "@/styles/molecules/*": ["src/styles/_04_library/_02_molecules/*"],
+      "@/styles/organisms/*": ["src/styles/_04_library/_03_organisms/*"],
+      "@/styles/templates/*": ["src/styles/_05_system/_01_templates/*"],
+      "@/styles/pages/*": ["src/styles/_05_system/_02_pages/*"],
 
       "@/svgs/*": ["public/svgs/*"],
       "@/content/*": ["content/*"]
