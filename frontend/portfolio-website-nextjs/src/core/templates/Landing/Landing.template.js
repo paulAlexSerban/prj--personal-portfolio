@@ -2,7 +2,7 @@ import Head from "next/head";
 import config from "./config";
 import { useId } from "react";
 
-function Landing({
+function LandingTemplate({
     title,
     keywords,
     description,
@@ -11,9 +11,9 @@ function Landing({
     pageProperties,
 }) {
     const ID = useId();
-    return <div data-next-cmp={`${config.name}-${ID}`}>About</div>;
+    return <div id={ID}>Landing Template</div>;
 }
 
-Landing.defaultProps = { ...config.defaultProps };
+LandingTemplate.defaultProps = { ...config.defaultProps };
 
-export default Landing;
+export default LandingTemplate;

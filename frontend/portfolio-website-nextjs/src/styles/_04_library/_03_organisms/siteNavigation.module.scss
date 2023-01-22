@@ -1,0 +1,39 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "siteNavigation";
+
+/* ------------------------------------ *\
+ * SITE NAVIGATION ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        max-width: $max-width;
+        width: 100%;
+    }
+
+    @include e("container") {
+        @include flex($main: flex-start);
+        column-gap: var(--dynamic-20);
+        width: 100%;
+    }
+
+    @include e("navToggle") {
+        display: block;
+
+        @include breakpoint($tablet) {
+            display: none;
+        }
+    }
+
+    @include e("navContent") {
+        max-height: 0;
+        overflow: hidden;
+
+        @include breakpoint($tablet) {
+            max-height: 100%;
+            margin-left: auto;
+        }
+    }
+}

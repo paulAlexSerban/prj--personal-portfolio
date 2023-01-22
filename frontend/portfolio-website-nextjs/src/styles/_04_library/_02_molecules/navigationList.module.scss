@@ -1,0 +1,31 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "navigationList";
+
+/* ------------------------------------ *\
+ * NAVIGATION LIST MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include m("siteNav") {
+            @include flex();
+            column-gap: var(--dynamic-40);
+        }
+
+        @include m("pageNav") {
+        }
+
+        @include m("footerNav") {
+        }
+    }
+
+    @include e("listItem") {
+        a {
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+}

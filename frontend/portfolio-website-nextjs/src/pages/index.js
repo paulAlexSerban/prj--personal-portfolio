@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Heading from "@/core/atoms/Heading.atom";
+import Heading from "@/core/library/atoms/typography/Heading.atom";
 
 export default function Home() {
     return (

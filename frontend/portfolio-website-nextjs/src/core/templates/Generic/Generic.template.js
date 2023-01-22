@@ -2,7 +2,7 @@ import Head from "next/head";
 import config from "./config";
 import { useId } from "react";
 
-function Generic({
+function GenericTemplate({
     title,
     keywords,
     description,
@@ -11,9 +11,9 @@ function Generic({
     pageProperties,
 }) {
     const ID = useId();
-    return <div data-next-cmp={`${config.name}-${ID}`}>{children}</div>;
+    return <div id={ID}>{children}</div>;
 }
 
-Generic.defaultProps = { ...config.defaultProps };
+GenericTemplate.defaultProps = { ...config.defaultProps };
 
-export default Generic;
+export default GenericTemplate;

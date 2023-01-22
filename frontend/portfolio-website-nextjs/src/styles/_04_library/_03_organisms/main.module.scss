@@ -1,0 +1,19 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "main";
+
+/* ------------------------------------ *\
+ * MAIN ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    @include e("container") {
+        @include flex($direction: column);
+    }
+}

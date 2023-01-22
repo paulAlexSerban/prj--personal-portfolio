@@ -5,11 +5,11 @@
 :root {
   --text-color: #{get-color($c-dark, eerie-black)};
   --brand-color: #{get-color($c-gray, davys-grey)};
-  --color-link: #{get-color($c-gray, davys-grey)};
-  --color-link-hover: #{get-color($c-blue, dark-liver)};
+  --color-link: #{get-color($c-dark, eerie-black)};
+  --color-link-hover: #{get-color($c-gray, ebony)};
   --background-color: #{get-color($c-light, light)};
-  --text-regular: #{$font-family-openSans};
-  --text-code: #{$font-family-courierPrime};
+  --text-regular: #{$font-family-roboto};
+  --text-code: #{$font-family-ubuntu};
 
   --dynamic-10: 5px;
   --dynamic-20: 10px;

@@ -29,32 +29,32 @@ export default function Heading({
 
     if (headingLevel === 1) {
         return (
-            <h1 data-next-cmp={ID} className={`${hasSeparator && separator}`}>
+            <h1 id={ID} className={`${hasSeparator && separator}`}>
                 {innerText()}
             </h1>
         );
     }
     if (headingLevel === 2) {
         return (
-            <h2 data-next-cmp={ID} className={`${hasSeparator && separator}`}>
+            <h2 id={ID} className={`${hasSeparator && separator}`}>
                 {innerText()}
             </h2>
         );
     }
     if (headingLevel === 3) {
         return (
-            <h3 data-next-cmp={ID} className={`${hasSeparator && separator}`}>
+            <h3 id={ID} className={`${hasSeparator && separator}`}>
                 {innerText()}
             </h3>
         );
     }
     if (headingLevel === 4) {
-        return <h4 data-next-cmp={ID}>{innerText()}</h4>;
+        return <h4 id={ID}>{innerText()}</h4>;
     }
     if (headingLevel === 5) {
-        return <h5 data-next-cmp={ID}>{innerText()}</h5>;
+        return <h5 id={ID}>{innerText()}</h5>;
     }
     if (headingLevel === 6) {
-        return <h6 data-next-cmp={ID}>{innerText()}</h6>;
+        return <h6 id={ID}>{innerText()}</h6>;
     }
 }
