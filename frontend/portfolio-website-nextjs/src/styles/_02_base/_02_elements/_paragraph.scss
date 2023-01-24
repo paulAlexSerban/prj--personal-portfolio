@@ -3,4 +3,5 @@ p {
 
     color: var(--text-color);
     margin-top: $baseline * 2;
+    max-width: $max-width / 1.5;
 }
