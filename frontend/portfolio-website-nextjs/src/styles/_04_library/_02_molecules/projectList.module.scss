@@ -1,0 +1,24 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "projectList";
+
+/* ------------------------------------ *\
+ * PROJECT LIST MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+    $gap: var(--dynamic-70);
+    @include e("base") {
+
+        @include flex($direction: row, $main: flex-start);
+
+        flex-wrap: wrap;
+        max-width: $max-width;
+        gap: $gap;
+    }
+
+    @include e("listItem") {
+        max-width: calc(calc($max-width - calc($gap * 2)) / 3);
+    }
+}

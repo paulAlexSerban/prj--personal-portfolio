@@ -1,0 +1,27 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "projectCard";
+
+/* ------------------------------------ *\
+ * PROJECT CARD MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include flex($direction: column, $cross: flex-start);
+        padding: var(--dynamic-50);
+
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+
+            background-color: lightgray;
+        }
+    }
+    @include e("footer") {
+        @include flex($main: space-between);
+        width: 100%;
+        margin-top: var(--dynamic-40);
+    }
+}

@@ -4,6 +4,7 @@ import LandingTemplate from "@/core/templates/Landing/Landing.template.js";
 import Section from "@/core/library/organisms/Section.organism";
 import Main from "@/core/library/organisms/Main.organism";
 import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
+import ProjectOverview from "@/core/library/organisms/ProjectOverview.organism";
 
 import { Paragraph } from "@/core/library/atoms/typography/all";
 
@@ -15,8 +16,8 @@ const siteNavLinks = [
 
 const pageNavLinks = [
     { label: "about me", href: "#about_me" },
-    { label: "skills", href: "#skills" },
     { label: "projects", href: "#projects" },
+    { label: "skills", href: "#skills" },
     { label: "achievements", href: "#achievements" },
     { label: "contact me", href: "#contact_me" },
 ];
@@ -74,8 +75,10 @@ export default function Home() {
                                 and expanding my portfolio."
                         />
                     </Section>
+                    <Section headingTitle="Projects" sectionId="projects">
+                        <ProjectOverview />
+                    </Section>
                     <Section headingTitle="Skills" sectionId="skills"></Section>
-                    <Section headingTitle="Projects" sectionId="projects"></Section>
                     <Section headingTitle="Achievements" sectionId="achievements"></Section>
                     <Section headingTitle="Contact me" sectionId="contact_me"></Section>
                 </Main>
