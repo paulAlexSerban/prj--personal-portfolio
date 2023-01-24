@@ -1,6 +1,33 @@
 import Head from "next/head";
+import LandingTemplate from "@/core/templates/Landing/Landing.template.js";
 
-import Heading from "@/core/library/atoms/typography/Heading.atom";
+import Section from "@/core/library/organisms/Section.organism";
+import Main from "@/core/library/organisms/Main.organism";
+import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
+
+import { Paragraph } from "@/core/library/atoms/typography/all";
+
+const siteNavLinks = [
+    { label: "portfolio", href: `/portfolio` },
+    { label: "blog", href: `/blog` },
+    { label: "cv", href: `/cv` },
+];
+
+const pageNavLinks = [
+    { label: "about me", href: "#about_me" },
+    { label: "skills", href: "#skills" },
+    { label: "projects", href: "#projects" },
+    { label: "achievements", href: "#achievements" },
+    { label: "contact me", href: "#contact_me" },
+];
+
+const socialMediaList = [
+    { label: "LinkedIn", icon: "linkedin", href: "https://linkedin.com" },
+    { label: "Github", icon: "github", href: "https://github.com" },
+    { label: "Xing", icon: "xing", href: "https://xing.com" },
+    { label: "Spoke", icon: "spoke", href: "https://spoke.com" },
+    { label: "AngelsList", icon: "angelslist", href: "https://angelslist.com" },
+];
 
 export default function Home() {
     return (
@@ -17,40 +44,42 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main>
-                <header>
-                    <h1>Paul Serban</h1>
-                    <nav>
-                        <ul>
-                            <li>PORTFOLIO</li>
-                            <li>BLOG</li>
-                            <li>CV</li>
-                        </ul>
-                    </nav>
-                </header>
-                <aside>
-                    <nav>
-                        <ul>
-                            <li>ABOUT ME</li>
-                            <li>SKILLS</li>
-                            <li>PROJECTS</li>
-                            <li>ACHIEVEMENTS</li>
-                            <li>CONTACT ME</li>
-                        </ul>
-                    </nav>
-                    <ul>
-                        <li>LinkedIn</li>
-                        <li>GitHub</li>
-                        <li>CodePen</li>
-                    </ul>
-                </aside>
-                <main>
-                    <h2>Main</h2>
-                </main>
-                <footer>
-                    <p>footer</p>
-                </footer>
-            </main>
+            <LandingTemplate siteNavLinks={siteNavLinks} pageNavLinks={pageNavLinks}>
+                <HeroBanner
+                    pageTitle="Welcome!"
+                    subheading="I'm Paul, a JavaScript, MERN and JAMStack software engineer with a passion for building 
+                                dynamic and user-friendly web applications."
+                    socialMediaList={socialMediaList}
+                />
+                <Main>
+                    <Section headingTitle="About me" sectionId="about_me">
+                        <Paragraph
+                            text="I am a highly motivated and experienced web developer with a passion for 
+                                creating innovative and user-friendly web applications. I have a strong background in 
+                                JavaScript, MERN, and JAMStack development, as well as experience in other technologies 
+                                such as HTML, CSS, and React."
+                        />
+
+                        <Paragraph
+                            text="Throughout my career, I have had the opportunity to work on a variety 
+                                of projects, from small business websites to large-scale e-commerce platforms. I take pride 
+                                in my ability to collaborate with teams, understand client needs, and deliver high-quality 
+                                solutions on time and on budget."
+                        />
+
+                        <Paragraph
+                            text="When I'm not coding, you can find me reading about new technologies, 
+                                experimenting with new frameworks and libraries, or mentoring other developers. I am always 
+                                eager to learn and grow as a developer, and I am excited to continue building my skills 
+                                and expanding my portfolio."
+                        />
+                    </Section>
+                    <Section headingTitle="Skills" sectionId="skills"></Section>
+                    <Section headingTitle="Projects" sectionId="projects"></Section>
+                    <Section headingTitle="Achievements" sectionId="achievements"></Section>
+                    <Section headingTitle="Contact me" sectionId="contact_me"></Section>
+                </Main>
+            </LandingTemplate>
         </div>
     );
 }

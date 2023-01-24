@@ -2,13 +2,13 @@ import { useId } from "react";
 import { base, container } from "@/styles/organisms/header.module.scss";
 import SiteNavigation from "@/core/organisms/SiteNavigation.organism";
 
-export default function Header({}) {
+export default function Header({ siteNavLinks = [] }) {
     const ID = useId();
 
     return (
         <header id={ID} className={base}>
             <div className={container}>
-                <SiteNavigation />
+                <SiteNavigation links={siteNavLinks} />
             </div>
         </header>
     );

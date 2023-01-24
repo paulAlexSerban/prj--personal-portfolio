@@ -1,25 +1,21 @@
 @import "../../_00_abstracts/abstracts.scss";
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: "header";
+$block: "section";
 
 /* ------------------------------------ *\
- * HEADER ORGANISM
+ * HERO BANNER ORGANISM
 \* ------------------------------------ */
 
 .#{$block} {
     @include e("base") {
-        @include fixed($top: 0, $left: 50%, $z-index: "header");
-
-        transform: translateX(-50%);
         width: 100%;
-        background-color: var(--background-color);
+        min-height: 500px;
     }
 
-    @include e("container") {
-        @include flex($direction: column);
+    @include e("header","container", "footer") {
+        @include flex($direction: column, $cross: flex-start);
         min-height: 100px;
         max-width: $max-width;
-        margin: 0 auto;
     }
 }

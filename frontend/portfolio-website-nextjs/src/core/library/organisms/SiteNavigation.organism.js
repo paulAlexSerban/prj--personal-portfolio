@@ -1,11 +1,19 @@
 import { useId } from "react";
-import { base, container, navToggle, navContent } from "@/styles/organisms/siteNavigation.module.scss";
+import {
+    base,
+    container,
+    navToggle,
+    navContent,
+} from "@/styles/organisms/siteNavigation.module.scss";
 
 import Logo from "@/core/atoms/Logo.atom";
 import BurgerButton from "@/core/atoms/BurgerButton";
 import NavigationList from "@/core/molecules/NavigationList.molecule";
 
-export default function SiteNavigation({}) {
+const DOMAIN_NAME =
+    process.env.NODE_ENV === "development" ? "http://localhost:3000" : "";
+
+export default function SiteNavigation({ links = [] }) {
     const ID = useId();
 
     return (
@@ -16,7 +24,7 @@ export default function SiteNavigation({}) {
                     <BurgerButton />
                 </div>
                 <div className={navContent}>
-                    <NavigationList />
+                    <NavigationList items={links} />
                 </div>
             </div>
         </nav>

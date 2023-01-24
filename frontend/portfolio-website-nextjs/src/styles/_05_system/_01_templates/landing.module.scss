@@ -1,0 +1,14 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "landing";
+
+/* ------------------------------------ *\
+ * LANDING TEMPLATE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        padding-top: 100px;
+    }
+}

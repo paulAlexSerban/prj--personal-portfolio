@@ -11,10 +11,14 @@ $block: "navigationList";
     @include e("base") {
         @include m("siteNav") {
             @include flex();
+
             column-gap: var(--dynamic-40);
         }
 
         @include m("pageNav") {
+            @include flex($direction: column, $cross: flex-start);
+
+            row-gap: var(--dynamic-40);
         }
 
         @include m("footerNav") {

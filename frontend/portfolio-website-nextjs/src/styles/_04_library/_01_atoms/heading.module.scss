@@ -16,6 +16,7 @@ $block: "heading";
         @include font($subheading);
 
         margin-top: var(--dynamic-30);
+        max-width: $max-width / 1.5;
     }
 
     @include e("separator") {

@@ -1,0 +1,26 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "socialMediaList";
+
+/* ------------------------------------ *\
+ * SOCIAL MEDIA LIST MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include flex($cross: flex-end);
+
+        column-gap: var(--dynamic-60);
+        align-self: flex-start;
+        height: 50%;
+    }
+
+    @include e("listItem") {
+        a {
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+}

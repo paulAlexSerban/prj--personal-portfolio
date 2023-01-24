@@ -1,0 +1,31 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "heroBanner";
+
+/* ------------------------------------ *\
+ * HERO BANNER ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include flex($direction: column, $cross: flex-start, $main: flex-start);
+        
+        width: 100%;
+        height: calc(100vh / 2);
+        background-color: get-color($c-gray, timberwolf);
+        margin-bottom: var(--dynamic-80);
+    }
+
+    @include e("header","container", "footer") {
+        @include flex($direction: column);
+
+        max-width: $max-width;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    @include e("container") {
+        height: 100%;
+    }
+}

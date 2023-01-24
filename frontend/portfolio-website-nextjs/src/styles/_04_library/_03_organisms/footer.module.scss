@@ -11,10 +11,15 @@ $block: "footer";
     @include e("base") {
         max-width: $max-width;
         margin: 0 auto;
+        margin-bottom: var(--dynamic-20);
     }
 
     @include e("container") {
         @include flex($direction: column);
         min-height: 100px;
+    }
+
+    @include e("bottom") {
+        @include flex($main: space-between);
     }
 }
