@@ -91,7 +91,7 @@ const projectList = [
         ],
     },
     {
-        title: "Hitchhiking Tours Website",
+        title: "Natours - Nature Tours Website",
         subtitle: "Landing Page",
         tags: [
             "RWD",
@@ -105,60 +105,6 @@ const projectList = [
             "Next.js",
             "GitHub Actions",
         ],
-    },
-    {
-        title: "Turn Based Board Game",
-        subtitle: "Browser Based Board Game",
-        tags: ["JavaScript", "jQuery", "Gulp", "WebPack"],
-    },
-    {
-        title: "FrontEnd Component Collection",
-        subtitle: "Front End Style Guide",
-        tags: ["RWD", "JavaScript", "Sass", "Gulp", "WebPack"],
-    },
-    {
-        title: "Productivity Website",
-        tags: ["React.js", "Next.js", "Sass", "Gulp", "WebPack"],
-        subtitle: "Web Portal",
-        description:
-            "Web portal that includes random quote generator to inspire users, a markdown previewer to make it easy to format text, and a JavaScript calculator to perform quick calculations while working on a task",
-    },
-    {
-        title: "Study Website",
-        tags: ["React.js", "Next.js", "Sass", "Gulp", "WebPack"],
-        subtitle: "Web Portal",
-        description:
-            "Web portal that includes a random quote generator to inspire students, a markdown previewer to help format study notes, and a JavaScript calculator to help with math and science homework",
-    },
-    {
-        title: "Financial Planner",
-        tags: ["React.js", "Next.js", "Sass", "Gulp", "WebPack"],
-        subtitle: "Web Portal",
-        description:
-            "Web portal that includes a JavaScript calculator for budgeting, investment and retirement planning, and a markdown previewer for creating financial reports",
-    },
-    {
-        title: "Math School Website",
-        tags: ["React.js", "Next.js", "Sass", "Gulp", "WebPack"],
-        subtitle: "Web Portal",
-        description:
-            "Web portal for for a math school that includes a JavaScript calculator for basic and advanced math operations, a markdown previewer for creating math lessons, and a random quote generator for inspiration.",
-    },
-    { title: "Restaurant Review SPA" },
-    { title: "IMDB Clone" },
-    {
-        title: "BI Website",
-        tags: [
-            "JavaScript",
-            "Data Visualization",
-            "D3",
-            "Algorithms",
-            "Sass",
-            "Gulp",
-            "WebPack",
-        ],
-        description:
-            "A business intelligence website that allows users to create and view data visualizations, including bar charts, scatterplot graphs, heat maps, choropleth maps, and treemap diagrams. This would allow companies to easily analyze and understand their data, and make data-driven decisions",
     },
 ];
 

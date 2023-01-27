@@ -10,9 +10,15 @@ $block: "navigationList";
 .#{$block} {
     @include e("base") {
         @include m("siteNav") {
-            @include flex();
+            @include flex($direction: column, $cross: flex-start);
 
-            column-gap: var(--dynamic-40);
+            margin-top: var(--dynamic-40);
+
+            @include breakpoint($tablet) {
+                margin-top: 0;
+                flex-direction: row;
+                gap: var(--dynamic-40);
+            }
         }
 
         @include m("pageNav") {
@@ -26,6 +32,8 @@ $block: "navigationList";
     }
 
     @include e("listItem") {
+        padding: var(--dynamic-20) 0;
+
         a {
             &:hover {
                 box-shadow: none;

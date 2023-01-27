@@ -25,7 +25,6 @@ const pageNavLinks = [
 const socialMediaList = [
     { label: "LinkedIn", icon: "linkedin", href: "https://linkedin.com" },
     { label: "Github", icon: "github", href: "https://github.com" },
-    { label: "Xing", icon: "xing", href: "https://xing.com" },
     { label: "Spoke", icon: "spoke", href: "https://spoke.com" },
     { label: "AngelsList", icon: "angelslist", href: "https://angelslist.com" },
 ];

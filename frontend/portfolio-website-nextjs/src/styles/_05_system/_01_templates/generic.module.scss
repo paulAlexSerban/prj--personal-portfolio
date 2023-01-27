@@ -9,6 +9,6 @@ $block: "generic";
 
 .#{$block} {
     @include e("base") {
-        padding-top: 100px;
+        padding-inline: var(--static-30);
     }
 }

@@ -9,20 +9,31 @@ $block: "heroBanner";
 
 .#{$block} {
     @include e("base") {
-        @include flex($direction: column, $cross: flex-start, $main: flex-start);
-        
-        width: 100%;
-        height: calc(100vh / 2);
+        @include flex(
+            $direction: column,
+            $cross: flex-start,
+            $main: space-around
+        );
+
+        width: calc(100% + calc(2 * var(--static-30)));
+        min-height: calc(100vh / 2);
         background-color: get-color($c-gray, timberwolf);
         margin-bottom: var(--dynamic-80);
+        margin-inline: calc(-1 * var(--static-30));
+        padding-inline: var(--static-30);
+        padding-bottom: var(--dynamic-50);
     }
 
-    @include e("header","container", "footer") {
+    @include e("header", "container", "footer") {
         @include flex($direction: column);
 
         max-width: $max-width;
         width: 100%;
         margin: 0 auto;
+    }
+
+    @include e("header") {
+        margin-top: var(--dynamic-100);
     }
 
     @include e("container") {

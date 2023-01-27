@@ -14,11 +14,13 @@ $block: "header";
         transform: translateX(-50%);
         width: 100%;
         background-color: var(--background-color);
+        padding: var(--static-30);
     }
 
     @include e("container") {
         @include flex($direction: column);
-        min-height: 100px;
+
+
         max-width: $max-width;
         margin: 0 auto;
     }

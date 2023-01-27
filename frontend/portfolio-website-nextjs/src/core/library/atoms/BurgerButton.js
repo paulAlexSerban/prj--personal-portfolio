@@ -1,11 +1,19 @@
 import { useId } from "react";
 
-export default function BurgerButton({ }) {
+import styles, { base, line } from "@/styles/atoms/burgerButton.module.scss";
+
+export default function BurgerButton({ isToggled }) {
     const ID = useId();
 
     return (
-        <div id={ID}>
-            Burger button
-        </div>
+        <button
+        type="button"
+            id={ID}
+            className={`${base} ${
+                isToggled ? styles["base--isOpen"] : styles["base--isClosed"]
+            }`}
+        >
+            <span className={line}>Menu</span>
+        </button>
     );
 }

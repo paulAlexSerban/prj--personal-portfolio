@@ -9,9 +9,9 @@ $block: "heading";
 
 .#{$block} {
     @include e("base") {
-        font-size: 48px;
+        font-size: 26px;
         font-weight: font-weight(heavy);
-        line-height: 51px;
+        line-height: 26px;
 
         &:hover  {
             box-shadow: none;

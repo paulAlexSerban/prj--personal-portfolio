@@ -12,7 +12,7 @@ export default function SocialMediaList({ items = [] }) {
         <ul id={ID} className={`${base}`}>
             {items.map((item, index) => {
                 return (
-                    <li className={listItem}>
+                    <li className={listItem} key={index}>
                         <Link label={item.label} href={item.href} />
                     </li>
                 );
