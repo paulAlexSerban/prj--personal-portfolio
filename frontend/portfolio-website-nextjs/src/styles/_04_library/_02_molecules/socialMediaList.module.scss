@@ -19,7 +19,9 @@ $block: "socialMediaList";
 
     @include e("listItem") {
         a {
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus {
                 box-shadow: none;
             }
         }

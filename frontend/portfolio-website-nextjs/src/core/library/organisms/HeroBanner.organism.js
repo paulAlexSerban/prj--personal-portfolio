@@ -8,6 +8,7 @@ import styles, {
 } from "@/styles/organisms/heroBanner.module.scss";
 
 import SocialMediaList from "../molecules/SocialMediaList.molecule";
+import FlexGrid from "@/core/library/layouts/FlexGrid.layout";
 
 export default function HeroBanner({
     pageTitle = "",
@@ -18,16 +19,22 @@ export default function HeroBanner({
 
     return (
         <section id={ID} className={base}>
-            <header className={header}>
-                <Heading
-                    level="1"
-                    mainText={pageTitle}
-                    subheadingText={subheading}
-                />
-            </header>
-            <div className={container}>
-                <SocialMediaList items={socialMediaList} />
-            </div>
+            <FlexGrid classNames={["grid"]}>
+                <FlexGrid gridElement="row">
+                    <FlexGrid classNames={["col"]}>
+                        <header className={header}>
+                            <Heading
+                                level="1"
+                                mainText={pageTitle}
+                                subheadingText={subheading}
+                            />
+                        </header>
+                        <div className={container}>
+                            <SocialMediaList items={socialMediaList} />
+                        </div>
+                    </FlexGrid>
+                </FlexGrid>
+            </FlexGrid>
         </section>
     );
 }

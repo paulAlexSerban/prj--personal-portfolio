@@ -202,6 +202,7 @@
 ) {
   .grid {
     @include make-container($breakpoints);
+    width: 100%;
 
     @include largest-breakpoint($breakpoints) {
       @include m("full-width") {

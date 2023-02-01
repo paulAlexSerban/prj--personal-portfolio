@@ -7,20 +7,20 @@ import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
 const siteNavLinks = [
     { label: "portfolio", href: `/portfolio` },
     { label: "blog", href: `/blog` },
-    { label: "cv", href: `/cv` },
+    // { label: "cv", href: `/cv` },
 ];
 
 const pageNavLinks = [
     { label: "posts", href: "#posts" },
     { label: "Snippets", href: "#snippets" },
-    { label: "booknotes", href: "#booknotes" }
+    { label: "booknotes", href: "#booknotes" },
 ];
 
 const socialMediaList = [
-    { label: "Twitter", href: "http://twitter.com"},
-    { label: "Instagram", href: "http://instagram.com"},
-    { label: "Medium", href: "http://medium.com"},
-    { label: "Mastodon", href: "http://mastodon.com"},
+    { label: "Twitter", icon: "twitter", href: "http://twitter.com" },
+    { label: "Instagram", icon: "instagram", href: "http://instagram.com" },
+    { label: "Medium", icon: "medium", href: "http://medium.com" },
+    { label: "Mastodon", icon: "mastodon", href: "http://mastodon.com" },
 ];
 
 export default function Blog() {
@@ -49,8 +49,14 @@ export default function Blog() {
                 />
                 <Main>
                     <Section headingTitle="Posts" sectionId="posts"></Section>
-                    <Section headingTitle="Snippets" sectionId="snippets"></Section>
-                    <Section headingTitle="Booknotes" sectionId="booknotes"></Section>
+                    <Section
+                        headingTitle="Snippets"
+                        sectionId="snippets"
+                    ></Section>
+                    <Section
+                        headingTitle="Booknotes"
+                        sectionId="booknotes"
+                    ></Section>
                 </Main>
             </GenericTemplate>
         </div>

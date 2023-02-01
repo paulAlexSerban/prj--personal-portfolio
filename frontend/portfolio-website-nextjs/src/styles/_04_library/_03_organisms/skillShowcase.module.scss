@@ -1,0 +1,22 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "skillShowcase";
+
+/* ------------------------------------ *\
+ * SKILL SHOWCASE ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        margin-top: var(--dynamic-20)
+    }
+
+    @include e("skillList") {
+        @include flex($main: flex-start);
+
+        column-gap: var(--dynamic-50);
+    }
+    @include e("listItem") {
+    }
+}

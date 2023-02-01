@@ -11,14 +11,16 @@ $block: "projectList";
     $gap: var(--dynamic-70);
     @include e("base") {
 
-        @include flex($direction: row, $main: flex-start);
+        @include flex($direction: row, $main: flex-start, $cross: unset);
 
         flex-wrap: wrap;
         max-width: $max-width;
         gap: $gap;
+        height: 100%;
     }
 
     @include e("listItem") {
         max-width: calc(calc($max-width - calc($gap * 2)) / 3);
+        display:flex;
     }
 }

@@ -1,0 +1,31 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "skillList";
+
+/* ------------------------------------ *\
+ * SKILL LIST ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        margin-top: var(--dynamic-50);
+        padding-top: var(--dynamic-30);
+       
+    }
+
+    @include e("list") {
+        @include flex($main: flex-start);
+
+        max-width: 100%;
+        flex-wrap: wrap;
+        gap: var(--dynamic-30)
+    }
+
+    @include e("listItem") {
+        &:not(:last-child) {
+            padding-right: var(--dynamic-30);
+            border-right: black 1px solid;
+        }
+    }
+}

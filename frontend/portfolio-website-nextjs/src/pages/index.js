@@ -5,13 +5,21 @@ import Section from "@/core/library/organisms/Section.organism";
 import Main from "@/core/library/organisms/Main.organism";
 import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
 import ProjectOverview from "@/core/library/organisms/ProjectOverview.organism";
+import SkillGallery from "@/core/library/organisms/SkillGallery.organism";
+import SkillShowcase from "@/core/library/organisms/SkillShowcase.organism";
+import SocialMediaList from "@/core/library/molecules/SocialMediaList.molecule";
+import FlexGrid from "@/core/library/layouts/FlexGrid.layout";
 
 import { Paragraph } from "@/core/library/atoms/typography/all";
+
+import getPortfolio from "@/core/utils/content/getPortfolio";
+import getSkillList from "@/core/utils/content/getSkillList";
+import ProjectList from "@/core/library/molecules/ProjectList.molecule";
 
 const siteNavLinks = [
     { label: "portfolio", href: `/portfolio` },
     { label: "blog", href: `/blog` },
-    { label: "cv", href: `/cv` },
+    // { label: "cv", href: `/cv` },
 ];
 
 const pageNavLinks = [
@@ -25,11 +33,9 @@ const pageNavLinks = [
 const socialMediaList = [
     { label: "LinkedIn", icon: "linkedin", href: "https://linkedin.com" },
     { label: "Github", icon: "github", href: "https://github.com" },
-    { label: "Spoke", icon: "spoke", href: "https://spoke.com" },
-    { label: "AngelsList", icon: "angelslist", href: "https://angelslist.com" },
 ];
 
-export default function Home() {
+export default function Home({ projectList, skillList }) {
     return (
         <div>
             <Head>
@@ -44,44 +50,111 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <LandingTemplate siteNavLinks={siteNavLinks} pageNavLinks={pageNavLinks}>
+            <LandingTemplate
+                siteNavLinks={siteNavLinks}
+                pageNavLinks={pageNavLinks}
+            >
                 <HeroBanner
                     pageTitle="Welcome!"
-                    subheading="I'm Paul, a JavaScript, MERN and JAMStack software engineer with a passion for building 
+                    subheading="I'm Paul, a highly skilled JavaScript Software Engineer proficient in Front-end development with a passion for building 
                                 dynamic and user-friendly web applications."
                     socialMediaList={socialMediaList}
                 />
                 <Main>
                     <Section headingTitle="About me" sectionId="about_me">
-                        <Paragraph
-                            text="I am a highly motivated and experienced web developer with a passion for 
-                                creating innovative and user-friendly web applications. I have a strong background in 
-                                JavaScript, MERN, and JAMStack development, as well as experience in other technologies 
-                                such as HTML, CSS, and React."
-                        />
+                        <FlexGrid classNames={["grid"]}>
+                            <FlexGrid gridElement="row">
+                                <FlexGrid classNames={["col"]}>
+                                    <Paragraph
+                                        text="I am a driven and accomplished web developer with a passion for creating intuitive and 
+                                innovative web applications. My expertise includes an in-depth understanding of front-end 
+                                technologies, JavaScript, and JAMStack development, as well as proficiency in React and 
+                                other cutting-edge technologies."
+                                    />
 
-                        <Paragraph
-                            text="Throughout my career, I have had the opportunity to work on a variety 
-                                of projects, from small business websites to large-scale e-commerce platforms. I take pride 
-                                in my ability to collaborate with teams, understand client needs, and deliver high-quality 
-                                solutions on time and on budget."
-                        />
+                                    <Paragraph
+                                        text="Throughout my career, I have had the opportunity to work on a diverse range of projects,
+                                from small business websites to large-scale e-commerce platforms. I take pride in my ability 
+                                to collaborate effectively with teams, understand the unique needs of clients, and deliver 
+                                high-quality solutions that are delivered on time and within budget."
+                                    />
 
-                        <Paragraph
-                            text="When I'm not coding, you can find me reading about new technologies, 
-                                experimenting with new frameworks and libraries, or mentoring other developers. I am always 
-                                eager to learn and grow as a developer, and I am excited to continue building my skills 
-                                and expanding my portfolio."
-                        />
+                                    <Paragraph
+                                        text="Continuous learning and growth is a core aspect of my professional journey. 
+                                When I'm not coding, you can find me staying up to date with the latest technologies,
+                                experimenting with new frameworks and libraries, or designing new systems. I am always 
+                                eager to learn and grow as a developer, and I am excited to continue building my 
+                                skills and expanding my portfolio."
+                                    />
+                                </FlexGrid>
+                            </FlexGrid>
+                        </FlexGrid>
                     </Section>
                     <Section headingTitle="Projects" sectionId="projects">
-                        <ProjectOverview />
+                        <ProjectOverview projectList={projectList} />
                     </Section>
-                    <Section headingTitle="Skills" sectionId="skills"></Section>
-                    <Section headingTitle="Achievements" sectionId="achievements"></Section>
-                    <Section headingTitle="Contact me" sectionId="contact_me"></Section>
+                    <Section headingTitle="Skills" sectionId="skills">
+                        <FlexGrid classNames={["grid"]}>
+                            <FlexGrid gridElement="row">
+                                <FlexGrid classNames={["col"]}>
+                                    <SkillShowcase />
+                                </FlexGrid>
+                            </FlexGrid>
+                            <FlexGrid gridElement="row">
+                                <FlexGrid classNames={["col"]}>
+                                    <SkillGallery list={skillList} />
+                                </FlexGrid>
+                            </FlexGrid>
+                        </FlexGrid>
+                    </Section>
+
+                    {/* <Section
+                        headingTitle="Achievements"
+                        sectionId="achievements"
+                    ></Section> */}
+                    <Section headingTitle="Contact me" sectionId="contact_me">
+                        <FlexGrid classNames={["grid"]}>
+                            <FlexGrid gridElement="row">
+                                <FlexGrid classNames={["col"]}>
+                                    <SocialMediaList
+                                        items={[
+                                            {
+                                                label: "LinkedIn",
+                                                icon: "linkedin_v2",
+                                                href: "http://linkedin.com",
+                                            },
+                                            {
+                                                label: "GitHub",
+                                                icon: "github",
+                                                href: "https://github.com",
+                                            },
+                                            {
+                                                label: "Email",
+                                                icon: "email",
+                                                href: "mailto:hzdkv@example.com",
+                                            },
+                                        ]}
+                                    />
+                                </FlexGrid>
+                            </FlexGrid>
+                        </FlexGrid>
+                    </Section>
                 </Main>
             </LandingTemplate>
         </div>
     );
+}
+
+export async function getStaticProps({}) {
+    const getProjectList = () =>
+        getPortfolio().projects.published.filter(
+            (item) => item.frontmatter.pinned === true
+        );
+
+    return {
+        props: {
+            projectList: getProjectList(),
+            skillList: getSkillList(),
+        },
+    };
 }

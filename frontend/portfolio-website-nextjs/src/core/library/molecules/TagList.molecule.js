@@ -1,5 +1,6 @@
 import { useId } from "react";
 import { base, listItem } from "@/styles/molecules/tagList.module.scss";
+import Pill from "@/core/atoms/Pill.atom";
 export default function TagList({ tags = [] }) {
     const ID = useId();
     return (
@@ -7,7 +8,7 @@ export default function TagList({ tags = [] }) {
             {tags.map((tag, index) => {
                 return (
                     <li className={listItem} key={index}>
-                        {tag}
+                        <Pill label={tag} />
                     </li>
                 );
             })}

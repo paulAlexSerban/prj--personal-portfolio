@@ -13,7 +13,7 @@
       "@/core/templates/*": ["src/core/templates/*"],
 
       "@/styles/base/*": ["src/styles/_02_base/*"],
-      "@/styles/layouts/*": ["src/styles/_04_layouts/*"],
+      "@/styles/layouts/*": ["src/styles/_04_library/_04_layouts/*"],
       "@/styles/atoms/*": ["src/styles/_04_library/_01_atoms/*"],
       "@/styles/molecules/*": ["src/styles/_04_library/_02_molecules/*"],
       "@/styles/organisms/*": ["src/styles/_04_library/_03_organisms/*"],

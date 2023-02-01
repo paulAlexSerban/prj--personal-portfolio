@@ -3,7 +3,8 @@ import styles, {
     base,
     listItem,
 } from "@/styles/molecules/socialMediaList.module.scss";
-import { Link } from "@/core/atoms/typography/all";
+
+import LinkIcon from "@/core/atoms/LinkIcon.atom";
 
 export default function SocialMediaList({ items = [] }) {
     const ID = useId();
@@ -13,7 +14,7 @@ export default function SocialMediaList({ items = [] }) {
             {items.map((item, index) => {
                 return (
                     <li className={listItem} key={index}>
-                        <Link label={item.label} href={item.href} />
+                        <LinkIcon label={item.label} href={item.href} iconName={item.icon} />
                     </li>
                 );
             })}

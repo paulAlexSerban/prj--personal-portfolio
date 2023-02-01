@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { base } from "@/styles/atoms/logo.module.scss";
+import { base, main, sub } from "@/styles/atoms/logo.module.scss";
 
 export default function Logo({ href = "/", label, target = "_self" }) {
     const ID = useId();
@@ -12,7 +12,8 @@ export default function Logo({ href = "/", label, target = "_self" }) {
             target={target}
             className={base}
         >
-            Paul Serban
+            <span className={main}>Paul Serban</span>
+            <span className={sub}>Software Engineer</span>
         </a>
     );
 }

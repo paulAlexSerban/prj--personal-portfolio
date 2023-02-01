@@ -5,10 +5,11 @@ import styles, {
     logoContainer,
     navToggle,
     navContent,
+    controls,
 } from "@/styles/organisms/siteNavigation.module.scss";
 
 import Logo from "@/core/atoms/Logo.atom";
-import BurgerButton from "@/core/atoms/BurgerButton";
+import BurgerButton from "@/core/library/atoms/BurgerButton.atom";
 import NavigationList from "@/core/molecules/NavigationList.molecule";
 
 const DOMAIN_NAME =
@@ -19,35 +20,42 @@ export default function SiteNavigation({ links = [] }) {
     const [navToggled, setNavToggled] = useState(false);
     const [navHeight, setNavHeight] = useState(0);
 
-
     const navContentRef = useRef(null);
 
     useEffect(() => {
-        setNavHeight(`${navContentRef.current.childNodes[0].clientHeight + 25}px`)
-    })
+        setNavHeight(
+            `${navContentRef.current.childNodes[0].clientHeight + 25}px`
+        );
+        setupEventListeners();
+    }, []);
 
     const handleToggle = () => {
         setNavToggled(!navToggled);
     };
 
+    const setupEventListeners = () => {
+        document.addEventListener("scroll", () => {
+            setNavToggled(false);
+        });
+    }
+
     return (
         <nav id={ID} className={base}>
             <div className={container}>
-                <div className={logoContainer}>
-                    <Logo />
-                </div>
-                <div
-                    className={navToggle}
-                    onClick={handleToggle}
-                >
-                    <BurgerButton isToggled={navToggled}/>
+                <div className={controls}>
+                    <div className={logoContainer}>
+                        <Logo />
+                    </div>
+                    <div className={navToggle} onClick={handleToggle}>
+                        <BurgerButton isToggled={navToggled} />
+                    </div>
                 </div>
                 <div
                     className={`${navContent} ${
                         navToggled ? styles["navContent--isOpen"] : ""
                     }`}
                     ref={navContentRef}
-                    style={{"--nav-list-height": navToggled ? navHeight : 0 }}
+                    style={{ "--nav-list-height": navToggled ? navHeight : 0 }}
                 >
                     <NavigationList items={links} />
                 </div>

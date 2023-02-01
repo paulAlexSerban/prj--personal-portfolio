@@ -25,6 +25,12 @@ $block: "siteNavigation";
         }
     }
 
+    @include e("controls") {
+        @include flex($main: space-between);
+        width: 100%;
+        position: relative;
+    }
+
     @include e("logoContainer", "navToggle") {
         @include flex();
         width: calc(50% - var(--static-30));
@@ -42,9 +48,7 @@ $block: "siteNavigation";
     @include e("navToggle") {
         justify-content: flex-end;
         align-content: center;
-        position: absolute;
-        top: calc(13px + var(--static-30));
-        right: 0;
+        height: 100%;
 
         @include breakpoint($tablet) {
             display: none;

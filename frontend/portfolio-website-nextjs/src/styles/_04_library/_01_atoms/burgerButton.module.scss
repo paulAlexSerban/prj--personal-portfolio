@@ -10,8 +10,9 @@ $block: "burgerButton";
 .#{$block} {
     @include e("base") {
         padding: var(--static-40);
-        position: relative;
-        top: 0;
+        position: absolute;
+        top: 50%;
+        right: var(--dynamic-30);
         width: 50px;
         height: 30px;
         padding: 0;
@@ -19,7 +20,7 @@ $block: "burgerButton";
         border: none;
         background-color: transparent ;
         box-shadow: inset 1px -3px -0 -1px var(--text-color);
-        transform: translate(-50%, -50%);
+        transform: translateY(-50%);
 
         &:focus {
             outline-offset: 4px;

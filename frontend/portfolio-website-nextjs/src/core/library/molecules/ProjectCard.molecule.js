@@ -8,8 +8,10 @@ import {
 
 import { Paragraph, Heading, Link } from "@/core/atoms/typography/all";
 import TagList from "./TagList.molecule";
+import LinkIcon from "@/core/atoms/LinkIcon.atom";
 
 export default function ProjectCard({
+    project,
     title = "Title undefined",
     subtitle = "Subtitle undefined",
     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
@@ -29,18 +31,33 @@ export default function ProjectCard({
 }) {
     const ID = useId();
 
+    const prjTitle = project.frontmatter.title;
+    const prjType = project.frontmatter.type;
+    const prjTags = project.frontmatter.tags;
+    const prjExcerpt = project.frontmatter.excerpt;
+    const prjGhRepo = project.frontmatter.repo_url;
+    const prjDemo = project.frontmatter.demo_url;
+
     return (
         <article id={ID} className={base}>
             <header className={header}>
-                <Heading level="3" mainText={title} subheadingText={subtitle} />
+                <Heading
+                    level="3"
+                    mainText={prjTitle}
+                    subheadingText={prjType}
+                />
             </header>
             <div className={container}>
-                <TagList tags={tags} />
-                <Paragraph text={description} />
+                <TagList tags={prjTags} />
+                <Paragraph text={prjExcerpt} />
             </div>
             <footer className={footer}>
-                <Link label="GitHub" href={githubLink} />
-                <Link label="Demo" href={demoLink} />
+                <LinkIcon
+                    label={[prjTitle, "Repo"].join(" ")}
+                    href={prjGhRepo}
+                    iconName="github"
+                />
+                <Link label="Demo" href={prjDemo} />
             </footer>
         </article>
     );

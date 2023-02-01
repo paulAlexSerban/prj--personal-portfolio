@@ -77,13 +77,13 @@ $page-title: (
 
 $subheading: (
   default: (
-    font-size: convert-rem(26px),
+    font-size: convert-rem(24px),
     line-height: convert-rem(29px),
     font-family: var(--text-regular),
     font-weight: font-weight(thin),
   ),
   $desktop: (
-    font-size: convert-rem(30px),
+    font-size: convert-rem(26px),
     line-height: convert-rem(33px),
   ),
 );
@@ -135,32 +135,32 @@ $heading-300: (
     letter-spacing: 0,
   ),
   $desktop: (
-    font-size: convert-rem(45px),
-    line-height: convert-rem(48px),
+    font-size: convert-rem(38px),
+    line-height: convert-rem(41px),
     letter-spacing: convert-rem(0.75px),
   ),
   $ultra-wide: (
-    font-size: convert-rem(50px),
-    line-height: convert-rem(53px),
+    font-size: convert-rem(40px),
+    line-height: convert-rem(43px),
     letter-spacing: convert-rem(-0.75px),
   ),
 );
 
 $heading-400: (
   default: (
-    font-size: convert-rem(28px),
-    line-height: convert-rem(31px),
+    font-size: convert-rem(26px),
+    line-height: convert-rem(30px),
     font-family: var(--text-regular),
     font-weight: font-weight(heavy),
   ),
   $desktop: (
-    font-size: convert-rem(35px),
-    line-height: convert-rem(38px),
+    font-size: convert-rem(30px),
+    line-height: convert-rem(34px),
     letter-spacing: convert-rem(0.5px),
   ),
   $ultra-wide: (
-    font-size: convert-rem(40px),
-    line-height: convert-rem(45px),
+    font-size: convert-rem(34px),
+    line-height: convert-rem(38px),
     letter-spacing: convert-rem(-0.5px),
   ),
 );

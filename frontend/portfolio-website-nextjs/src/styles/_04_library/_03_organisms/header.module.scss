@@ -15,6 +15,17 @@ $block: "header";
         width: 100%;
         background-color: var(--background-color);
         padding: var(--static-30);
+        transition: padding 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+
+        @include breakpoint($tablet) {
+            padding: var(--static-40) var(--static-30);
+        }
+
+        @include m("shrink") {
+            box-shadow: 0 4px 16px get-color($c-dark, dark-30);
+
+            padding: var(--static-10) var(--static-30);
+        }
     }
 
     @include e("container") {

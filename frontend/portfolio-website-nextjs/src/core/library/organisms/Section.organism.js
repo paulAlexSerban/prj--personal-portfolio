@@ -7,7 +7,7 @@ import styles, {
     footer,
 } from "@/styles/organisms/section.module.scss";
 
-export default function Section({ children, headingTitle, sectionId }) {
+export default function Section({ children, headingTitle, sectionId, subheadingText }) {
     const ID = useId();
 
     return (
@@ -17,6 +17,7 @@ export default function Section({ children, headingTitle, sectionId }) {
                     level="2"
                     mainText={headingTitle}
                     hasSeparator={true}
+                    subheadingText={subheadingText}
                 />
             </header>
             <div className={container}>{children}</div>

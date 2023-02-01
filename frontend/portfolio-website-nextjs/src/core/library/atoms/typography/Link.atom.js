@@ -1,6 +1,10 @@
 import { useId } from "react";
 
-export default function Link({ href = "#", label, target = "_self" }) {
+export default function Link({
+    href = "/",
+    label = "label text",
+    target = "_self",
+}) {
     const ID = useId();
 
     return (

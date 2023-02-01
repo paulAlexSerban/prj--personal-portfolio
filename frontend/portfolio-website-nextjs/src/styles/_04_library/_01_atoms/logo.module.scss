@@ -9,12 +9,29 @@ $block: "heading";
 
 .#{$block} {
     @include e("base") {
-        font-size: 26px;
-        font-weight: font-weight(heavy);
-        line-height: 26px;
+
+        @include flex($direction: column, $cross: flex-start);
+
+
 
         &:hover  {
             box-shadow: none;
+        }
+    }
+
+    @include e("main") {
+        font-size: 22px;
+        font-weight: font-weight(heavy);
+        line-height: 26px;
+
+        @include breakpoint($mobile) {
+            font-size: 30px;
+            line-height: 34px;
+        }
+
+        @include breakpoint($desktop){
+            font-size: 40px;
+            line-height: 40px;
         }
     }
 }

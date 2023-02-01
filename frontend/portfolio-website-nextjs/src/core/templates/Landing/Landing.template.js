@@ -4,7 +4,7 @@ import { useId } from "react";
 
 import Header from "@/core/library/organisms/Header.organism";
 import Footer from "@/core/library/organisms/Footer.organism";
-import PageNavigation from "@/core/library/organisms/PageNavigation.organism";
+// import PageNavigation from "@/core/library/organisms/PageNavigation.organism";
 
 import { base } from "@/styles/templates/landing.module.scss";
 

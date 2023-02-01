@@ -14,16 +14,18 @@ export default function Heading({
     const headingLevel = parseInt(level);
     const ID = useId();
 
+    const capitalizedMainText = mainText.charAt(0).toUpperCase() + mainText.slice(1);
+
     const innerText = () => {
         if (subheadingText.length !== 0) {
             return (
                 <span>
-                    <span className={styles.main}>{mainText}</span>
+                    <span className={styles.main}>{capitalizedMainText}</span>
                     <span className={subheading}>{subheadingText}</span>
                 </span>
             );
         } else {
-            return mainText;
+            return capitalizedMainText;
         }
     };
 

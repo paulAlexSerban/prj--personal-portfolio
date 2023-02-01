@@ -10,7 +10,6 @@ $block: "section";
 .#{$block} {
     @include e("base") {
         width: 100%;
-        min-height: 500px;
         margin-top: var(--dynamic-100);
     }
 

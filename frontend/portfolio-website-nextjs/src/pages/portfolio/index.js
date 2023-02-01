@@ -4,11 +4,14 @@ import GenericTemplate from "@/core/templates/Generic/Generic.template.js";
 import Section from "@/core/library/organisms/Section.organism";
 import Main from "@/core/library/organisms/Main.organism";
 import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
+import ProjectGallery from "@/core/library/organisms/ProjectGallery.organism";
+
+import getPortfolio from "@/utils/content/getPortfolio";
 
 const siteNavLinks = [
     { label: "portfolio", href: `/portfolio` },
     { label: "blog", href: `/blog` },
-    { label: "cv", href: `/cv` },
+    // { label: "cv", href: `/cv` },
 ];
 
 const pageNavLinks = [
@@ -29,7 +32,11 @@ const socialMediaList = [
     { label: "TryHackMe", icon: "tryhackme", href: "https://tryhackme.com" },
 ];
 
-export default function Portfolio() {
+export default function Portfolio({
+    projectList = [],
+    courseWorkList = [],
+    caseStudiesList,
+}) {
     return (
         <div>
             <Head>
@@ -57,13 +64,41 @@ export default function Portfolio() {
                     <Section
                         headingTitle="Projects"
                         sectionId="projects"
-                    ></Section>
+                        subheadingText="Projects undertaken for personal or hobby purposes that showcase my skills and creativity."
+                    >
+                        {/* gallery of projects filtered by tag in the url query */}
+                        <ProjectGallery projectList={projectList} />
+                    </Section>
+                    <Section
+                        headingTitle="Case Studies"
+                        sectionId="case_studies"
+                        subheadingText="Projects that involve research, analysis, and problem-solving, in which you have applied 
+                        my skills and knowledge to real-world scenarios. These projects showcase my ability to tackle complex 
+                        challenges and provide solutions."
+                    >
+                        {/* gallery of case studies filtered by tag in the url query */}
+                        <ProjectGallery projectList={caseStudiesList} />
+                    </Section>
                     <Section
                         headingTitle="Coursework"
                         sectionId="coursework"
-                    ></Section>
+                        subheadingText="Academic or educational projects assigned as part of a course or program that demonstrate my ability to apply knowledge and techniques."
+                    >
+                        {/* gallery of coursework filtered by tag in the url query */}
+                        <ProjectGallery projectList={courseWorkList} />
+                    </Section>
                 </Main>
             </GenericTemplate>
         </div>
     );
+}
+
+export async function getStaticProps({}) {
+    return {
+        props: {
+            projectList: getPortfolio().projects.published,
+            courseWorkList: getPortfolio().courseWork.published,
+            caseStudiesList: getPortfolio().caseStudies.published,
+        },
+    };
 }

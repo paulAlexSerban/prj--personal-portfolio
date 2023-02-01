@@ -10,6 +10,7 @@ $block: "tagList";
 .#{$block} {
     @include e("base") {
         @include flex($main: flex-start);
+        
         max-width: 100%;
         flex-wrap: wrap;
         gap: var(--dynamic-20)
