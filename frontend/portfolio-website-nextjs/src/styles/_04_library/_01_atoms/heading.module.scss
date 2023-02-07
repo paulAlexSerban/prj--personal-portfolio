@@ -1,0 +1,37 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "heading";
+
+/* ------------------------------------ *\
+ * SECTION HEADING ATOM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("main", "subheading") {
+        display: block;
+    }
+
+    @include e("subheading") {
+        @include font($subheading);
+
+        margin-top: var(--dynamic-20);
+    }
+
+    @include e("separator") {
+        padding-bottom: var(--dynamic-60);
+
+        &:after {
+            @include absolute();
+
+            background: var(--brand-color);
+            content: "";
+            display: inline-block;
+            height: 4px;
+            left: 0;
+            max-width: convert-rem(400px);
+            width: 75%;
+            bottom: 0;
+        }
+    }
+}

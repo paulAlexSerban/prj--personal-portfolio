@@ -1,0 +1,38 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "header";
+
+/* ------------------------------------ *\
+ * HEADER ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include fixed($top: 0, $left: 50%, $z-index: "header");
+
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: var(--background-color);
+        padding: var(--static-30) var(--lateral-padding);
+        transition: padding 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+
+        @include breakpoint($tablet) {
+            padding: var(--static-40) var(--lateral-padding);
+        }
+
+        @include m("shrink") {
+            box-shadow: 0 4px 16px get-color($c-dark, dark-30);
+
+            padding: var(--static-10) var(--lateral-padding);
+        }
+    }
+
+    @include e("container") {
+        @include flex($direction: column);
+
+
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+}

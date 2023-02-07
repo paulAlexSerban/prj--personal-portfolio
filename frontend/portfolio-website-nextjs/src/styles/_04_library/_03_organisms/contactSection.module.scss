@@ -1,0 +1,15 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "contactSection";
+
+/* ------------------------------------ *\
+ * CONTACT SECTION ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        padding-inline: var(--lateral-padding);
+        padding-bottom: var(--dynamic-70);
+    }
+}

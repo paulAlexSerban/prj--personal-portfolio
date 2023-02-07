@@ -1,0 +1,20 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "section";
+
+/* ------------------------------------ *\
+ * HERO BANNER ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        width: 100%;
+        margin-top: var(--dynamic-100);
+    }
+
+    @include e("header","container", "footer") {
+        @include flex($direction: column, $cross: flex-start);
+        max-width: $max-width;
+    }
+}

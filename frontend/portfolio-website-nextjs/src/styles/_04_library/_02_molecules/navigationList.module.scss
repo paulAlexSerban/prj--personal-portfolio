@@ -1,0 +1,43 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "navigationList";
+
+/* ------------------------------------ *\
+ * NAVIGATION LIST MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include m("siteNav") {
+            @include flex($direction: column, $cross: flex-start);
+
+            margin-top: var(--dynamic-40);
+
+            @include breakpoint($tablet) {
+                margin-top: 0;
+                flex-direction: row;
+                gap: var(--dynamic-40);
+            }
+        }
+
+        @include m("pageNav") {
+            @include flex($direction: column, $cross: flex-start);
+
+            row-gap: var(--dynamic-40);
+        }
+
+        @include m("footerNav") {
+        }
+    }
+
+    @include e("listItem") {
+        padding: var(--dynamic-20) 0;
+
+        a {
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+}

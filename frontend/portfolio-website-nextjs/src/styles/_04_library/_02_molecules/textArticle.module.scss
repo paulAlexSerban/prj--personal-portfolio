@@ -1,0 +1,14 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "textArticle";
+
+/* ------------------------------------ *\
+ * TEXT ARTICLE MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        padding-inline: var(--lateral-padding);
+    }
+}

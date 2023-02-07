@@ -1,0 +1,88 @@
+---
+name: Develop Frontend NextJS SSG Portfolio Website
+
+on:
+  push:
+    branches-ignore:
+      - release
+      - main
+      - develop
+
+  pull_request:
+    types: [opened, synchronize]
+
+  workflow_dispatch:
+
+jobs:
+  build-frontend:
+    name: Build Frontend NextJS SSG Portfolio Website
+    runs-on: ubuntu-latest
+    env:
+      ASSETS_ROOT: assets
+      FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website-nextjs
+      NODE_VERSION: 16.19.0
+    steps:
+      - name: "📥  Checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "🔍  Verify Changed Files"
+        uses: tj-actions/changed-files@v35
+        id: changed-frontend-portfolio-website-files
+        with:
+          files: ${{ env.FE_NEXTJS_PROJECT_ROOT }}/**/*
+
+      - name: "🔄  Cache node_modules"
+        if: ${{ always() }}
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: "🔧  Setup NodeJS ${{ env.NODE_VERSION }}"
+        if: ${{ always() }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: "🔧  Install npm@latest"
+        if: ${{ always() }}
+        run: npm i -g npm@latest
+
+      - name: "Install GraphicsMagick"
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        run: sudo apt-get install -y graphicsmagick
+
+      - name: "📦  Install Frontend NextJS Portfolio Website dependencies"
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        run: |
+          bash scripts/assets/install.bash
+          bash scripts/frontend/portfolio-website-nextjs/install.bash
+
+      - name: "🔍  Lint Frontend NextJS SSG Portfolio Website"
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        run: |
+          bash scripts/frontend/portfolio-website-nextjs/lint.bash
+        continue-on-error: true
+
+      - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        run: |
+          bash scripts/assets/process.bash
+          bash scripts/frontend/portfolio-website-nextjs/build-dev.bash
+
+      - name: "🚚  Package NextJS Portfolio Website"
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        run: |
+          bash scripts/package/clean.bash
+          bash scripts/package/portfolio-website.bash
+
+      - name: Configure git
+        run: |
+          git config --global user.email "paul.alex.serban@gmail.com"
+          git config --global user.name "paulAlexSerban"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: "🚀 Deploy to Test (GitHub Pages)"
+        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request' }}
+        run: npx gh-pages -d package/portfolio-website-nextjs --branch gh-pages-test -t true

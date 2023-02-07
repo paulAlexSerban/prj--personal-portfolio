@@ -1,0 +1,28 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "skillGallery";
+
+/* ------------------------------------ *\
+ * SKILL GALLERY ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        width: 100%;
+        margin-top: var(--dynamic-70);
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--dynamic-70);
+    }
+
+    @include e("container") {
+        margin-top: var(--dynamic-70);
+        grid-column: span 12;
+
+        @include breakpoint($tablet) {
+            margin-top: 0;
+            grid-column: span 6;
+        }
+    }
+}

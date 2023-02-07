@@ -1,0 +1,30 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "footer";
+
+/* ------------------------------------ *\
+ * FOOTER ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include flex($direction: column);
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin: 0 auto;
+        background-color: get-color($c-gray, timberwolf);
+    }
+
+    @include e("container") {
+        @include flex($direction: column);
+    }
+
+    @include e("bottom") {
+        @include flex($main: space-between);
+        width: 100%;
+        max-width: $max-width;
+    }
+}
