@@ -10,7 +10,7 @@ export default function LinkIcon({
     const ID = useId();
 
     return (
-        <a id={ID} href={href} aria-label={label} target="_blank" rel="noreferrer" className={base}>
+        <a id={ID} href={href} aria-label={label} target="_self" rel="noreferrer" className={base}>
             <Icon iconName={iconName} />
         </a>
     );

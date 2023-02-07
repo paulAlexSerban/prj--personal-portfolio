@@ -15,8 +15,7 @@ $block: "heading";
     @include e("subheading") {
         @include font($subheading);
 
-        margin-top: var(--dynamic-30);
-        max-width: $max-width / 1.5;
+        margin-top: var(--dynamic-20);
     }
 
     @include e("separator") {
@@ -34,12 +33,5 @@ $block: "heading";
             width: 75%;
             bottom: 0;
         }
-
-        // @include m("center") {
-        //   &:after {
-        //     left: 50%;
-        //     transform: translateX(-50%);
-        //   }
-        // }
     }
 }

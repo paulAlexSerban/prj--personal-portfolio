@@ -10,17 +10,16 @@ $block: "projectList";
 .#{$block} {
     $gap: var(--dynamic-70);
     @include e("base") {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: $grid-gutter;
 
-        @include flex($direction: row, $main: flex-start, $cross: unset);
+        @include breakpoint($tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        };
 
-        flex-wrap: wrap;
-        max-width: $max-width;
-        gap: $gap;
-        height: 100%;
-    }
-
-    @include e("listItem") {
-        max-width: calc(calc($max-width - calc($gap * 2)) / 3);
-        display:flex;
+        @include breakpoint($desktop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }

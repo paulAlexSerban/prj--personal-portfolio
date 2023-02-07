@@ -1,0 +1,22 @@
+
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "projectsOverview";
+
+/* ------------------------------------ *\
+ * PROJECTS OVERVIEW ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include flex($direction: column, $cross: flex-start);
+
+        width: 100%;
+    }
+
+    @include e("container") {
+        width: 100%;
+
+    }
+}

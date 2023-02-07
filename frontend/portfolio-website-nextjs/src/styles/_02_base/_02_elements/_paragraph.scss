@@ -2,6 +2,10 @@ p {
     @include font($body);
 
     color: var(--text-color);
-    margin-top: $baseline * 2;
-    max-width: $max-width / 1.5;
+    margin-top: var(--dynamic-50);
+
+    &.indent,
+    .indent {
+        padding-inline: var(--lateral-padding);
+    }
 }

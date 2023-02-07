@@ -9,17 +9,22 @@ $block: "footer";
 
 .#{$block} {
     @include e("base") {
-        max-width: $max-width;
+        @include flex($direction: column);
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        bottom: 0;
         margin: 0 auto;
-        margin-bottom: var(--dynamic-20);
+        background-color: get-color($c-gray, timberwolf);
     }
 
     @include e("container") {
         @include flex($direction: column);
-        min-height: 100px;
     }
 
     @include e("bottom") {
         @include flex($main: space-between);
+        width: 100%;
+        max-width: $max-width;
     }
 }

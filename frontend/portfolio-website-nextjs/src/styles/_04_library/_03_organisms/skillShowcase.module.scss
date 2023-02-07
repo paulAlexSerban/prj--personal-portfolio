@@ -9,7 +9,7 @@ $block: "skillShowcase";
 
 .#{$block} {
     @include e("base") {
-        margin-top: var(--dynamic-20)
+        margin-top: var(--dynamic-70)
     }
 
     @include e("skillList") {

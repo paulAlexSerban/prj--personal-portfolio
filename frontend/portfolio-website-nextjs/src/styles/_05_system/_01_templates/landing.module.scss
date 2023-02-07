@@ -9,7 +9,7 @@ $block: "landing";
 
 .#{$block} {
     @include e("base") {
-        padding-inline: var(--static-30);
+        padding-inline: var(--lateral-padding);
         margin-top: var(--dynamic-70);
     }
 }

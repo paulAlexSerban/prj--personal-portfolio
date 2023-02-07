@@ -5,6 +5,8 @@ const sanitizeQueryString = (
         .toLowerCase()
         .split(" ")
         .join("")
+        .split("-")
+        .join("")
         .split(".")
         .join("")
         .split("/")

@@ -21,11 +21,10 @@ else
 fi
 
 # set base path
-export BASE_PATH=""
 echo "Set the base path to $BASE_PATH"
 
 echo "Build the app"
-npm --prefix $APP_FOLDER run build 
+npm --prefix $APP_FOLDER run build:local
 
 echo "Create a .nojekyll file"
 touch $APP_FOLDER/out/.nojekyll

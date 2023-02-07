@@ -7,20 +7,27 @@ import styles, {
     footer,
 } from "@/styles/organisms/section.module.scss";
 
-export default function Section({ children, headingTitle, sectionId, subheadingText }) {
+export default function Section({
+    children,
+    headingTitle,
+    sectionId,
+    subheadingText,
+}) {
     const ID = useId();
 
     return (
         <section id={sectionId} className={base}>
-            <header className={header}>
-                <Heading
-                    level="2"
-                    mainText={headingTitle}
-                    hasSeparator={true}
-                    subheadingText={subheadingText}
-                />
-            </header>
-            <div className={container}>{children}</div>
+            {headingTitle && (
+                <header className={header}>
+                    <Heading
+                        level="2"
+                        mainText={headingTitle}
+                        hasSeparator={true}
+                        subheadingText={subheadingText}
+                    />
+                </header>
+            )}
+            {children && <div className={container}>{children}</div>}
         </section>
     );
 }

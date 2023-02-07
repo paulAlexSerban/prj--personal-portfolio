@@ -9,11 +9,13 @@ import {
     FaMediumM,
     FaMastodon,
     FaNodeJs,
-    FaDocker
+    FaDocker,
+    FaGlobe,
+    FaFolderOpen
 } from "react-icons/fa";
 import { SiCodewars, SiTryhackme, SiHackthebox, SiJavascript, SiReact, SiAmazonaws } from "react-icons/si";
 import { ImMail } from "react-icons/im";
-import { GrMail, GrLinkedinOption } from "react-icons/gr";
+import { GrMail, GrLinkedinOption, GrDocumentText } from "react-icons/gr";
 
 export default function Icon({ iconName = "github", className }) {
     const ID = useId();
@@ -36,7 +38,11 @@ export default function Icon({ iconName = "github", className }) {
         docker: <FaDocker />,
         aws: <SiAmazonaws />,
         linkedin_v2: <GrLinkedinOption />,
-        email: <GrMail />
+        email: <GrMail />,
+        document: <GrDocumentText />,
+        globe: <FaGlobe />,
+        folder: <FaFolderOpen />
+
     };
 
     return (

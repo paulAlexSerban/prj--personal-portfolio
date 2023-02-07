@@ -27,12 +27,12 @@ const getSkillList = () => [
             },
             {
                 title: "Front-end Tools",
-                skills: ["WebPack", "Gulp", "Sass/Scss", "Babel"],
+                skills: ["WebPack", "Gulp", "Scss/Sass", "Babel"],
             },
             {
                 title: "DevOps",
                 skills: [
-                    "Amazon Web Services",
+                    "AWS",
                     "Git",
                     "Docker",
                     "Linux",

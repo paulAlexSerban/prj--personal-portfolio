@@ -35,11 +35,15 @@
   --static-100: 80px;
   --static-110: 120px;
 
+  --lateral-padding: 20px;
+
   @include breakpoint($tablet) {
     --dynamic-80: 45px;
     --dynamic-90: 55px;
     --dynamic-100: 80px;
     --dynamic-110: 120px;
+
+    --lateral-padding: 25px;
   }
 
   @include breakpoint($desktop-xl) {
@@ -50,5 +54,7 @@
     --dynamic-90: 80px;
     --dynamic-100: 110px;
     --dynamic-110: 150px;
+
+    --lateral-padding: 30px;
   }
 }

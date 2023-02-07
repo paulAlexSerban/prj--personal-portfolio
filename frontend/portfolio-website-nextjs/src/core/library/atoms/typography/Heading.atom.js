@@ -31,7 +31,7 @@ export default function Heading({
 
     if (headingLevel === 1) {
         return (
-            <h1 id={ID} className={`${hasSeparator && separator}`}>
+            <h1 id={ID}>
                 {innerText()}
             </h1>
         );

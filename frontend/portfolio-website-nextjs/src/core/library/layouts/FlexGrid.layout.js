@@ -4,7 +4,7 @@ export default function FlexGrid({
     children,
     sectionId,
     classNames = [],
-    gridElement = "container",
+    gridElement,
 }) {
     const ID = useId();
 
@@ -28,7 +28,7 @@ export default function FlexGrid({
         ),
         col: (
             <div
-                className={`${styles.col} ${classNames
+                className={`${classNames
                     .map((cls) => styles[cls])
                     .join(" ")}`}
                 id={ID}

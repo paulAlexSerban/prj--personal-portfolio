@@ -11,12 +11,11 @@ $block: "projectCard";
     @include e("base") {
         @include flex($direction: column, $cross: flex-start, $main: unset);
 
-        padding: var(--dynamic-50);
+        padding: var(--lateral-padding);
         transition: background-color 0.3s ease-in-out;
         height: 100%;
 
         &:hover {
-
             background-color: #ebebeb;
         }
     }
@@ -24,8 +23,8 @@ $block: "projectCard";
     @include e("footer") {
         @include flex($main: space-between);
 
-        width: 100%;
-        margin-top: var(--dynamic-40);
         margin-top: auto;
+        padding-top: var(--lateral-padding);
+        column-gap: $grid-gutter;
     }
 }

@@ -11,32 +11,16 @@ import TagList from "./TagList.molecule";
 import LinkIcon from "@/core/atoms/LinkIcon.atom";
 
 export default function ProjectCard({
-    project,
-    title = "Title undefined",
-    subtitle = "Subtitle undefined",
-    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-    githubLink = "https://github.com",
-    demoLink = "https://demo.com",
-    tags = [
-        "RWD",
-        "a11y",
-        "SEO",
-        "JavaScript",
-        "Sass",
-        "Gulp",
-        "WebPack",
-        "JAMStack",
-        "GitHub Actions",
-    ],
+    project, category
 }) {
     const ID = useId();
-
     const prjTitle = project.frontmatter.title;
     const prjType = project.frontmatter.type;
     const prjTags = project.frontmatter.tags;
     const prjExcerpt = project.frontmatter.excerpt;
     const prjGhRepo = project.frontmatter.repo_url;
     const prjDemo = project.frontmatter.demo_url;
+    const prjSlug = `/portfolio/${category.category_url}/${project.slug}`
 
     return (
         <article id={ID} className={base}>
@@ -57,7 +41,16 @@ export default function ProjectCard({
                     href={prjGhRepo}
                     iconName="github"
                 />
-                <Link label="Demo" href={prjDemo} />
+                <LinkIcon
+                    label={[prjTitle, "Case Study"].join(" ")}
+                    href={prjSlug}
+                    iconName="folder"
+                />
+                <LinkIcon
+                    label={[prjTitle, "View Demo"].join(" ")}
+                    href={prjDemo}
+                    iconName="globe"
+                />
             </footer>
         </article>
     );

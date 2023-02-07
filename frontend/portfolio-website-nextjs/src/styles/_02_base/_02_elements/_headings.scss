@@ -17,36 +17,46 @@ h6 {
 
 h1 {
     @include font($heading-100);
-
-    margin-bottom: ($baseline * 3.5);
 }
 
 h2 {
     @include font($heading-200);
 
-    margin-bottom: ($baseline * 3);
+    &:not(:first-child) {
+        margin-top: var(--dynamic-60);
+    }
+
+    // &.hasSeparator {
+    //     padding-bottom: var(--dynamic-60);
+    //     margin-left: -$grid-gutter;
+
+    //     &:after {
+    //         @include absolute();
+
+    //         background: var(--brand-color);
+    //         content: "";
+    //         display: inline-block;
+    //         height: 4px;
+    //         left: 0;
+    //         max-width: convert-rem(400px);
+    //         width: 75%;
+    //         bottom: 0;
+    //     }
+    // }
 }
 
 h3 {
     @include font($heading-300);
-
-    margin-bottom: ($baseline * 2.5);
 }
 
 h4 {
     @include font($heading-400);
-
-    margin-bottom: ($baseline * 2);
 }
 
 h5 {
     @include font($heading-500);
-
-    margin-bottom: ($baseline * 1.5);
 }
 
 h6 {
     @include font($heading-600);
-
-    margin-bottom: ($baseline);
 }

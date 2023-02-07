@@ -10,5 +10,6 @@ $block: "generic";
 .#{$block} {
     @include e("base") {
         padding-inline: var(--static-30);
+        margin-top: var(--dynamic-100);
     }
 }

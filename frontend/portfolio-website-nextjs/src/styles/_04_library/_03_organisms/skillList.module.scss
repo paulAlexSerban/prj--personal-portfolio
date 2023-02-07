@@ -19,7 +19,8 @@ $block: "skillList";
 
         max-width: 100%;
         flex-wrap: wrap;
-        gap: var(--dynamic-30)
+        gap: var(--dynamic-30);
+        margin-top: var(--dynamic-30);
     }
 
     @include e("listItem") {

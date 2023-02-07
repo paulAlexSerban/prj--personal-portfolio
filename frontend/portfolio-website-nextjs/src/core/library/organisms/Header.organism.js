@@ -25,7 +25,7 @@ export default function Header({ siteNavLinks = [] }) {
 
     useEffect(() => {
         setupEventListeners(headerRef.current)
-    }, [])
+    })
 
     return (
         <header id={ID} className={base} ref={headerRef}>

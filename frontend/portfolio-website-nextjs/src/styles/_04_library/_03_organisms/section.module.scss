@@ -15,7 +15,6 @@ $block: "section";
 
     @include e("header","container", "footer") {
         @include flex($direction: column, $cross: flex-start);
-        min-height: 100px;
         max-width: $max-width;
     }
 }

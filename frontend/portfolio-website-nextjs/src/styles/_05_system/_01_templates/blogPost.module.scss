@@ -1,0 +1,15 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "blogPost";
+
+/* ------------------------------------ *\
+ * BLOG POST TEMPLATE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        padding-inline: var(--static-30);
+        margin-top: var(--dynamic-100);
+    }
+}
