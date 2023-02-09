@@ -110,7 +110,7 @@ Using HTML semantic elements can greatly improve the accessibility of a web page
 
 By using semantic HTML, you can create a web page that is more accessible and usable for all users, regardless of their abilities or disabilities. This will help improve the user experience and make your page more inclusive for a wider range of users.
 
-## Some Free Resources
+## Some free learning resources
 
 -   [web.dev - Semantic HTML](https://web.dev/learn/html/semantic-html/){target=_blank}
 -   [w3schools - HTML5 Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp){target=_blank}

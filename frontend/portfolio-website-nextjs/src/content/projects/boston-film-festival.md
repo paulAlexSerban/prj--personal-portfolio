@@ -32,7 +32,9 @@ case_study:
                 - "responsive-web-design-a-guide-to-building-user-friendly-websites"
                 - "web-accessibility-why-it-matters-and-how-to-implement-it"
                 - "essential-seo-strategies-for-web-developers"
-  
+                - "website-mockups-an-essential-tool-for-website-design"
+
+
                 - "bootstrap-discover-the-benefits-of-using-bootstrap-for-web-development"
                 - "bootstrap-the-key-to-streamlining-website-prototype-development"
                 - "defining-the-scope-of-your-web-development-project"
@@ -42,7 +44,6 @@ case_study:
                 - "the-importance-of-user-acceptance-testing-uat-in-web-development"
                 - "the-minimum-viable-product-mvp-in-web-development-projects"
                 - "web-development-project-brief-document"
-                - "website-mockups-an-essential-tool-for-website-design"
                 - "website-prototypes-the-key-to-successful-website-design-and-development"
           - booknotes:
                 - "html-and-css-design-and-build-websites-jon-ducket"

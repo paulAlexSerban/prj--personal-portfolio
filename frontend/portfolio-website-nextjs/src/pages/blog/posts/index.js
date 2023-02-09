@@ -42,8 +42,8 @@ export async function getStaticProps() {
                             list: publishedPosts.slice(0, 12),
                             parentPage: "blog",
                             category: {
-                                category_url: "post",
-                                category_name: "post",
+                                category_url: "posts",
+                                category_name: "posts",
                             },
                         },
                     },

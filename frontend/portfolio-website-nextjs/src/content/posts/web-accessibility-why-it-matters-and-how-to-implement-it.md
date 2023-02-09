@@ -67,7 +67,7 @@ While the goal of web accessibility is to create inclusive digital content that 
 
 In conclusion, by avoiding these common web accessibility pitfalls, organizations can create digital content that is truly inclusive and accessible to all users. This can help to break down barriers for people with disabilities and create a more equal and inclusive digital world.
 
-## Some free resources
+## Some free learning resources
 
 -   [mdn - Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility){target=_blank}
 -   [udacity - Web Accessibility by Google](https://www.udacity.com/course/web-accessibility--ud891){target=_blank}

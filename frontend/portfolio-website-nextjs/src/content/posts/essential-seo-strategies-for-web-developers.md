@@ -46,7 +46,7 @@ In conclusion, SEO is a complex and ever-evolving field, but by focusing on thes
 
 In summary, SEO is an essential aspect of website development, and web developers play a critical role in ensuring their website is optimized for search engines. By focusing on keyword research, on-page optimization, technical SEO, and link building, you can improve your website's search engine ranking and drive more organic traffic. Remember, SEO is an ongoing process, and it's essential to stay up-to-date with the latest best practices and trends.
 
-## Some free resources
+## Some free learning resources
 
 -   [google.com - Explore Google Search Docs](https://developers.google.com/search/docs){target=_blank}
 -   [github.com/seo - State Of The Art Internet Marketing](https://github.com/seo/guide){target=_blank}
