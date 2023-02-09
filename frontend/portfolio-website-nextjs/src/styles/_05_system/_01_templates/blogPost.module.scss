@@ -25,6 +25,11 @@ $block: "blogPost";
                 @include font($body-bold);
             }
         }
+
+        ul, ol {
+            padding-inline: var(--lateral-padding);
+            list-style: disc;
+        }
     }
 
     

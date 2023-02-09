@@ -58,7 +58,7 @@ export default function BlogPostTemplate({
             <Main>
                 <HeroBanner
                     pageTitle={frontmatter.title}
-                    subheading={frontmatter.excerpt}
+                    subheading={frontmatter.subheading}
                     socialMediaLinks={socialMediaLinks}
                     date={frontmatter.date}
                     author={frontmatter.author}
