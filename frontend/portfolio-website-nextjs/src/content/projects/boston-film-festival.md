@@ -31,6 +31,7 @@ case_study:
                 - "html-semantics-best-practices-and-tips"
                 - "responsive-web-design-a-guide-to-building-user-friendly-websites"
                 - "web-accessibility-why-it-matters-and-how-to-implement-it"
+                - "essential-seo-strategies-for-web-developers"
   
                 - "bootstrap-discover-the-benefits-of-using-bootstrap-for-web-development"
                 - "bootstrap-the-key-to-streamlining-website-prototype-development"
