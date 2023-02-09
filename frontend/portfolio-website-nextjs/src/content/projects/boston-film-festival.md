@@ -28,12 +28,15 @@ case_study:
                 - "fcc-responsive-web-design-mini-projects"
     - blog:
           - posts:
+                - "html-semantics-best-practices-and-tips"
+                - "responsive-web-design-a-guide-to-building-user-friendly-websites"
+                - "web-accessibility-why-it-matters-and-how-to-implement-it"
+  
                 - "bootstrap-discover-the-benefits-of-using-bootstrap-for-web-development"
                 - "bootstrap-the-key-to-streamlining-website-prototype-development"
                 - "defining-the-scope-of-your-web-development-project"
                 - "developing-a-promotional-website-a-step-by-step-guide"
                 - "developing-a-promotional-website-that-meets-your-goals"
-                - "responsive-web-design-a-guide-to-building-user-friendly-websites"
                 - "the-different-types-of-promotional-websites-and-which-one-is-right-for-your-business"
                 - "the-importance-of-user-acceptance-testing-uat-in-web-development"
                 - "the-minimum-viable-product-mvp-in-web-development-projects"
