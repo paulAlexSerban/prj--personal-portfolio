@@ -5,3 +5,7 @@
 ul, li {
     @include font($link);
 }
+
+ul {
+    margin-top: var(--dynamic-50);
+}

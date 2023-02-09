@@ -2,7 +2,7 @@
 title: "Defining the Scope of Your Web Development Project"
 subheading: "A Guide to the Project Scope of Work"
 excerpt: "A comprehensive project scope of work is essential for the success of any web development project. By outlining objectives, deliverables, timeline, budget, and potential risks, a project scope of work helps to ensure that everyone involved is on the same page and working towards the same goals. From defining the objectives to determining the timeline and budget, a project scope of work provides a roadmap for a successful web development project."
-status: "published"
+status: "draft"
 tags:
     - "Web Development"
     - "Project Management"

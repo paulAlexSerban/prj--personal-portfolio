@@ -2,7 +2,7 @@
 title: "JavaScript and jQuery"
 subheading: "Interactive  Frontend Web Development"
 author: "Jon Ducket"
-status: "published"
+status: "draft"
 tags:
  - "JavaScript"
  - "jQuery"

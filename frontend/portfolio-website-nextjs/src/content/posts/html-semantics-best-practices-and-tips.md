@@ -145,8 +145,10 @@ By using semantic HTML, you can create a web page that is more accessible and us
 
 ## Resources
 
--   [Web.dev - Semantic HTML](https://web.dev/learn/html/semantic-html/)
--   [CodeCademy - Semantic HTML](https://www.codecademy.com/learn/learn-html/modules/learn-semantic-html/cheatsheet)
--   [Semrush - Semantic HTML Guide](https://www.semrush.com/blog/semantic-html5-guide/)
--   [I Like Kill Nerds - How To Correctly Use Semantic HTML5 `<article>`, `<main> and <section> tags](https://ilikekillnerds.com/2014/07/how-to-correctly-use-semantic-html5-article-main-and-section-tags/)
--   [Thoughtco - Why Use Semantic HTML](https://www.thoughtco.com/why-use-semantic-html-3468271)
+-   [web.dev - Semantic HTML](https://web.dev/learn/html/semantic-html/){target=_blank}
+-   [w3schools - HTML5 Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp){target=_blank}
+-   [CodeCademy - Semantic HTML](https://www.codecademy.com/learn/learn-html/modules/learn-semantic-html/cheatsheet){target=_blank}
+-   [Semrush - Semantic HTML Guide](https://www.semrush.com/blog/semantic-html5-guide/){target=_blank}
+-   [I Like Kill Nerds - How To Correctly Use Semantic HTML5 `<article>`, `<main> and <section> tags](https://ilikekillnerds.com/2014/07/how-to-correctly-use-semantic-html5-article-main-and-section-tags/){target=_blank}
+-   [Thoughtco - Why Use Semantic HTML](https://www.thoughtco.com/why-use-semantic-html-3468271){target=_blank}
+-   [hackernoon.com - How to Write Semantic HTML](https://hackernoon.com/how-to-write-semantic-html-dkq3ulo){target=_blank}

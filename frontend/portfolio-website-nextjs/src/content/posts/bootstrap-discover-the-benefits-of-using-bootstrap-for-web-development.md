@@ -2,7 +2,7 @@
 title: "Bootstrap"
 subheading: "Discover the Benefits of Using Bootstrap for Web Development"
 excerpt: "Bootstrap is a popular front-end framework that simplifies the process of building responsive websites. It provides a comprehensive set of CSS and JavaScript tools to streamline development, including a responsive grid system and pre-made styles and components. Bootstrap saves time, is highly customizable, and makes building responsive websites easy. It's a must-have tool for any web development project, whether you're a seasoned developer or just starting out."
-status: "published"
+status: "draft"
 tags:
     - "Web Development"
     - "Bootstrap"

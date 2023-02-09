@@ -11,12 +11,12 @@ export default function App({ Component, pageProps }) {
             {
                 label: "LinkedIn",
                 icon: "linkedin_v2",
-                href: "http://linkedin.com",
+                href: "https://www.linkedin.com/in/paulalexs/",
             },
             {
                 label: "GitHub",
                 icon: "github",
-                href: "https://github.com",
+                href: "https://github.com/paulAlexSerban",
             },
             {
                 label: "Email",

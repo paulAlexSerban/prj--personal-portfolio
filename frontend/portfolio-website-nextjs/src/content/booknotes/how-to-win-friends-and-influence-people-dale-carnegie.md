@@ -2,7 +2,7 @@
 title: "The Secret of Success"
 subheading: "How to Win Friends and Influence People"
 author: "Dale Carnegie"
-status: "published"
+status: "draft"
 tags:
  - "Project Management"
  - "Feedback Giving"

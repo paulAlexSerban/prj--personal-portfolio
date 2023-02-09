@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, } from "react";
 import {
     base,
     container,
@@ -10,20 +10,19 @@ import { Paragraph, Heading, Link } from "@/core/atoms/typography/all";
 import TagList from "./TagList.molecule";
 import LinkIcon from "@/core/atoms/LinkIcon.atom";
 
-export default function ProjectCard({
-    project, category
-}) {
+export default function ProjectCard({ project, category }) {
     const ID = useId();
+
     const prjTitle = project.frontmatter.title;
     const prjType = project.frontmatter.type;
     const prjTags = project.frontmatter.tags;
     const prjExcerpt = project.frontmatter.excerpt;
     const prjGhRepo = project.frontmatter.repo_url;
     const prjDemo = project.frontmatter.demo_url;
-    const prjSlug = `/portfolio/${category.category_url}/${project.slug}`
+    const prjSlug = `/portfolio/${category.category_url}/${project.slug}`;
 
     return (
-        <article id={ID} className={base}>
+        <article id={ID} className={`${base} projectCard`}>
             <header className={header}>
                 <Heading
                     level="3"

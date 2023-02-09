@@ -3,7 +3,6 @@ import path from "path";
 import matter from "gray-matter";
 import sanitizeQueryString from "../sanitizeQueryString";
 
-
 const CONTENT_PATH = path.join(process.cwd(), "src", "content");
 
 const CONTENT_CATEGORIES = fs.readdirSync(CONTENT_PATH);
@@ -26,9 +25,8 @@ const getContent = () => {
             if (frontmatter.tags) {
                 Object.values(frontmatter.tags).map((tag) => {
                     const sanitizedTag = sanitizeQueryString(tag);
-                    content.tags.push(sanitizedTag);
-                })
-
+                    content.tags.push({ name: tag, tag: sanitizedTag });
+                });
             }
             const fileContent = fileMatter.content;
 

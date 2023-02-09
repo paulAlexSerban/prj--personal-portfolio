@@ -7,7 +7,7 @@ export default function Pill({ label, href }) {
 
     return (
         <span id={ID} className={base}>
-            <Link label={label} href={href}/>
+            <Link label={`#${label}`} href={href}/>
         </span>
     );
 }

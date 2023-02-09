@@ -9,10 +9,12 @@ $block: "heroBanner";
 
 .#{$block} {
     @include e("base") {
-        display: grid;
+        @include flex($direction: column);
+
         width: 100vw;
-        background-color: get-color($c-gray, timberwolf);
+        background-color: var(--secondary-color);;
         padding-bottom: var(--dynamic-50);
+        margin-top: var(--dynamic-100);
     }
 
     @include e("header", "container") {
@@ -24,16 +26,10 @@ $block: "heroBanner";
         padding-inline: var(--lateral-padding);
     }
 
-    @include e("header") {
-        margin-top: var(--dynamic-100);
-    }
-
-    @include e("container") {
-        height: 100%;
-    }
-
     @include e("wrapper") {
+        @include flex($direction: column, $cross: flex-start);
         grid-column: span 12;
+
         @include breakpoint($tablet) {
             grid-column: span 8;
         }

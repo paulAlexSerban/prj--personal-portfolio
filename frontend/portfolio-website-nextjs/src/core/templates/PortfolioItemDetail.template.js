@@ -11,7 +11,7 @@ import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
 import Section from "@/core/library/organisms/Section.organism";
 import CaseStudyOverview from "@/core/organisms/CaseStudyOverview.organism";
 
-import { base } from "@/styles/templates/portfolioItemDetail.module.scss";
+import { base, contentContainer } from "@/styles/templates/portfolioItemDetail.module.scss";
 
 export default function PortfolioItemDetailTemplate({
     children,
@@ -53,7 +53,7 @@ export default function PortfolioItemDetailTemplate({
                     socialMediaLinks={socialMediaLinks}
                 />
                 <Section sectionId={pageContent.slug}>
-                    <div
+                    <div className={contentContainer}
                         dangerouslySetInnerHTML={{
                             __html: marked.render(pageContent.content),
                         }}
@@ -64,7 +64,7 @@ export default function PortfolioItemDetailTemplate({
                         sectionId="casestudy_section"
                         headingTitle="Case Study"
                         subheadingText="Research, analysis, and problem-solving cases used to tackle
-                complex challenges and provide solutions encountered in the
+                complex challenges and provide solutions encountered developing the project
                 project."
                     >
                         <CaseStudyOverview list={caseStudy} />

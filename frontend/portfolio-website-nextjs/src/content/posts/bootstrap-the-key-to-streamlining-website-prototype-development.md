@@ -2,7 +2,7 @@
 title: "Bootstrap for Website Prototype"
 subheading: "The Key to Streamlining Website Prototype Development"
 excerpt: "Bootstrap is the ultimate tool for streamlining website prototype development. The front-end framework offers a comprehensive set of CSS and JavaScript tools, including a responsive grid system and pre-made styles and components, making it easy to create responsive websites. Its open-source nature allows for customization, making it a versatile tool for web development projects of any size. Whether you're a seasoned developer or just starting out, Bootstrap is a must-have for creating efficient and effective website prototypes."
-status: "published"
+status: "draft"
 tags:
     - "Web Development"
     - "Bootstrap"

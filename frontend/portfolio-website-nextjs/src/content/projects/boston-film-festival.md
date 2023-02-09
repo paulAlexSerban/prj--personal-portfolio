@@ -11,7 +11,7 @@ repo_url: "https://github.com/"
 demo_url: "https://github.com/"
 status: "published"
 tags:
-    - "RWD"            
+    - "Responsive Web Design"
     - "Accessibility"
     - "SEO"
     - "JavaScript"
@@ -19,56 +19,55 @@ tags:
     - "Gulp"
     - "WebPack"
     - "JAMStack"
-    - "11ty"
     - "GitHub Actions"
     - "Bootstrap"
     - "SSG"
 case_study:
     - portfolio:
-      - courseworks:
-        - "fcc-responsive-web-design-mini-projects"
+          - courseworks:
+                - "fcc-responsive-web-design-mini-projects"
     - blog:
-      - posts:
-        - "bootstrap-discover-the-benefits-of-using-bootstrap-for-web-development"
-        - "bootstrap-the-key-to-streamlining-website-prototype-development"
-        - "defining-the-scope-of-your-web-development-project"
-        - "developing-a-promotional-website-a-step-by-step-guide"
-        - "developing-a-promotional-website-that-meets-your-goals"
-        - "responsive-web-design-a-guide-to-building-user-friendly-websites"
-        - "the-different-types-of-promotional-websites-and-which-one-is-right-for-your-business"
-        - "the-importance-of-user-acceptance-testing-uat-in-web-development"
-        - "the-minimum-viable-product-mvp-in-web-development-projects"
-        - "web-development-project-brief-document"
-        - "website-mockups-an-essential-tool-for-website-design"
-        - "website-prototypes-the-key-to-successful-website-design-and-development"
-      - booknotes:
-        - "html-and-css-design-and-build-websites-jon-ducket"
-        - "javascript-and-jquery-interactive-frontend-web-developemnt-jon-ducket"
-        - "the-phoenix-project-a-novel-about-it-devops-and-helping-your-business-win-gene-kim"
-      - snippets:
-        - "capitalize-the-first-letter-with-javascript"
+          - posts:
+                - "bootstrap-discover-the-benefits-of-using-bootstrap-for-web-development"
+                - "bootstrap-the-key-to-streamlining-website-prototype-development"
+                - "defining-the-scope-of-your-web-development-project"
+                - "developing-a-promotional-website-a-step-by-step-guide"
+                - "developing-a-promotional-website-that-meets-your-goals"
+                - "responsive-web-design-a-guide-to-building-user-friendly-websites"
+                - "the-different-types-of-promotional-websites-and-which-one-is-right-for-your-business"
+                - "the-importance-of-user-acceptance-testing-uat-in-web-development"
+                - "the-minimum-viable-product-mvp-in-web-development-projects"
+                - "web-development-project-brief-document"
+                - "website-mockups-an-essential-tool-for-website-design"
+                - "website-prototypes-the-key-to-successful-website-design-and-development"
+          - booknotes:
+                - "html-and-css-design-and-build-websites-jon-ducket"
+                - "javascript-and-jquery-interactive-frontend-web-developemnt-jon-ducket"
+                - "the-phoenix-project-a-novel-about-it-devops-and-helping-your-business-win-gene-kim"
+          - snippets:
+                - "capitalize-the-first-letter-with-javascript"
 ---
 
-## Brief Description {.hasSeparator}
+## Brief Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.{.indent-block}
 
-## Architecture {.hasSeparator}
+## Architecture
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.{.indent-block}
 
-## Infrastructure {.hasSeparator}
+## Infrastructure
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.{.indent-block}
 
-## Tech Stack {.hasSeparator}
+## Tech Stack
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.{.indent-block}
 
-## System Design {.hasSeparator}
+## System Design
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.{.indent-block}
 
-## Glossary {.hasSeparator}
+## Glossary
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.{.indent-block}

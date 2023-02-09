@@ -10,6 +10,22 @@ $block: "blogPost";
 .#{$block} {
     @include e("base") {
         padding-inline: var(--static-30);
-        margin-top: var(--dynamic-100);
+        margin-top: var(--dynamic-50);
     }
+
+    @include e("contentContainer") {
+        padding-inline: var(--lateral-padding);
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        p, h2, ul, ol {
+            grid-column: span 8;
+
+            strong {
+                @include font($body-bold);
+            }
+        }
+    }
+
+    
 }

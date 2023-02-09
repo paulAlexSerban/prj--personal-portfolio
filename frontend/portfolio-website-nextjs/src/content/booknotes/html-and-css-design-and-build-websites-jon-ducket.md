@@ -6,6 +6,7 @@ status: "published"
 tags:
     - "Web Development"
     - "Front-end Development"
+    - "Responsive Web Design"
 ---
 
 "HTML and CSS: Design and Build Websites" is a comprehensive guide to the basics of web design and development. Written by Jon Duckett, this book provides an introduction to HTML and CSS, two of the most essential technologies used to build and style websites. The book covers a wide range of topics, including HTML structure, content elements, CSS styles and selectors, graphic design, layout, user experience, and best practices for web development. With clear explanations and plenty of practical examples, "HTML and CSS: Design and Build Websites" is an ideal resource for anyone looking to learn how to create engaging and functional websites. Whether you're a beginner or an experienced web designer, this book is an essential tool for mastering the fundamentals of web design and development.

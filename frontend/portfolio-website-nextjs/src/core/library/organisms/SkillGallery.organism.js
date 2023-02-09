@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { Paragraph, Heading, Link } from "@/core/atoms/typography/all";
+import { Heading } from "@/core/atoms/typography/all";
 import { base, container } from "@/styles/organisms/skillGallery.module.scss";
 import SkillList from "./SkillList.organism";
 
@@ -15,10 +15,10 @@ export default function SkillGallery({ list = [] }) {
                         {item[Object.keys(item)[0]].map((skill, skillIndex) => {
                             return (
                                 <SkillList
+                                    key={skillIndex}
                                     isSoftSkill={
                                         Object.keys(item)[0] === "soft"
                                     }
-                                    key={skillIndex}
                                     skillList={skill}
                                 />
                             );

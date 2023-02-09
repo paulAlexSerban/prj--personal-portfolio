@@ -2,7 +2,7 @@
 title: "Project Brief Document"
 subheading: "Maximizing Your Web Development Project"
 excerpt: "Maximizing Your Web Development Project with a Detailed Brief Document: A project brief document is a written document that outlines the objectives, goals, and requirements of a web development project. It serves as a roadmap for the development team and provides a clear understanding of the project scope, timeline, and budget. A well-written brief document helps to avoid misunderstandings and miscommunications during the development process and ensures that the final product meets the client's expectations."
-status: "published"
+status: "draft"
 tags:
     - "Web Development"
     - "Project Management"

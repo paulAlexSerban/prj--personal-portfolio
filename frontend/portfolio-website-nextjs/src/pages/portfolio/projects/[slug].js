@@ -108,10 +108,14 @@ export async function getStaticProps({ params: { slug } }) {
 
                     const { data: caseStudyFrontmatter } =
                         matter(caseStudyMarkdown);
-                    caseStudyReferences[key][subKey].push({
-                        title: caseStudyFrontmatter.title,
-                        url_path: path.join("/", key, subKey, subSubKey),
-                    });
+
+                        if(caseStudyFrontmatter.status === "published") {
+                            caseStudyReferences[key][subKey].push({
+                                title: caseStudyFrontmatter.title,
+                                url_path: path.join("/", key, subKey, subSubKey),
+                            });
+                        }
+
                 });
             });
         });

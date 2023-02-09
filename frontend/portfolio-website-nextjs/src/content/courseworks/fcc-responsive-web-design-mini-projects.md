@@ -10,5 +10,5 @@ demo_url: "https://github.com/"
 status: "published"
 tags:
     - "Front-end Development"
-    - "RWD"
+    - "Responsive Web Design"
 ---

@@ -4,8 +4,7 @@ p {
     color: var(--text-color);
     margin-top: var(--dynamic-50);
 
-    &.indent,
-    .indent {
+    &.indent-block {
         padding-inline: var(--lateral-padding);
     }
 }

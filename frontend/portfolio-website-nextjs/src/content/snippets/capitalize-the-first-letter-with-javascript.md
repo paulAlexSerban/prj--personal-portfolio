@@ -1,7 +1,7 @@
 ---
 title: Capitalize the first letter in a word with JavaScript
-category: snippet
-status: published
+category: "snippet"
+status: "published"
 tags:
     - "JavaScript"
 date: 01/01/2019

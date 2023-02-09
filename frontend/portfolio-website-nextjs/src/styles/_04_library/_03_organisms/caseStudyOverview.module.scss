@@ -1,14 +1,18 @@
 @import "../../_00_abstracts/abstracts.scss";
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: "contactSection";
+$block: "caseStudyOverview";
 
 /* ------------------------------------ *\
- * CONTACT SECTION ORGANISM
+ * CASE STUDY OVERVIEW ORGANISM
 \* ------------------------------------ */
 
 .#{$block} {
     @include e("base") {
         padding: var(--dynamic-70) var(--lateral-padding);
+    }
+
+    @include e("linkList") {
+        margin-top: var(--dynamic-30);
     }
 }

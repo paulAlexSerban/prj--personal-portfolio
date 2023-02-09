@@ -2,7 +2,7 @@
 title: "The Importance of User Acceptance Testing (UAT) in Web Development"
 subheading: "A Comprehensive Guide to Effective UAT"
 excerpt: "User acceptance testing (UAT) is a crucial step in the web development process that helps to ensure that the end product meets the needs and expectations of the users. By evaluating the software or application before release, UAT helps to identify any potential issues or bugs that may have been missed during development, and to make any necessary improvements. This guide will explore the importance of UAT, what it entails, and how to perform UAT effectively, so that your web application or product is ready for release."
-status: "published"
+status: "draft"
 tags:
     - "Web Development"
     - "UAT"

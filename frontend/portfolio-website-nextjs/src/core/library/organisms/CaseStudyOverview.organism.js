@@ -1,5 +1,5 @@
-import { Link } from "@/core/atoms/typography/all";
-import FlexGrid from "@/core/library/layouts/FlexGrid.layout";
+import { Link, Heading } from "@/core/atoms/typography/all";
+import { base, linkList } from "@/styles/organisms/caseStudyOverview.module.scss";
 
 /**
  * @name CaseStudyOverview
@@ -7,74 +7,102 @@ import FlexGrid from "@/core/library/layouts/FlexGrid.layout";
  */
 
 export default function CaseStudyOverview({ list = [] }) {
+    console.log();
+    const hasCourseWorks =
+        list &&
+        list.portfolio &&
+        list.portfolio.courseworks &&
+        list.portfolio.courseworks.length > 0;
+    const hasPosts =
+        list && list.blog && list.blog.posts && list.blog.posts.length > 0;
+
+    const hasBooknotes =
+        list &&
+        list.blog &&
+        list.blog.booknotes &&
+        list.blog.booknotes.length > 0;
+    const hasSnippets =
+        list &&
+        list.blog &&
+        list.blog.snippets &&
+        list.blog.snippets.length > 0;
+
+    const hasContent =
+        hasCourseWorks || hasPosts || hasBooknotes || hasSnippets;
     return (
         <>
-            {list && list.portfolio && list.portfolio.courseworks && (
-                <article>
-                    <h3>Course Work</h3>
-                    <ul>
-                        {list.portfolio.courseworks.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <Link
-                                        label={item.title}
-                                        href={item.url_path}
-                                    />
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </article>
-            )}
-            {list && list.blog && list.blog.posts && (
-                <article>
-                    <h3>Posts</h3>
-                    <ul>
-                        {list.blog.posts.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <Link
-                                        label={item.title}
-                                        href={item.url_path}
-                                    />
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </article>
-            )}
-            {list && list.blog && list.blog.booknotes && (
-                <article>
-                    <h3>Book Notes</h3>
-                    <ul>
-                        {list.blog.booknotes.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <Link
-                                        label={item.title}
-                                        href={item.url_path}
-                                    />
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </article>
-            )}
-            {list && list.blog && list.blog.snippets && (
-                <article>
-                    <h3>Snippets</h3>
-                    <ul>
-                        {list.blog.snippets.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <Link
-                                        label={item.title}
-                                        href={item.url_path}
-                                    />
-                                </li>
-                            );
-                        })}
-                    </ul>
+            {hasContent && (
+                <article className={base}>
+                    {hasCourseWorks && (
+                        <>
+                            <Heading level="3" mainText="Course Work" />
+                            <ul className={linkList}>
+                                {list.portfolio.courseworks.map(
+                                    (item, index) => {
+                                        return (
+                                            <li key={index}>
+                                                <Link
+                                                    label={item.title}
+                                                    href={item.url_path}
+                                                />
+                                            </li>
+                                        );
+                                    }
+                                )}
+                            </ul>
+                        </>
+                    )}
+                    {hasPosts && (
+                        <>
+                            <Heading level="3" mainText="Posts" />
+                            <ul className={linkList}>
+                                {list.blog.posts.map((item, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <Link
+                                                label={item.title}
+                                                href={item.url_path}
+                                            />
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </>
+                    )}
+                    {hasBooknotes && (
+                        <>
+                            <Heading level="3" mainText="Book Notes" />
+                            <ul className={linkList}>
+                                {list.blog.booknotes.map((item, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <Link
+                                                label={item.title}
+                                                href={item.url_path}
+                                            />
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </>
+                    )}
+                    {hasSnippets && (
+                        <>
+                            <Heading level="3" mainText="Snippets" />
+                            <ul className={linkList}>
+                                {list.blog.snippets.map((item, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <Link
+                                                label={item.title}
+                                                href={item.url_path}
+                                            />
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </>
+                    )}
                 </article>
             )}
         </>

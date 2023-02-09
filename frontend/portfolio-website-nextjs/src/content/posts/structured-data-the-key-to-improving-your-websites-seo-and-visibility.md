@@ -1,7 +1,7 @@
 ---
 title: "Structured Data"
 excerpt: "The Key to Improving Your Website's SEO and Visibility"
-status: "published"
+status: "draft"
 type: "Technical Documentation"
 category: "Front-end Development"
 tags:

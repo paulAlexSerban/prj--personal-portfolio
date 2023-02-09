@@ -10,7 +10,7 @@ repo_url: "https://github.com/"
 demo_url: "https://github.com/"
 status: "draft"
 tags:
-    - "RWD"            
+    - "Responsive Web Design"            
     - "Accessibility"
     - "SEO"
     - "JavaScript"

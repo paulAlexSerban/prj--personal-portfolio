@@ -10,6 +10,7 @@
   --background-color: #{get-color($c-light, ivory)};
   --text-regular: #{$font-family-roboto};
   --text-code: #{$font-family-ubuntu};
+  --secondary-color: #{get-color($c-gray, timberwolf)};
 
   --dynamic-10: 5px;
   --dynamic-20: 10px;

@@ -8,14 +8,18 @@ import styles, {
 } from "@/styles/organisms/heroBanner.module.scss";
 
 import SocialMediaList from "../molecules/SocialMediaList.molecule";
-import FlexGrid from "@/core/library/layouts/FlexGrid.layout";
 
 export default function HeroBanner({
     pageTitle,
     subheading,
-    socialMediaLinks,
+    socialMediaLinks = [],
+    date,
+    author,
 }) {
     const ID = useId();
+
+    const hasSocialMediaLinks = socialMediaLinks.length > 0;
+    const hasContent = hasSocialMediaLinks || date;
 
     return (
         <section id={ID} className={base}>
@@ -30,10 +34,17 @@ export default function HeroBanner({
                             />
                         </div>
                     </header>
-                    {socialMediaLinks && (
+                    {hasContent && (
                         <div className={container}>
                             <div className={wrapper}>
-                                <SocialMediaList items={socialMediaLinks} />
+                                {hasSocialMediaLinks && (
+                                    <SocialMediaList items={socialMediaLinks} />
+                                )}
+                                {date && (
+                                    <Paragraph
+                                        text={`By ${author} on the ${date}`}
+                                    />
+                                )}
                             </div>
                         </div>
                     )}

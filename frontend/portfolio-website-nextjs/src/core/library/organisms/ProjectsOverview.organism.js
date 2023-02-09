@@ -4,6 +4,7 @@ import { Link } from "@/core/atoms/typography/all";
 import {
     base,
     container,
+    footer
 } from "@/styles/organisms/projectsOverview.module.scss";
 
 /**
@@ -26,10 +27,13 @@ export default function ProjectOverview({ content, showViewAllButton = true }) {
                         <ProjectList list={content.projects} category={content.category}/>
                     </div>
                     {content.category && showViewAllButton && (
+                        <div className={footer}>
                         <Link
                             label={`View all ${content.category.category_name}`}
                             href={`/portfolio/${content.category.category_url}`}
                         ></Link>
+                        </div>
+
                     )}
                 </article>
             )}

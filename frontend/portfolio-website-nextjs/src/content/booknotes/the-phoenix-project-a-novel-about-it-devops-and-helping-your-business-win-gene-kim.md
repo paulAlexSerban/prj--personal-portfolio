@@ -2,7 +2,7 @@
 title: "The Phoenix Project"
 subheading: "A Novel About IT, DevOps and Helping your Business Win"
 author: "Gene Kim"
-status: "published"
+status: "draft"
 tags:
  - "Project Management"
  - "DevOps"

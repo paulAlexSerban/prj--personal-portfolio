@@ -16,7 +16,7 @@ $block: "postCard";
         height: 100%;
 
         &:hover {
-            background-color: #ebebeb;
+            background-color: var(--secondary-color);
         }
     }
 

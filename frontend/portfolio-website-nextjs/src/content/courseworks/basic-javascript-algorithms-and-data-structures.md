@@ -7,7 +7,7 @@ category: "Programming"
 experience: "coursework"
 repo_url: "https://github.com/"
 demo_url: "https://github.com/"
-status: "published"
+status: "draft"
 tags:
     - "JavaScript"
     - "Computer Science"

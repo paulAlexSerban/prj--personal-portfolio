@@ -30,9 +30,12 @@ export default function LandingPage({ siteProps, pageContent }) {
 }
 
 export async function getStaticProps() {
-    const pinnedProjects = getContent().projects.filter(
-        (project) => project.frontmatter.pinned
-    );
+    const pinnedProjects = getContent().projects.filter((project) => {
+        return (
+            project.frontmatter.pinned &&
+            project.frontmatter.status === "published"
+        );
+    });
 
     return {
         props: {
@@ -42,10 +45,10 @@ export async function getStaticProps() {
 
                 mainSkills: [
                     { name: "JavaScript", iconName: "javascript" },
-                    { name: "React.js", iconName: "reactjs" },
-                    { name: "Node.js", iconName: "nodejs" },
-                    { name: "Docker", iconName: "docker" },
-                    { name: "AWS", iconName: "aws" },
+                    // { name: "React.js", iconName: "reactjs" },
+                    // { name: "Node.js", iconName: "nodejs" },
+                    // { name: "Docker", iconName: "docker" },
+                    // { name: "AWS", iconName: "aws" },
                 ],
                 main: {
                     heroBanner: {

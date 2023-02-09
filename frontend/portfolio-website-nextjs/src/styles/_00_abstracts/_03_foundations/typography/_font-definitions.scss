@@ -281,18 +281,18 @@ $button-large: (
 $button-small: (
   default: (
     font-family: var(--text-regular),
-    font-size: convert-rem(12px),
-    line-height: convert-rem(13px),
+    font-size: convert-rem(10px),
+    line-height: convert-rem(12px),
     font-weight: var(--font-weight--button),
     letter-spacing: convert-rem(1.25px),
   ),
   $desktop: (
-    font-size: convert-rem(14px),
-    line-height: convert-rem(15px),
+    font-size: convert-rem(12px),
+    line-height: convert-rem(13px),
   ),
   $ultra-wide: (
-    font-size: convert-rem(16px),
-    line-height: convert-rem(17px),
+    font-size: convert-rem(13px),
+    line-height: convert-rem(15px),
   ),
 );
 

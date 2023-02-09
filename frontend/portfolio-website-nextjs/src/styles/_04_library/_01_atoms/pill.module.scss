@@ -11,13 +11,13 @@ $block: "pill";
   @include e("base") {
     @include flex();
 
-    background-color: get-color($c-gray, timberwolf);
+    background-color: var(--secondary-color);
     border-radius: 20px;
     transition: background-color 0.3s ease-in-out;
     
 
     &:hover {
-      background-color: transparent;
+      background-color: var(--background-color);
     }
 
     a {
@@ -28,5 +28,6 @@ $block: "pill";
         box-shadow: none;
       }
     }
+
   }
 }

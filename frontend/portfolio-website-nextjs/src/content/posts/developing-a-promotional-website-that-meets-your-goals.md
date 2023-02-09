@@ -2,7 +2,7 @@
 title: "Developing a Promotional Website that Meets Your Goals"
 subheading: "A Guide to the Project Brief Document"
 excerpt: "A promotional website project brief document is essential for developing a website that meets your goals and effectively promotes your brand. From defining your goals to identifying your target audience and planning your design and content, a project brief document provides a roadmap for a successful promotional website."
-status: "published"
+status: "draft"
 tags:
     - "Web Development"
     - "Project Management"
