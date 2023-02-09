@@ -11,6 +11,7 @@ repo_url: "https://github.com/"
 demo_url: "https://github.com/"
 status: "published"
 tags:
+    - "Front-end Development"
     - "Responsive Web Design"
     - "Accessibility"
     - "SEO"
@@ -33,7 +34,7 @@ case_study:
                 - "web-accessibility-why-it-matters-and-how-to-implement-it"
                 - "essential-seo-strategies-for-web-developers"
                 - "website-mockups-an-essential-tool-for-website-design"
-
+                - "front-end-development-tools-guide-to-best-practices-and-pitfalls"
 
                 - "bootstrap-discover-the-benefits-of-using-bootstrap-for-web-development"
                 - "bootstrap-the-key-to-streamlining-website-prototype-development"

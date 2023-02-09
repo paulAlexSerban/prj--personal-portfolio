@@ -5,7 +5,7 @@ import sanitizeQueryString from "@/core/utils/sanitizeQueryString";
 export default function TagList({ tags }) {
     const ID = useId();
 
-    const getHref = (tag) => `tags/${sanitizeQueryString(tag)}`;
+    const getHref = (tag) => `/tags/${sanitizeQueryString(tag)}`;
 
     return (
         <>
