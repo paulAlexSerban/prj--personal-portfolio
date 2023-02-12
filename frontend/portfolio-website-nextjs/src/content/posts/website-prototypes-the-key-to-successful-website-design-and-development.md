@@ -2,11 +2,15 @@
 title: "Website Prototypes"
 subheading: "The Key to Successful Website Design and Development"
 excerpt: "Website prototypes are a fundamental tool in website design and development. They allow designers to test and refine the design, improve the user experience, and ensure the success of the final product. Prototyping helps identify and resolve technical and usability issues, leading to a seamless and user-friendly website. By including prototyping in the process, businesses can save time and resources while ensuring the success of their website."
-status: "draft"
+status: "published"
+author: "Paul Serban"
+date: "April 4, 2019"
 tags:
     - "Web Development"
     - "Project Management"
 ---
+
+Website prototypes are a fundamental tool in website design and development. They allow designers to test and refine the design, improve the user experience, and ensure the success of the final product. Prototyping helps identify and resolve technical and usability issues, leading to a seamless and user-friendly website. By including prototyping in the process, businesses can save time and resources while ensuring the success of their website.
 
 When it comes to designing and developing a website, prototypes play a crucial role in ensuring the success of the final product. A website prototype is a preliminary model or sample version of a website that is used to demonstrate and test the design, functionality, and overall concept of the proposed website. It is a simulation of the final product that provides a basic idea of how the website will look, feel, and behave.
 

@@ -39,7 +39,7 @@ export async function getStaticProps() {
                     section_id: "posts",
                     children: {
                         postsOverview: {
-                            list: publishedPosts.slice(0, 12),
+                            list: publishedPosts,
                             parentPage: "blog",
                             category: {
                                 category_url: "posts",

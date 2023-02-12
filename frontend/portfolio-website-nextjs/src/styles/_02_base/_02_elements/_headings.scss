@@ -47,6 +47,10 @@ h2 {
 
 h3 {
     @include font($heading-300);
+
+    &:not(:first-child) {
+        margin-top: var(--dynamic-40);
+    }
 }
 
 h4 {

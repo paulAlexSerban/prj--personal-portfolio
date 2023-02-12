@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-
+import { sortByDate } from "@/core/utils/softByDate";
 import Head from "next/head";
 import PortfolioItemDetailTemplate from "@/core/templates/PortfolioItemDetail.template.js";
 
@@ -109,14 +109,18 @@ export async function getStaticProps({ params: { slug } }) {
                     const { data: caseStudyFrontmatter } =
                         matter(caseStudyMarkdown);
 
-                        if(caseStudyFrontmatter.status === "published") {
+                        if(caseStudyFrontmatter.status === "published" && caseStudyFrontmatter.date) {
                             caseStudyReferences[key][subKey].push({
-                                title: caseStudyFrontmatter.title,
-                                url_path: path.join("/", key, subKey, subSubKey),
+                                frontmatter: {
+                                    title: caseStudyFrontmatter.title,
+                                    date: caseStudyFrontmatter.date,
+                                    url_path: path.join("/", key, subKey, subSubKey),
+                                }
                             });
                         }
 
                 });
+                caseStudyReferences[key][subKey].sort(sortByDate)
             });
         });
     }

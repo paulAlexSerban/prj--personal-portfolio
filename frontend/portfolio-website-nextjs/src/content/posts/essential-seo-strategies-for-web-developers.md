@@ -4,7 +4,7 @@ subheading: "Keyword Research, On-page Optimization, Technical SEO, and Link Bui
 excerpt: "Search Engine Optimization (SEO) is a crucial aspect of website development, and web developers play a significant role in ensuring their website is optimized for search engines. By focusing on keyword research, on-page optimization, technical SEO, and link building, you can improve your website's search engine ranking and drive more organic traffic. Keyword research is the foundation of a successful SEO strategy, and on-page optimization involves optimizing individual pages on your website, such as the title tags, meta descriptions, headings, URL structure, and content."
 status: "published"
 author: "Paul Serban"
-date: "29th of January, 2019"
+date: "January 29, 2019"
 tags:
     - "Web Development"
     - "SEO"

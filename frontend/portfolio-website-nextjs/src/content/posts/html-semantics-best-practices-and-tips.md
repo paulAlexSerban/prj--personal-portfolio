@@ -4,7 +4,7 @@ subheading: "Best Practices and Tips for Better Web Development"
 excerpt: "HTML semantics play a crucial role in web development as they provide context to web content. It helps web browsers, search engines, and assistive technologies understand the structure and purpose of the content. There are several best practices for using HTML semantics, including using descriptive HTML tags, using ARIA roles, using microdata, using nested HTML tags correctly, using form semantics, and validating HTML. "
 status: "published"
 author: "Paul Serban"
-date: "24th of January, 2019"
+date: "January 24, 2019"
 tags:
     - "Web Development"
     - "HTML"

@@ -13,7 +13,7 @@ export default function Logo({ href = "/", label, target = "_self" }) {
             className={base}
         >
             <span className={main}>Paul Serban</span>
-            <span className={sub}>Software Engineer</span>
+            <span className={sub}>Front-end Software Engineer</span>
         </a>
     );
 }

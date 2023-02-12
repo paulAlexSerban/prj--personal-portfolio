@@ -4,7 +4,7 @@ subheading: "A Guide to Building User-Friendly Websites"
 excerpt: "RWD is a technique for building websites that adjust dynamically to the size of the screen they are being viewed on. This ensures that websites look good and are easy to use, regardless of the device being used. The key to RWD is the use of flexible grids, images, and media queries. With a responsive website, there is only one website that works on all devices, which is more cost-effective and easier to manage."
 status: "published"
 author: "Paul Serban"
-date: "25th of January, 2019"
+date: "January 25, 2019"
 tags:
     - "Web Development"
     - "Responsive Web Design"

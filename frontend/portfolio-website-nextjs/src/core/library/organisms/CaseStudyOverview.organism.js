@@ -7,7 +7,6 @@ import { base, linkList } from "@/styles/organisms/caseStudyOverview.module.scss
  */
 
 export default function CaseStudyOverview({ list = [] }) {
-    console.log();
     const hasCourseWorks =
         list &&
         list.portfolio &&
@@ -42,8 +41,8 @@ export default function CaseStudyOverview({ list = [] }) {
                                         return (
                                             <li key={index}>
                                                 <Link
-                                                    label={item.title}
-                                                    href={item.url_path}
+                                                    label={item.frontmatter.title}
+                                                    href={item.frontmatter.url_path}
                                                 />
                                             </li>
                                         );
@@ -60,8 +59,8 @@ export default function CaseStudyOverview({ list = [] }) {
                                     return (
                                         <li key={index}>
                                             <Link
-                                                label={item.title}
-                                                href={item.url_path}
+                                                label={item.frontmatter.title}
+                                                href={item.frontmatter.url_path}
                                             />
                                         </li>
                                     );
@@ -77,8 +76,8 @@ export default function CaseStudyOverview({ list = [] }) {
                                     return (
                                         <li key={index}>
                                             <Link
-                                                label={item.title}
-                                                href={item.url_path}
+                                                label={item.frontmatter.title}
+                                                href={item.frontmatter.url_path}
                                             />
                                         </li>
                                     );
@@ -94,8 +93,8 @@ export default function CaseStudyOverview({ list = [] }) {
                                     return (
                                         <li key={index}>
                                             <Link
-                                                label={item.title}
-                                                href={item.url_path}
+                                                label={item.frontmatter.title}
+                                                href={item.frontmatter.url_path}
                                             />
                                         </li>
                                     );

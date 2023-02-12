@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import sanitizeQueryString from "../sanitizeQueryString";
+import { sortByDate } from "../softByDate";
 
 const CONTENT_PATH = path.join(process.cwd(), "src", "content");
 
@@ -22,7 +23,11 @@ const getContent = () => {
             );
             const fileMatter = matter(markdownWithMeta);
             const { data: frontmatter } = fileMatter;
-            if (frontmatter.tags) {
+
+            const isPublished = frontmatter.status === "published";
+            const hasTags = frontmatter.tags;
+
+            if (hasTags && isPublished) {
                 Object.values(frontmatter.tags).map((tag) => {
                     const sanitizedTag = sanitizeQueryString(tag);
                     content.tags.push({ name: tag, tag: sanitizedTag });
@@ -35,10 +40,13 @@ const getContent = () => {
                 frontmatter,
                 content: fileContent,
             };
-            content[category].push(itemObj);
+            if (isPublished) {
+                content[category].push(itemObj);
+            }
         });
     });
     content.tags = [...new Set(content.tags)];
+    content.posts.sort(sortByDate);
     return content;
 };
 export default getContent;

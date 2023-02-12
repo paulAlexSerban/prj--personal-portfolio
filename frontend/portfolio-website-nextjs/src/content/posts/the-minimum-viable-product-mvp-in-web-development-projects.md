@@ -2,11 +2,14 @@
 title: "What is an MVP in Web Development"
 subheading: "Understanding the Concept"
 excerpt: "A minimum viable product (MVP) is a simplified version of a final product that includes only the essential features and functionalities. The MVP is becoming increasingly popular in web development projects, as it provides a low-cost and low-risk solution for bringing a product to market and testing ideas. In this article, we will explore what an MVP is and how it can benefit web development projects."
-status: "draft"
+status: "published"
+date: "May 20, 2019"
 tags:
     - "Web Development"
     - "Project Management"
 ---
+
+A minimum viable product (MVP) is a simplified version of a final product that includes only the essential features and functionalities. The MVP is becoming increasingly popular in web development projects, as it provides a low-cost and low-risk solution for bringing a product to market and testing ideas. In this article, we will explore what an MVP is and how it can benefit web development projects.
 
 When it comes to web development projects, the concept of the minimum viable product (MVP) is becoming increasingly popular. The MVP is a simplified version of the final product that includes only the essential features and functionalities. The goal of an MVP is to quickly validate the idea and gather feedback from users, which can then be used to improve the final product.
 

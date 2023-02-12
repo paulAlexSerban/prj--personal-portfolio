@@ -42,7 +42,7 @@ export default function HeroBanner({
                                 )}
                                 {date && (
                                     <Paragraph
-                                        text={`By ${author} on the ${date}`}
+                                        text={`By ${author} on ${date}`}
                                     />
                                 )}
                             </div>

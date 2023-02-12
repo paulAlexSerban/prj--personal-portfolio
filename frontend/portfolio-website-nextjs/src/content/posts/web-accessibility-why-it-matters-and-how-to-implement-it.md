@@ -4,7 +4,7 @@ subheading: "Why It Matters and How to Implement It"
 excerpt: "Web accessibility refers to the practice of making websites and digital content usable by people with disabilities. This includes individuals with visual, auditory, physical, speech, cognitive, and neurological disabilities. The goal of web accessibility is to provide equal access and equal opportunities to all users, regardless of their abilities.Also, to be taken into account that accessible websites have several benefits, including increased reach and customer base, improved user experience, and legal compliance. By designing websites with accessibility in mind, organizations can create a more inclusive digital world and break down barriers for people with disabilities."
 status: "published"
 author: "Paul Serban"
-date: "26th of January, 2019"
+date: "January 26, 2019"
 tags:
     - "Web Development"
     - "Front-end Development"

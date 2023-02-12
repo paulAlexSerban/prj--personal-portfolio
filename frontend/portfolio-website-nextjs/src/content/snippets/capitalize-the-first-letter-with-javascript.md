@@ -4,7 +4,7 @@ category: "snippet"
 status: "published"
 tags:
     - "JavaScript"
-date: 01/01/2019
+date: "March 01, 2019"
 excerpt: "Capitalizing the first letter in a string is a common task in programming, Whether you are working on a personal project or developing for a client, you may need to format text in a specific way."
 ---
 
