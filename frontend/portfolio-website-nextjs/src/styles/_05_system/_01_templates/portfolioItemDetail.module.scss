@@ -10,20 +10,7 @@ $block: "portfolioItemDetail";
 .#{$block} {
     @include e("base") {
         padding-inline: var(--static-30);
-        margin-top: var(--dynamic-50);
-    }
+        margin: var(--dynamic-50) 0 var(--dynamic-110);
 
-    @include e("contentContainer") {
-        padding-inline: var(--lateral-padding);
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-
-        p, h2, ul {
-            grid-column: span 8;
-
-            strong {
-                @include font($body-bold);
-            }
-        }
     }
 }

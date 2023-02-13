@@ -79,7 +79,7 @@ function BlogTemplate({ pageContent, siteProps }) {
                     />
                 </Section>
             </Main>
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }

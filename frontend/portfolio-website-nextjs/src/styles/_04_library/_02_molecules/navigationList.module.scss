@@ -13,11 +13,13 @@ $block: "navigationList";
             @include flex($direction: column, $cross: flex-start);
 
             margin-top: var(--dynamic-40);
+            width: 100%;
 
             @include breakpoint($tablet) {
                 margin-top: 0;
                 flex-direction: row;
                 gap: var(--dynamic-40);
+                width: auto;
             }
         }
 
@@ -32,12 +34,17 @@ $block: "navigationList";
     }
 
     @include e("listItem") {
-        padding: var(--dynamic-20) 0;
+        display: block;
+        width: 100%;
+    }
 
-        a {
-            &:hover {
-                box-shadow: none;
-            }
+    @include e("link") {
+        width: 100%;
+        padding: var(--dynamic-20) 0;
+        display: block;
+
+        &:hover {
+            box-shadow: none;
         }
     }
 }

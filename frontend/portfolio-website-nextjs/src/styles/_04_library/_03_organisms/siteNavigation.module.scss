@@ -33,7 +33,6 @@ $block: "siteNavigation";
 
     @include e("logoContainer", "navToggle") {
         @include flex();
-        width: calc(50% - var(--static-30));
 
         @include breakpoint($tablet) {
             width: 100%;

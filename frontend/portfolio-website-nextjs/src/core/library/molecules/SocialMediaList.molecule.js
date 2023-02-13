@@ -6,7 +6,7 @@ import styles, {
 
 import LinkIcon from "@/core/atoms/LinkIcon.atom";
 
-export default function SocialMediaList({ items = [] }) {
+export default function SocialMediaList({ items = [], position = "" }) {
     const ID = useId();
 
     return (
@@ -14,7 +14,7 @@ export default function SocialMediaList({ items = [] }) {
             {items.map((item, index) => {
                 return (
                     <li className={listItem} key={index}>
-                        <LinkIcon label={item.label} href={item.href} iconName={item.icon} />
+                        <LinkIcon label={item.label} href={item.href} iconName={item.icon} position={position} />
                     </li>
                 );
             })}

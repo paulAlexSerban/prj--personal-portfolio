@@ -8,8 +8,8 @@ $block: "portfolioOverview";
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        padding-inline: var(--static-30);
-        margin-top: var(--dynamic-70);
-    }
+	@include e("base") {
+		padding-inline: var(--static-30);
+		margin: var(--dynamic-70) 0 var(--dynamic-110);
+	}
 }

@@ -4,11 +4,12 @@ export default function Link({
     href = "/",
     label = "label text",
     target = "_self",
+    className
 }) {
     const ID = useId();
 
     return (
-        <a id={ID} href={href} aria-label={label} target={target}>
+        <a id={ID} href={href} aria-label={label} target={target} className={className}>
             {label}
         </a>
     );

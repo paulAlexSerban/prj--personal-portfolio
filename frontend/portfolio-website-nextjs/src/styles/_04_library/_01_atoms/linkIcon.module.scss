@@ -18,5 +18,9 @@ $block: "link-icon";
     &:hover {
       box-shadow: none;
     }
+
+    @include m("footer") {
+      font-size: 20px;
+    }
   }
 }

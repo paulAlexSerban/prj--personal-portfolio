@@ -10,6 +10,7 @@ import Main from "@/core/organisms/Main.organism";
 import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
 import Section from "@/core/library/organisms/Section.organism";
 import CaseStudyOverview from "@/core/organisms/CaseStudyOverview.organism";
+import MarkdownContainer from "@/core/molecules/MarkdownContent.molecule";
 
 import { base, contentContainer } from "@/styles/templates/portfolioItemDetail.module.scss";
 
@@ -53,11 +54,7 @@ export default function PortfolioItemDetailTemplate({
                     socialMediaLinks={socialMediaLinks}
                 />
                 <Section sectionId={pageContent.slug}>
-                    <div className={contentContainer}
-                        dangerouslySetInnerHTML={{
-                            __html: marked.render(pageContent.content),
-                        }}
-                    ></div>
+                    <MarkdownContainer markdownContent={pageContent.content} />
                 </Section>
                 {caseStudy && (
                     <Section
@@ -71,7 +68,7 @@ export default function PortfolioItemDetailTemplate({
                     </Section>
                 )}
             </Main>
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }

@@ -23,7 +23,7 @@ excerpt: "Capitalizing the first letter in a string is a common task in programm
 
 ## Methods
 
-### Method 1 - `charAt()`, `slice()`, `toUpperCase()`
+###  #1 - charAt, slice, toUpperCase
 
 ```javascript
 const word = "hello world";
@@ -38,21 +38,21 @@ const word = "hello world";
 const capitalized = `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
 ```
 
-### Method 2 - `replace()` and Regular Expressions
+###  #2 - replace and Regular Expressions
 
 ```javascript
 let string = "hello world";
 let capitalizedString = string.replace(/^\w/, (c) => c.toUpperCase());
 ```
 
-### Method 3 - Destructuring and Template Literals
+###  #3 - Destructuring and Template Literals
 
 ```javascript
 let string = "hello world";
 let capitalizedString = `${string[0].toUpperCase()}${string.slice(1)}`;
 ```
 
-### Method 4 - `split()` into an Array, `map()` and `join()` into back into a String
+###  #4 - split into an Array, map and join into back into a String
 
 ```javascript
 let string = "hello world";
@@ -63,14 +63,14 @@ let capitalizedString = string
 ```
 
 
-### Method 5 - `substr()` and `toUppercase()`
+###  #5 - substr and toUppercase
 
 ```javascript
 let string = "hello world";
 let capitalizedString = string.substr(0,1).toUpperCase + string.substr(1);
 ```
 
-### Method 6 - `slice()` and `toUppercase()`
+###  #6 - slice and toUppercase
 
 ```javascript
 let string = "hello world";

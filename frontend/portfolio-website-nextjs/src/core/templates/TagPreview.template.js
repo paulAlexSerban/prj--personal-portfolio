@@ -122,7 +122,7 @@ function TagPreview({ pageContent, siteProps }) {
                 )}
             </Main>
 
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }

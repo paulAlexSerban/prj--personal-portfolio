@@ -27,5 +27,6 @@ $block: "postCard";
         margin-top: auto;
         padding-top: var(--dynamic-50);
         column-gap: $grid-gutter;
+        width: 100%;
     }
 }

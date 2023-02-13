@@ -15,68 +15,62 @@ import SkillsOverview from "@/core/library/organisms/SkillsOverview.organism";
 import ContactSection from "@/core/library/organisms/ContactSection.organism";
 
 function LandingTemplate({ children, pageContent, siteProps }) {
-    const ID = useId();
+	const ID = useId();
 
-    return (
-        <div id={ID} className={base}>
-            <Header siteNavLinks={siteProps.siteNavLinks} />
+	return (
+		<div id={ID} className={base}>
+			<Header siteNavLinks={siteProps.siteNavLinks} />
 
-            <Main>
-                <HeroBanner
-                    pageTitle={pageContent.main.heroBanner.pageTitle}
-                    subheading={pageContent.main.heroBanner.subheading}
-                    socialMediaLinks={siteProps.socialMediaLinks}
-                />
-                <Section
-                    headingTitle={pageContent.main.section_1.title}
-                    sectionId={pageContent.main.section_1.section_id}
-                >
-                    <TextArticle
-                        paragraphs={
-                            pageContent.main.section_1.children.textArticle
-                                .paragraphs
-                        }
-                        colWidth={
-                            pageContent.main.section_1.children.textArticle
-                                .colWidth
-                        }
-                    />
-                </Section>
+			<Main>
+				<HeroBanner
+					pageTitle={pageContent.main.heroBanner.pageTitle}
+					subheading={pageContent.main.heroBanner.subheading}
+					socialMediaLinks={siteProps.socialMediaLinks}
+				/>
+				<Section
+					headingTitle={pageContent.main.section_1.title}
+					sectionId={pageContent.main.section_1.section_id}
+				>
+					<TextArticle
+						paragraphs={
+							pageContent.main.section_1.children.textArticle.paragraphs
+						}
+						colWidth={pageContent.main.section_1.children.textArticle.colWidth}
+					/>
+				</Section>
 
-                <Section
-                    headingTitle={pageContent.main.section_2.title}
-                    sectionId={pageContent.main.section_2.section_id}
-                >
-                    <ProjectsOverview
-                        content={
-                            pageContent.main.section_2.children.projectsOverview
-                        }
-                    />
-                </Section>
-                <Section
-                    headingTitle={pageContent.main.section_3.title}
-                    sectionId={pageContent.main.section_3.section_id}
-                >
-                    <SkillsOverview
-                        mainSkills={pageContent.mainSkills}
-                        skillGallery={
-                            pageContent.main.section_3.children.skillsOverview.skills
-                        }
-                    />
-                </Section>
-                <Section
-                    headingTitle={pageContent.main.section_4.title}
-                    sectionId={pageContent.main.section_4.section_id}
-                >
-                    <ContactSection
-                        socialMediaLinks={siteProps.socialMediaLinks}
-                    />
-                </Section>
-            </Main>
+				<Section
+					headingTitle={pageContent.main.section_2.title}
+					sectionId={pageContent.main.section_2.section_id}
+				>
+					<ProjectsOverview
+						content={pageContent.main.section_2.children.projectsOverview}
+					/>
+				</Section>
+				<Section
+					headingTitle={pageContent.main.section_3.title}
+					sectionId={pageContent.main.section_3.section_id}
+				>
+					<SkillsOverview
+						mainSkills={pageContent.mainSkills}
+						skillGallery={
+							pageContent.main.section_3.children.skillsOverview.skills
+						}
+					/>
+				</Section>
+				<Section
+					headingTitle={pageContent.main.section_4.title}
+					sectionId={pageContent.main.section_4.section_id}
+				>
+					<ContactSection socialMediaLinks={siteProps.socialMediaLinks} />
+				</Section>
+			</Main>
 
-            <Footer />
-        </div>
-    );
+			{/* on Landing template, the social media links in the footer will be added after contact form will be implemented*/}
+			{/* <Footer socialMediaLinks={siteProps.socialMediaLinks} /> */}
+			<Footer />
+		</div>
+	);
 }
 
 export default LandingTemplate;

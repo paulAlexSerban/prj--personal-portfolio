@@ -20,4 +20,8 @@ $block: "portfolioOverview";
         width: 100%;
         padding-bottom: 40px;
     }
+
+    @include e("viewAllLink") {
+        margin-inline: var(--lateral-padding);
+    }
 }

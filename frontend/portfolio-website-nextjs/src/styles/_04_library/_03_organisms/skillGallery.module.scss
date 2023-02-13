@@ -13,7 +13,11 @@ $block: "skillGallery";
         margin-top: var(--dynamic-70);
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap: var(--dynamic-70);
+        gap: var(--dynamic-30);
+
+        @include breakpoint($tablet) {
+            gap: var(--dynamic-50);
+        };
     }
 
     @include e("container") {

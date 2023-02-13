@@ -20,18 +20,22 @@ $block: "heading";
     }
 
     @include e("main") {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: font-weight(heavy);
-        line-height: 26px;
+        line-height: 24px;
 
         @include breakpoint($mobile) {
-            font-size: 30px;
-            line-height: 34px;
+            font-size: 28px;
+            line-height: 32px;
         }
 
         @include breakpoint($desktop){
-            font-size: 40px;
+            font-size: 36px;
             line-height: 40px;
         }
+    }
+
+    @include e("sub") {
+        @include font($link-small)
     }
 }

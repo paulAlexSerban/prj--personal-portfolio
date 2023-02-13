@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 
 import Head from "next/head";
-import PortfolioItemDetailTemplate from "@/core/templates/PortfolioItemDetail.template.js";
+import BlogPostTemplate from "@/core/templates/BlogPost.template.js";
 
 export default function PortfolioItemDetail({
     children,
@@ -23,14 +23,14 @@ export default function PortfolioItemDetail({
                 />
                 <link rel="icon" href={siteProps.icons.favicon} />
             </Head>
-            <PortfolioItemDetailTemplate
+            <BlogPostTemplate
                 siteNavLinks={siteProps.siteNavLinks}
                 pageContent={pageContent}
                 siteProps={siteProps}
                 frontmatter={frontmatter}
             >
                 {children}
-            </PortfolioItemDetailTemplate>
+            </BlogPostTemplate>
         </div>
     );
 }

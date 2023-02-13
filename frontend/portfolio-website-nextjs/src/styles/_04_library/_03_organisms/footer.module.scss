@@ -15,16 +15,32 @@ $block: "footer";
         left: 0;
         bottom: 0;
         margin: 0 auto;
-        background-color: var(--secondary-color);;
+        background-color: var(--secondary-color);
+        gap: var(--dynamic-20);
     }
 
-    @include e("container") {
-        @include flex($direction: column);
+    @include e("container", "bottom") {
+        @include flex($cross: flex-start, $direction: column);
+
+        width: 100%;
+        max-width: $max-width;
+        padding-inline: var(--lateral-padding);
+
+        @include breakpoint($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     @include e("bottom") {
-        @include flex($main: space-between);
-        width: 100%;
-        max-width: $max-width;
+        gap: var(--dynamic-10);
+    }
+
+    @include e("copyrightText") {
+        @include font($body-small);
+    }
+
+    @include e("domainUrl") {
+        @include font($link-small);
     }
 }

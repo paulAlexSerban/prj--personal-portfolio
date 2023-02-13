@@ -29,7 +29,7 @@ function BlogCatalog({ pageContent, siteProps }) {
                     showViewAllButton={false}
                 />
             </Main>
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }

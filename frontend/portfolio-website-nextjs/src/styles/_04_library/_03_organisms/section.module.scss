@@ -8,13 +8,17 @@ $block: "section";
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        width: 100%;
-        margin-top: var(--dynamic-100);
-    }
+	@include e("base") {
+		width: 100%;
+		margin-top: var(--dynamic-70);
 
-    @include e("header","container", "footer") {
-        @include flex($direction: column, $cross: flex-start);
-        max-width: $max-width;
-    }
+		@include breakpoint($tablet) {
+			margin-top: var(--dynamic-70);
+		}
+	}
+
+	@include e("header", "container", "footer") {
+		@include flex($direction: column, $cross: flex-start);
+		max-width: $max-width;
+	}
 }

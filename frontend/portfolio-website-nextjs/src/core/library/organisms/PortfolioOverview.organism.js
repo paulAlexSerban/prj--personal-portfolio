@@ -2,8 +2,9 @@ import { useId } from "react";
 import ProjectList from "../molecules/ProjectList.molecule";
 
 import {
-    base,
-    container,
+	base,
+	container,
+	viewAllLink,
 } from "@/styles/organisms/portfolioOverview.module.scss";
 import { Link } from "@/core/atoms/typography/all";
 
@@ -19,27 +20,28 @@ import { Link } from "@/core/atoms/typography/all";
  * @returns {JSX.Element}
  */
 
-export default function PortfolioOverview({ content, showViewAllButton = true }) {
-    const ID = useId();
+export default function PortfolioOverview({
+	content,
+	showViewAllButton = true,
+}) {
+	const ID = useId();
 
-    return (
-        <>
-            {content && (
-                <article id={ID} className={base}>
-                    <div className={container}>
-                        <ProjectList
-                            list={content.projects}
-                            category={content.category}
-                        />
-                    </div>
-                    {content.category && showViewAllButton && (
-                        <Link
-                            label={`View all ${content.category.category_name}`}
-                            href={`/portfolio/${content.category.category_url}`}
-                        ></Link>
-                    )}
-                </article>
-            )}
-        </>
-    );
+	return (
+		<>
+			{content && (
+				<article id={ID} className={base}>
+					<div className={container}>
+						<ProjectList list={content.projects} category={content.category} />
+					</div>
+					{content.category && showViewAllButton && (
+						<Link
+							className={viewAllLink}
+							label={`View all ${content.category.category_name}`}
+							href={`/portfolio/${content.category.category_url}`}
+						></Link>
+					)}
+				</article>
+			)}
+		</>
+	);
 }

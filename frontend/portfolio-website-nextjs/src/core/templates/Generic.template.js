@@ -10,7 +10,7 @@ function GenericTemplate({ children, siteNavLinks = [] }) {
         <div id={ID} className={base}>
             <Header siteNavLinks={siteNavLinks} />
             {children}
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }

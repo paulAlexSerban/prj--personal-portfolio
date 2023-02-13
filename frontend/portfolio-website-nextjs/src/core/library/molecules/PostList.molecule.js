@@ -1,5 +1,5 @@
 import { useId } from "react";
-import PostCard from "./PostCard.molecule";
+import PostCard from "@/core/molecules/PostCard.molecule";
 
 import { base } from "@/styles/molecules/postList.module.scss";
 

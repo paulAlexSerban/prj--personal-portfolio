@@ -40,7 +40,7 @@ export async function getStaticProps() {
             pageContent: {
                 heroBanner: {
                     pageTitle: "Blog",
-                    subheading: "Blog posts.",
+                    subheading: "Coding with Purpose, and blogging about it.",
                 },
                 section_1: {
                     title: "Posts",

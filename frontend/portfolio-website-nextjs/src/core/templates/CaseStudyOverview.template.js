@@ -12,7 +12,7 @@ function CaseStudyOverviewTemplate({ children, siteNavLinks = [] }) {
             <Header siteNavLinks={siteNavLinks} />
             {children}
             <h1>CaseStudy Overview Template</h1>
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }

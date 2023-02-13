@@ -14,7 +14,8 @@ $block: "heroBanner";
         width: 100vw;
         background-color: var(--secondary-color);;
         padding-bottom: var(--dynamic-50);
-        margin-top: var(--dynamic-100);
+        margin-top: var(--dynamic-70);
+
     }
 
     @include e("header", "container") {
