@@ -6,7 +6,7 @@ type: "Technical Documentation"
 category: "Architecture"
 tags:
     - "WebPack"
-    - "JAMStack"
+    - "JAMstack"
     - "11ty"
     - "Next.js"
     - "Hugo"

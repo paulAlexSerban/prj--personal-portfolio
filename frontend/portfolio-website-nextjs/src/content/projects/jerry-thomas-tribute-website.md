@@ -18,7 +18,7 @@ tags:
     - "Scss/Sass"
     - "Gulp"
     - "WebPack"
-    - "JAMStack"
+    - "JAMstack"
     - "GitHub Actions"
     - "SSG"
 ---

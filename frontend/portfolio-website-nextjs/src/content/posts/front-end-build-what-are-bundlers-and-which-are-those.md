@@ -1,7 +1,7 @@
 ---
-title: "Front-end Build: JavaScript Bundlers"
-subheading: "A popular JavaScript module but not only"
-excerpt: "Webpack is a popular JavaScript module bundler that is used to build and package web applications. It processes your application's source code, resolves dependencies between modules, and generates a single bundle or multiple chunks of code that can be efficiently loaded by the browser. With Webpack, you can include different types of assets such as images, fonts, and styles in your application, and it takes care of bundling, transforming, and optimizing them."
+title: "Front-end Build: Module Bundlers"
+subheading: "A popular JavaScript module bundler but not only"
+excerpt: "Front end build bundlers have become increasingly popular in recent years and for good reason. They help streamline the process of developing and deploying complex front end applications by bundling all the necessary files and dependencies into one compact package. In this post, we'll explore what front end build bundlers are, their benefits, and some of the most popular options available today."
 status: "published"
 author: "Paul Serban"
 date: "February 23, 2019"
