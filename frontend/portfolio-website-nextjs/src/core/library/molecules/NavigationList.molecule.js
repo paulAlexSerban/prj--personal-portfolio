@@ -5,6 +5,7 @@ import styles, {
 	link,
 } from "@/styles/molecules/navigationList.module.scss";
 import { Link } from "@/core/atoms/typography/all";
+import PropTypes from "prop-types";
 
 export default function NavigationList({
 	items = [],
@@ -21,6 +22,7 @@ export default function NavigationList({
 							label={item.label.toUpperCase()}
 							href={item.href}
 							className={link}
+							isInternal={true}
 						/>
 					</li>
 				);
@@ -28,3 +30,16 @@ export default function NavigationList({
 		</ul>
 	);
 }
+
+
+
+
+NavigationList.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  navPosition: PropTypes.oneOf(["siteNav", "footerNav"]),
+};

@@ -31,7 +31,7 @@ export default function HeroBanner({
 					<header className={header}>
 						<div className={wrapper}>
 							<Heading
-								level="1"
+								level={1}
 								mainText={pageTitle}
 								subheadingText={subheading}
 							/>

@@ -19,6 +19,7 @@ export default function PostsOverview({ blogList, category, parentPage, showView
                         <Link
                             label={`View all ${category.category_name}`}
                             href={`/blog/${category.category_url}`}
+                            isInternal={true}
                         ></Link>
                     )}
                 </article>

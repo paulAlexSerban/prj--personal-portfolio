@@ -1,18 +1,37 @@
 import { useId } from "react";
-
-import Header from "@/core/library/organisms/Header.organism";
-import Footer from "@/core/library/organisms/Footer.organism";
-
+import dynamic from "next/dynamic";
 import { base } from "@/styles/templates/landing.module.scss";
-import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
-import Main from "@/core/library/organisms/Main.organism";
-import FlexGrid from "@/core/library/layouts/FlexGrid.layout";
-import Section from "@/core/library/organisms/Section.organism";
-import ProjectsOverview from "@/core/library/organisms/ProjectsOverview.organism";
 
-import TextArticle from "@/core/library/molecules/TextArticle.organism";
-import SkillsOverview from "@/core/library/organisms/SkillsOverview.organism";
-import ContactSection from "@/core/library/organisms/ContactSection.organism";
+const Header = dynamic(() =>
+	import("@/core/library/organisms/Header.organism")
+);
+const Footer = dynamic(() =>
+	import("@/core/library/organisms/Footer.organism")
+);
+const HeroBanner = dynamic(() =>
+	import("@/core/library/organisms/HeroBanner.organism")
+);
+const Main = dynamic(() => import("@/core/library/organisms/Main.organism"));
+
+const Section = dynamic(() =>
+	import("@/core/library/organisms/Section.organism")
+);
+
+const ProjectsOverview = dynamic(() =>
+	import("@/core/library/organisms/ProjectsOverview.organism")
+);
+
+const SkillsOverview = dynamic(() =>
+	import("@/core/library/organisms/SkillsOverview.organism")
+);
+
+const ContactSection = dynamic(() =>
+	import("@/core/library/organisms/ContactSection.organism")
+);
+
+const TextArticle = dynamic(() =>
+	import("@/core/library/molecules/TextArticle.molecule")
+);
 
 function LandingTemplate({ children, pageContent, siteProps }) {
 	const ID = useId();

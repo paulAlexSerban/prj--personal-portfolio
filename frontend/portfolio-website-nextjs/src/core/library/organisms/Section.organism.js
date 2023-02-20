@@ -20,7 +20,7 @@ export default function Section({
             {headingTitle && (
                 <header className={header}>
                     <Heading
-                        level="2"
+                        level={2}
                         mainText={headingTitle}
                         hasSeparator={true}
                         subheadingText={subheadingText}

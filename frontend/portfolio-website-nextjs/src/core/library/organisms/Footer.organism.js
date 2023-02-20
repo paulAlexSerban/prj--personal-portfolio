@@ -25,7 +25,7 @@ export default function Footer({ socialMediaLinks = [] }) {
 				<span className={copyrightText}>
 					{currentYear} &copy; Paul Serban. All rights reserved.
 				</span>
-				<Link className={domainUrl} label="www.paulserban.eu" />
+				<Link className={domainUrl} label="www.paulserban.eu" isInternal={true} />
 			</div>
 		</footer>
 	);

@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { sortByDate } from "@/core/utils/softByDate";
 import Head from "next/head";
 import PortfolioItemDetailTemplate from "@/core/templates/PortfolioItemDetail.template.js";
-
+import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
 export default function PortfolioItemDetail({
     children,
     pageContent,
@@ -15,6 +15,7 @@ export default function PortfolioItemDetail({
     const pageTitle = [frontmatter.title, "|", siteProps.title].join(" ");
     return (
         <div>
+                <LoadingSpinner />
             <Head>
                 <title>{pageTitle}</title>
                 <meta name="description" content={frontmatter.excerpt} />

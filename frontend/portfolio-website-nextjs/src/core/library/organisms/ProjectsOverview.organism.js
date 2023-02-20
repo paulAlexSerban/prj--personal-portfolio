@@ -31,6 +31,7 @@ export default function ProjectOverview({ content, showViewAllButton = true }) {
                         <Link
                             label={`View all ${content.category.category_name}`}
                             href={`/portfolio/${content.category.category_url}`}
+                            isInternal={true}
                         ></Link>
                         </div>
 

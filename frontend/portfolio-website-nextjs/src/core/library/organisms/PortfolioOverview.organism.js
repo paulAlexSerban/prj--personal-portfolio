@@ -38,6 +38,7 @@ export default function PortfolioOverview({
 							className={viewAllLink}
 							label={`View all ${content.category.category_name}`}
 							href={`/portfolio/${content.category.category_url}`}
+							isInternal={true}
 						></Link>
 					)}
 				</article>

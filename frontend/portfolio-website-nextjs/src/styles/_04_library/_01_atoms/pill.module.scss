@@ -11,7 +11,6 @@ $block: "pill";
   @include e("base") {
     @include flex();
 
-    // background-color: var(--secondary-color);
     border-radius: 20px;
     transition: background-color 0.3s ease-in-out;
     
@@ -21,8 +20,8 @@ $block: "pill";
     }
 
     a {
-      @include font($button-small);
-      padding: 2px 10px;
+      @include font($link-small);
+      padding: 4px 14px;
 
       &:hover {
         box-shadow: none;

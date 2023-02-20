@@ -34,7 +34,7 @@ export default function CaseStudyOverview({ list = [] }) {
                 <article className={base}>
                     {hasCourseWorks && (
                         <>
-                            <Heading level="3" mainText="Course Work" />
+                            <Heading level={3} mainText="Course Work" />
                             <ul className={linkList}>
                                 {list.portfolio.courseworks.map(
                                     (item, index) => {
@@ -53,7 +53,7 @@ export default function CaseStudyOverview({ list = [] }) {
                     )}
                     {hasPosts && (
                         <>
-                            <Heading level="3" mainText="Posts" />
+                            <Heading level={3} mainText="Posts" />
                             <ul className={linkList}>
                                 {list.blog.posts.map((item, index) => {
                                     return (
@@ -70,7 +70,7 @@ export default function CaseStudyOverview({ list = [] }) {
                     )}
                     {hasBooknotes && (
                         <>
-                            <Heading level="3" mainText="Book Notes" />
+                            <Heading level={3} mainText="Book Notes" />
                             <ul className={linkList}>
                                 {list.blog.booknotes.map((item, index) => {
                                     return (
@@ -87,7 +87,7 @@ export default function CaseStudyOverview({ list = [] }) {
                     )}
                     {hasSnippets && (
                         <>
-                            <Heading level="3" mainText="Snippets" />
+                            <Heading level={3} mainText="Snippets" />
                             <ul className={linkList}>
                                 {list.blog.snippets.map((item, index) => {
                                     return (

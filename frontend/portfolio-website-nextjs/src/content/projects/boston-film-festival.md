@@ -8,7 +8,7 @@ category: "Front-end Development"
 type: "Promo Website"
 experience: "personal project"
 repo_url: "https://github.com/"
-demo_url: "https://github.com/"
+demo_url: "https://github.com/github_pages"
 status: "published"
 tags:
     - "Front-end Development"

@@ -25,7 +25,7 @@ export default function ProjectCard({ project, category }) {
 		<article id={ID} className={`${base} projectCard`}>
 			<header className={header}>
 				<a href={prjSlug} target="_self">
-					<Heading level="3" mainText={prjTitle} subheadingText={prjType} />
+					<Heading level={3} mainText={prjTitle} subheadingText={prjType} />
 				</a>
 			</header>
 			<div className={container}>
@@ -37,16 +37,19 @@ export default function ProjectCard({ project, category }) {
 					label={[prjTitle, "Repo"].join(" ")}
 					href={prjGhRepo}
 					iconName="github"
+					isInternal={false}
 				/>
 				<LinkIcon
 					label={[prjTitle, "Case Study"].join(" ")}
 					href={prjSlug}
 					iconName="folder"
+					isInternal={true}
 				/>
 				<LinkIcon
 					label={[prjTitle, "View Demo"].join(" ")}
 					href={prjDemo}
 					iconName="globe"
+					isInternal={false}
 				/>
 			</footer>
 		</article>

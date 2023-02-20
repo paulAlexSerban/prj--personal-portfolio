@@ -15,7 +15,7 @@ $block: "tagList";
         flex-wrap: wrap;
         gap: var(--dynamic-10);
         margin-top: var(--dynamic-20);
-        margin-left: -10px;
+        margin-left: -14px;
     }
 
     @include e("listItem") {

@@ -15,7 +15,7 @@ export default function SkillList({
     return (
         <div className={base} key={index}>
             {skillList.title && (
-                <Heading level="4" mainText={skillList.title} />
+                <Heading level={4} mainText={skillList.title} />
             )}
 
             <ul className={list}>
@@ -29,6 +29,7 @@ export default function SkillList({
                             <Link
                                 href={`/tags/${sanitizeQueryString(item)}`}
                                 label={item}
+                                isInternal={true}
                             />
                         </li>
                     )

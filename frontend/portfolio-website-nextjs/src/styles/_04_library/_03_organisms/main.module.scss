@@ -11,6 +11,10 @@ $block: "main";
     @include e("base") {
         max-width: $max-width;
         margin: 0 auto;
+
+        @include m("isLoading") {
+            opacity: 0;
+        }
     }
 
     @include e("container") {

@@ -7,7 +7,7 @@ import PostsOverview from "@/core/library/organisms/PostsOverview.organism";
 import Main from "@/core/library/organisms/Main.organism";
 
 import { base } from "@/styles/templates/portfolioCategory.module.scss";
-function BlogCatalog({ pageContent, siteProps }) {
+function BlogCatalog({ pageContent, siteProps, children }) {
     const ID = useId();
 
     return (
@@ -28,6 +28,7 @@ function BlogCatalog({ pageContent, siteProps }) {
                     category={pageContent.main.children.postsOverview.category}
                     showViewAllButton={false}
                 />
+                {children}
             </Main>
             <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
