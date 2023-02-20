@@ -98,7 +98,7 @@ function TagPreview({ pageContent, siteProps }) {
                     </Section>
                 )}
 
-                {pageContent.main.section_5.children.postsOverview.list > 0 && (
+                {pageContent.main.section_5.children.postsOverview.list.length > 0 && (
                     <Section
                         headingTitle={pageContent.main.section_5.title}
                         sectionId={pageContent.main.section_5.section_id}

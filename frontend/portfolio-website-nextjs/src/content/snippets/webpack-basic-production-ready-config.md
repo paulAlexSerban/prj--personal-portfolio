@@ -2,6 +2,7 @@
 title: "Webpack: Basic Production Ready Config"
 category: "snippet"
 status: "published"
+repo_url: "https://github.com/paulAlexSerban/rnd--webpack"
 tags:
   - "JavaScript"
   - "Webpack"

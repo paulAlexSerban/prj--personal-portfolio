@@ -22,7 +22,7 @@ export default function BlogPostTemplate({
 	caseStudy,
 }) {
 	const ID = useId();
-
+	console.log({siteProps})
 	const socialMediaLinks = [];
 	if (frontmatter && frontmatter.repo_url) {
 		socialMediaLinks.push({

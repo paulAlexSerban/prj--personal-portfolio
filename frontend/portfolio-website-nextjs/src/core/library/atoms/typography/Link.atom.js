@@ -1,6 +1,5 @@
 import { useId, useRef, useEffect, useState, useCallback } from "react";
 import { encodeToBase64, decodeFromBase64 } from "@/core/utils/base64";
-import Link from "next/link";
 import PropTypes from "prop-types";
 export default function LinkAtom({
 	href = "/",
@@ -95,21 +94,20 @@ export default function LinkAtom({
 	}, [isEncoded, isInternal, handleLinkHover, handleLinkBlur, handleLinkClick]);
 
 	return (
-		<Link href={hrefString} legacyBehavior scroll={false}>
-			<a
-				id={ID}
-				aria-label={ariaLabel || label}
-				target={isInternal ? "_self" : "_blank"}
-				rel="noreferrer"
-				className={className}
-				data-internal-link={isInternal}
-				data-prefetch={prefetch}
-				data-scroll-to-link={isScrollTo}
-				ref={linkRef}
-			>
-				{children || label}
-			</a>
-		</Link>
+		<a
+			href={hrefString}
+			id={ID}
+			aria-label={ariaLabel || label}
+			target={isInternal ? "_self" : "_blank"}
+			rel="noreferrer"
+			className={className}
+			data-internal-link={isInternal}
+			data-prefetch={prefetch}
+			data-scroll-to-link={isScrollTo}
+			ref={linkRef}
+		>
+			{children || label}
+		</a>
 	);
 }
 
