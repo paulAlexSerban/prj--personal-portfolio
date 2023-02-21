@@ -8,8 +8,8 @@ const nextConfig = {
   },
 };
 
-if (process.env.NODE_ENV === "gh_pages") {
-  nextConfig.basePath = "/prj--personal-portfolio";
+if (process.env.NODE_ENV === "production") {
+  nextConfig.basePath = process.env.BASE_PATH;
   console.log(nextConfig)
 }
 

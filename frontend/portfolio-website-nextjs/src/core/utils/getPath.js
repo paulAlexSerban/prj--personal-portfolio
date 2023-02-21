@@ -1,11 +1,10 @@
 const getPath = (path = "") => {
-  let basePath = undefined;
-  if (process.env.NODE_ENV === "gh_pages") {
-    basePath = "/prj--personal-portfolio";
-  } else if(process.env.NODE_ENV === "development") {
-    basePath = "";
+  let basePath = "";
+  if (process.env.NODE_ENV === "production") {
+    basePath = process.env.BASE_PATH;
   }
-  return `${basePath}${path}`
-}
+
+  return `${basePath}${path}`;
+};
 
 export default getPath;
