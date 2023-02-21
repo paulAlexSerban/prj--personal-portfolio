@@ -9,6 +9,7 @@ import {
 import { Paragraph, Heading, Link } from "@/core/atoms/typography/all";
 import TagList from "./TagList.molecule";
 import LinkIcon from "@/core/atoms/LinkIcon.atom";
+import getPath from "@/core/utils/getPath";
 
 export default function ProjectCard({ project, category }) {
 	const ID = useId();
@@ -19,7 +20,7 @@ export default function ProjectCard({ project, category }) {
 	const prjExcerpt = project.frontmatter.excerpt;
 	const prjGhRepo = project.frontmatter.repo_url;
 	const prjDemo = project.frontmatter.demo_url;
-	const prjSlug = `/portfolio/${category.category_url}/${project.slug}`;
+	const prjSlug = getPath(`/portfolio/${category.category_url}/${project.slug}`);
 
 	return (
 		<article id={ID} className={`${base} projectCard`}>

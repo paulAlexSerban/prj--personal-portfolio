@@ -6,7 +6,6 @@ import styles, {
 } from "@/styles/molecules/navigationList.module.scss";
 import { Link } from "@/core/atoms/typography/all";
 import PropTypes from "prop-types";
-
 export default function NavigationList({
 	items = [],
 	navPosition = "siteNav",
