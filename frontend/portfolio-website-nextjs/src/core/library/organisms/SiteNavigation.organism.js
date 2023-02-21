@@ -12,9 +12,6 @@ import Logo from "@/core/atoms/Logo.atom";
 import BurgerButton from "@/core/library/atoms/BurgerButton.atom";
 import NavigationList from "@/core/molecules/NavigationList.molecule";
 
-const DOMAIN_NAME =
-    process.env.NODE_ENV === "development" ? "http://localhost:3000" : "";
-
 export default function SiteNavigation({ links = [] }) {
     const ID = useId();
     const [navToggled, setNavToggled] = useState(false);
