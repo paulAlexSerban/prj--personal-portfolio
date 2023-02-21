@@ -10,7 +10,6 @@ const nextConfig = {
 
 if (process.env.NODE_ENV === "production") {
   nextConfig.basePath = process.env.BASE_PATH;
-  console.log(nextConfig)
 }
 
 module.exports = nextConfig;
