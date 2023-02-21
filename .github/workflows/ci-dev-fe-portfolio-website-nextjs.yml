@@ -47,7 +47,9 @@ jobs:
 
       - name: "🔧  Install npm@latest"
         if: ${{ always() }}
-        run: npm i -g npm@latest
+        run: |
+          npm i -g npm@latest
+          npm ci
 
       #   @INFO - this part is needed when assets module will be functional
       # - name: "Install GraphicsMagick"
@@ -55,27 +57,27 @@ jobs:
       #   run: sudo apt-get install -y graphicsmagick
 
       - name: "📦  Install Frontend NextJS Portfolio Website dependencies"
-        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/install.bash
 
       - name: "🔍  Lint Frontend NextJS SSG Portfolio Website"
-        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/lint.bash
         continue-on-error: true
 
       - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
-        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/build_local.bash
 
       - name: "🚚  Package NextJS Portfolio Website"
-        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/package.bash
 
-      - name: Configure git
+      - name: "Configure git"
         run: |
           git config --global user.email "paul.alex.serban@gmail.com"
           git config --global user.name "paulAlexSerban"
