@@ -3,7 +3,7 @@
 \* ------------------------------------ */
 
 ul, li {
-    @include font($link);
+    @include font($body);
 }
 
 ul {
