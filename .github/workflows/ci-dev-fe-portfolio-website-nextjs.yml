@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: "🔧  Install npm@latest"
+      - name: "🔧  Install npm@latest & CI Deps"
         if: ${{ always() }}
         run: |
           npm i -g npm@latest

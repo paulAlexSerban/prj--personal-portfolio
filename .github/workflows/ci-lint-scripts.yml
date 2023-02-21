@@ -57,11 +57,12 @@ jobs:
             echo "$file was changed"
           done
 
-      - name: "🧪 Lint Yaml"
-        if: steps.changed-yaml-files.outputs.any_changed == 'true'
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          file_or_dir: ./**/*.yml
+      #   INFO: to be used when docker images are added
+      # - name: "🧪 Lint Yaml"
+      #   if: steps.changed-yaml-files.outputs.any_changed == 'true'
+      #   uses: ibiqlik/action-yamllint@v3
+      #   with:
+      #     file_or_dir: ./**/*.yml
       
       - name: "🧪  Lint Bash Script with ShellCheck"
         if: steps.changed-bash-files.outputs.any_changed == 'true'
