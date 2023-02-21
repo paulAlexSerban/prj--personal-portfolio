@@ -49,33 +49,31 @@ jobs:
         if: ${{ always() }}
         run: npm i -g npm@latest
 
-      - name: "Install GraphicsMagick"
-        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
-        run: sudo apt-get install -y graphicsmagick
+      #   @INFO - this part is needed when assets module will be functional
+      # - name: "Install GraphicsMagick"
+      #   if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+      #   run: sudo apt-get install -y graphicsmagick
 
       - name: "📦  Install Frontend NextJS Portfolio Website dependencies"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/assets/install.bash
-          bash scripts/frontend/portfolio-website-nextjs/install.bash
+          bash scripts/install.bash
 
       - name: "🔍  Lint Frontend NextJS SSG Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/frontend/portfolio-website-nextjs/lint.bash
+          bash scripts/lint.bash
         continue-on-error: true
 
       - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/assets/process.bash
-          bash scripts/frontend/portfolio-website-nextjs/build-dev.bash
+          bash scripts/build_local.bash
 
       - name: "🚚  Package NextJS Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/package/clean.bash
-          bash scripts/package/portfolio-website.bash
+          bash scripts/package.bash
 
       - name: Configure git
         run: |
