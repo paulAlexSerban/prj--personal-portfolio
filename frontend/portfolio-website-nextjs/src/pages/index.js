@@ -32,7 +32,7 @@ export async function getStaticProps() {
 		props: {
 			pageContent: {
 				pageDescription:
-					"JavaScript software engineer portfolio featuring top-notch web development projects. Discover innovative web apps and scalable enterprise solutions.",
+					"Front-end Software Engineer portfolio of Paul Serban featuring top-notch web development projects and insightful web development blog-posts. Discover innovative web apps and scalable enterprise solutions.",
 
 				mainSkills: [
 					{ name: "JavaScript", iconName: "javascript" },
@@ -45,7 +45,7 @@ export async function getStaticProps() {
 					heroBanner: {
 						pageTitle: "Welcome!",
 						subheading:
-							"I'm Paul, a highly skilled JavaScript Software Engineer proficient in Front-end development with a passion for building dynamic and user-friendly web applications.",
+							"I'm Paul, a highly skilled Front-end Software Engineer proficient in Front-end development with a passion for building dynamic and user-friendly web applications.",
 					},
 					section_1: {
 						title: "About Me",

@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
 		icons: {
 			favicon: getPath("favicon.ico"),
 		},
-		title: "Paul Serban | JS Software Engineer",
+		title: "Paul Serban | Front-end Software Engineer",
 		socialMediaLinks: [
 			{
 				label: "LinkedIn",
