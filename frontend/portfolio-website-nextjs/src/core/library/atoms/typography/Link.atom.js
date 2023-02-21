@@ -76,6 +76,7 @@ export default function LinkAtom({
 	useEffect(() => {
 		const linkRefCurrent = linkRef.current;
 		if (isEncoded) {
+			linkRefCurrent.addEventListener("click", handleLinkHover);
 			linkRefCurrent.addEventListener("mouseover", handleLinkHover);
 			linkRefCurrent.addEventListener("blur", handleLinkBlur);
 		}
@@ -84,6 +85,7 @@ export default function LinkAtom({
 		}
 		return () => {
 			if (isEncoded) {
+				linkRefCurrent.removeEventListener("click", handleLinkHover);
 				linkRefCurrent.removeEventListener("mouseover", handleLinkHover);
 				linkRefCurrent.removeEventListener("blur", handleLinkBlur);
 			}
