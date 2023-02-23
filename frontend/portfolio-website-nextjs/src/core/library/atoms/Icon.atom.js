@@ -13,6 +13,7 @@ import {
 	FaDocker,
 	FaGlobe,
 	FaFolderOpen,
+	FaLinux
 } from "react-icons/fa";
 import {
 	SiCodewars,
@@ -21,6 +22,7 @@ import {
 	SiJavascript,
 	SiReact,
 	SiAmazonaws,
+	SiGnubash
 } from "react-icons/si";
 import { GrMail, GrLinkedinOption, GrDocumentText } from "react-icons/gr";
 
@@ -54,6 +56,8 @@ export default function Icon({
 		document: <GrDocumentText title="Document" />,
 		globe: <FaGlobe title="Globe" />,
 		folder: <FaFolderOpen title="Folder" />,
+		linux: <FaLinux title="Linux"/>,
+		bash_shell: <SiGnubash title="Bash/Shell"/>
 	};
 
 	const selectedIcon = icon[iconName] || <FaGlobe title="Globe" />;

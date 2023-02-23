@@ -1,5 +1,5 @@
 ---
-title: "FreeCodeCamp - RWD - Mini Projects"
+title: freeCodeCamp.org - JavaScript Algorithms and Data Structures"
 priority: 1
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
 type: "Technical Documentation"
@@ -10,5 +10,6 @@ demo_url: "https://github.com/"
 status: "published"
 tags:
     - "Front-end Development"
-    - "Responsive Web Design"
+    - "JavaScript"
+    - "Programming"
 ---
