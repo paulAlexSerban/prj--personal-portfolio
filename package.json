@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "lint": "bash scripts/modulize.bash -e dev -p lint -m portfolio-website-nextjs",
-    "lint:scripts": "shellcheck ./**/*.bash && ",
+    "lint:scripts": "shellcheck ./**/*.bash",
     "install:ci": "npm ci --omit=dev --ignore-scripts",
     "install:root": "npm install",
     "prepare": "husky install"

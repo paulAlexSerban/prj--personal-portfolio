@@ -89,7 +89,7 @@ init() {
           phase ../${i} ${PHASE} ${i}
         fi
 
-        if [[ -z "../${i}/config.env" ]]; then
+        if [[ ! -f "../${i}/config.env" ]]; then
           phase ../${i}/${DIR} ${PHASE} ${DIR}
         fi
       done
@@ -97,7 +97,7 @@ init() {
       if [[ -f "../${i}/config.env" ]]; then
         . "../${i}/config.env"
 
-        for j in ${INSTALL_MODULE_SUBPROJECTS[@]}; do
+        for j in "${INSTALL_MODULE_SUBPROJECTS[@]}"; do
           phase ../${i}/${j} ${PHASE} ${j}
         done
       else
