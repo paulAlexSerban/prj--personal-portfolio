@@ -148,19 +148,19 @@ $heading-300: (
 
 $heading-400: (
   default: (
-    font-size: convert-rem(26px),
-    line-height: convert-rem(30px),
+    font-size: convert-rem(24px),
+    line-height: convert-rem(27px),
     font-family: var(--text-regular),
     font-weight: font-weight(heavy),
   ),
   $desktop: (
     font-size: convert-rem(30px),
-    line-height: convert-rem(34px),
+    line-height: convert-rem(33px),
     letter-spacing: convert-rem(0.5px),
   ),
   $ultra-wide: (
-    font-size: convert-rem(34px),
-    line-height: convert-rem(38px),
+    font-size: convert-rem(33px),
+    line-height: convert-rem(36px),
     letter-spacing: convert-rem(-0.5px),
   ),
 );
@@ -306,12 +306,12 @@ $link: (
     text-decoration: none,
   ),
   $desktop: (
-    font-size: convert-rem(19px),
-    line-height: 27px,
+    font-size: convert-rem(17px),
+    line-height: 22px,
   ),
   $ultra-wide: (
     font-size: 20px,
-    line-height: 28px,
+    line-height: 26px,
   ),
 );
 

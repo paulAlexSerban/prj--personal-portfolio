@@ -9,7 +9,6 @@ $block: "blog";
 
 .#{$block} {
     @include e("base") {
-        padding-inline: var(--static-30);
-        margin-top: var(--dynamic-100);
+        @include baseTemplate;
     }
 }

@@ -9,7 +9,6 @@ $block: "tagPreview";
 
 .#{$block} {
     @include e("base") {
-        padding-inline: var(--static-30);
-        margin-top: var(--dynamic-70);
+        @include baseTemplate;
     }
 }

@@ -9,8 +9,6 @@ $block: "portfolioItemDetail";
 
 .#{$block} {
     @include e("base") {
-        padding-inline: var(--static-30);
-        margin: var(--dynamic-50) 0 var(--dynamic-110);
-
+        @include baseTemplate;
     }
 }

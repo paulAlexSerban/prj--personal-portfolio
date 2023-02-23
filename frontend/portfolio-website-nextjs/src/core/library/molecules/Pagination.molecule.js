@@ -1,5 +1,5 @@
 import { Link } from "@/core/atoms/typography/all";
-
+import getPath from "@/core/utils/getPath";
 import {
 	base,
 	list,
@@ -10,8 +10,8 @@ import {
 export default function Pagination({ currentPage, numPages }) {
 	const isFirstPage = currentPage === 1;
 	const isLastPage = currentPage === numPages;
-	const prevPage = `/blog/posts/page/${currentPage - 1}`;
-	const nextPage = `/blog/posts/page/${currentPage + 1}`;
+	const prevPage = getPath(`/blog/posts/page/${currentPage - 1}`);
+	const nextPage = getPath(`/blog/posts/page/${currentPage + 1}`);
 
 	if (numPages === 1) {
 		return <></>;
@@ -34,7 +34,7 @@ export default function Pagination({ currentPage, numPages }) {
 				{Array.from({ length: numPages }, (_, i) => (
 					<li className={listItem} key={`page-${i}`}>
 						<Link
-							href={`/blog/posts/page/${i + 1}`}
+							href={getPath(`/blog/posts/page/${i + 1}`)}
 							key={`page-${i}`}
 							label={`${i + 1}`}
 							className={link}

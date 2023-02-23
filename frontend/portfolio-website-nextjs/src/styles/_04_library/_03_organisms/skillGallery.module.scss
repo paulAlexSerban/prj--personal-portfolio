@@ -10,7 +10,6 @@ $block: "skillGallery";
 .#{$block} {
     @include e("base") {
         width: 100%;
-        margin-top: var(--dynamic-70);
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: var(--dynamic-30);
@@ -25,7 +24,6 @@ $block: "skillGallery";
         grid-column: span 12;
 
         @include breakpoint($tablet) {
-            margin-top: 0;
             grid-column: span 6;
         }
     }

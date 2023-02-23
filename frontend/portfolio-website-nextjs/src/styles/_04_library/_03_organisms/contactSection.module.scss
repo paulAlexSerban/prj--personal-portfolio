@@ -9,6 +9,10 @@ $block: "contactSection";
 
 .#{$block} {
     @include e("base") {
-        padding: var(--dynamic-70) var(--lateral-padding);
+        padding: var(--dynamic-70) 0;
+
+        @include breakpoint($tablet) {
+            padding: var(--dynamic-70) var(--lateral-padding);
+          }
     }
 }

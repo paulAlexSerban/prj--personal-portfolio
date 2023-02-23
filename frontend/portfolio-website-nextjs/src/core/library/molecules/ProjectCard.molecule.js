@@ -30,8 +30,8 @@ export default function ProjectCard({ project, category }) {
 				</a>
 			</header>
 			<div className={container}>
-				<TagList tags={prjTags} />
 				<Paragraph text={prjExcerpt} />
+				<TagList tags={prjTags} />
 			</div>
 			<footer className={footer}>
 				<LinkIcon

@@ -4,6 +4,6 @@ cd "$(dirname "$0")" || exit
 
 source ../config.env
 
-export NODE_ENV=gh-pages
-export BASE_PATH='/prj--personal-portfolio'
+export NODE_ENV=production
+# export BASE_PATH='/prj--personal-portfolio'
 npm --prefix .. run build

@@ -9,7 +9,7 @@ $block: "header";
 
 .#{$block} {
     @include e("base") {
-        @include fixed($top: 0, $left: 50%, $z-index: "header");
+        @include relative($top: 0, $left: 50%, $z-index: "header");
 
         transform: translateX(-50%);
         width: 100%;

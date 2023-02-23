@@ -9,6 +9,9 @@ $block: "textArticle";
 
 .#{$block} {
     @include e("base") {
-        padding-inline: var(--lateral-padding);
+
+        @include breakpoint($tablet) {
+            padding-inline: var(--lateral-padding);
+        }
     }
 }

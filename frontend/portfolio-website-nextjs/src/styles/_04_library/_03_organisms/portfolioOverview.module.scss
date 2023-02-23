@@ -11,14 +11,12 @@ $block: "portfolioOverview";
     @include e("base") {
         @include flex($direction: column, $cross: flex-start);
 
-        width: 100%;
-        margin-top: var(--dynamic-80);
-        
+        width: 100%;        
     }
 
     @include e("container") {
         width: 100%;
-        padding-bottom: 40px;
+        padding-bottom: var(--dynamic-30);
     }
 
     @include e("viewAllLink") {

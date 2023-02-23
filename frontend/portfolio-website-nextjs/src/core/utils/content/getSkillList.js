@@ -44,7 +44,7 @@ const getSkillList = () => [
                     // "AWS",
                     "Git",
                     // "Docker",
-                    // "Linux",
+                    "Linux",
                     "Bash/Shell",
                     "Github Actions",
                 ],

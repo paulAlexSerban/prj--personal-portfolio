@@ -12,10 +12,8 @@ $block: "heroBanner";
         @include flex($direction: column);
 
         width: 100vw;
-        background-color: var(--secondary-color);;
-        padding-bottom: var(--dynamic-50);
-        margin-top: var(--dynamic-70);
-
+        background-color: var(--secondary-color);
+        padding: var(--dynamic-50) 0;
     }
 
     @include e("header", "container") {

@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:gh_pages": "next build && next export",
-    "build:dev": "next build && next export",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },

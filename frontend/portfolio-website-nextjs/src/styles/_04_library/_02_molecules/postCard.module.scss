@@ -14,9 +14,14 @@ $block: "postCard";
 		padding: var(--dynamic-50) var(--lateral-padding);
 		transition: background-color 0.3s ease-in-out;
 		height: 100%;
+		margin-inline: calc(var(--lateral-padding) * -1);
 
 		&:hover {
 			background-color: var(--secondary-color);
+		}
+
+		@include breakpoint($tablet) {
+			margin-inline: 0;
 		}
 	}
 

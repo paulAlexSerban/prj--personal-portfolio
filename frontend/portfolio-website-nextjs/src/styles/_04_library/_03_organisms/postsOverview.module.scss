@@ -12,9 +12,7 @@ $block: "postsOverview";
     @include e("base") {
         @include flex($direction: column, $cross: flex-start);
 
-        width: 100%;
-        margin-top: var(--dynamic-80);
-        
+        width: 100%;        
     }
 
     @include e("container") {

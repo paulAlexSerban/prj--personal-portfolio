@@ -5,4 +5,4 @@ cd "$(dirname "$0")" || exit
 source ../config.env
 
 export NODE_ENV=development
-npm --prefix .. run build:dev
+npm --prefix .. run build

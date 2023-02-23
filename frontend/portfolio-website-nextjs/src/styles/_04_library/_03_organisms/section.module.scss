@@ -11,6 +11,7 @@ $block: "section";
 	@include e("base") {
 		width: 100%;
 		margin-top: var(--dynamic-70);
+		padding-inline: var(--lateral-padding);
 
 		@include breakpoint($tablet) {
 			margin-top: var(--dynamic-70);

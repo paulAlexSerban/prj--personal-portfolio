@@ -10,13 +10,11 @@ $block: "footer";
 .#{$block} {
     @include e("base") {
         @include flex($direction: column);
+
         width: 100vw;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        margin: 0 auto;
+        margin: var(--dynamic-70) auto 0;
         background-color: var(--secondary-color);
-        gap: var(--dynamic-20);
+        padding: var(--dynamic-20) 0;
     }
 
     @include e("container", "bottom") {
