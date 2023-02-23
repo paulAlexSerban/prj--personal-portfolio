@@ -59,23 +59,23 @@ jobs:
       - name: "📦  Install Frontend NextJS Portfolio Website dependencies"
         # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/install.bash
+          bash scripts/modulize.bash -e prod -p install -m portfolio-website-nextjs
 
       - name: "🔍  Lint Frontend NextJS SSG Portfolio Website"
         # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/lint.bash
+          bash scripts/modulize.bash -e prod -p lint -m portfolio-website-nextjs
         continue-on-error: true
 
       - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
         # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/build_gh_pages.bash
+          bash scripts/modulize.bash -e prod -p build_gh_pages -m portfolio-website-nextjs
 
       - name: "🚚  Package NextJS Portfolio Website"
         # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/package.bash
+          bash scripts/modulize.bash -e prod -p package -m portfolio-website-nextjs
 
       - name: "Configure git"
         run: |

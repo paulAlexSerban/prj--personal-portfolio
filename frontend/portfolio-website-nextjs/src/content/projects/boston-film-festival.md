@@ -26,7 +26,7 @@ tags:
 case_study:
     - portfolio:
           - courseworks:
-                - "fcc-responsive-web-design-mini-projects"
+                - "fcc-responsive-web-design"
     - blog:
           - posts:
                 - "html-semantics-best-practices-and-tips"
