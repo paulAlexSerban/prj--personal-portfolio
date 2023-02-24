@@ -8,7 +8,7 @@ $block: "landing";
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        @include baseTemplate;
-    }
+  @include e("base") {
+    @include baseTemplate;
+  }
 }

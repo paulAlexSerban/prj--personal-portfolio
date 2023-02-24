@@ -21,11 +21,7 @@
 /// @return {String}
 /// @access public
 
-@function breakpoint-next(
-  $name,
-  $breakpoints: $breakpoints,
-  $breakpoint-names: map.keys($breakpoints)
-) {
+@function breakpoint-next($name, $breakpoints: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
   $n: list.index($breakpoint-names, $name);
   @if $n != null and $n < list.length($breakpoint-names) {
     @return list.nth($breakpoint-names, $n + 1);
@@ -39,11 +35,7 @@
 /// @param {List} $breakpoint-names [map-keys($breakpoints)] - A list of names from the `$breakpoints` map
 /// @return {String}
 /// @access public
-@function breakpoint-prev(
-  $name,
-  $breakpoints: $breakpoints,
-  $breakpoint-names: map.keys($breakpoints)
-) {
+@function breakpoint-prev($name, $breakpoints: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
   $n: list.index($breakpoint-names, $name);
   @if $n != null and $n > 1 {
     @return list.nth($breakpoint-names, $n - 1);

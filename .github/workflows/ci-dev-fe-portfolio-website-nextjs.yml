@@ -84,5 +84,5 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: "🚀 Deploy to Test (GitHub Pages)"
-        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request' }}
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: npx gh-pages -d package/portfolio-website-nextjs --branch gh-pages-test -t true
