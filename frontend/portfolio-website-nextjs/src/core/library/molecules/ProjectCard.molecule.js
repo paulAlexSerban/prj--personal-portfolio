@@ -16,7 +16,7 @@ export default function ProjectCard({ project, category }) {
 
 	const prjTitle = project.frontmatter.title;
 	const prjType = project.frontmatter.type;
-	const prjTags = project.frontmatter.tags;
+	const prjTags = project.frontmatter.tags.slice(0, 5);
 	const prjExcerpt = project.frontmatter.excerpt;
 	const prjGhRepo = project.frontmatter.repo_url;
 	const prjDemo = project.frontmatter.demo_url;
