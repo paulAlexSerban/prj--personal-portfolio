@@ -19,7 +19,7 @@ const getPath = (path = "") => {
     }
 
     if (process.env.SERVER_ENV === "gh_pages") {
-      return `/${process.env.BASE_PATH}`;
+      return `${process.env.BASE_PATH}`;
     }
   };
 
