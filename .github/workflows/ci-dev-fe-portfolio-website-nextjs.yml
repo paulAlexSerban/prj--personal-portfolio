@@ -70,7 +70,7 @@ jobs:
       - name: "🏗️  Build Frontend NextJS SSG Portfolio Website For GitHub Pages"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/modulize.bash -e gh_pages -p build_gh_pages -m portfolio-website-nextjs
+          bash scripts/modulize.bash -e gh_pages -p build -m portfolio-website-nextjs
 
       - name: "🚚  Package NextJS Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
