@@ -57,23 +57,23 @@ jobs:
       #   run: sudo apt-get install -y graphicsmagick
 
       - name: "📦  Install Frontend NextJS Portfolio Website dependencies"
-        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/modulize.bash -e prod -p install -m portfolio-website-nextjs
 
       - name: "🔍  Lint Frontend NextJS SSG Portfolio Website"
-        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/modulize.bash -e prod -p lint -m portfolio-website-nextjs
         continue-on-error: true
 
-      - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
-        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+      - name: "🏗️  Build Frontend NextJS SSG Portfolio Website For GitHub Pages"
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/modulize.bash -e prod -p build_gh_pages -m portfolio-website-nextjs
+          bash scripts/modulize.bash -e gh_pages -p build_gh_pages -m portfolio-website-nextjs
 
       - name: "🚚  Package NextJS Portfolio Website"
-        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
           bash scripts/modulize.bash -e prod -p package -m portfolio-website-nextjs
 

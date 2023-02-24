@@ -8,7 +8,7 @@ const nextConfig = {
   },
 };
 
-if (process.env.NODE_ENV === "gh-pages") {
+if (process.env.SERVER_ENV === "gh_pages") {
   nextConfig.basePath = process.env.BASE_PATH;
 }
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eo pipefail
-MODULIZE_VERSION="1.0.0"
+MODULIZE_VERSION="1.0.3"
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
@@ -47,17 +47,14 @@ print_header
 # Validate command-line options
 if [[ -z $PHASE ]]; then
   usage
-elif [[ -z $ENV ]]; then
-  usage
+fi
+if [[ -z $ENV ]]; then
+  ENV=dev
 fi
 
-if [[ "${ENV}" = "dev" ]]; then
-  . ../config/config.development.env
-  print_info "Running in ${BLUE} ${NODE_ENV} ${NC} mode"
-elif [[ "${ENV}" = "prod" ]]; then
-  . ../config/config.production.env
-  print_info "Running in ${BLUE} ${NODE_ENV} ${NC} mode"
-fi
+. "../config/config.${ENV}.env"
+export $NODE_ENV
+print_info "Running in ${BLUE} ${NODE_ENV} ${NC} mode"
 
 init() {
   phase() {
@@ -67,7 +64,7 @@ init() {
 
     if [[ -f "${PHASE_PATH}/scripts/${PHASE_NAME}.bash" ]]; then
       print_info "${PHASE_NAME}ing ${BLUE}${PHASE_DIR}${NC}"
-      bash "${PHASE_PATH}/scripts/${PHASE_NAME}.bash"
+      bash "${PHASE_PATH}/scripts/${PHASE_NAME}.bash" -e $ENV
 
       # Print a message indicating that the module has been installed and how long it took
       print_info "${PHASE_NAME}ed ${BLUE}${PHASE_DIR}${NC}"

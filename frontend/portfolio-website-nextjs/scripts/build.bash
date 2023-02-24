@@ -15,17 +15,17 @@ done
 # Shift the options and arguments so that $1 refers to the first non-option argument
 shift $((OPTIND - 1))
 
-# set some default values
 if [[ -z $ENV ]]; then
   ENV=dev
 fi
 
 if [[ $ENV == "dev" ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
+  export SERVER_ENV=development
 elif [[ $ENV == "gh_pages" ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
+  export SERVER_ENV=gh_pages
+  export BASE_PATH='/prj--personal-portfolio'
 elif [[ $ENV == 'prod' ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
+  export SERVER_ENV=production
 fi
 
 npm --prefix .. run build
