@@ -25,9 +25,9 @@ export default function ProjectCard({ project, category }) {
 	return (
 		<article id={ID} className={`${base} projectCard`}>
 			<header className={header}>
-				<a href={prjSlug} target="_self">
+				<Link href={prjSlug} isInternal={true}>
 					<Heading level={3} mainText={prjTitle} subheadingText={prjType} />
-				</a>
+				</Link>
 			</header>
 			<div className={container}>
 				<Paragraph text={prjExcerpt} />
