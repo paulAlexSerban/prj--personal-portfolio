@@ -9,7 +9,7 @@ $block: "header";
 
 .#{$block} {
     @include e("base") {
-        @include relative($top: 0, $left: 50%, $z-index: "header");
+        @include fixed($top: 0, $left: 50%, $z-index: "header");
 
         transform: translateX(-50%);
         width: 100%;
@@ -22,15 +22,12 @@ $block: "header";
         }
 
         @include m("shrink") {
-            box-shadow: 0 4px 16px get-color($c-dark, dark-30);
-
             padding: var(--static-10) var(--lateral-padding);
         }
     }
 
     @include e("container") {
         @include flex($direction: column);
-
 
         max-width: $max-width;
         margin: 0 auto;

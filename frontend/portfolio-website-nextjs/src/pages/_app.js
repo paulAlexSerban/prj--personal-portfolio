@@ -1,12 +1,12 @@
 import "@/styles/base/base.scss";
 import { encodeToBase64 } from "@/core/utils/base64";
-import getPath from "@/core/utils/getPath";
+  
 // import "../styles/_99_devTools/devTools.scss";
 
 export default function App({ Component, pageProps }) {
 	pageProps.siteProps = {
 		icons: {
-			favicon: getPath("favicon.ico"),
+			favicon: "favicon.ico",
 		},
 		title: "Paul Serban | Front-end Software Engineer",
 		socialMediaLinks: [
@@ -28,8 +28,8 @@ export default function App({ Component, pageProps }) {
 			},
 		],
 		siteNavLinks: [
-			{ label: "portfolio", href: getPath("/portfolio") },
-			{ label: "blog", href: getPath("/blog") },
+			{ label: "portfolio", href: "/portfolio" },
+			{ label: "blog", href: "/blog"},
 		],
 	};
 	return <Component {...pageProps} />;

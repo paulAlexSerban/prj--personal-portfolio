@@ -8,7 +8,7 @@ export default function PortfolioCategoryPage({ children, pageContent, siteProps
 
 	return (
 		<div>
-			<LoadingSpinner />
+			  
 			<Head>
 				<title>{pageTitle}</title>
 				<meta name="description" content={pageContent.pageDescription} />

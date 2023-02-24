@@ -8,7 +8,7 @@ import {
 	footer,
 	cardLink,
 } from "@/styles/molecules/postCard.module.scss";
-import getPath from "@/core/utils/getPath";
+  
 export default function PostCard({ post, category }) {
 	const ID = useId();
 
@@ -23,7 +23,7 @@ export default function PostCard({ post, category }) {
 	return (
 		<article id={ID} className={base}>
 			<Link
-				href={getPath(postSlug)}
+				href={postSlug}
 				isInternal={true}
 				ariaLabel={["Link to", postTitle, postSubheading].join(" - ")}
 				className={cardLink}

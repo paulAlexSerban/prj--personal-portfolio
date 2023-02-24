@@ -1,16 +1,14 @@
 import Head from "next/head";
-import { useId, useEffect, useState } from "react";
+import { useId } from "react";
 import getContent from "@/core/utils/content/getContent";
 import getSkillList from "@/core/utils/content/getSkillList";
-import dynamic from "next/dynamic";
-import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
-const LandingTemplate = dynamic(() => import("@/core/templates/Landing.template"));
+import LandingTemplate from "@/core/templates/Landing.template";
 
 export default function LandingPage({ siteProps, pageContent }) {
   const ID = useId();
   return (
     <div id={ID}>
-      <LoadingSpinner />
+        
       <Head>
         <title>{siteProps.title}</title>
         <meta name="description" content={pageContent.pageDescription} />

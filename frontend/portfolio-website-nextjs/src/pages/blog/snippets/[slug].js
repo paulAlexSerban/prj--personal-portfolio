@@ -9,7 +9,7 @@ export default function PortfolioItemDetail({ children, pageContent, siteProps, 
 	const pageTitle = [frontmatter.title, "|", siteProps.title].join(" ");
 	return (
 		<div>
-			<LoadingSpinner />
+			  
 			<Head>
 				<title>{pageTitle}</title>
 				<meta name="description" content={frontmatter.excerpt} />

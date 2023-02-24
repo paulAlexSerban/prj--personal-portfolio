@@ -3,7 +3,7 @@ import { base, listItem } from "@/styles/molecules/tagList.module.scss";
 import Pill from "@/core/atoms/Pill.atom";
 import sanitizeQueryString from "@/core/utils/sanitizeQueryString";
 import PropTypes from "prop-types";
-import getPath from "@/core/utils/getPath";
+  
 
 export default function TagList({ tags }) {
 	const ID = useId();
@@ -16,7 +16,7 @@ export default function TagList({ tags }) {
 				<ul id={ID} className={base}>
 					{tags.map((tag, index) => (
 						<li className={listItem} key={index}>
-							<Pill label={tag} href={getPath(getHref(tag))} />
+							<Pill label={tag} href={getHref(tag)} />
 						</li>
 					))}
 				</ul>

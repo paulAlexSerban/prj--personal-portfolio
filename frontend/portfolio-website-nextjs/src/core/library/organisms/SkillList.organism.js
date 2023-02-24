@@ -1,7 +1,7 @@
 import { Heading, Link } from "@/core/atoms/typography/all";
 import sanitizeQueryString from "@/core/utils/sanitizeQueryString";
 import { base, list, listItem } from "@/styles/organisms/skillList.module.scss";
-import getPath from "@/core/utils/getPath";
+  
 
 const loremList = {
     title: "Lorem Skill List Title",
@@ -28,7 +28,7 @@ export default function SkillList({
                     ) : (
                         <li key={index} className={listItem}>
                             <Link
-                                href={getPath(`/tags/${sanitizeQueryString(item)}`)}
+                                href={`/tags/${sanitizeQueryString(item)}`}
                                 label={item}
                                 isInternal={true}
                             />

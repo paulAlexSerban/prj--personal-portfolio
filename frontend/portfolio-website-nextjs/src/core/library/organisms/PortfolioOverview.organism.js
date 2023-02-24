@@ -7,7 +7,7 @@ import {
 	viewAllLink,
 } from "@/styles/organisms/portfolioOverview.module.scss";
 import { Link } from "@/core/atoms/typography/all";
-import getPath from "@/core/utils/getPath";
+  
 /**
  * @name PortfolioOverview
  * @specs
@@ -37,7 +37,7 @@ export default function PortfolioOverview({
 						<Link
 							className={viewAllLink}
 							label={`View all ${content.category.category_name}`}
-							href={getPath(`/portfolio/${content.category.category_url}`)}
+							href={`/portfolio/${content.category.category_url}`}
 							isInternal={true}
 						></Link>
 					)}

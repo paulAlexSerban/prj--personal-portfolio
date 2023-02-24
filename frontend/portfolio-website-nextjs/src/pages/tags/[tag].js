@@ -10,7 +10,7 @@ export default function TagsPage({ siteProps, pageContent }) {
 
 	return (
 		<div id={ID}>
-			<LoadingSpinner />
+			  
 			<Head>
 				<title>{siteProps.title}</title>
 				<meta name="description" content={pageContent.pageDescription} />

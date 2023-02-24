@@ -8,7 +8,7 @@ import PortfolioItemDetailTemplate from "@/core/templates/PortfolioItemDetail.te
 export default function PortfolioItemDetail({ children, pageContent, siteProps, frontmatter }) {
 	return (
 		<div>
-			<LoadingSpinner />
+			  
 			<Head>
 				<title>{`${frontmatter.title} | ${siteProps.title}`}</title>
 				<meta name="description" content={frontmatter.excerpt} />

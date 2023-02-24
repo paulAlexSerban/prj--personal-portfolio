@@ -2,7 +2,7 @@ import { useId } from "react";
 import LinkIcon from "@/core/atoms/LinkIcon.atom";
 import sanitizeQueryString from "@/core/utils/sanitizeQueryString";
 import { base, skillList, listItem } from "@/styles/organisms/skillShowcase.module.scss";
-import getPath from "@/core/utils/getPath";
+  
 
 export default function SkillsShowcase({ list }) {
   const ID = useId();
@@ -16,7 +16,7 @@ export default function SkillsShowcase({ list }) {
               <LinkIcon
                 label={item.name}
                 iconName={item.iconName}
-                href={getPath(`/tags/${sanitizeQueryString(item.name)}`)}
+                href={`/tags/${sanitizeQueryString(item.name)}`}
                 isInternal={true}
               />
             </li>

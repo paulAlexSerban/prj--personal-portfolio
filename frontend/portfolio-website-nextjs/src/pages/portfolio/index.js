@@ -18,7 +18,7 @@ export default function Portfolio({ siteProps, pageContent }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href={siteProps.icons.favicon} />
 			</Head>
-			<LoadingSpinner />
+			  
 			<PortfolioOverviewTemplate siteProps={siteProps} pageContent={pageContent}></PortfolioOverviewTemplate>
 		</div>
 	);
