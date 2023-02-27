@@ -4,12 +4,21 @@ import TagPreviewTemplate from "@/core/templates/TagPreview.template";
 import sanitizeQueryString from "@/utils/sanitizeQueryString";
 import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
 import getContent from "@/core/utils/content/getContent";
+import {  Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+	display: 'swap',
+	subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  style: ['normal'],
+  variable: '--text-regular',
+});
 
 export default function TagsPage({ siteProps, pageContent }) {
 	const ID = useId();
 
 	return (
-		<div id={ID}>
+		<div id={ID} className={roboto.className}>
 			  
 			<Head>
 				<title>{siteProps.title}</title>

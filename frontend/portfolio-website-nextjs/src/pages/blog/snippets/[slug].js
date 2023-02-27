@@ -4,11 +4,19 @@ import matter from "gray-matter";
 import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
 import Head from "next/head";
 import PortfolioItemDetailTemplate from "@/core/templates/PortfolioItemDetail.template.js";
+import {  Roboto } from 'next/font/google';
 
+const roboto = Roboto({
+	display: 'swap',
+	subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  style: ['normal'],
+  variable: '--text-regular',
+});
 export default function PortfolioItemDetail({ children, pageContent, siteProps, frontmatter }) {
 	const pageTitle = [frontmatter.title, "|", siteProps.title].join(" ");
 	return (
-		<div>
+		<div className={roboto.className}> 
 			  
 			<Head>
 				<title>{pageTitle}</title>

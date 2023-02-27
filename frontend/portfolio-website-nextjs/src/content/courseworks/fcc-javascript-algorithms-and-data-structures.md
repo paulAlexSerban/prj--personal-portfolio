@@ -1,5 +1,5 @@
 ---
-title: freeCodeCamp.org - JavaScript Algorithms and Data Structures"
+title: "JavaScript Algorithms and Data Structures - fcc.org"
 priority: 1
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
 type: "Technical Documentation"

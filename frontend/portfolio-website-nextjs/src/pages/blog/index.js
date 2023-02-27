@@ -3,12 +3,21 @@ import { useId } from "react";
 import BlogTemplate from "@/core/templates/Blog.template.js";
 import getContent from "@/core/utils/content/getContent";
 import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
+import {  Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+	display: 'swap',
+	subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  style: ['normal'],
+  variable: '--text-regular',
+});
 
 export default function Blog({ children, pageContent, siteProps }) {
 	const ID = useId();
 	const pageTitle = ["Blog", "|", siteProps.title].join(" ");
 	return (
-		<div id={ID}>
+		<div id={ID} className={roboto.className}>
 		  
 			<Head>
 				<title>{pageTitle}</title>

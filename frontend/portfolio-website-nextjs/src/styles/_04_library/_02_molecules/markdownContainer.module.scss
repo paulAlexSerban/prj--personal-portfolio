@@ -9,9 +9,12 @@ $block: "markdownContainer";
 
 .#{$block} {
 	@include e("base") {
-		padding-inline: var(--lateral-padding);
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
+
+		@include breakpoint($tablet) {
+			padding-inline: var(--lateral-padding);
+		}
 
 		p,
 		h2,

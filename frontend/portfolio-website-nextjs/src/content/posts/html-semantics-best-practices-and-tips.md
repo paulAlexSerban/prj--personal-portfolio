@@ -119,5 +119,5 @@ By using semantic HTML, you can create a web page that is more accessible and us
 -   [I Like Kill Nerds - How To Correctly Use Semantic HTML5 &lt;article&gt;, &lt;main&gt; and &lt;section&gt; tags](https://ilikekillnerds.com/2014/07/how-to-correctly-use-semantic-html5-article-main-and-section-tags/){target=_blank}
 -   [Thoughtco - Why Use Semantic HTML](https://www.thoughtco.com/why-use-semantic-html-3468271){target=_blank}
 -   [hackernoon.com - How to Write Semantic HTML](https://hackernoon.com/how-to-write-semantic-html-dkq3ulo){target=_blank}
--   [freeCodeCamp.org/blog - HTML Best Practices – How to Build a Better HTML-Based Website](https://www.freecodecamp.org/news/html-best-practices/){target=_blank}
+-   [FreeCodeCamp.org/blog - HTML Best Practices – How to Build a Better HTML-Based Website](https://www.FreeCodeCamp.org/news/html-best-practices/){target=_blank}
 -   [hubspot.org/blog - Semantic HTML: What It Is and How It Improves Your Site](https://blog.hubspot.com/website/semantic-html){target=_blank}

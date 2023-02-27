@@ -26,7 +26,7 @@ The front-end build process is a crucial step in web development, and it should 
 In conclusion, front-end builds are essential for modern web development. They help to optimize the code, reduce file size, and automate tasks that would otherwise be time-consuming and repetitive. By investing in a strong front-end build process, developers can produce code that is faster, more efficient, and easier to maintain, making it easier to deploy and maintain web applications.
 
 ## Some Resources
-- [Making Sense of the Front-end Build Tools](https://www.freecodecamp.org/news/making-sense-of-front-end-build-tools-3a1b3a87043b/){target=_blank}
+- [Making Sense of the Front-end Build Tools](https://www.FreeCodeCamp.org/news/making-sense-of-front-end-build-tools-3a1b3a87043b/){target=_blank}
 - [Modern Front-end: The Tools and Build Process Explained](https://medium.com/@trevorpoppen/modern-front-end-the-tools-and-build-process-explained-36641b5c1a53){target=_blank}
 - [FE Build Tools you can use in your development lifecycle](https://www.smashcreate.com/our-insights/4-best-build-tools-you-can-use-in-frontend-development/){target=_blank}
 - [SmashingMagazine - The Future of Frontend Tools](https://www.smashingmagazine.com/2022/06/future-frontend-build-tools/){target=_blank}

@@ -5,13 +5,22 @@ import getContent from "@/core/utils/content/getContent";
 import dynamic from "next/dynamic";
 import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
 const PortfolioOverviewTemplate = dynamic(() => import("@/core/templates/PortfolioOverview.template.js"));
+import {  Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+	display: 'swap',
+	subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  style: ['normal'],
+  variable: '--text-regular',
+});
 
 export default function Portfolio({ siteProps, pageContent }) {
 	const ID = useId();
 	const pageTitle = ["Portfolio", "|", siteProps.title].join(" ");
 
 	return (
-		<div id={ID}>
+		<div id={ID} className={roboto.className}>
 			<Head>
 				<title>{pageTitle}</title>
 				<meta name="description" content={pageContent.pageDescription} />

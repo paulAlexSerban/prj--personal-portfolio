@@ -3,6 +3,15 @@ import BlogCategoryTemplate from "@/core/templates/BlogCategory.template.js";
 import getContent from "@/core/utils/content/getContent";
 import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
 import Pagination from "@/core/library/molecules/Pagination.molecule";
+import {  Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+	display: 'swap',
+	subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  style: ['normal'],
+  variable: '--text-regular',
+});
 const POSTS_PER_PAGE = 10;
 export default function BlogCategory({ children, pageContent, siteProps }) {
 	const pageTitle = [
@@ -12,7 +21,7 @@ export default function BlogCategory({ children, pageContent, siteProps }) {
 		siteProps.title,
 	].join(" ");
 	return (
-		<div>
+		<div className={roboto.className}>
 			  
 			<Head>
 				<title>{pageTitle}</title>

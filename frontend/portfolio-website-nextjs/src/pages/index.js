@@ -3,11 +3,20 @@ import { useId } from "react";
 import getContent from "@/core/utils/content/getContent";
 import getSkillList from "@/core/utils/content/getSkillList";
 import LandingTemplate from "@/core/templates/Landing.template";
+import {  Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+	display: 'swap',
+	subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  style: ['normal'],
+  variable: '--text-regular',
+});
 
 export default function LandingPage({ siteProps, pageContent }) {
   const ID = useId();
   return (
-    <div id={ID}>
+    <div id={ID} className={roboto.className}>
         
       <Head>
         <title>{siteProps.title}</title>

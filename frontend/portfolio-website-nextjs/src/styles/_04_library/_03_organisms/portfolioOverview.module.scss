@@ -1,25 +1,27 @@
-@import "../../_00_abstracts/abstracts.scss";
+@import '../../_00_abstracts/abstracts.scss';
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: "portfolioOverview";
+$block: 'portfolioOverview';
 
 /* ------------------------------------ *\
  * PORTFOLIO OVERVIEW ORGANISM
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        @include flex($direction: column, $cross: flex-start);
+  @include e('base') {
+    @include flex($direction: column, $cross: flex-start);
 
-        width: 100%;        
-    }
+    width: 100%;
+  }
 
-    @include e("container") {
-        width: 100%;
-        padding-bottom: var(--dynamic-30);
-    }
+  @include e('container') {
+    width: 100%;
+    padding-bottom: var(--dynamic-30);
+  }
 
-    @include e("viewAllLink") {
-        margin-inline: var(--lateral-padding);
+  @include e('viewAllLink') {
+    @include breakpoint($tablet) {
+      margin-inline: var(--lateral-padding);
     }
+  }
 }
