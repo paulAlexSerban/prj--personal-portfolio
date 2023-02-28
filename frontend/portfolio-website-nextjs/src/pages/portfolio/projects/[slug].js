@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import { sortByDate } from '@/core/utils/softByDate';
 import Head from 'next/head';
 import PortfolioItemDetailTemplate from '@/core/templates/PortfolioItemDetail.template.js';
-import LoadingSpinner from '@/core/library/atoms/LoadingSpinner.atom';
 import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({

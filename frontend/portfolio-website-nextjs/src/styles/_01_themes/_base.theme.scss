@@ -36,6 +36,8 @@
   --static-110: 120px;
 
   --lateral-padding: 20px;
+  --header-height-default: 80px;
+  --header-height-scrolled: 60px;
 
   @include breakpoint($tablet) {
     --dynamic-80: 45px;
@@ -44,6 +46,8 @@
     --dynamic-110: 120px;
 
     --lateral-padding: 25px;
+    --header-height-default: 100px;
+    --header-height-scrolled: 70px;
   }
 
   @include breakpoint($desktop-xl) {

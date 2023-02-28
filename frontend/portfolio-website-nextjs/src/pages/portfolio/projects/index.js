@@ -1,13 +1,11 @@
 import Head from 'next/head';
 import PortfolioCategoryTemplate from '@/core/templates/PortfolioCategory.template.js';
-import dynamic from 'next/dynamic';
-import LoadingSpinner from '@/core/library/atoms/LoadingSpinner.atom';
 import getContent from '@/core/utils/content/getContent';
-import {  Roboto } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({
-	display: 'swap',
-	subsets: ['latin'],
+  display: 'swap',
+  subsets: ['latin'],
   weight: ['400', '700', '900'],
   style: ['normal'],
   variable: '--text-regular',

@@ -1,25 +1,27 @@
-
-@import "../../_00_abstracts/abstracts.scss";
+@import '../../_00_abstracts/abstracts.scss';
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: "projectsOverview";
+$block: 'projectsOverview';
 
 /* ------------------------------------ *\
  * PROJECTS OVERVIEW ORGANISM
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        @include flex($direction: column, $cross: flex-start);
+  @include e('base') {
+    @include flex($direction: column, $cross: flex-start);
 
-        width: 100%;
-    }
+    width: 100%;
+  }
 
-    @include e("container") {
-        width: 100%;
-    }
+  @include e('container') {
+    width: 100%;
+  }
 
-    @include  e("footer") {
-        margin-top: var(--dynamic-50);
+  @include e('footer') {
+    margin-top: var(--dynamic-50);
+    @include breakpoint($tablet) {
+      padding-inline: var(--lateral-padding);
     }
+  }
 }

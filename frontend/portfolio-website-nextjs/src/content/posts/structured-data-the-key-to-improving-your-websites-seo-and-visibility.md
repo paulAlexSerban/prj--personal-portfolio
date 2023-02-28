@@ -41,7 +41,7 @@ HTML Microdata is a way to annotate HTML content with machine-readable tags, pro
 
 Here's an example of HTML Microdata:
 
-```html
+```xml
 <div itemscope itemtype="http://schema.org/Person">
     <p><strong>Name:</strong> <span itemprop="name">John Doe</span></p>
     <p>

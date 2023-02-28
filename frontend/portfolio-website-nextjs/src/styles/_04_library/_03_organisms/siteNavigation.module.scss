@@ -42,6 +42,10 @@ $block: "siteNavigation";
 
     @include e("logoContainer") {
         justify-content: flex-start;
+
+        @include breakpoint($ultra-wide) {
+            padding-inline: var(--lateral-padding);
+        }
     }
 
     @include e("navToggle") {

@@ -4,11 +4,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   eslint: {
-    dirs: ["."],
+    dirs: ['.'],
   },
 };
 
-if (process.env.SERVER_ENV === "gh_pages") {
+if (process.env.SERVER_ENV === 'gh_pages') {
   nextConfig.basePath = process.env.BASE_PATH;
 }
 

@@ -1,8 +1,4 @@
 import { useId } from "react";
-import MarkdownIt from "markdown-it";
-import attrs from "markdown-it-attrs";
-import highlight from "markdown-it-highlightjs";
-import bracketed from "markdown-it-bracketed-spans";
 import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("@/core/library/organisms/Header.organism"));
@@ -13,14 +9,11 @@ const Section = dynamic(() => import("@/core/library/organisms/Section.organism"
 const CaseStudyOverview = dynamic(() => import("@/core/organisms/CaseStudyOverview.organism"));
 const MarkdownContainer = dynamic(() => import("@/core/molecules/MarkdownContent.molecule"));
 
+
 import { base } from "@/styles/templates/portfolioItemDetail.module.scss";
 
 export default function PortfolioItemDetailTemplate({ children, pageContent, siteProps, frontmatter, caseStudy }) {
   const ID = useId();
-  const marked = new MarkdownIt();
-  marked.use(highlight, {});
-  marked.use(attrs);
-  marked.use(bracketed);
 
   const socialMediaLinks = [];
   if (frontmatter && frontmatter.repo_url) {
@@ -45,8 +38,9 @@ export default function PortfolioItemDetailTemplate({ children, pageContent, sit
       <Main>
         <HeroBanner
           pageTitle={frontmatter.title}
-          subheading={frontmatter.excerpt}
+          subheading={frontmatter.subheading}
           socialMediaLinks={socialMediaLinks}
+          tags={frontmatter.tags}
         />
         <Section sectionId={pageContent.slug}>
           <MarkdownContainer markdownContent={pageContent.content} />

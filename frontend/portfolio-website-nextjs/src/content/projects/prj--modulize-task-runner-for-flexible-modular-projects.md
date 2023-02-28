@@ -1,9 +1,9 @@
 ---
 title: "Modulize"
-subheading: "Task runner script for flexible modular projects"
+subheading: "Bash task runner script for flexible modular projects."
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
 pinned: true
-priority: 1
+priority: 2
 section: "portfolio"
 category: "Bash/Shell Scripting"
 type: "Automation Script"

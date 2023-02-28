@@ -1,7 +1,7 @@
 ---
 title: "HTML Semantics"
-subheading: "Best Practices and Tips for Better Web Development"
-excerpt: "HTML semantics play a crucial role in web development as they provide context to web content. It helps web browsers, search engines, and assistive technologies understand the structure and purpose of the content. There are several best practices for using HTML semantics, including using descriptive HTML tags, using ARIA roles, using microdata, using nested HTML tags correctly, using form semantics, and validating HTML. "
+subheading: "Best practices and tips for better web development"
+excerpt: "HTML semantics play a crucial role in web development as they provide context to web content. It helps web browsers, search engines, and assistive technologies understand the structure and purpose of the content. There are several best practices for using HTML semantics, including using descriptive HTML tags, using ARIA roles, using micro-data, using nested HTML tags correctly, using form semantics, and validating HTML. "
 status: "published"
 author: "Paul Serban"
 date: "January 24, 2019"
@@ -18,7 +18,7 @@ HTML semantics refer to the use of HTML tags to describe the meaning and structu
 
 -   **Use descriptive HTML tags**: HTML tags such as `header`, `footer`, `nav`, `main`, `section`, `article`, and `aside` are designed to describe the purpose of the content they contain. For example, the header tag should be used to contain the header of a web page, and the footer tag should be used to contain the footer.
 -   **Use ARIA roles**: ARIA (Accessible Rich Internet Applications) roles are a way to provide additional information about the purpose of an HTML element. For example, you could use the role="navigation" attribute to indicate that an element is a navigation menu.
--   **Use microdata**: Microdata is a way to provide additional information about the content on a web page to search engines and other tools. For example, you could use microdata to provide information about the author, publication date, and other details of a blog post.
+-   **Use micro-data**: Micro-data is a way to provide additional information about the content on a web page to search engines and other tools. For example, you could use micro-data to provide information about the author, publication date, and other details of a blog post.
 -   **Use nested HTML tags correctly**: HTML tags should be nested correctly to reflect the structure of the content. For example, if you have a header that contains a logo and a navigation menu, the logo should be wrapped in a separate div element, and the navigation menu should be wrapped in another div element.
 -   **Use form semantics**: When creating forms, use HTML tags such as label, input, and select to provide context to the form elements. For example, use the label tag to provide a label for a form input, and use the input tag to create form fields.
 -   **Validate HTML**: Always validate your HTML using a tool such as the W3C Markup Validation Service to ensure that your HTML is well-formed and meets the latest standards.

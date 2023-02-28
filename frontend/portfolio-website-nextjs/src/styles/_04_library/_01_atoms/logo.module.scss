@@ -9,12 +9,9 @@ $block: "heading";
 
 .#{$block} {
     @include e("base") {
-
         @include flex($direction: column, $cross: flex-start);
 
-
-
-        &:hover  {
+        @include on-event() {
             box-shadow: none;
         }
     }

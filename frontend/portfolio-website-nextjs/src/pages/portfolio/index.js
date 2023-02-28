@@ -3,7 +3,6 @@ import { useId, useState, useEffect } from "react";
 // import PortfolioOverviewTemplate from "@/core/templates/PortfolioOverview.template.js";
 import getContent from "@/core/utils/content/getContent";
 import dynamic from "next/dynamic";
-import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
 const PortfolioOverviewTemplate = dynamic(() => import("@/core/templates/PortfolioOverview.template.js"));
 import {  Roboto } from 'next/font/google';
 

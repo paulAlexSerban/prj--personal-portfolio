@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import PortfolioCategoryTemplate from '@/core/templates/PortfolioCategory.template.js';
 import getContent from '@/core/utils/content/getContent';
-import LoadingSpinner from '@/core/library/atoms/LoadingSpinner.atom';
 import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({

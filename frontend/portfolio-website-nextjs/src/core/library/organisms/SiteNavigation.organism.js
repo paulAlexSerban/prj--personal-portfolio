@@ -12,7 +12,7 @@ import Logo from "@/core/atoms/Logo.atom";
 import BurgerButton from "@/core/library/atoms/BurgerButton.atom";
 import NavigationList from "@/core/molecules/NavigationList.molecule";
 
-export default function SiteNavigation({ links = [] }) {
+export default function SiteNavigation({ links = [], handleNavToggle }) {
     const ID = useId();
     const [navToggled, setNavToggled] = useState(false);
     const [navHeight, setNavHeight] = useState(0);
@@ -21,13 +21,14 @@ export default function SiteNavigation({ links = [] }) {
 
     useEffect(() => {
         setNavHeight(
-            `${navContentRef.current.childNodes[0].clientHeight + 25}px`
+            `${navContentRef.current.childNodes[0].clientHeight + 30}px`
         );
         setupEventListeners();
     }, []);
 
     const handleToggle = () => {
         setNavToggled(!navToggled);
+        handleNavToggle()
     };
 
     const setupEventListeners = () => {

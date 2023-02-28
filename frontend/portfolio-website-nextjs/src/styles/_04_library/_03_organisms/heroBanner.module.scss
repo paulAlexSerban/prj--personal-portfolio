@@ -23,14 +23,21 @@ $block: "heroBanner";
         width: 100%;
         margin: 0 auto;
         padding-inline: var(--lateral-padding);
+
+        &:not(:first-child) {
+            padding-top: var(--dynamic-50);
+        }
     }
 
     @include e("wrapper") {
         @include flex($direction: column, $cross: flex-start);
+
         grid-column: span 12;
 
         @include breakpoint($tablet) {
             grid-column: span 8;
         }
+
+
     }
 }

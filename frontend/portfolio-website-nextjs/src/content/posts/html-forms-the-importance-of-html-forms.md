@@ -42,7 +42,7 @@ HTML forms provide a way for users to interact with a website by submitting data
 
 Here's a basic example of an HTML form:
 
-```html
+```xml
 <form action="submit.php" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" />

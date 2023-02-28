@@ -12,9 +12,15 @@ $block: "section";
 		width: 100%;
 		margin-top: var(--dynamic-70);
 		padding-inline: var(--lateral-padding);
+		opacity: 1;
+		transition: opacity 0.3s ease-in;
 
 		@include breakpoint($tablet) {
 			margin-top: var(--dynamic-70);
+		}
+
+		@include m("inactive") {
+			opacity: 0;
 		}
 	}
 

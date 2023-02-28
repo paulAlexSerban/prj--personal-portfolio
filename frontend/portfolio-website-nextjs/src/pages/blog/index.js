@@ -2,7 +2,6 @@ import Head from "next/head";
 import { useId } from "react";
 import BlogTemplate from "@/core/templates/Blog.template.js";
 import getContent from "@/core/utils/content/getContent";
-import LoadingSpinner from "@/core/library/atoms/LoadingSpinner.atom";
 import {  Roboto } from 'next/font/google';
 
 const roboto = Roboto({

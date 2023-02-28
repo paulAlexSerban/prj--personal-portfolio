@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import LoadingSpinner from '@/core/library/atoms/LoadingSpinner.atom';
 import Head from 'next/head';
 import PortfolioItemDetailTemplate from '@/core/templates/PortfolioItemDetail.template.js';
 import { Roboto } from 'next/font/google';

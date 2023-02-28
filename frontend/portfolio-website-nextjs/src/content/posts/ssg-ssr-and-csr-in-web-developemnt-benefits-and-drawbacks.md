@@ -46,3 +46,7 @@ Apart from Server-Side Rendering (SSR), Client-Side Rendering (CSR), and Static 
 ## Conclusion
 
 In conclusion, SSR, CSR, and SSG are all useful techniques in web development, each with its own benefits and drawbacks. The choice of which technique to use will depend on the specific needs of the project, such as performance requirements, SEO needs, and user experience goals. By understanding the pros and cons of each approach, developers can make informed decisions about how to build and deploy their websites.
+
+
+## Reads
+- [medium.com - System Design — CSR vs SSR vs SSG](https://eishta.medium.com/system-design-csr-vs-ssr-vs-ssg-8e26dbb20b1d){target=_blank}
