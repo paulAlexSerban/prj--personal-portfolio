@@ -2,7 +2,7 @@
 title: "Remote Procedure Calls: An Introduction"
 subheading: "What They Are, How They Work, and Why They're Useful"
 excerpt: "Remote Procedure Calls (RPC) are a powerful tool in modern software development. They allow developers to write distributed applications that can communicate across a network, making it possible to build large, complex systems that can handle high traffic loads. In this post, we'll explore what RPCs are, how they work, and why they're useful."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "January 30, 2023"
 tags:

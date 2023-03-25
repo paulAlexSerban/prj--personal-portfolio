@@ -2,7 +2,7 @@
 title: "Git: Rewriting History "
 subheading: "Reset and Amend Commits"
 excerpt: "Git is an incredibly powerful tool that allows developers to collaborate and manage code efficiently. With Git, you can work on code simultaneously with other developers, manage changes, and organize projects. One of the most crucial aspects of Git is branching. Branching is the process of creating a new branch from an existing branch or commit. This allows developers to work on a new feature or fix a bug without disrupting the main codebase."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 3, 2019"
 tags:

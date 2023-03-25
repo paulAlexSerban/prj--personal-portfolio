@@ -2,7 +2,7 @@
 title: "JAMstack: Pitfalls"
 subheading: "Common Pitfalls of JAMstack Development and How to Avoid Them"
 excerpt: "The JAMstack is a modern web development architecture that is gaining popularity due to its speed, security, and scalability. However, despite its many benefits, there are also some potential pitfalls to be aware of. In this blog post, we’ll take a closer look at some common JAMstack pitfalls, and how you can avoid them."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 8, 2019"
 tags:

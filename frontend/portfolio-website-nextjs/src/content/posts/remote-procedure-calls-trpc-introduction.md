@@ -2,7 +2,7 @@
 title: "Remote Procedure Calls: Introduction to tRPC"
 subheading: "Building Efficient and Type-Safe Web APIs with tRPC Remote Procedure Calls"
 excerpt: "tRPC is a powerful remote procedure call (RPC) framework that simplifies the process of building web APIs. It is particularly useful for TypeScript developers because it allows for type-safe communication between the client and server. In this post, we'll dive into the details of tRPC and explore how it can be used to build efficient, type-safe APIs."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 01, 2023"
 tags:

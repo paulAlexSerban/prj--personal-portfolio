@@ -2,7 +2,7 @@
 title: "Front-end Build: System Design Challenges"
 subheading: "With The Many Benefits Come Some Challenges That Can Arise During The Development Process"
 excerpt: "Front-end build tools and design systems have become an essential part of the web development process. These tools help developers create beautiful and responsive websites and applications with ease. However, with the many benefits come some challenges that can arise during the development process. In this blog post, we will discuss the most common challenges of using front-end build tools and design systems."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 29, 2019"
 tags:

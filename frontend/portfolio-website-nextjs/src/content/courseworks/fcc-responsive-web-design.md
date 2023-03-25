@@ -7,7 +7,7 @@ category: "Programming"
 experience_type: "coursework"
 repo_url: "https://github.com/"
 demo_url: "https://github.com/"
-status: "published"
+status: "draft"
 tags:
     - "Front-end Development"
     - "Responsive Web Design"

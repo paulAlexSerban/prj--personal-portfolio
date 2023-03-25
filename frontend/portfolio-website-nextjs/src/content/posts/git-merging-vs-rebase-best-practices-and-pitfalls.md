@@ -2,7 +2,7 @@
 title: "Git: Merging vs Rebasing"
 subheading: "Best Practices and Pitfalls"
 excerpt: "Git provides two ways of integrating changes from one branch into another - merging and rebasing. In this blog post, we'll explore the differences between these two approaches, best practices for using them, and potential pitfalls to avoid."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 13, 2019"
 tags:

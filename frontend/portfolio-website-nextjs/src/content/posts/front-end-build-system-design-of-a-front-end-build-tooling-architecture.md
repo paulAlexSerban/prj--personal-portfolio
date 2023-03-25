@@ -2,7 +2,7 @@
 title: "Front-end Build: Design Systems, Archietctures and Design Systems"
 subheading: "System Design Of a Front-end Build Tooling Architecture For A Website Using A Design System"
 excerpt: "A front-end build tooling architecture for a website using a design system can be designed in several ways, depending on the specific needs and requirements of the project."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "April 2, 2019"
 tags:

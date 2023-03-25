@@ -2,7 +2,7 @@
 title: "Front-end Build: Exploring the Most Popular Tools"
 subheading: "Webpack, Babel, Gulp, Grunt, and Rollup"
 excerpt: "Front-end build tools are an essential part of modern web development. They help automate tasks that are time-consuming and repetitive, freeing up developers to focus on more important tasks. In this blog post, we will explore some of the most popular front-end build tools and their use cases."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 16, 2019"
 tags:

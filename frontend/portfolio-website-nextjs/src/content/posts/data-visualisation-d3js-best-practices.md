@@ -2,7 +2,7 @@
 title: 'Data Visualization: D3.js Best Practices'
 subheading: 'Creating effective and visually appealing visualizations requires more than just technical skills'
 excerpt: "Data visualization with D3.js is a powerful way to communicate complex information to your audience. But creating effective and visually appealing visualizations requires more than just technical skills. In this blog post, we'll explore best practices for data visualization with D3.js."
-status: 'published'
+status: "draft"
 author: 'Paul Serban'
 date: 'February 28, 2023'
 tags:

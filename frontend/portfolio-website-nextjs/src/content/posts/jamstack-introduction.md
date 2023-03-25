@@ -2,7 +2,7 @@
 title: "JAMstack: An Introduction"
 subheading: "Benefits and Advantages in Web Development"
 excerpt: "The way we build websites and applications has changed dramatically in the past few years, and the rise of the JAMstack is a significant part of this transformation. JAMstack is a modern web development architecture that is changing the way developers think about building websites and web applications. In this blog post, we'll take a closer look at JAMstack, its benefits, and how it's changing the web development landscape."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 3, 2019"
 tags:

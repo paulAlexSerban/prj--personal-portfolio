@@ -2,7 +2,7 @@
 title: "Git: Basics"
 subheading: "A Beginner's Guide to Version Control"
 excerpt: "If you're new to software development, you may have heard the term 'Git' thrown around a lot. Git is a version control system that has become the industry standard for managing code. In this blog post, we'll introduce you to the basics of Git and show you how to get started with version control."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 5, 2019"
 tags:

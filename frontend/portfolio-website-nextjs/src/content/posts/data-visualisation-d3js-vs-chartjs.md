@@ -2,7 +2,7 @@
 title: 'Data Visualization: D3.js vs Chart.js'
 subheading: 'A comparison of two powerful data visualization libraries'
 excerpt: "Data visualization is a powerful tool that enables us to understand complex information quickly and easily. It has become an essential part of modern data analysis and reporting, and there are many different tools available to help us create these visualizations. Two of the most popular libraries for creating interactive visualizations are D3.js and Chart.js. In this blog post, we'll take a closer look at these two libraries and compare their features, strengths, and weaknesses."
-status: 'published'
+status: "draft"
 author: 'Paul Serban'
 date: 'February 28, 2023'
 tags:

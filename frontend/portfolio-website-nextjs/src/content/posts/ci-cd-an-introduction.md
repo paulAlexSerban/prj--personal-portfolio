@@ -2,7 +2,7 @@
 title: "CI/CD: An Introduction"
 subheading: "Understanding Continuous Integration and Continuous Delivery"
 excerpt: "CI/CD stands for Continuous Integration and Continuous Delivery (or Continuous Deployment). It's a software development methodology that helps teams to build, test, and deploy software more efficiently and reliably."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 30, 2019"
 tags:

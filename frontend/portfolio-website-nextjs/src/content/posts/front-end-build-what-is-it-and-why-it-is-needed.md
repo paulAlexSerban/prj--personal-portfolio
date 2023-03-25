@@ -2,7 +2,7 @@
 title: "Front-end Build: What is it"
 subheading: "The Importance of Front-End Builds in Web Development"
 excerpt: "A front-end build is a crucial step in the web development process, transforming source code into a format optimized for production. The source code, which typically includes HTML, CSS, and JavaScript files, is optimized for performance, minified to reduce file size, and combined into a single file for deployment. The result is faster, more efficient, and easier to maintain code, making it easier to deploy and maintain web applications. Automating tasks such as compiling SCSS files into CSS, linting the code, and running tests also saves time and effort, and helps ensure the code is of high quality."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 15, 2019"
 tags:

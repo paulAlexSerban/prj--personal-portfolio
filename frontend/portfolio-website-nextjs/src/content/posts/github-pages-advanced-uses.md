@@ -2,7 +2,7 @@
 title: "GitHub Pages: Advanced Uses"
 subheading: "Static Site Generators, Blogs, Documentation Sites, and Web Applications"
 excerpt: "GitHub Pages is a fantastic tool for creating and hosting simple static websites. However, it can also be used for more advanced purposes, such as building blogs, documentation sites, and even web applications. In this blog post, we will explore some of the advanced uses of GitHub Pages."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 13, 2019"
 tags:

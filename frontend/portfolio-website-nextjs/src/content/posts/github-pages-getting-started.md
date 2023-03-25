@@ -2,7 +2,7 @@
 title: "GitHub Pages: Getting Started"
 subheading: "A Simple and Free Way to Host Your Website"
 excerpt: "GitHub Pages is a free, simple, and efficient way to host a website. It is a static website hosting service that is built directly into GitHub. This means that you can create and host a website using GitHub without having to pay for web hosting or set up a complicated server."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 11, 2019"
 tags:

@@ -2,7 +2,7 @@
 title: "Front-end Build: Best Practices For Building Projects"
 subheading: "Combining Technical Skills and Best Practices to Build High-quality Projects"
 excerpt: "Building high-quality front-end projects requires a combination of technical skills and best practices. From automating testing and using source control, to writing modular and reusable code and optimizing images and assets, there are many factors that can contribute to the success of a front-end project."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 22, 2019"
 tags:

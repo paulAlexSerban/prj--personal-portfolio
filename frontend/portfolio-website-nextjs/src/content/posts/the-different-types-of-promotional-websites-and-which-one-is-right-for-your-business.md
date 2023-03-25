@@ -2,7 +2,7 @@
 title: "Choosing the Right Type of Promotional Website for Your Business"
 subheading: "Understanding the Different Types of Promotional Websites and Their Benefits"
 excerpt: "A promotional website is a must-have for any business looking to reach its target audience and promote its products or services. But with so many options available, choosing the right type of promotional website can be overwhelming. From landing pages to e-commerce sites, each type offers its own unique benefits and features. Understanding the different types of promotional websites and their benefits is key to choosing the right one for your business."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "May 13, 2019"
 tags:

@@ -2,7 +2,7 @@
 title: "Version Control Systems"
 subheading: "An Essential Tool for Managing Code"
 excerpt: "In the world of software development, managing code can be a complex and challenging task. As projects grow in size and complexity, keeping track of changes and collaborating with others can become increasingly difficult. This is where version control systems come in - they are an essential tool for managing code and keeping track of changes over time."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 2, 2019"
 tags:

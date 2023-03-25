@@ -2,7 +2,7 @@
 title: "Git: Hooks"
 subheading: "Automating Tasks, Enforcing Code Standards, and Improving Collaboration and Security"
 excerpt: "Git is a powerful tool for managing code changes and collaborating with other developers. One of the key features of Git is the ability to use hooks to automate various tasks, such as running tests or triggering builds. In this blog post, we'll explore the uses, benefits, and problems that Git hooks can solve."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 21, 2019"
 tags:

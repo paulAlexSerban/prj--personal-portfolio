@@ -2,7 +2,7 @@
 title: 'Data Visualization: Pros and Cons of D3.js'
 subheading: 'A comparison of two powerful data visualization libraries'
 excerpt: "D3.js is a popular JavaScript library that is widely used for creating data visualizations on the web. While D3.js offers many benefits, it also has some drawbacks. In this blog post, we will explore the pros and cons of D3.js."
-status: 'published'
+status: "draft"
 author: 'Paul Serban'
 date: 'February 28, 2023'
 tags:

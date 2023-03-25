@@ -2,7 +2,7 @@
 title: "Web Development Tools: Package Managers"
 subheading: "The Essential Tools for Managing Dependencies in Node.js and Front-End Development Projects"
 excerpt: "Node.js and front-end development projects have a lot of dependencies that are required for their proper functioning. These dependencies can be libraries, tools, and even specific versions of the Node.js platform itself. To manage all these dependencies, developers have a range of tools at their disposal. In this post, we will look at five such tools: npm, Bower, Yarn, npx, and nvm."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 19, 2019"
 tags:

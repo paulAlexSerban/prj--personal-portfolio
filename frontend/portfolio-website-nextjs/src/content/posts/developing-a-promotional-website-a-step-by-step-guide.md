@@ -2,7 +2,7 @@
 title: "Developing a Promotional Website"
 subheading: "A Step-by-Step Guide"
 excerpt: "A promotional website is a valuable tool for promoting a product, service, or brand. The process of developing a promotional website involves defining your goals, choosing a platform, planning your design, developing content, and testing your website. By following these steps, you can create a promotional website that effectively communicates your brand's message and reaches your target audience."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "May 05, 2019"
 tags:

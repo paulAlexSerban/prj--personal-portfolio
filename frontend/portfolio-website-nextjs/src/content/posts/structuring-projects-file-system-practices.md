@@ -2,7 +2,7 @@
 title: "Structuring Projects: File Systems and Folder Systems in Web Development"
 subheading: "Best Practices and Pitfalls"
 excerpt: "When it comes to web development, organizing project files and folders is crucial for a smooth and efficient workflow. Proper file and folder structure can make a big difference in the development process and can help prevent errors and confusion. In this blog post, we will discuss best practices and potential pitfalls when it comes to structuring project file systems and folder systems."
-status: "published"
+status: "draft"
 type: "Technical Documentation"
 author: "Paul Serban"
 date: "April 10, 2019"

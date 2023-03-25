@@ -2,7 +2,7 @@
 title: "Front-end Build: Tasks"
 subheading: "What Tasks Are Normally Achieved Using Front End Build Tools"
 excerpt: "Are you tired of manually combining files, checking for syntax errors, or manually refreshing your browser during development? Front-end build tools can help solve these issues and streamline your development process. From bundling and minification to hot reloading, these tools can automate a wide range of tasks. They can even help optimize assets and run automated tests, ensuring your code is high quality and bug-free. Discover the benefits of using front-end build tools today."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 17, 2019"
 tags:

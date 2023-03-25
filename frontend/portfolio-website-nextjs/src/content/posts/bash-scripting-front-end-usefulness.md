@@ -2,7 +2,7 @@
 title: "Bash Scripting: Front-end Usefulness"
 subheading: "Automate Front-end Build Tasks With Bash Scripts"
 excerpt: "As a front-end developer, you may not initially think of shell scripting as a key part of your skill set. However, there are several important reasons why you should consider learning shell scripting and incorporating it into your workflow."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "April 10, 2019"
 tags:

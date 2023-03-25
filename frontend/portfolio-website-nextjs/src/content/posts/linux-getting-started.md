@@ -2,7 +2,7 @@
 title: "Linux: Getting Started"
 subheading: "A Beginner's Guide to Basic Linux Use"
 excerpt: "Linux is an operating system that has become increasingly popular in recent years. It is an open-source operating system, which means it is free to use and can be modified by anyone. In this blog post, we will discuss some of the basics of using Linux."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 23, 2019"
 tags:

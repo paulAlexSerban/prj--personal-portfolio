@@ -2,7 +2,7 @@
 title: "ARIA"
 subheading: "The Key to Making Your Web Applications More Accessible"
 excerpt: "ARIA, which stands for Accessible Rich Internet Applications, is a set of attributes and roles that can be added to HTML elements to provide additional information about their purpose and behavior. ARIA is an essential tool for improving the accessibility of web applications and ensuring that everyone, regardless of ability, can access and use the content."
-status: "published"
+status: "draft"
 type: "Technical Documentation"
 author: "Paul Serban"
 date: "April 15, 2019"

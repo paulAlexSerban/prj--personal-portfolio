@@ -1,7 +1,7 @@
 ---
 title: "Bash/Shell: Pass Options and Arguments"
 category: "snippet"
-status: "published"
+status: "draft"
 tags:
     - "Bash/Shell"
 date: "July 01, 2019"

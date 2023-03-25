@@ -2,7 +2,7 @@
 title: 'Data Visualization: An Introduction to D3.js'
 subheading: 'A JavaScript library that is widely used for creating data visualizations on the web'
 excerpt: 'D3.js is a JavaScript library that is widely used for creating data visualizations on the web. D3 stands for Data-Driven Documents, which is an accurate description of what the library does. D3.js is a powerful tool for creating interactive and dynamic visualizations that can help you present complex data in a clear and easy-to-understand way.'
-status: 'published'
+status: "draft"
 author: 'Paul Serban'
 date: 'February 28, 2023'
 tags:

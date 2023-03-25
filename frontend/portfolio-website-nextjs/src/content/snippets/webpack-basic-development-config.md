@@ -1,7 +1,7 @@
 ---
 title: "Webpack: Basic Development Configuration"
 category: "snippet"
-status: "published"
+status: "draft"
 repo_url: "https://github.com/paulAlexSerban/rnd--webpack"
 tags:
   - "JavaScript"

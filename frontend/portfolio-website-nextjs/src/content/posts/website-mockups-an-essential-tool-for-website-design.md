@@ -2,7 +2,7 @@
 title: "Website Mockups"
 subheading: "An Essential Tool for Website Design"
 excerpt: "Website mockups are a visual representation of the design and layout of a website and play a crucial role in the success of the final product. They allow designers to experiment with different design elements, communicate their ideas to stakeholders, and serve as a reference point for the development team. Including mockups in the design process helps to ensure the website is user-friendly and meets the design and functional specifications."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 1, 2019"
 tags:

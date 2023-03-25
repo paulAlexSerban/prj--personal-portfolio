@@ -2,7 +2,7 @@
 title: "Front-end Build: Design Systems"
 subheading: "An Essential Part of Modern Front-end Development"
 excerpt: "Design systems are collections of design elements, such as color palettes, typography, and UI components, that are used to create a consistent look and feel across a website or application. Design systems are an essential part of modern front-end development and can greatly improve the efficiency and consistency of the design process."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 29, 2019"
 tags:

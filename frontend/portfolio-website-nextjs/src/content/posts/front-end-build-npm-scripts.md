@@ -2,7 +2,7 @@
 title: "Front-end Build: NPM Scripts Based Architecture"
 subheading: "A reliable and efficient way to manage your project's dependencies"
 excerpt: "Building a front-end application can be a daunting task, especially when you have to deal with a myriad of dependencies, libraries, and build tools. One of the most popular build tools for front-end development is NPM, which provides a reliable and efficient way to manage your project's dependencies, as well as automate build tasks."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "May 20, 2019"
 tags:

@@ -2,7 +2,7 @@
 title: "JAMstack: Bast Practices"
 subheading: "Building Fast, Secure, and Scalable Websites with JAMstack Development"
 excerpt: "The JAMstack is a modern web development architecture that is rapidly gaining popularity for its speed, security, and scalability. However, building a JAMstack site requires a different approach than traditional server-side rendered sites. In this blog post, we'll take a closer look at some best practices for JAMstack development, to help you build fast, secure, and scalable websites and applications."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 5, 2019"
 tags:

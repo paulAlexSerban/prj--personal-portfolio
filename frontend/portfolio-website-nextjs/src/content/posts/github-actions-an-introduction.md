@@ -2,7 +2,7 @@
 title: "GitHub Actions: An Introduction"
 subheading: "Automate Your Software Development Lifecycle"
 excerpt: "GitHub Actions is a powerful automation platform that enables developers to build, test, and deploy their code with ease. With GitHub Actions, you can create custom workflows that automate your software development lifecycle, from code commit to deployment, and everything in between. In this blog post, we will explore what GitHub Actions is, how it works, and some of its most exciting features."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 16, 2019"
 tags:

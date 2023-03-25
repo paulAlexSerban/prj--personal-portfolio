@@ -2,7 +2,7 @@
 title: "Web Developer Portfolio Website"
 subheading: "Creating a Professional Web Developer Portfolio Website with a Blog"
 excerpt: "As a web developer, having a professional and engaging portfolio website is essential to showcase your skills, experience, and work samples to potential clients, recruiters, and other industry professionals. A portfolio website not only provides a platform to showcase your work, but it also gives you the opportunity to share your thoughts and insights on the industry through a blog. In this article, we'll take a closer look at the project overview, target audience, scope of work, timeline, technical requirements, design requirements, content requirements, budget, approval process, and maintenance and support for a web developer portfolio website with a blog."
-status: "published"
+status: "draft"
 type: "Project Brief"
 category: "Project Brief"
 author: "Paul Serban"

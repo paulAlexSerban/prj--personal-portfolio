@@ -3,7 +3,7 @@ title: "Modulize"
 subheading: "Bash task runner script for flexible modular projects."
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
 pinned: true
-priority: 2
+priority: 1
 section: "portfolio"
 category: "Bash/Shell Scripting"
 type: "Automation Script"

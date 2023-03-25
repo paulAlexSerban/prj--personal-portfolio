@@ -1,7 +1,7 @@
 ---
 title: "Front-end Build: NPM Scripts Based Architecture"
 category: "snippet"
-status: "published"
+status: "draft"
 repo_url: "https://github.com/paulAlexSerban/rnd--javaScript/tree/main/fe-build-npm-scripts-prod-ready"
 tags:
   - "JavaScript"

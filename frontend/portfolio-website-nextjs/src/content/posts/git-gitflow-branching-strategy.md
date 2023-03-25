@@ -2,7 +2,7 @@
 title: "Git: GitFlow Branching Strategy "
 subheading: "A Deep Dive into the Branching Strategy with Best Practices and Pitfalls"
 excerpt: "GitFlow is a branching strategy that defines a workflow for using Git with the goal of helping teams manage their code changes more effectively. This approach has gained widespread adoption and is now considered a best practice for many development teams. In this blog post, we will provide a deep dive into the GitFlow branching strategy, including its best practices and pitfalls."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 6, 2019"
 tags:

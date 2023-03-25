@@ -2,7 +2,7 @@
 title: "Bash Scripting: Advanced Concepts"
 subheading: "Exploring the Advanced Features and Uses of Bash Scripting"
 excerpt: "Bash scripting is a powerful tool for automating repetitive tasks and managing large-scale operations. Beyond the basics, bash scripting offers many advanced features and capabilities that can help you write more efficient, scalable, and robust scripts."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "April 20, 2019"
 tags:

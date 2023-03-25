@@ -2,7 +2,7 @@
 title: "DevOps: An Introduction"
 subheading: "Principles, Benefits, and Challenges"
 excerpt: "DevOps is a set of practices that combines software development (Dev) and information technology operations (Ops) to improve collaboration and efficiency in software development and deployment. The goal of DevOps is to create a culture and environment where building, testing, and releasing software can be done rapidly, reliably, and at scale."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 27, 2019"
 tags:

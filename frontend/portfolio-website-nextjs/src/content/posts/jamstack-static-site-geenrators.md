@@ -2,7 +2,7 @@
 title: "JAMstack: Static Site Generators"
 subheading: "Exploring the Most Popular JAMstack Static Site Generators"
 excerpt: "JAMstack is a modern web development architecture that is gaining popularity among developers for its speed, security, and scalability. It offers a new approach to building websites and web applications that makes them fast and performant. At the heart of JAMstack is the concept of static site generators (SSGs). SSGs are tools that generate HTML, CSS, and JavaScript files from templates and content. In this blog post, we'll take a closer look at some of the most popular SSGs used in JAMstack development."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 14, 2019"
 tags:

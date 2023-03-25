@@ -2,7 +2,7 @@
 title: "Front-end Build: Minifiers"
 subheading: "Understanding Front-End Build Minifiers for Web Performance Optimization"
 excerpt: "Front end build minifiers are essential tools for optimizing the size and performance of your web applications. By reducing the size of your code, you can improve page load times, reduce the amount of data that needs to be transferred, and enhance the overall user experience. In this blog post, we'll explore the benefits of using front end build minifiers, and introduce you to some of the most popular options available."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 25, 2019"
 tags:

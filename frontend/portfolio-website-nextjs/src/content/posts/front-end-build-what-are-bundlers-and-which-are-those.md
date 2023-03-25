@@ -2,7 +2,7 @@
 title: "Front-end Build: Module Bundlers"
 subheading: "A popular JavaScript module bundler but not only"
 excerpt: "Front end build bundlers have become increasingly popular in recent years and for good reason. They help streamline the process of developing and deploying complex front end applications by bundling all the necessary files and dependencies into one compact package. In this post, we'll explore what front end build bundlers are, their benefits, and some of the most popular options available today."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 23, 2019"
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Capitalize the first letter in a word with Bash
 category: "snippet"
-status: "published"
+status: "draft"
 tags:
     - "Bash/Shell"
 date: "March 27, 2019"

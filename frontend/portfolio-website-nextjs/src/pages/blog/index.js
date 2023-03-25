@@ -50,7 +50,7 @@ export async function getStaticProps() {
 					pageTitle: "Blog",
 					subheading: "Coding with Purpose, and blogging about it.",
 				},
-				section_1: {
+				section_posts: {
 					title: "Posts",
 					section_id: "posts",
 					children: {
@@ -64,7 +64,7 @@ export async function getStaticProps() {
 						},
 					},
 				},
-				section_2: {
+				section_booknotes: {
 					title: "Book Notes",
 					section_id: "book_notes",
 					children: {
@@ -78,7 +78,7 @@ export async function getStaticProps() {
 						},
 					},
 				},
-				section_3: {
+				section_snippets: {
 					title: "Snippets",
 					section_id: "snippets",
 					children: {

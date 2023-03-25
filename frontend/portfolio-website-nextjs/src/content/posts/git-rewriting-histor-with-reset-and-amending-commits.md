@@ -2,7 +2,7 @@
 title: "Git: Rewriting History "
 subheading: "Reset and Amend Commits"
 excerpt: "Git is a powerful tool for version control, but it's easy to create a messy Git history with unnecessary commits, typos in commit messages, and other issues. Fortunately, Git provides tools for rewriting history to clean up your commit history or make small changes to existing commits. In this blog post, we'll cover two ways to rewrite Git history: reset and amend commits."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 1, 2019"
 tags:

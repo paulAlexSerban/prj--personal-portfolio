@@ -2,7 +2,7 @@
 title: "Design Patterns: SOLID Intro, Best practices and Pitfalls"
 subheading: "The Key to Building Scalable and Maintainable Software Systems"
 excerpt: "As software systems become more complex and feature-rich, it becomes increasingly important to design them in a way that makes them scalable and maintainable. One approach to achieving this goal is to follow the SOLID design patterns, which are a set of principles for object-oriented software design introduced by Robert C. Martin. In this blog post, we'll explore what the SOLID design patterns are and how they can help you build better software."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "April 23, 2019"
 tags:

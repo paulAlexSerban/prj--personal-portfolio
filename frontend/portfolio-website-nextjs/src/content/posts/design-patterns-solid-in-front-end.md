@@ -2,7 +2,7 @@
 title: "Design Patterns: SOLID in Front-end Development"
 subheading: "SOLID Design Patterns to Improve Your Front-End Development"
 excerpt: "Front-end development is a crucial aspect of software development as it directly affects the user experience. Creating a well-structured, scalable, and maintainable front-end application is essential for delivering a seamless user experience. The SOLID design patterns can help front-end developers achieve these goals by providing a set of principles for organizing code and making it more modular and testable."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "April 26, 2019"
 tags:

@@ -2,7 +2,7 @@
 title: "SSG, SSR, and CSR in Web Development"
 subheading: "Benefits and Drawbacks"
 excerpt: "Webpack is a popular JavaScript module bundler that is used to build and package web applications. It processes your application's source code, resolves dependencies between modules, and generates a single bundle or multiple chunks of code that can be efficiently loaded by the browser. With Webpack, you can include different types of assets such as images, fonts, and styles in your application, and it takes care of bundling, transforming, and optimizing them."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 27, 2019"
 tags:

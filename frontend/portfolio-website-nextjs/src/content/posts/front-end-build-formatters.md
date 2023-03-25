@@ -2,7 +2,7 @@
 title: "Front-end Build: Formatters"
 subheading: "Improving Code Consistency with Front End Build Formatters"
 excerpt: "Front end web development has come a long way over the years, with a plethora of tools and technologies available to make the process easier and more efficient. One of these tools is the front end build formatter, which is used to automate and standardize the formatting of code."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 21, 2019"
 tags:

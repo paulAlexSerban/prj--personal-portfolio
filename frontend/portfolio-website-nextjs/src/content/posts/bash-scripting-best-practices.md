@@ -2,7 +2,7 @@
 title: "Bash Scripting: Best Practices An Pitfalls"
 subheading: "To write efficient, maintainable, and reliable scripts, it's important to follow best practices"
 excerpt: "Bash scripting is a powerful tool for automating complex operations and improving workflow. To write efficient, maintainable, and reliable scripts, it's important to follow best practices."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "April 12, 2019"
 tags:

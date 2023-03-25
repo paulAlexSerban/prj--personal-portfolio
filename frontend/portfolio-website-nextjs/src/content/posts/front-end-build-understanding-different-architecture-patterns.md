@@ -2,7 +2,7 @@
 title: "Front-end Build: Architecture Patterns"
 subheading: "Understanding Different Architecture Patterns and Systems"
 excerpt: "Front-end build tools can simplify the development process, but there are potential downsides to be aware of. These include configuration overhead, the challenge of managing dependencies, complexity in the build process, slow build times, and difficulty in debugging issues. To make the most of front-end build tools, developers should keep these pitfalls in mind and take steps to mitigate them. By doing so, they can ensure build tools are used effectively and productively in their projects."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 25, 2019"
 tags:

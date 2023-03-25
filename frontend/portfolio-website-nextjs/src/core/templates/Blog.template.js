@@ -21,36 +21,36 @@ function BlogTemplate({ pageContent, siteProps }) {
           socialMediaLinks={siteProps.socialMediaLinks}
         />
         <Section
-          headingTitle={pageContent.section_1.title}
-          sectionId={pageContent.section_1.section_id}
-          subheadingText={pageContent.section_1.subheading}
+          headingTitle={pageContent.section_posts.title}
+          sectionId={pageContent.section_posts.section_id}
+          subheadingText={pageContent.section_posts.subheading}
         >
           <PostsOverview
-            blogList={pageContent.section_1.children.postsOverview.list}
-            parentPage={pageContent.section_1.children.postsOverview.parent_page}
-            category={pageContent.section_1.children.postsOverview.category}
+            blogList={pageContent.section_posts.children.postsOverview.list}
+            parentPage={pageContent.section_posts.children.postsOverview.parent_page}
+            category={pageContent.section_posts.children.postsOverview.category}
           />
         </Section>
         <Section
-          headingTitle={pageContent.section_2.title}
-          sectionId={pageContent.section_2.section_id}
-          subheadingText={pageContent.section_2.subheading}
+          headingTitle={pageContent.section_booknotes.title}
+          sectionId={pageContent.section_booknotes.section_id}
+          subheadingText={pageContent.section_booknotes.subheading}
         >
           <PostsOverview
-            blogList={pageContent.section_2.children.postsOverview.list}
-            parentPage={pageContent.section_2.children.postsOverview.parent_page}
-            category={pageContent.section_2.children.postsOverview.category}
+            blogList={pageContent.section_booknotes.children.postsOverview.list}
+            parentPage={pageContent.section_booknotes.children.postsOverview.parent_page}
+            category={pageContent.section_booknotes.children.postsOverview.category}
           />
         </Section>
         <Section
-          headingTitle={pageContent.section_3.title}
-          sectionId={pageContent.section_3.section_id}
-          subheadingText={pageContent.section_3.subheading}
+          headingTitle={pageContent.section_snippets.title}
+          sectionId={pageContent.section_snippets.section_id}
+          subheadingText={pageContent.section_snippets.subheading}
         >
           <PostsOverview
-            blogList={pageContent.section_3.children.postsOverview.list}
-            parentPage={pageContent.section_3.children.postsOverview.parent_page}
-            category={pageContent.section_3.children.postsOverview.category}
+            blogList={pageContent.section_snippets.children.postsOverview.list}
+            parentPage={pageContent.section_snippets.children.postsOverview.parent_page}
+            category={pageContent.section_snippets.children.postsOverview.category}
           />
         </Section>
       </Main>

@@ -2,7 +2,7 @@
 title: "Front-end Build: Linters"
 subheading: "What Are Linters And Which Are Those"
 excerpt: "As software developers, it's crucial that we write code that is not only functional but also maintainable, readable, and of high quality. With the increasing complexity of projects, it's easy to make mistakes that could lead to bugs, performance issues, and even security vulnerabilities. This is where linters come in handy."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 21, 2019"
 tags:

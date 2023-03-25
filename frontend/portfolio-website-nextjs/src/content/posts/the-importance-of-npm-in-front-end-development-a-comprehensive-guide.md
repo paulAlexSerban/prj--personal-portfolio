@@ -2,7 +2,7 @@
 title: "The Importance of npm in Front-End Development"
 subheading: "A Comprehensive Guide"
 excerpt: "Node Package Manager (npm) is a crucial tool for front-end developers, providing a way to manage packages and dependencies in JavaScript projects. With over 1 million packages in its library, npm provides access to a vast array of resources, making it easier to extend the functionality of your projects."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "April 25, 2019"
 tags:

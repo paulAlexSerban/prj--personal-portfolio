@@ -2,7 +2,7 @@
 title: "Differential Loading"
 subheading: "A Game Changer in JavaScript Performance"
 excerpt: "As websites and web applications become more complex, it's crucial to ensure they load quickly and smoothly for users. One technique that can significantly improve the performance of your website is differential loading. In this blog post, we'll explore what differential loading is, how it works, and why you should be using it."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "July 1, 2019"
 tags:

@@ -2,7 +2,7 @@
 title: "Repository Hosting Service: Pros and Cons"
 subheading: "Getting Started"
 excerpt: "As a developer, you have probably come across the term repository hosting service. In simple terms, a repository hosting service is an online platform where you can store and manage your source code. There are several repository hosting services out there, with the most popular being GitHub, GitLab, and Bitbucket. While these platforms have become an integral part of the software development process, they do come with their own set of advantages and disadvantages."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 4, 2019"
 tags:

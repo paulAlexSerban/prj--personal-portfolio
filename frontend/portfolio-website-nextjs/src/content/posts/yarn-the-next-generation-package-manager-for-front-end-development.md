@@ -2,7 +2,7 @@
 title: "Yarn"
 subheading: "The Next Generation Package Manager for Front-End Development"
 excerpt: "As a front-end developer, managing dependencies for your projects can be a daunting task. Enter Yarn, the next generation package manager for the JavaScript programming language, which was created by Facebook and is now maintained by the open-source community. In this blog post, we will explore the benefits of using Yarn for managing dependencies for front-end and back-end projects."
-status: "published"
+status: "draft"
 date: "April 27, 2019"
 author: "Paul Serban"
 tags:

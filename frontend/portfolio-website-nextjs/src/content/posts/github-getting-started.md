@@ -2,7 +2,7 @@
 title: "GitHub: Basics"
 subheading: "Getting Started"
 excerpt: "GitHub is a web-based platform for version control and collaboration that has become a critical tool for developers, companies, and open-source projects worldwide. It was founded in 2008 by Tom Preston-Werner, Chris Wanstrath, and PJ Hyett and is now owned by Microsoft."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 6, 2019"
 tags:

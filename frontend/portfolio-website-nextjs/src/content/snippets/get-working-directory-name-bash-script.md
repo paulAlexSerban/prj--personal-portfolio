@@ -1,7 +1,7 @@
 ---
 title: "Bash/Shell: Get Working Directory Name"
 category: "snippet"
-status: "published"
+status: "draft"
 tags:
     - "Bash/Shell"
 date: "July 01, 2019"

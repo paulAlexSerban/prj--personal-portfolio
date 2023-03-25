@@ -2,7 +2,7 @@
 title: "SDLC: Basics, Best Practices and Pitfalls"
 subheading: "What You Need to Know"
 excerpt: "The Software Development Lifecycle (SDLC) is a process used by software development teams to plan, design, build, test, and maintain software. While the SDLC can vary depending on the organization and the software being developed, there are some basic principles, best practices, and pitfalls that every team should be aware of."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 22, 2019"
 tags:

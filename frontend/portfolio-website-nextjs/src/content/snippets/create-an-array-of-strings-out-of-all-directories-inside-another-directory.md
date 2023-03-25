@@ -1,7 +1,7 @@
 ---
 title: Create An Array Of Strings Out Of All Directories Inside Another Directory
 category: "snippet"
-status: "published"
+status: "draft"
 tags:
     - "Bash/Shell"
 date: "March 28, 2019"

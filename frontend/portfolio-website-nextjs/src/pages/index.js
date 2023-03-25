@@ -56,7 +56,7 @@ export async function getStaticProps() {
             subheading:
               "I'm Paul, a highly skilled Front-end Software Engineer proficient in Front-end development with a passion for building dynamic and user-friendly web applications.",
           },
-          section_1: {
+          section_aboutMe: {
             title: "About Me",
             section_id: "about_me",
             children: {
@@ -70,7 +70,7 @@ export async function getStaticProps() {
               },
             },
           },
-          section_2: {
+          section_myProjects: {
             title: "My Projects",
             section_id: "my_projects",
             children: {
@@ -84,14 +84,14 @@ export async function getStaticProps() {
               },
             },
           },
-          section_3: {
+          section_mySkills: {
             title: "My Skills",
             section_id: "my_skills",
             children: {
               skillsOverview: { skills: getSkillList() },
             },
           },
-          section_4: {
+          section_contactMe: {
             title: "Contact Me",
             section_id: "contact_me",
             children: { contactSection: {} },

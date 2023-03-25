@@ -2,7 +2,7 @@
 title: "Front-End Development Tools"
 subheading: "Guide to Best Practices and Pitfalls"
 excerpt: "Front-end development tools play a critical role in the creation of modern websites and web applications. They help streamline the development process, improve the quality of your projects, and enhance the user experience. However, with so many tools available, it can be difficult to know where to start and how to use them effectively."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "February 2, 2019"
 tags:

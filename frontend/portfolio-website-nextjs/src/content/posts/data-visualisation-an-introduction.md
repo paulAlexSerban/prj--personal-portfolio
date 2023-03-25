@@ -2,7 +2,7 @@
 title: 'Data Visualization: An Introduction'
 subheading: 'The process of presenting data in a visual form'
 excerpt: 'Data visualization is the process of presenting data in a visual form, such as charts, graphs, and maps. It is an essential tool for anyone who needs to analyze and communicate complex information quickly and effectively.'
-status: 'published'
+status: 'draft'
 author: 'Paul Serban'
 date: 'February 28, 2023'
 tags:

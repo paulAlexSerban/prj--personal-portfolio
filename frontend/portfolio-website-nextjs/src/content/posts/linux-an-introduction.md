@@ -2,7 +2,7 @@
 title: "Linux: An Introduction"
 subheading: "Advantages and Popular Distributions"
 excerpt: "Linux is a powerful and versatile operating system that has become a popular choice for developers, businesses, and individuals alike. In this blog post, we will explore what Linux is, its advantages, and some popular distributions that you can try."
-status: "published"
+status: "draft"
 author: "Paul Serban"
 date: "March 20, 2019"
 tags:

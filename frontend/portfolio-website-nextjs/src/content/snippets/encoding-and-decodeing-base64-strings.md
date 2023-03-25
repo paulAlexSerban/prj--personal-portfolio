@@ -1,7 +1,7 @@
 ---
 title: "Encoding and Decoding base64 Strings"
 category: "snippet"
-status: "published"
+status: "draft"
 tags:
   - "JavaScript"
   - "Encoding"
