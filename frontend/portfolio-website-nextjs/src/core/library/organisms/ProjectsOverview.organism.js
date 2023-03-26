@@ -1,4 +1,4 @@
-import { useId } from "react";
+
 import ProjectList from "../molecules/ProjectList.molecule";
 import { Link } from "@/core/atoms/typography/all";
 import {
@@ -17,12 +17,10 @@ import {
  */
 
 export default function ProjectOverview({ content, showViewAllButton = true }) {
-    const ID = useId();
-
     return (
         <>
             {content && (
-                <article id={ID} className={base}>
+                <article className={base}>
                     <div className={container}>
                         <ProjectList list={content.projects} category={content.category}/>
                     </div>

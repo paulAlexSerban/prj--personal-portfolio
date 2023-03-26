@@ -5,7 +5,7 @@ import { sortByDate } from '@/core/utils/softByDate';
 import Head from 'next/head';
 import PortfolioItemDetailTemplate from '@/core/templates/PortfolioItemDetail.template.js';
 import { Roboto } from 'next/font/google';
-
+import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],
@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace('.md', ''),
+      slug: filename.replace('.mdx', ''),
     },
   }));
 
@@ -55,7 +55,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const contentPath = ['src', 'content'];
-  const markdownWithMeta = fs.readFileSync(path.join(...contentPath, 'projects', slug + '.md'), 'utf-8');
+  const markdownWithMeta = fs.readFileSync(path.join(...contentPath, 'projects', slug + '.mdx'), 'utf-8');
 
   const { data: frontmatter, content } = matter(markdownWithMeta);
 
@@ -95,7 +95,7 @@ export async function getStaticProps({ params: { slug } }) {
       Object.keys(caseStudyList[key]).forEach((subKey) => {
         caseStudyReferences[key][subKey] = [];
         caseStudyList[key][subKey].forEach((subSubKey) => {
-          const caseStudyMarkdown = fs.readFileSync(path.join(...contentPath, subKey, subSubKey + '.md'));
+          const caseStudyMarkdown = fs.readFileSync(path.join(...contentPath, subKey, subSubKey + '.mdx'));
 
           const { data: caseStudyFrontmatter } = matter(caseStudyMarkdown);
 

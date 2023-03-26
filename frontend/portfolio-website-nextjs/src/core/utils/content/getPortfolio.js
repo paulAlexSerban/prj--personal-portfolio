@@ -11,7 +11,7 @@ const getPortfolio = () => {
         const dirContent = fs
             .readdirSync(path.join(PORTFOLIO_PATH, dir))
             .map((filename) => {
-                const slug = filename.replace(".md", "");
+                const slug = filename.replace(".mdx", "");
                 const markdownWithMeta = fs.readFileSync(
                     path.join(PORTFOLIO_PATH, dir, filename),
                     "utf-8"

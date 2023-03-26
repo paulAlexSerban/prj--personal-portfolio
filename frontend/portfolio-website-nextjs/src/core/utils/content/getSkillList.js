@@ -16,11 +16,11 @@ const getSkillList = () => [
                 title: "Frameworks and Libraries",
                 skills: [
                     "Bootstrap",
-                    // "React.js",
-                    // "Next.js",
+                    "React.js",
+                    "Next.js",
                     // "jQuery",
-                    // "Express.js",
-                    // "Node.js",
+                    "Express.js",
+                    "Node.js",
                     // "Wordpress",
                     // "Ghost CMS",
                     // "Strapi CMS",
@@ -41,9 +41,9 @@ const getSkillList = () => [
             {
                 title: "DevOps",
                 skills: [
-                    // "AWS",
+                    "AWS",
                     "Git",
-                    // "Docker",
+                    "Docker",
                     "Linux",
                     "Bash/Shell",
                     "Github Actions",

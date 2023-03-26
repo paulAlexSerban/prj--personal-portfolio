@@ -1,52 +1,62 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import sanitizeQueryString from "../sanitizeQueryString";
-import { sortByDate } from "../softByDate";
+import fs from 'fs/promises';
+import path from 'path';
+import sanitizeQueryString from '../sanitizeQueryString';
+import { sortByDate } from '../softByDate';
+import { serialize } from 'next-mdx-remote/serialize';
 
-const CONTENT_PATH = path.join(process.cwd(), "src", "content");
+const getContent = async (contentPath = './src/content') => {
+  const contentCategories = await fs.readdir(path.resolve(contentPath));
+  const content = { tags: [] };
 
-const CONTENT_CATEGORIES = fs.readdirSync(CONTENT_PATH);
+  for (const category of contentCategories) {
+    const categoryPath = path.join(contentPath, category);
+    const files = await fs.readdir(categoryPath);
 
-const getContent = () => {
-    const content = { tags: [] };
-    CONTENT_CATEGORIES.map((category) => {
-        content[category] = [];
+    content[category] = [];
 
-        const CATEGORY_PATH = path.join(CONTENT_PATH, category);
-        const FILES = fs.readdirSync(CATEGORY_PATH);
-        FILES.map((filename) => {
-            const slug = filename.replace(".md", "");
-            const markdownWithMeta = fs.readFileSync(
-                path.join(CATEGORY_PATH, filename),
-                "utf-8"
-            );
-            const fileMatter = matter(markdownWithMeta);
-            const { data: frontmatter } = fileMatter;
+    for (const filename of files) {
+      if (!filename.endsWith('.mdx')) continue;
 
-            const isPublished = frontmatter.status === "published";
-            const hasTags = frontmatter.tags;
+      const slug = filename.replace('.mdx', '');
+      const filePath = path.join(categoryPath, filename);
 
-            if (hasTags && isPublished) {
-                Object.values(frontmatter.tags).map((tag) => {
-                    const sanitizedTag = sanitizeQueryString(tag);
-                    content.tags.push({ name: tag, tag: sanitizedTag });
-                });
-            }
-            const fileContent = fileMatter.content;
+      try {
+        const markdownWithMeta = await fs.readFile(filePath, 'utf-8');
+        const mdxSource = await serialize(markdownWithMeta, { parseFrontmatter: true });
+        const { frontmatter } = mdxSource;
+        const isPublished = frontmatter.status === 'published';
+        const hasTags = frontmatter.tags;
 
-            const itemObj = {
-                slug,
-                frontmatter,
-                content: fileContent,
-            };
-            if (isPublished) {
-                content[category].push(itemObj);
-            }
-        });
-    });
-    content.tags = [...new Set(content.tags)];
-    content.posts.sort(sortByDate);
-    return content;
+        if (hasTags && isPublished) {
+          Object.values(frontmatter.tags).forEach((tag) => {
+            const sanitizedTag = sanitizeQueryString(tag);
+            content.tags.push({ name: tag, tag: sanitizedTag });
+          });
+        }
+
+        const itemObj = {
+          slug,
+          frontmatter,
+          content: mdxSource,
+        };
+
+        if (isPublished) {
+          content[category].push(itemObj);
+        }
+      } catch (error) {
+        console.error(`Error reading file: ${filePath}`, error);
+      }
+    }
+  }
+
+  const uniqueTags = [...new Set(content.tags)];
+  for (const category in content) {
+    if (category !== 'tags') {
+      content[category] = content[category].sort(sortByDate);
+    }
+  }
+
+  return { content, tags: uniqueTags };
 };
+
 export default getContent;

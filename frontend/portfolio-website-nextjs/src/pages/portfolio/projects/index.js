@@ -2,6 +2,7 @@ import Head from 'next/head';
 import PortfolioCategoryTemplate from '@/core/templates/PortfolioCategory.template.js';
 import getContent from '@/core/utils/content/getContent';
 import { Roboto } from 'next/font/google';
+import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
 
 const roboto = Roboto({
   display: 'swap',
@@ -28,7 +29,11 @@ export default function PortfolioCategoryPage({ children, pageContent, siteProps
 }
 
 export async function getStaticProps() {
-  const publishedProjects = getContent().projects.filter((project) => project.frontmatter.status === 'published');
+  const publishedProjects = await getContent().then((fetchedContent) => {
+    const { content } = fetchedContent;
+    return filterByFrontmatter(content.projects, ['status'], { status: 'published' });
+  });
+
   return {
     props: {
       pageContent: {

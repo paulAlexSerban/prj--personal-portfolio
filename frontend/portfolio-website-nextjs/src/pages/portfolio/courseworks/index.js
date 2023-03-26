@@ -2,7 +2,7 @@ import Head from 'next/head';
 import PortfolioCategoryTemplate from '@/core/templates/PortfolioCategory.template.js';
 import getContent from '@/core/utils/content/getContent';
 import { Roboto } from 'next/font/google';
-
+import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],
@@ -28,9 +28,10 @@ export default function PortfolioCategoryPage({ children, pageContent, siteProps
 }
 
 export async function getStaticProps() {
-  const publishedCoursework = getContent().courseworks.filter(
-    (courseworks) => courseworks.frontmatter.status === 'published'
-  );
+  const publishedCoursework = await getContent().then((fetchedContent) => {
+    const { content } = fetchedContent;
+    return filterByFrontmatter(content.courseworks, ['status'], { status: 'published' });
+  });
   return {
     props: {
       pageContent: {
