@@ -23,5 +23,9 @@ const nextConfig = {
   },
 }
 
+if (process.env.SERVER_ENV === 'gh_pages') {
+  nextConfig.basePath = process.env.BASE_PATH;
+}
+
 // Merge MDX config with Next.js config
 module.exports = withMDX(nextConfig)
