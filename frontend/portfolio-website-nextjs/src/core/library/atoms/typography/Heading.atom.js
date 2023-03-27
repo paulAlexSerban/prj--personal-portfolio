@@ -1,4 +1,4 @@
-import { useId, useMemo } from "react";
+import { useMemo } from "react";
 import styles from "@/styles/atoms/heading.module.scss";
 import PropTypes from "prop-types";
 
@@ -7,47 +7,44 @@ export default function Heading({
 	mainText,
 	subheadingText,
 	hasSeparator,
+	children
 }) {
 	const headingLevel = parseInt(level);
-	const ID = useId();
 
-	const capitalizedMainText = `${mainText
-		.charAt(0)
-		.toUpperCase()}${mainText.slice(1)}`;
 
 	const innerText = useMemo(() => {
 		if (subheadingText) {
 			return (
 				<span>
-					<span className={styles.main}>{capitalizedMainText}</span>
+					<span className={styles.main}>{children || mainText}</span>
 					<span className={styles.subheading}>{subheadingText}</span>
 				</span>
 			);
 		}
-		return capitalizedMainText;
-	}, [capitalizedMainText, subheadingText]);
+		return children || mainText;
+	}, [children || mainText, subheadingText]);
 
 	switch (headingLevel) {
 		case 1:
-			return <h1 id={ID}>{innerText}</h1>;
+			return <h1>{innerText}</h1>;
 		case 2:
 			return (
-				<h2 id={ID} className={hasSeparator ? styles.separator : null}>
+				<h2 className={hasSeparator ? styles.separator : null}>
 					{innerText}
 				</h2>
 			);
 		case 3:
 			return (
-				<h3 id={ID} className={hasSeparator ? styles.separator : null}>
+				<h3 className={hasSeparator ? styles.separator : null}>
 					{innerText}
 				</h3>
 			);
 		case 4:
-			return <h4 id={ID}>{innerText}</h4>;
+			return <h4>{innerText}</h4>;
 		case 5:
-			return <h5 id={ID}>{innerText}</h5>;
+			return <h5>{innerText}</h5>;
 		case 6:
-			return <h6 id={ID}>{innerText}</h6>;
+			return <h6>{innerText}</h6>;
 		default:
 			return null;
 	}

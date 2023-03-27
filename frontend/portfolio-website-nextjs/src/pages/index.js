@@ -13,13 +13,14 @@ const ProjectsOverview = dynamic(() => import('@/core/library/organisms/Projects
 const SkillsOverview = dynamic(() => import('@/core/library/organisms/SkillsOverview.organism'));
 const ContactSection = dynamic(() => import('@/core/library/organisms/ContactSection.organism'));
 const TextArticle = dynamic(() => import('@/core/library/molecules/TextArticle.molecule'));
+import getPageDescription from '@/core/utils/content/getPageDescription';
 
 export default function LandingPage({ siteProps, pageContent }) {
   return (
     <>
       <Head>
         <title>{siteProps.title}</title>
-        <meta name="description" content={pageContent.pageDescription} />
+        <meta name="description" content={getPageDescription(pageContent.pageDescription)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
@@ -115,7 +116,9 @@ export async function getStaticProps() {
             section_id: 'my_projects',
             children: {
               projectsOverview: {
-                projects: await contentRepository.getFilteredContent('projects', ['pinned', 'status'], { status: 'published' }),
+                projects: await contentRepository.getFilteredContent('projects', ['pinned', 'status'], {
+                  status: 'published',
+                }),
                 parentPage: 'landing',
                 category: {
                   category_url: 'projects',

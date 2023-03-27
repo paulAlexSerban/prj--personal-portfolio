@@ -3,6 +3,7 @@ import path from 'path';
 import ContentRepository from '@/core/utils/content/ContentRepository';
 import Head from 'next/head';
 import BlogPostTemplate from '@/core/templates/BlogPost.template.js';
+import getPageDescription from '@/core/utils/content/getPageDescription';
 import { Roboto } from 'next/font/google';
 const roboto = Roboto({
   display: 'swap',
@@ -17,7 +18,7 @@ export default function PortfolioItemDetail({ children, pageContent, siteProps, 
     <div className={roboto.className}>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content={frontmatter.excerpt} />
+        <meta name="description" content={getPageDescription(frontmatter.excerpt)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>

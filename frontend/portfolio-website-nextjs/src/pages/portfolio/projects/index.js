@@ -2,6 +2,7 @@ import Head from 'next/head';
 import PortfolioCategoryTemplate from '@/core/templates/PortfolioCategory.template.js';
 import { Roboto } from 'next/font/google';
 import ContentRepository from '@/core/utils/content/ContentRepository';
+import getPageDescription from '@/core/utils/content/getPageDescription';
 
 const roboto = Roboto({
   display: 'swap',
@@ -18,7 +19,7 @@ export default function PortfolioCategoryPage({ children, pageContent, siteProps
     <div className={roboto.className}>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content={pageContent.pageDescription} />
+        <meta name="description" content={getPageDescription(pageContent.pageDescription)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>

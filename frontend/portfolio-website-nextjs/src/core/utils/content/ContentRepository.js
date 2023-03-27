@@ -6,6 +6,7 @@ import { sortByDate } from '@/utils/softByDate';
 import { serialize } from 'next-mdx-remote/serialize';
 import sanitizeQueryString from '@/utils/sanitizeQueryString';
 import rehypeHighlight from 'rehype-highlight'
+import rehypeAttr from 'rehype-attr'
 
 class ContentRepository {
   constructor(contentPath = './src/content') {
@@ -123,7 +124,7 @@ class ContentRepository {
     const mdxSource = await serialize(mdxContent, {
       parseFrontmatter: true,
       mdxOptions: {
-        rehypePlugins: [rehypeHighlight],
+        rehypePlugins: [rehypeHighlight, rehypeAttr],
       },
     });
     return {

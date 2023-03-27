@@ -3,6 +3,7 @@ import { useId } from 'react';
 import TagPreviewTemplate from '@/core/templates/TagPreview.template';
 import { Roboto } from 'next/font/google';
 import ContentRepository from '@/core/utils/content/ContentRepository';
+import getPageDescription from '@/core/utils/content/getPageDescription';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],
@@ -18,7 +19,7 @@ export default function TagsPage({ siteProps, pageContent }) {
     <div id={ID} className={roboto.className}>
       <Head>
         <title>{siteProps.title}</title>
-        <meta name="description" content={pageContent.pageDescription} />
+        <meta name="description" content={getPageDescription(pageContent.pageDescription)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
