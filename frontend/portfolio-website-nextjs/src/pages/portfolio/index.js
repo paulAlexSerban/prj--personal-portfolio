@@ -3,8 +3,8 @@ import { useId } from 'react';
 import dynamic from 'next/dynamic';
 const PortfolioOverviewTemplate = dynamic(() => import('@/core/templates/PortfolioOverview.template.js'));
 import { Roboto } from 'next/font/google';
-import ContentRepository from '@/core/utils/content/ContentRepository';
-import getPageDescription from '@/core/utils/content/getPageDescription';
+import ContentRepository from '@/core/utils/ContentRepository';
+import getPageDescription from '@/core/utils/getPageDescription';
 
 const roboto = Roboto({
   display: 'swap',

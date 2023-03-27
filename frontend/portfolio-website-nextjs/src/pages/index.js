@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import ContentRepository from '@/core/utils/content/ContentRepository';
-import getSkillList from '@/core/utils/content/getSkillList';
+import ContentRepository from '@/core/utils/ContentRepository';
+import getSkillList from '@/core/utils/getSkillList';
 import LandingTemplate from '@/core/templates/Landing.template';
 
 const Header = dynamic(() => import('@/core/library/organisms/Header.organism'));
@@ -13,7 +13,7 @@ const ProjectsOverview = dynamic(() => import('@/core/library/organisms/Projects
 const SkillsOverview = dynamic(() => import('@/core/library/organisms/SkillsOverview.organism'));
 const ContactSection = dynamic(() => import('@/core/library/organisms/ContactSection.organism'));
 const TextArticle = dynamic(() => import('@/core/library/molecules/TextArticle.molecule'));
-import getPageDescription from '@/core/utils/content/getPageDescription';
+import getPageDescription from '@/core/utils/getPageDescription';
 
 export default function LandingPage({ siteProps, pageContent }) {
   return (
