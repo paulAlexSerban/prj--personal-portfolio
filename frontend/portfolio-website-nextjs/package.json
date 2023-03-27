@@ -13,23 +13,16 @@
     "@mdx-js/react": "^2.3.0",
     "@next/font": "13.1.2",
     "@next/mdx": "^13.2.4",
+    "classnames": "^2.3.2",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.2",
-    "linkify-it": "^4.0.1",
     "next": "13.2.1",
     "next-mdx-remote": "^4.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
-    "react-intersection-observer": "^9.4.3"
-  },
-  "devDependencies": {
-    "classnames": "^2.3.2",
-    "gray-matter": "^4.0.3",
-    "markdown-it": "^13.0.1",
-    "markdown-it-attrs": "^4.1.6",
-    "markdown-it-bracketed-spans": "^1.0.1",
-    "markdown-it-highlightjs": "^4.0.1",
-    "sass": "^1.57.1"
+    "react-intersection-observer": "^9.4.3",
+    "rehype-highlight": "^6.0.0",
+    "sass": "^1.60.0"
   }
 }

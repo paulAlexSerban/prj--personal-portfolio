@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 import Head from 'next/head';
 import PortfolioItemDetailTemplate from '@/core/templates/PortfolioItemDetail.template.js';
 import { Roboto } from 'next/font/google';
+import ContentRepository from '@/core/utils/content/ContentRepository';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],
@@ -49,12 +49,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const markdownWithMeta = fs.readFileSync(path.join('src', 'content', 'courseworks', slug + '.mdx'), 'utf-8');
-  const { data: frontmatter, content } = matter(markdownWithMeta);
+  const contentRepository = new ContentRepository();
+  const content = await contentRepository.getPostContent('courseworks', slug);
   return {
     props: {
-      frontmatter,
-      pageContent: { content, slug },
+      ...content,
     },
   };
 }

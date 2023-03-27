@@ -1,9 +1,11 @@
 // contentRepository.js
-import fs from 'fs/promises';
+import fsPromises from 'fs/promises';
+import fs from 'fs';
 import path from 'path';
 import { sortByDate } from '@/utils/softByDate';
 import { serialize } from 'next-mdx-remote/serialize';
 import sanitizeQueryString from '@/utils/sanitizeQueryString';
+import rehypeHighlight from 'rehype-highlight'
 
 class ContentRepository {
   constructor(contentPath = './src/content') {
@@ -21,7 +23,6 @@ class ContentRepository {
 
     return array.filter((item) => {
       return frontmatterKeys.every((key) => {
-
         if (!item.frontmatter.hasOwnProperty(key)) {
           return false;
         }
@@ -47,12 +48,12 @@ class ContentRepository {
   }
 
   async getContent() {
-    const contentCategories = await fs.readdir(path.resolve(this.contentPath));
+    const contentCategories = await fsPromises.readdir(path.resolve(this.contentPath));
     const content = { tags: [] };
 
     for (const category of contentCategories) {
       const categoryPath = path.join(this.contentPath, category);
-      const files = await fs.readdir(categoryPath);
+      const files = await fsPromises.readdir(categoryPath);
 
       content[category] = [];
 
@@ -63,7 +64,7 @@ class ContentRepository {
         const filePath = path.join(categoryPath, filename);
 
         try {
-          const markdownWithMeta = await fs.readFile(filePath, 'utf-8');
+          const markdownWithMeta = await fsPromises.readFile(filePath, 'utf-8');
           const mdxSource = await serialize(markdownWithMeta, { parseFrontmatter: true });
           const { frontmatter } = mdxSource;
           const isPublished = frontmatter.status === 'published';
@@ -108,6 +109,27 @@ class ContentRepository {
     });
 
     return filteredContent;
+  }
+
+  async getPostContent(category, slug) {
+    const contentDir = path.join(process.cwd(), 'src', 'content');
+    const fullPath = path.join(contentDir, category, `${slug}.mdx`);
+    if (!fs.existsSync(fullPath)) {
+      return {
+        notFound: true,
+      };
+    }
+    const mdxContent = fs.readFileSync(fullPath, 'utf-8');
+    const mdxSource = await serialize(mdxContent, {
+      parseFrontmatter: true,
+      mdxOptions: {
+        rehypePlugins: [rehypeHighlight],
+      },
+    });
+    return {
+      frontmatter: mdxSource.frontmatter,
+      pageContent: { content: mdxSource },
+    };
   }
 }
 
