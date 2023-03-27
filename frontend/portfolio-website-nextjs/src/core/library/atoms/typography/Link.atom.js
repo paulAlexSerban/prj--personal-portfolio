@@ -1,5 +1,5 @@
 import { useId, useRef, useEffect, useState, useCallback } from "react";
-import { encodeToBase64, decodeFromBase64 } from "@/core/utils/base64";
+import { encodeToBase64, decodeFromBase64 } from "@/core/utils/string/base64";
 import PropTypes from "prop-types";
 import Link from "next/link";
 export default function LinkAtom({
