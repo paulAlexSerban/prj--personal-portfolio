@@ -23,6 +23,7 @@ export default function TagsPage({ siteProps, pageContent }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
+
       <TagPreviewTemplate pageContent={pageContent} siteProps={siteProps}></TagPreviewTemplate>
     </div>
   );

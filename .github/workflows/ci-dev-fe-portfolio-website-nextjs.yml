@@ -21,6 +21,7 @@ jobs:
       ASSETS_ROOT: assets
       FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website-nextjs
       NODE_VERSION: 16.19.0
+      SITE_URL: https://paulalexserban.github.io/prj--personal-portfolio
     steps:
       - name: "📥  Checkout repository"
         uses: actions/checkout@v3
