@@ -1,5 +1,5 @@
 import "@/styles/base/base.scss";
-import { encodeToBase64 } from "@/core/utils/base64";
+import { encodeToBase64 } from "@/core/utils/string/base64";
   
 // import "../styles/_99_devTools/devTools.scss";
 
