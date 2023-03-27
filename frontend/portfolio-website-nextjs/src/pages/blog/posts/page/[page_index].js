@@ -2,8 +2,8 @@ import Head from 'next/head';
 import BlogCategoryTemplate from '@/core/templates/BlogCategory.template.js';
 import Pagination from '@/core/library/molecules/Pagination.molecule';
 import { Roboto } from 'next/font/google';
-import ContentRepository from '@/core/utils/content/ContentRepository';
-import getPageDescription from '@/core/utils/content/getPageDescription';
+import ContentRepository from '@/core/utils/ContentRepository';
+import getPageDescription from '@/core/utils/getPageDescription';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],
