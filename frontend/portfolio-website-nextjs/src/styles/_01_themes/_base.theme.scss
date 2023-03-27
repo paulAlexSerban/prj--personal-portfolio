@@ -11,39 +11,39 @@
   --text-code: #{$font-family-ubuntu};
   --secondary-color: #{get-color($c-gray, timberwolf)};
 
-  --dynamic-10: 5px;
-  --dynamic-20: 10px;
-  --dynamic-30: 15px;
-  --dynamic-40: 20px;
-  --dynamic-50: 25px;
-  --dynamic-60: 30px;
-  --dynamic-70: 35px;
-  --dynamic-80: 40px;
-  --dynamic-90: 50px;
-  --dynamic-100: 70px;
-  --dynamic-110: 90px;
-  --static-0: 0;
-  --static-10: 5px;
-  --static-20: 10px;
-  --static-30: 15px;
-  --static-40: 20px;
-  --static-50: 25px;
-  --static-60: 30px;
-  --static-70: 35px;
-  --static-80: 40px;
-  --static-90: 60px;
-  --static-100: 80px;
-  --static-110: 120px;
+  --responsive-spacing-10: 5px;
+  --responsive-spacing-20: 10px;
+  --responsive-spacing-30: 15px;
+  --responsive-spacing-40: 20px;
+  --responsive-spacing-50: 25px;
+  --responsive-spacing-60: 30px;
+  --responsive-spacing-70: 35px;
+  --responsive-spacing-80: 40px;
+  --responsive-spacing-90: 50px;
+  --responsive-spacing-100: 70px;
+  --responsive-spacing-110: 90px;
+  --static-spacing-0: 0;
+  --static-spacing-10: 5px;
+  --static-spacing-20: 10px;
+  --static-spacing-30: 15px;
+  --static-spacing-40: 20px;
+  --static-spacing-50: 25px;
+  --static-spacing-60: 30px;
+  --static-spacing-70: 35px;
+  --static-spacing-80: 40px;
+  --static-spacing-90: 60px;
+  --static-spacing-100: 80px;
+  --static-spacing-110: 120px;
 
   --lateral-padding: 20px;
   --header-height-default: 80px;
   --header-height-scrolled: 60px;
 
   @include breakpoint($tablet) {
-    --dynamic-80: 45px;
-    --dynamic-90: 55px;
-    --dynamic-100: 80px;
-    --dynamic-110: 120px;
+    --responsive-spacing-80: 45px;
+    --responsive-spacing-90: 55px;
+    --responsive-spacing-100: 80px;
+    --responsive-spacing-110: 120px;
 
     --lateral-padding: 25px;
     --header-height-default: 100px;
@@ -51,13 +51,13 @@
   }
 
   @include breakpoint($desktop-xl) {
-    --dynamic-50: 30px;
-    --dynamic-60: 40px;
-    --dynamic-70: 50px;
-    --dynamic-80: 70px;
-    --dynamic-90: 80px;
-    --dynamic-100: 110px;
-    --dynamic-110: 150px;
+    --responsive-spacing-50: 30px;
+    --responsive-spacing-60: 40px;
+    --responsive-spacing-70: 50px;
+    --responsive-spacing-80: 70px;
+    --responsive-spacing-90: 80px;
+    --responsive-spacing-100: 110px;
+    --responsive-spacing-110: 150px;
 
     --lateral-padding: 30px;
   }

@@ -12,9 +12,9 @@ $block: "footer";
         @include flex($direction: column);
 
         width: 100vw;
-        margin: var(--dynamic-50) auto 0;
+        margin: var(--responsive-spacing-50) auto 0;
         background-color: var(--secondary-color);
-        padding: var(--dynamic-20) 0;
+        padding: var(--responsive-spacing-20) 0;
     }
 
     @include e("container", "bottom") {
@@ -31,7 +31,7 @@ $block: "footer";
     }
 
     @include e("bottom") {
-        gap: var(--dynamic-10);
+        gap: var(--responsive-spacing-10);
     }
 
     @include e("copyrightText") {

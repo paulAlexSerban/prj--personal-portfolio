@@ -9,7 +9,7 @@ on:
       - develop
 
   pull_request:
-    types: [opened, synchronize]
+    types: [synchronize]
 
   workflow_dispatch:
 

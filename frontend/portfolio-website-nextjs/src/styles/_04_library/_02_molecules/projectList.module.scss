@@ -8,7 +8,7 @@ $block: "projectList";
 \* ------------------------------------ */
 
 .#{$block} {
-    $gap: var(--dynamic-70);
+    $gap: var(--responsive-spacing-70);
     @include e("base") {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
