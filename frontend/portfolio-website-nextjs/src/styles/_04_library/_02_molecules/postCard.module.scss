@@ -11,7 +11,7 @@ $block: "postCard";
 	@include e("base") {
 		@include flex($direction: column, $cross: flex-start, $main: unset);
 
-		padding: var(--dynamic-50) var(--lateral-padding);
+		padding: var(--responsive-spacing-50) var(--lateral-padding);
 		transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
 		height: 100%;
 		margin-inline: calc(var(--lateral-padding) * -1);
@@ -44,7 +44,7 @@ $block: "postCard";
 		@include flex($direction: column, $main: space-between, $cross: flex-start);
 
 		margin-top: auto;
-		padding-top: var(--dynamic-50);
+		padding-top: var(--responsive-spacing-50);
 		column-gap: $grid-gutter;
 		width: 100%;
 	}

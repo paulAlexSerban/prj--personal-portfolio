@@ -8,8 +8,3 @@ export default function Paragraph(props) {
     </p>
   );
 }
-
-Paragraph.propTypes = {
-  defaultText: PropTypes.string.isRequired,
-  classNames: PropTypes.arrayOf(PropTypes.string),
-};

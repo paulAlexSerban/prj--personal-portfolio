@@ -40,8 +40,8 @@ $block: "markdownContainer";
 		}
 
 		pre {
-            margin-top: var(--dynamic-30);
-			padding: var(--dynamic-40);
+            margin-top: var(--responsive-spacing-30);
+			padding: var(--responsive-spacing-40);
 			overflow-x: scroll;
 			overflow-y: hidden;
             background-color: var(--secondary-color);

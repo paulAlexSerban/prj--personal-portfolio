@@ -22,7 +22,7 @@ export default function Heading({
 			);
 		}
 		return children || mainText;
-	}, [children || mainText, subheadingText]);
+	}, [children , mainText, subheadingText]);
 
 	switch (headingLevel) {
 		case 1:
