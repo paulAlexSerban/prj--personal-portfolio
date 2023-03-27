@@ -8,24 +8,44 @@ $block: "postCard";
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        @include flex($direction: column, $cross: flex-start, $main: unset);
+	@include e("base") {
+		@include flex($direction: column, $cross: flex-start, $main: unset);
 
-        padding: var(--dynamic-50) var(--lateral-padding);
-        transition: background-color 0.3s ease-in-out;
-        height: 100%;
-
-        &:hover {
-            background-color: #ebebeb;
-        }
-    }
+		padding: var(--dynamic-50) var(--lateral-padding);
+		transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+		height: 100%;
+		margin-inline: calc(var(--lateral-padding) * -1);
+		opacity: 1;
 
 
-    @include e("footer") {
-        @include flex($direction: column, $main: space-between, $cross: flex-start);
+		&:hover {
+			background-color: var(--secondary-color);
+		}
 
-        margin-top: auto;
-        padding-top: var(--dynamic-50);
-        column-gap: $grid-gutter;
-    }
+		@include breakpoint($tablet) {
+			margin-inline: 0;
+		}
+
+		@include m('inactive') {
+			opacity: 0;
+		}
+	}
+
+	@include e("cardLink") {
+		height: 100%;
+
+		&:hover,
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	@include e("footer") {
+		@include flex($direction: column, $main: space-between, $cross: flex-start);
+
+		margin-top: auto;
+		padding-top: var(--dynamic-50);
+		column-gap: $grid-gutter;
+		width: 100%;
+	}
 }

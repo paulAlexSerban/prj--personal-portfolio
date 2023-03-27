@@ -8,7 +8,9 @@ $block: "skillList";
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        padding-inline: var(--lateral-padding);
+  @include e("base") {
+    @include breakpoint($tablet) {
+      padding-inline: var(--lateral-padding);
     }
+  }
 }

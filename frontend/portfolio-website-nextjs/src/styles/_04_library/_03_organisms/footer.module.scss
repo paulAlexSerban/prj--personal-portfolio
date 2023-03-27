@@ -10,21 +10,35 @@ $block: "footer";
 .#{$block} {
     @include e("base") {
         @include flex($direction: column);
+
         width: 100vw;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        margin: 0 auto;
-        background-color: get-color($c-gray, timberwolf);
+        margin: var(--dynamic-50) auto 0;
+        background-color: var(--secondary-color);
+        padding: var(--dynamic-20) 0;
     }
 
-    @include e("container") {
-        @include flex($direction: column);
+    @include e("container", "bottom") {
+        @include flex($cross: flex-start, $direction: column);
+
+        width: 100%;
+        max-width: $max-width;
+        padding-inline: var(--lateral-padding);
+
+        @include breakpoint($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     @include e("bottom") {
-        @include flex($main: space-between);
-        width: 100%;
-        max-width: $max-width;
+        gap: var(--dynamic-10);
+    }
+
+    @include e("copyrightText") {
+        @include font($body-small);
+    }
+
+    @include e("domainUrl") {
+        @include font($link-small);
     }
 }

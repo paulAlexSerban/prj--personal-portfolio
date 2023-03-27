@@ -1,9 +1,10 @@
-import { useId } from "react";
+
 import ProjectList from "../molecules/ProjectList.molecule";
 import { Link } from "@/core/atoms/typography/all";
 import {
     base,
     container,
+    footer
 } from "@/styles/organisms/projectsOverview.module.scss";
 
 /**
@@ -16,20 +17,22 @@ import {
  */
 
 export default function ProjectOverview({ content, showViewAllButton = true }) {
-    const ID = useId();
-
     return (
         <>
             {content && (
-                <article id={ID} className={base}>
+                <article className={base}>
                     <div className={container}>
                         <ProjectList list={content.projects} category={content.category}/>
                     </div>
                     {content.category && showViewAllButton && (
+                        <div className={footer}>
                         <Link
                             label={`View all ${content.category.category_name}`}
                             href={`/portfolio/${content.category.category_url}`}
+                            isInternal={true}
                         ></Link>
+                        </div>
+
                     )}
                 </article>
             )}

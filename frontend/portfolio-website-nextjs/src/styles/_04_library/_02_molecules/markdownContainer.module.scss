@@ -1,0 +1,50 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "markdownContainer";
+
+/* ------------------------------------ *\
+ * MARKDOWN CONTAINER
+\* ------------------------------------ */
+
+.#{$block} {
+	@include e("base") {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+
+		@include breakpoint($tablet) {
+			padding-inline: var(--lateral-padding);
+		}
+
+		p,
+		h2,
+		h3,
+		ul,
+		ol,
+		pre {
+			grid-column: span 12;
+
+			@include breakpoint($tablet) {
+				grid-column: span 8;
+			}
+
+			strong {
+				@include font($body-bold);
+			}
+		}
+
+		ul,
+		ol {
+			padding-inline: var(--lateral-padding);
+			list-style: disc;
+		}
+
+		pre {
+            margin-top: var(--dynamic-30);
+			padding: var(--dynamic-40);
+			overflow-x: scroll;
+			overflow-y: hidden;
+            background-color: var(--secondary-color);
+		}
+	}
+}

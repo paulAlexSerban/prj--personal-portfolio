@@ -7,11 +7,11 @@ $block: "skillList";
  * SKILL LIST ORGANISM
 \* ------------------------------------ */
 
+$skillSpacing: var(--dynamic-30);
+
 .#{$block} {
     @include e("base") {
-        margin-top: var(--dynamic-50);
-        padding-top: var(--dynamic-30);
-       
+        margin-top: var(--dynamic-30);       
     }
 
     @include e("list") {
@@ -19,13 +19,13 @@ $block: "skillList";
 
         max-width: 100%;
         flex-wrap: wrap;
-        gap: var(--dynamic-30);
-        margin-top: var(--dynamic-30);
+        gap: $skillSpacing;
+        margin-top: var(--dynamic-10);
     }
 
     @include e("listItem") {
         &:not(:last-child) {
-            padding-right: var(--dynamic-30);
+            padding-right: $skillSpacing;
             border-right: black 1px solid;
         }
     }

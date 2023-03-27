@@ -11,10 +11,10 @@ $block: "socialMediaList";
     @include e("base") {
         @include flex($cross: flex-end, $main: flex-start);
 
-        column-gap: var(--dynamic-30);
+        column-gap: var(--dynamic-50);
         align-self: flex-start;
-        height: 50%;
         flex-wrap: wrap;
+        margin-top: 0;
     }
 
     @include e("listItem") {

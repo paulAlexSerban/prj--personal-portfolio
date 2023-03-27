@@ -15,11 +15,11 @@ $block: "heading";
     @include e("subheading") {
         @include font($subheading);
 
-        margin-top: var(--dynamic-20);
+        margin-top: var(--dynamic-30);
     }
 
     @include e("separator") {
-        padding-bottom: var(--dynamic-60);
+        padding-bottom: var(--dynamic-50);
 
         &:after {
             @include absolute();

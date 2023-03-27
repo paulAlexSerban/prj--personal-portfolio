@@ -1,26 +1,32 @@
 import { useId } from "react";
-import { base, container, bottom } from "@/styles/organisms/footer.module.scss";
-import Link from "@/core/atoms/typography/Link.atom";
+import {
+	base,
+	container,
+	bottom,
+	copyrightText,
+	domainUrl,
+} from "@/styles/organisms/footer.module.scss";
+import { Link } from "@/core/atoms/typography/all";
+import SocialMediaList from "../molecules/SocialMediaList.molecule";
 
-export default function Footer({
-    ownerEmail = "",
-    currentYear = "",
-    ownerName = "",
-}) {
-    const ID = useId();
+const date = new Date();
+const currentYear = date.getFullYear();
 
-    const date = new Date();
+export default function Footer({ socialMediaLinks = [] }) {
+	const ID = useId();
+	const hasSocialMediaLinks = socialMediaLinks.length > 0;
 
-    return (
-        <footer id={ID} className={base}>
-            <div className={container}></div>
-            <div className={bottom}>
-                <span>
-                    {date.getFullYear()} &copy; Paul Serban. All rights
-                    reserved.
-                </span>
-                <Link label="www.paulserban.eu" />
-            </div>
-        </footer>
-    );
+	return (
+		<footer id={ID} className={base}>
+			<div className={container}>
+				{hasSocialMediaLinks && <SocialMediaList items={socialMediaLinks} position="footer"/>}
+			</div>
+			<div className={bottom}>
+				<span className={copyrightText}>
+					{currentYear} &copy; Paul Serban. All rights reserved.
+				</span>
+				<Link className={domainUrl} label="www.paulserban.eu" isInternal={true} />
+			</div>
+		</footer>
+	);
 }

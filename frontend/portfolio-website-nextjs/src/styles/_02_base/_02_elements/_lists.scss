@@ -3,5 +3,9 @@
 \* ------------------------------------ */
 
 ul, li {
-    @include font($link);
+    @include font($body);
+}
+
+ul {
+    margin-top: var(--dynamic-50);
 }

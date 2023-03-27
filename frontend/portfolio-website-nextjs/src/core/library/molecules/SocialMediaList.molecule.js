@@ -1,23 +1,30 @@
 import { useId } from "react";
 import styles, {
-    base,
-    listItem,
+	base,
+	listItem,
 } from "@/styles/molecules/socialMediaList.module.scss";
 
 import LinkIcon from "@/core/atoms/LinkIcon.atom";
 
-export default function SocialMediaList({ items = [] }) {
-    const ID = useId();
+export default function SocialMediaList({ items = [], position = "" }) {
+	const ID = useId();
 
-    return (
-        <ul id={ID} className={`${base}`}>
-            {items.map((item, index) => {
-                return (
-                    <li className={listItem} key={index}>
-                        <LinkIcon label={item.label} href={item.href} iconName={item.icon} />
-                    </li>
-                );
-            })}
-        </ul>
-    );
+	return (
+		<ul id={ID} className={`${base}`}>
+			{items.map((item, index) => {
+				return (
+					<li className={listItem} key={index}>
+						<LinkIcon
+							label={item.label}
+							href={item.href}
+							iconName={item.icon}
+							position={position}
+							isEncoded={item.isEncoded}
+                            isInternal={false}
+						/>
+					</li>
+				);
+			})}
+		</ul>
+	);
 }

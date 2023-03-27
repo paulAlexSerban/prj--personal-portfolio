@@ -1,7 +1,8 @@
 import { useId } from "react";
+import dynamic from "next/dynamic";
 
-import Header from "@/core/library/organisms/Header.organism";
-import Footer from "@/core/library/organisms/Footer.organism";
+const Header = dynamic(() => import("@/core/library/organisms/Header.organism"));
+const Footer = dynamic(() => import("@/core/library/organisms/Footer.organism"));
 
 import { base } from "@/styles/templates/caseStudyOverview.module.scss";
 
@@ -12,7 +13,7 @@ function CaseStudyOverviewTemplate({ children, siteNavLinks = [] }) {
             <Header siteNavLinks={siteNavLinks} />
             {children}
             <h1>CaseStudy Overview Template</h1>
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import { useId } from "react";
-import PostCard from "./PostCard.molecule";
-
+import PostCard from "@/core/molecules/PostCard.molecule";
+import PropTypes from "prop-types";
 import { base } from "@/styles/molecules/postList.module.scss";
 
 export default function PostList({ list = [], category = {} }) {
@@ -17,4 +17,20 @@ export default function PostList({ list = [], category = {} }) {
             })}
         </ul>
     );
+}
+
+PostList.propTypes = {
+    post: PropTypes.shape({
+		frontmatter: PropTypes.shape({
+			title: PropTypes.string.isRequired,
+			excerpt: PropTypes.string,
+			tags: PropTypes.arrayOf(PropTypes.string),
+			subheading: PropTypes.string,
+			author: PropTypes.string,
+		}).isRequired,
+		slug: PropTypes.string.isRequired,
+	}),
+    category: PropTypes.shape({
+		category_url: PropTypes.string.isRequired,
+	}).isRequired,
 }

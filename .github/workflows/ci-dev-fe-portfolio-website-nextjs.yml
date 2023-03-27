@@ -45,44 +45,44 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: "🔧  Install npm@latest"
+      - name: "🔧  Install npm@latest & CI Deps"
         if: ${{ always() }}
-        run: npm i -g npm@latest
+        run: |
+          npm i -g npm@latest
+          npm ci
 
-      - name: "Install GraphicsMagick"
-        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
-        run: sudo apt-get install -y graphicsmagick
+      #   @INFO - this part is needed when assets module will be functional
+      # - name: "Install GraphicsMagick"
+      #   if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
+      #   run: sudo apt-get install -y graphicsmagick
 
       - name: "📦  Install Frontend NextJS Portfolio Website dependencies"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/assets/install.bash
-          bash scripts/frontend/portfolio-website-nextjs/install.bash
+          bash scripts/modulize.bash -e prod -p install -m portfolio-website-nextjs
 
       - name: "🔍  Lint Frontend NextJS SSG Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/frontend/portfolio-website-nextjs/lint.bash
+          bash scripts/modulize.bash -e prod -p lint -m portfolio-website-nextjs
         continue-on-error: true
 
-      - name: "🏗️  Build Frontend NextJS SSG Portfolio Website"
+      - name: "🏗️  Build Frontend NextJS SSG Portfolio Website For GitHub Pages"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/assets/process.bash
-          bash scripts/frontend/portfolio-website-nextjs/build-dev.bash
+          bash scripts/modulize.bash -e gh_pages -p build -m portfolio-website-nextjs
 
       - name: "🚚  Package NextJS Portfolio Website"
         if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: |
-          bash scripts/package/clean.bash
-          bash scripts/package/portfolio-website.bash
+          bash scripts/modulize.bash -e prod -p package -m portfolio-website-nextjs
 
-      - name: Configure git
+      - name: "Configure git"
         run: |
           git config --global user.email "paul.alex.serban@gmail.com"
           git config --global user.name "paulAlexSerban"
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: "🚀 Deploy to Test (GitHub Pages)"
-        # if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request' }}
+        if: ${{ steps.changed-frontend-portfolio-website-files.outputs.any_changed == 'true' }}
         run: npx gh-pages -d package/portfolio-website-nextjs --branch gh-pages-test -t true

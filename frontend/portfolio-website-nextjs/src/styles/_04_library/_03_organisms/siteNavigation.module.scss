@@ -33,7 +33,6 @@ $block: "siteNavigation";
 
     @include e("logoContainer", "navToggle") {
         @include flex();
-        width: calc(50% - var(--static-30));
 
         @include breakpoint($tablet) {
             width: 100%;
@@ -43,6 +42,10 @@ $block: "siteNavigation";
 
     @include e("logoContainer") {
         justify-content: flex-start;
+
+        @include breakpoint($ultra-wide) {
+            padding-inline: var(--lateral-padding);
+        }
     }
 
     @include e("navToggle") {

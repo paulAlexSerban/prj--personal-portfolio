@@ -1,0 +1,32 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "pagination";
+
+/* ------------------------------------ *\
+ * PAGINATION MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+	@include e("base") {
+		@include flex();
+    width: 100%;
+    padding-bottom: var(--dynamic-40);
+	}
+
+  @include e("list") {
+    @include flex();
+    gap: var(--dynamic-20);
+  }
+
+  @include e("listItem") {
+  }
+
+  @include e("link") {
+    padding: var(--dynamic-30);
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}

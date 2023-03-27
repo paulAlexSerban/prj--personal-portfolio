@@ -8,8 +8,8 @@
   --color-link: #{get-color($c-dark, eerie-black)};
   --color-link-hover: #{get-color($c-gray, ebony)};
   --background-color: #{get-color($c-light, ivory)};
-  --text-regular: #{$font-family-roboto};
   --text-code: #{$font-family-ubuntu};
+  --secondary-color: #{get-color($c-gray, timberwolf)};
 
   --dynamic-10: 5px;
   --dynamic-20: 10px;
@@ -36,6 +36,8 @@
   --static-110: 120px;
 
   --lateral-padding: 20px;
+  --header-height-default: 80px;
+  --header-height-scrolled: 60px;
 
   @include breakpoint($tablet) {
     --dynamic-80: 45px;
@@ -44,6 +46,8 @@
     --dynamic-110: 120px;
 
     --lateral-padding: 25px;
+    --header-height-default: 100px;
+    --header-height-scrolled: 70px;
   }
 
   @include breakpoint($desktop-xl) {

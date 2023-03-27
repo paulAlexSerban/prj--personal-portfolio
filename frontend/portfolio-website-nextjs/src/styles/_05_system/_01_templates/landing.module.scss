@@ -8,8 +8,7 @@ $block: "landing";
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
-        padding-inline: var(--lateral-padding);
-        margin-top: var(--dynamic-70);
-    }
+  @include e("base") {
+    @include baseTemplate;
+  }
 }

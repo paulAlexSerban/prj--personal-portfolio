@@ -1,16 +1,8 @@
-const sanitizeQueryString = (
-    string = "String to be sanitized from spaces.dots/and/slashes"
-) => {
-    return string
-        .toLowerCase()
-        .split(" ")
-        .join("")
-        .split("-")
-        .join("")
-        .split(".")
-        .join("")
-        .split("/")
-        .join("");
+const sanitizeQueryString = (string, pattern = /[\s./-]/g) => {
+	if (typeof string !== "string") {
+		throw new Error("Input must be a string");
+	}
+	return string.toLowerCase().replace(pattern, "");
 };
 
 export default sanitizeQueryString;

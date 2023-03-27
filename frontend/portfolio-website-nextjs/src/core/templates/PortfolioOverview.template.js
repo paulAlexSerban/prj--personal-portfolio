@@ -1,11 +1,12 @@
 import { useId } from "react";
+import dynamic from "next/dynamic";
 
-import Header from "@/core/library/organisms/Header.organism";
-import Footer from "@/core/library/organisms/Footer.organism";
-import HeroBanner from "@/core/library/organisms/HeroBanner.organism";
-import Section from "@/core/library/organisms/Section.organism";
-import PortfolioOverview from "@/core/library/organisms/PortfolioOverview.organism";
-import Main from "@/core/library/organisms/Main.organism";
+const Header = dynamic(() => import("@/core/library/organisms/Header.organism"));
+const Footer = dynamic(() => import("@/core/library/organisms/Footer.organism"));
+const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
+const Main = dynamic(() => import("@/core/library/organisms/Main.organism"));
+const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
+const PortfolioOverview = dynamic(() => import("@/core/library/organisms/PortfolioOverview.organism"));
 
 import { base } from "@/styles/templates/portfolioOverview.module.scss";
 
@@ -48,7 +49,7 @@ export default function PortfolioOverviewTemplate({ pageContent, siteProps }) {
                     />
                 </Section>
             </Main>
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }

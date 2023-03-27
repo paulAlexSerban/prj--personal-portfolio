@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "lint": "shellcheck ./scripts/**/*.bash",
+    "lint": "bash scripts/modulize.bash -e dev -p lint -m portfolio-website-nextjs",
+    "lint:scripts": "shellcheck ./**/*.bash",
     "install:ci": "npm ci --omit=dev --ignore-scripts",
     "install:root": "npm install",
     "prepare": "husky install"
@@ -26,6 +27,7 @@
     "@semantic-release/github": "^8.0.4",
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
+    "gh-pages": "^5.0.0",
     "semantic-release": "^19.0.2"
   },
   "config": {

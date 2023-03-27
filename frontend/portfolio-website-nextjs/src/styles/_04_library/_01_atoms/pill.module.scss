@@ -1,30 +1,29 @@
-@import "../../_00_abstracts/abstracts.scss";
+@import '../../_00_abstracts/abstracts.scss';
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: "pill";
+$block: 'pill';
 
 /* ------------------------------------ *\
  * PILL ATOM
 \* ------------------------------------ */
 
 .#{$block} {
-  @include e("base") {
+  @include e('base') {
     @include flex();
 
-    background-color: get-color($c-gray, timberwolf);
     border-radius: 20px;
     transition: background-color 0.3s ease-in-out;
-    
 
     &:hover {
-      background-color: transparent;
+      background-color: var(--background-color);
     }
 
     a {
-      @include font($button-small);
-      padding: 2px 10px;
+      @include font($link-small);
 
-      &:hover {
+      padding: 4px 14px;
+
+      @include on-event() {
         box-shadow: none;
       }
     }

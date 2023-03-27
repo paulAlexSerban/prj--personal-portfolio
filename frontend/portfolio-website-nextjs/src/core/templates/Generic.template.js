@@ -1,7 +1,8 @@
 import { useId } from "react";
+import dynamic from "next/dynamic";
 
-import Header from "@/core/library/organisms/Header.organism";
-import Footer from "@/core/library/organisms/Footer.organism";
+const Header = dynamic(() => import("@/core/library/organisms/Header.organism"));
+const Footer = dynamic(() => import("@/core/library/organisms/Footer.organism"));
 
 import { base } from "@/styles/templates/generic.module.scss";
 function GenericTemplate({ children, siteNavLinks = [] }) {
@@ -10,7 +11,7 @@ function GenericTemplate({ children, siteNavLinks = [] }) {
         <div id={ID} className={base}>
             <Header siteNavLinks={siteNavLinks} />
             {children}
-            <Footer />
+            <Footer socialMediaLinks={siteProps.socialMediaLinks} />
         </div>
     );
 }
