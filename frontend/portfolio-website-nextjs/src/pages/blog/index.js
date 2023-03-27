@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import { useId } from 'react';
 import BlogTemplate from '@/core/templates/Blog.template.js';
-import getContent from '@/core/utils/content/getContent';
 import { Roboto } from 'next/font/google';
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
+import ContentRepository from '@/core/utils/content/ContentRepository';
 
 const roboto = Roboto({
   display: 'swap',
@@ -32,20 +31,12 @@ export default function Blog({ children, pageContent, siteProps }) {
 }
 
 export async function getStaticProps() {
-  const publishedPosts = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.posts, ['status'], { status: 'published' });
+  const contentRepository = new ContentRepository();
+  const publishedPosts = await contentRepository.getFilteredContent('posts', ['status'], { status: 'published' });
+  const publishedBooknotes = await contentRepository.getFilteredContent('booknotes', ['status'], {
+    status: 'published',
   });
-
-  const publishedBooknotes = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.booknotes, ['status'], { status: 'published' });
-  });
-
-  const publishedSnippets = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.snippets, ['status'], { status: 'published' });
-  });
+  const publishedSnippets = await contentRepository.getFilteredContent('snippets', ['status'], { status: 'published' });
 
   return {
     props: {

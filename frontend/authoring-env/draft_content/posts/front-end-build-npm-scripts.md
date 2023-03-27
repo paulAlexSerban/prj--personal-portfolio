@@ -170,7 +170,7 @@ NPM Scripts-based architecture is a powerful methodology for building front-end 
 
 ## Free Reads:
 
-- [CSS-Tricks - Why NPM Scripts](https://css-tricks.com/why-npm-scripts/){target=\_blank}
-- [makeuseof.com - NPM Scripts](https://www.makeuseof.com/npm-scripts-javascript-how-run/){target=\_blank}
-- [dev.to - Mastering NPM Scripts](https://dev.to/paulasantamaria/mastering-npm-scripts-2chd){target=\_blank}
-- [deliciousbrains.com - NPM Build Scripts](https://deliciousbrains.com/npm-build-script/){target=\_blank}
+- [CSS-Tricks - Why NPM Scripts](https://css-tricks.com/why-npm-scripts/)
+- [makeuseof.com - NPM Scripts](https://www.makeuseof.com/npm-scripts-javascript-how-run/)
+- [dev.to - Mastering NPM Scripts](https://dev.to/paulasantamaria/mastering-npm-scripts-2chd)
+- [deliciousbrains.com - NPM Build Scripts](https://deliciousbrains.com/npm-build-script/)

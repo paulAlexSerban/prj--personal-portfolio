@@ -100,7 +100,7 @@ These books cover various aspects of Responsive Web Design, from the basics to m
 
 -   [alistapart.com.com - Responsive Web Design](https://alistapart.com/article/responsive-web-design/){target=_blank}
 -   [learn.microsoft.com - HTML5 - Responsive Web Design](https://learn.microsoft.com/en-us/archive/msdn-magazine/2011/november/html5-responsive-web-design){target=_blank}
--   [smashingmagazine.com - Responsive Web Design Techniques, Tools and Design Strategies](https://www.smashingmagazine.com/2011/07/responsive-web-design-techniques-tools-and-design-strategies/){target=\_blank}
+-   [smashingmagazine.com - Responsive Web Design Techniques, Tools and Design Strategies](https://www.smashingmagazine.com/2011/07/responsive-web-design-techniques-tools-and-design-strategies/)
 -   [web.dev - Learn Responsive Design](https://web.dev/learn/design/){target=_blank}
 -   [webfx.com/blog - A Brief Look at Grid-Based Layouts in Web Design](https://www.webfx.com/blog/web-design/a-brief-look-at-grid-based-layouts-in-web-design/){target=_blank}
 -   [kinsta.con/blog - The Beginner’s Guide to Responsive Web Design (Code Samples & Layout Examples)](https://kinsta.com/blog/responsive-web-design/){target=_blank}

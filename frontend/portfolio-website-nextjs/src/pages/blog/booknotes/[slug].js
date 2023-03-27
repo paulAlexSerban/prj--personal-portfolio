@@ -4,7 +4,6 @@ import matter from "gray-matter";
 import Head from "next/head";
 import BlogPostTemplate from "@/core/templates/BlogPost.template.js";
 import { Roboto } from 'next/font/google';
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],

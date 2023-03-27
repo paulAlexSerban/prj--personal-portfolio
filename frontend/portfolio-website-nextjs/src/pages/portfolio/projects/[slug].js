@@ -5,7 +5,6 @@ import { sortByDate } from '@/core/utils/softByDate';
 import Head from 'next/head';
 import PortfolioItemDetailTemplate from '@/core/templates/PortfolioItemDetail.template.js';
 import { Roboto } from 'next/font/google';
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],

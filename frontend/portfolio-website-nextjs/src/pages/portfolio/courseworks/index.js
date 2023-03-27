@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import PortfolioCategoryTemplate from '@/core/templates/PortfolioCategory.template.js';
-import getContent from '@/core/utils/content/getContent';
 import { Roboto } from 'next/font/google';
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
+import ContentRepository from '@/core/utils/content/ContentRepository';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],
@@ -28,10 +27,7 @@ export default function PortfolioCategoryPage({ children, pageContent, siteProps
 }
 
 export async function getStaticProps() {
-  const publishedCoursework = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.courseworks, ['status'], { status: 'published' });
-  });
+  const contentRepository = new ContentRepository();
   return {
     props: {
       pageContent: {
@@ -45,7 +41,7 @@ export async function getStaticProps() {
             section_id: 'coursework_overview',
             children: {
               portfolioOverview: {
-                projects: publishedCoursework,
+                projects: await contentRepository.getFilteredContent('courseworks', ['status'], { status: 'published' }),
                 parentPage: 'category_page',
                 category: {
                   category_url: 'courseworks',

@@ -1,10 +1,8 @@
 import Head from 'next/head';
 import { useId } from 'react';
 import TagPreviewTemplate from '@/core/templates/TagPreview.template';
-import sanitizeQueryString from '@/utils/sanitizeQueryString';
-import getContent from '@/core/utils/content/getContent';
 import { Roboto } from 'next/font/google';
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
+import ContentRepository from '@/core/utils/content/ContentRepository';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],
@@ -30,7 +28,8 @@ export default function TagsPage({ siteProps, pageContent }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getContent().then((fetchedContent) => {
+  const contentRepository = new ContentRepository();
+  const paths = await contentRepository.getContent().then((fetchedContent) => {
     const { content } = fetchedContent;
     return content.tags.map((tag) => ({
       params: {
@@ -47,21 +46,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { tag } }) {
-  const tags = await getContent().then((fetchedContent) => {
+  const contentRepository = new ContentRepository();
+  const tags = await contentRepository.getContent().then((fetchedContent) => {
     const { content } = fetchedContent;
     return content.tags;
   });
-
   const tagName = tags.find((tagObj) => tagObj.tag === tag).name;
-
 	const getTaggedContent = async (category) => {
-		const fetchedContent = await getContent();
-		const { content } = fetchedContent;
-	
-		return filterByFrontmatter(content[category], ['tags', 'status'], {
+		const fetchedContent = await contentRepository.getFilteredContent(category, ['tags', 'status'], {
 			tags: tag,
 			status: 'published',
-		});
+		})
+		return fetchedContent
 	};
 
   return {

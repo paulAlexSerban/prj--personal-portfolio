@@ -4,7 +4,6 @@ import matter from "gray-matter";
 import Head from "next/head";
 import BlogPostTemplate from "@/core/templates/BlogPost.template.js";
 import {  Roboto } from 'next/font/google';
-import filterByFrontmatter from "@/core/utils/filterByFrontMatter";
 
 const roboto = Roboto({
 	display: 'swap',
@@ -37,10 +36,7 @@ export default function PortfolioItemDetail({ children, pageContent, siteProps, 
 
 export async function getStaticPaths() {
 	const BLOG_PATH = path.join("src", "content", "posts");
-	const blogDirs = fs.readdirSync(BLOG_PATH);
-
 	const files = fs.readdirSync(BLOG_PATH);
-
 	const paths = files.map((filename) => ({
 		params: {
 			slug: filename.replace(".mdx", ""),

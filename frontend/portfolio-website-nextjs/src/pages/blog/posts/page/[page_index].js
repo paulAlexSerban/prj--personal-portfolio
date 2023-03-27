@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import BlogCategoryTemplate from '@/core/templates/BlogCategory.template.js';
-import getContent from '@/core/utils/content/getContent';
 import Pagination from '@/core/library/molecules/Pagination.molecule';
 import { Roboto } from 'next/font/google';
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
+import ContentRepository from '@/core/utils/content/ContentRepository';
+
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],
@@ -38,12 +38,10 @@ export default function BlogCategory({ children, pageContent, siteProps }) {
   );
 }
 
-export async function getStaticPaths() {
-  const publishedPosts = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.posts, ['status'], { status: 'published' });
-  });
 
+export async function getStaticPaths() {
+  const contentRepository = new ContentRepository();
+  const publishedPosts = await contentRepository.getFilteredContent('posts', ['status'], { status: 'published' });
   const numPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE); // get number of pages
   let paths = [];
   for (let i = 1; i <= numPages; i++) {
@@ -55,12 +53,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const contentRepository = new ContentRepository();
+  const publishedPosts = await contentRepository.getFilteredContent('posts', ['status'], { status: 'published' });
   const page = parseInt((params && params.page_index) || 1);
-  const publishedPosts = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.posts, ['status'], { status: 'published' });
-  });
-
   const numPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE); // get number of pages
   const pageIndex = page - 1;
   const orderedPosts = publishedPosts.slice(pageIndex * POSTS_PER_PAGE, (pageIndex + 1) * POSTS_PER_PAGE);

@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-
-import getContent from '@/core/utils/content/getContent';
+import ContentRepository from '@/core/utils/content/ContentRepository';
 import getSkillList from '@/core/utils/content/getSkillList';
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
 import LandingTemplate from '@/core/templates/Landing.template';
 
 const Header = dynamic(() => import('@/core/library/organisms/Header.organism'));
@@ -75,11 +73,7 @@ export default function LandingPage({ siteProps, pageContent }) {
 }
 
 export async function getStaticProps() {
-  const pinnedProjects = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    // console.log(filterByFrontmatter(content.projects, ['pinned', 'status'], { status: 'published' }))
-    return filterByFrontmatter(content.projects, ['pinned', 'status'], { status: 'published' });
-  });
+  const contentRepository = new ContentRepository();
 
   return {
     props: {
@@ -121,7 +115,7 @@ export async function getStaticProps() {
             section_id: 'my_projects',
             children: {
               projectsOverview: {
-                projects: pinnedProjects,
+                projects: await contentRepository.getFilteredContent('projects', ['pinned', 'status'], { status: 'published' }),
                 parentPage: 'landing',
                 category: {
                   category_url: 'projects',

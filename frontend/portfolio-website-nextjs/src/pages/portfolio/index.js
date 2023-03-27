@@ -1,11 +1,9 @@
 import Head from 'next/head';
-import { useId, useState, useEffect } from 'react';
-// import PortfolioOverviewTemplate from "@/core/templates/PortfolioOverview.template.js";
-import getContent from '@/core/utils/content/getContent';
+import { useId } from 'react';
 import dynamic from 'next/dynamic';
 const PortfolioOverviewTemplate = dynamic(() => import('@/core/templates/PortfolioOverview.template.js'));
 import { Roboto } from 'next/font/google';
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
+import ContentRepository from '@/core/utils/content/ContentRepository';
 
 const roboto = Roboto({
   display: 'swap',
@@ -34,15 +32,7 @@ export default function Portfolio({ siteProps, pageContent }) {
 }
 
 export async function getStaticProps({}) {
-  const publishedProjects = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.projects, ['status'], { status: 'published' });
-  });
-
-  const publishedCoursework = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.courseworks, ['status'], { status: 'published' });
-  });
+  const contentRepository = new ContentRepository();
 
   return {
     props: {
@@ -92,7 +82,7 @@ export async function getStaticProps({}) {
               'In my free time, I pursue personal and hobby projects that allow me to showcase my skills and unleash my creativity. These projects not only bring me enjoyment, but also demonstrate my versatility, initiative, and dedication to continuously developing my abilities.',
             children: {
               portfolioOverview: {
-                projects: publishedProjects,
+                projects: await contentRepository.getFilteredContent('projects', ['status'], { status: 'published' }),
                 parentPage: 'portfolio_overview',
                 category: {
                   category_url: 'projects',
@@ -108,7 +98,7 @@ export async function getStaticProps({}) {
               'Academic or educational projects assigned as part of a course or program that demonstrate my ability to apply knowledge and techniques.',
             children: {
               portfolioOverview: {
-                projects: publishedCoursework,
+                projects: await contentRepository.getFilteredContent('courseworks', ['status'], { status: 'published' }),
                 parentPage: 'portfolio_overview',
                 category: {
                   category_url: 'courseworks',

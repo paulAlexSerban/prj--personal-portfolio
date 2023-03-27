@@ -1,8 +1,7 @@
 import Head from "next/head";
 import BlogCategoryTemplate from "@/core/templates/BlogCategory.template.js";
-import getContent from "@/core/utils/content/getContent";
-import filterByFrontmatter from '@/core/utils/filterByFrontMatter';
 import {  Roboto } from 'next/font/google';
+import ContentRepository from '@/core/utils/content/ContentRepository';
 
 const roboto = Roboto({
 	display: 'swap',
@@ -29,10 +28,8 @@ export default function BlogCategory({ children, pageContent, siteProps }) {
 }
 
 export async function getStaticProps() {
-  const publishedSnippets = await getContent().then((fetchedContent) => {
-    const { content } = fetchedContent;
-    return filterByFrontmatter(content.snippets, ['status'], { status: 'published' });
-  });
+	const contentRepository = new ContentRepository();
+  const publishedSnippets = await contentRepository.getFilteredContent('snippets', ['status'], { status: 'published' });
 	return {
 		props: {
 			pageContent: {
