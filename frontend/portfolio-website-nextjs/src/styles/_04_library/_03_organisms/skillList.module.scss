@@ -7,11 +7,11 @@ $block: "skillList";
  * SKILL LIST ORGANISM
 \* ------------------------------------ */
 
-$skillSpacing: var(--responsive-spacing-30);
+$skillSpacing: var(--responsive-spacing-15);
 
 .#{$block} {
     @include e("base") {
-        margin-top: var(--responsive-spacing-30);       
+        margin-top: var(--responsive-spacing-15);       
     }
 
     @include e("list") {
@@ -20,7 +20,7 @@ $skillSpacing: var(--responsive-spacing-30);
         max-width: 100%;
         flex-wrap: wrap;
         gap: $skillSpacing;
-        margin-top: var(--responsive-spacing-10);
+        margin-top: var(--responsive-spacing-5);
     }
 
     @include e("listItem") {

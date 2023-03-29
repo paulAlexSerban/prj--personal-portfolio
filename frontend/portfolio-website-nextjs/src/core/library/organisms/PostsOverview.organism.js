@@ -1,11 +1,11 @@
 import { useId } from "react";
 
-import { base, container } from "@/styles/organisms/postsOverview.module.scss";
+import { base, container, footer } from "@/styles/organisms/postsOverview.module.scss";
 import { Link } from "@/core/atoms/typography/all";
   
 import PostList from "@/core/molecules/PostList.molecule";
 
-export default function PostsOverview({ blogList, category, parentPage, showViewAllButton = true  }) {
+export default function PostsOverview({ blogList, category, parentPage, showViewAllButton = true, cols = 3  }) {
     const ID = useId();
 
     return (
@@ -13,14 +13,15 @@ export default function PostsOverview({ blogList, category, parentPage, showView
             {blogList && (
                 <article id={ID} className={base}>
                     <div className={container}>
-                        <PostList list={blogList} category={category} />
+                        <PostList list={blogList} category={category} cols={cols}/>
                     </div>
                     {category && showViewAllButton &&  (
-                        <Link
+                        <div className={footer}>                        <Link
                             label={`View all ${category.category_name}`}
                             href={`/blog/${category.category_url}`}
                             isInternal={true}
-                        ></Link>
+                        ></Link></div>
+
                     )}
                 </article>
             )}

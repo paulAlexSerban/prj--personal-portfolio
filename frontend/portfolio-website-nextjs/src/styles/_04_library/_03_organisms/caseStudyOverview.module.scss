@@ -9,7 +9,7 @@ $block: "caseStudyOverview";
 
 .#{$block} {
     @include e("base") {
-        padding: var(--responsive-spacing-70) var(--lateral-padding);
+        padding: var(--responsive-spacing-35) var(--lateral-padding);
     }
 
     @include e("linkList") {

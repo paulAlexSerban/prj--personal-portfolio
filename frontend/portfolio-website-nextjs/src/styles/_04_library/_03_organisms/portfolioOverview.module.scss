@@ -16,7 +16,7 @@ $block: 'portfolioOverview';
 
   @include e('container') {
     width: 100%;
-    padding-bottom: var(--responsive-spacing-30);
+    padding-bottom: var(--responsive-spacing-15);
   }
 
   @include e('viewAllLink') {

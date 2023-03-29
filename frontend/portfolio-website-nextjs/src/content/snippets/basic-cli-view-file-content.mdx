@@ -1,0 +1,46 @@
+---
+title: 'Basic CLI: View File Content'
+excerpt: 'Learn how to view file content with the cat, more, less, and sort commands.'
+category: 'snippet'
+status: 'published'
+tags:
+  - 'Bash/Shell'
+date: 'Apr 15, 2019'
+---
+
+## `cat`
+
+- display all data inside the file - `cat config.cfg` - concatenates and prints the contents of files
+- `cat` - "concatenate" - command used to create, view and concatenate files - it is usually used to read data from a file and see the content as output; - `cat -n config-cfg` - using the `-n` parameter you will get all tine lines numbered - `cat -b config.cfg` - using the `-b` parameter you will number only the lines with text - `cat > myFile.txt` - the command to create a file named "myFile";
+  specified time (`touch -t 201510290630 file_2.txt`)
+- `cat -A config.cfg` - will show you the end of the line and the tabs
+
+
+## `more` (pagers)
+
+- to read files, we do not necessarily have to use an editor for that. There are two tools called `more` and `less`,
+- these are fundamental `pagers` that allow us to scroll through the file in an interactive view.
+- `more fileName` - display's a text file but it stops for each page
+  - will show you the contents of the file with the only possibility to see more by pressing enter (return) - use `q` to quit
+
+## `less` (pagers)
+
+- `less fileName` - provides the possibility to scroll, search and more through a file
+  - is a file reader - you can use the arrow to read the contents of the file
+    - `less config.cfg` - will output the entire file and you can look though it with hte arrows and search for text - to quit use `q`
+- `less -N config.cfg` - will output the entire file and you can look though it with hte arrows and search for text - to quit use `q` - the `-N` parameter will show you the line numbers
+- `less -S config.cfg` - will output the entire file and you can look though it with hte arrows and search for text - to quit use `q` - the `-S` parameter will show you the line numbers and will not wrap the lines
+- `less -S -N config.cfg` - will output the entire file and you can look though it with hte arrows and search for text - to quit use `q` - the `-S` parameter will show you the line numbers and will not wrap the lines - the `-N` parameter will show you the line numbers
+
+## `sort`
+
+- depending on which results and files are dealt with, they are rarely sorted. Often it is necessary to sort the desired results alphabetically or numerically to get a better overview
+- `cat /etc/passwd | sort`
+  - `cat /etc/passwd` - will output the content of the file
+  - `|` - pipe - will take the output of the first command and pass it to the second command
+  - `sort` - will sort the output of the first command
+- `echo "hello textfile" > file1.txt\` - command that overwrites everything with "hello textfile" into "file.txt";
+- `echo "hello textfile" >> file1.txt\` - command that appends "hello textfile" to the content fo the file;
+- `sort -r file1.txt` - will sort the file in reverse order
+- `sort -n file1.txt` - will sort the file numerically
+- `sort -u file1.txt` - will sort the file and remove duplicates

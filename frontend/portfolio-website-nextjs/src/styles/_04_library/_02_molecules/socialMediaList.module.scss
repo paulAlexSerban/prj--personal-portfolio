@@ -11,7 +11,7 @@ $block: "socialMediaList";
     @include e("base") {
         @include flex($cross: flex-end, $main: flex-start);
 
-        column-gap: var(--responsive-spacing-50);
+        column-gap: var(--responsive-spacing-20);
         align-self: flex-start;
         flex-wrap: wrap;
         margin-top: 0;

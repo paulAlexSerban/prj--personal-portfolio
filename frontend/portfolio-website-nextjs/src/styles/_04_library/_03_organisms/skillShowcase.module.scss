@@ -9,13 +9,13 @@ $block: "skillShowcase";
 
 .#{$block} {
     @include e("base") {
-        margin-top: var(--responsive-spacing-70);
+        margin-top: var(--responsive-spacing-35);
     }
 
     @include e("skillList") {
         @include flex($main: flex-start);
 
-        column-gap: var(--responsive-spacing-50);
+        column-gap: var(--responsive-spacing-20);
     }
     @include e("listItem") {
     }

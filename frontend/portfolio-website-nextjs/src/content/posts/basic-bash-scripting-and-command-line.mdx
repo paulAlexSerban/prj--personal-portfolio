@@ -1,5 +1,5 @@
 ---
-title: 'Basics of Bash and Shell Scripting'
+title: 'Basics of Shell Scripting'
 subheading: 'A quick introduction to Bash and shell scripting'
 excerpt: 'If you are new to Linux or Unix-like systems, you have probably heard of Bash and shell scripting. Bash is the most common shell for Linux and Unix systems, and it is used for managing files, running programs, and automating tasks. In this blog post, we will cover the basics of Bash and shell scripting.'
 status: 'published'
@@ -16,211 +16,41 @@ If you're new to Linux or Unix-like systems, you've probably heard of Bash and s
 
 ### Navigation through the file-system
 
-The first thing you need to know is how to navigate the file system. To do this, you need to use the cd command. The `cd` command stands for "change directory," and it allows you to move around the file system. For example:
+The first thing you need to know is how to navigate the file system. To do this, you need to use the `cd` command. The `cd` command stands for "change directory," and it allows you to move around the file system. For example, to move to the root directory, you would type `cd /`.
 
-- Print full path (absolute path) of the current directory, `pwd` - "print working directory"
-- Move to the root directory, `cd /`.
-- Move to the home directory, `cd ~`.
-- Move to the parent directory, `cd ..`.
-- Move to the current directory, `cd .`.
-- Move to a specific directory, `cd /path/to/directory`.
-- Move to the previous directory, `cd -`.
-- Change directory and clear the screen at the same time, `cd /path/to/directory && clear`.
-- Get from one directory to another and gives the option to use `popd`.
-- Get back to the directory where you triggered `pushd` (`pushd` and `popd` are useful when it is hard to remember what directory you were working in).
+- <Link href="/blog/snippets/basic-cli-navigating-the-file-system" label="Read more" isInternal={true}/>
 
-#### View and list directory content
+### View and list directory content
 
-- View the content of a directory, you need to use the `ls` command. The `ls` command lists the files and directories in the current directory.
-- List all files and directories, including hidden ones, you can use the -a flag, like this: `ls -a`.
+To view the content of a directory, you need to use the `ls` command. The `ls` command lists the files and directories in the current directory. To list all files and directories, including hidden ones, you can use the `-a` flag, like this: `ls -a`.
 
-#### Viewing and listing directory contents with
-
-- `ls -a` - view hidden "dot" files
-- `ls -lah` - command used to list files as a list, hidden files also and info will be human-readable;
-- `ls -lat` - command used to list files as a list, hidden files sort by time modified;
-- `ls -al` - to see more details about every file
-- `ls -F` - to see the file type
-- `ls -R` - list the contents of all directories below the current directory recursively
-- `ls -S` - sort by size
-- `ls -i` - get index number
-- `ls -t` - sort by modification time
-
-#### Viewing and listing directory contents with
-
-- `ls -l scr?pt` - the question mark can be used to replace one character anywhere on the filter string
-- `ls -l s*t` - the asterisk character can be used to replace multiple characters on the filter string
-- `ls -l sc[abcri]ipt` - you can list a choices of characters, you can specify a range of characters like an alphabetic range - `ls -l f[a-i]ll`
-- `ls *.conf` - list all files ending in `.conf`
-
-#### Linking files
-
-Linking files is a great option available in Linux - if you need to maintain two or more copied of the same file on the system, instead of having separate physical copies , you can use on physical copy and multiple virtual copies. This is done by creating a link to the original file. There are two types of links:
-
-- `ln -s main-file symbolic-link__main-file` - will create a symbolic lint to `main-file` (the symbolic link doe not contain info about the original file).
-- `ln main-file hard-link__main-file` - will create a `hard-link` that contains information about the original file
-
-NOTE: you can only create hard-links between files on the same physical medium - to create alink under separate physical mediums you must use a symbolic link
-
-#### List Wildcard Files
-
-Wildcards are placeholders used to allow users to search for OR use multiple files with similar names
-
-- the asterisk , `*`, represents any character or string of characters - the `a*.txt` could refer to `ab.txt` as well as `aardvark.txt`
-- the question mark, `?`, represents a single character - the `a?.txt` could refer to `ab.txt` and `al.txt`, but NOT `aardvark.txt`
+- <Link href="/blog/snippets/basic-cli-view-and-list-directory-content" label="Read more here" isInternal={true}/>
 
 ### Handling Files
 
-- Create a new file, you can use the `touch` command. For example, to create a new file called "example.txt," you would type `touch example.txt`.
-- Delete a file, you can use the `rm` command. For example, to delete the "example.txt" file, you would type `rm example.txt`.
-- Copy a file, you can use the `cp` command. For example, to copy the "example.txt" file to a new file called "example2.txt," you would type `cp example.txt example2.txt`.
-- Move a file, you can use the `mv` command. For example, to move the "example.txt" file to a new file called "example2.txt," you would type `mv example.txt example2.txt`.
+To create a new file, you can use the `touch` command. For example, to create a new file called "example.txt," you would type `touch example.txt`. To delete a file, you can use the `rm` command. For example, to delete the "example.txt" file, you would type `rm example.txt`.
 
-#### Creating files and directories
+- <Link href="/blog/snippets/basic-cli-handling-files" label="Read more here" isInternal={true}/>
 
-- `touch` - command used to create, update the access date and/or modification date/time-stamp of a computer-file or directory - the `touch`command can be used to create a file without any content - this command can be used when the user does not have data to store at the time of file creation, and the `touch` command can be used to update the access date and/or modification date/time-stamp of a computer-file or directory
-- `touch file_1.txt` - create a file named "file_1.txt"
-- `touch -t YYYYMMDDHHMM file_2.txt` - command used to create a file using a specific date and time;
-- `mkdir myDir` - create a directory named "myDir"
-- `mkdir -p myDir/hello` - create a directory named "myDir" and inside it the directory named "hello" - the `-p` flag will create the directory and all the parent directories if they do not exist
-
-#### Copying files
-
-- `cp src_file dest_file` - command used to copy files and group of files or directories - it creates an exact image of a file or directory;
-- `cp file1.txt{,.bkp}` - command that takes the file_name that you want and creates a new file with the same name plus `.bkp` at the end;
-- `cp -R src_directory dest_directory` - the command that copies all files of the source directory to the destination directory, creating any files and directories needed - the additional option ` -R` indicates the recursive copying of directories and subdirectories;
-
-#### Moving or renaming files
-
-- `mv` - command used to move one or more files from one place to another - it can be used also to rename a file or folder
-- `mv old_name.txt new_name.txt` - command to rename the file "old_name.txt" to "new_name.txt" - this command actually moves the content from one file to another - **!!! this command overwrites any existing file with the same name without any prompt !!!** - to avoid this, you can use the `-i` flag to prompt the user before overwriting an existing file
-- `mv file.txt [dest-directory]` - the command that moves the file named `file.txt` to the destination folder `dest-directory` - if the destination folder does not exist, it will be created
-
-#### Delete files PERMANENTLY
-
-- `rm` - command used to remove/delete a file or an empty directory - it can be used to remove multiple files at once
-- `rm -v` - delete and see the progress of removing files and directories
-- `rm -i` - delete file with prompt to continue or not
-- `rm -rf` - the command that removes, enforces and does not ask for confirmation all the files and subdirectories from the current directory
-- `rm -rf /` - the command that removes everything from the whole computer
-- `rm -rf *` - the command that removes all the files and directories from the computer - **!!! this command is very dangerous and should be used with extreme caution !!!**
 
 ### Find Files and Directories, and Compare
 
 It is crucial to be able to find the files and folders we need. Once we have gained access to a Linux based system, it will be essential to find configuration files, scripts created by users or the administrator, and other files and folders. We do not have to manually browse through every single folder and check when modified for the last time. There are some tools we can use to make this work easier.
 
-- Find files or directories, you can use the `find` command. For example, to find all files in the current directory that end with ".txt," you would type `find . -name "*.txt"`.
-- Compare the content of two files, you can use the `diff` command. For example, to compare the content of "file1.txt" and "file2.txt," you would type `diff file1.txt file2.txt`.
+- <Link href="/blog/snippets/basic-cli-find-files-and-directories-and-compare" label="Read more here" isInternal={true}/>
 
-#### which
-
-One of the common tools is `which`. This tool returns the path to the file or link that should be executed. This allows us to determine if specific programs, like `cURL`, `netcat`, `wget`, `python`, `gcc`, are available on the operating system. Let us use it to search for Python in our interactive instance
-
-- example - `which python`
-
-#### find
-
-Besides the function to find files and folders, this tool also contains the function to filter the results. We can use filter parameters like the size of the file or the date. We can also specify if we only search for files or folders.
-
-- Syntax - `find [location] [option]`
-  `find` - command used to find files and directories - prints the path where the files were found - it can be used to find files and directories by name, size, date, type, etc.
-- `find  -name fileName` - finds all files and directories in your computer with the name `fileName` - the `-name` flag is used to specify the name of the file or directory that we are looking for
-- `find . -name fileName` - finds all files and directories in the working directory and any subdirectory with the name `fileName` - the `.` flag is used to specify the current directory
-- `find / -type f -name *.cfg -user root -size +20k -newermt 2020-03-03 -exec ls -al {}; 2>/dev/null`
-  - `-type f` define the type of the searched object. In this case, '`f`' stands for '`file`'
-  - `-name *.conf` - with '`-name`', we indicate the name of the file we are looking for. The asterisk (`*`) stands for 'all' files with the '`.conf`' extension.
-  - `-user root` This option filters all files whose owner is the root user.
-  - `-size +20k` - We can then filter all the located files and specify that we only want to see the files that are larger than 20 KiB.
-  - `-newermt 2020-03-03` - With this option, we set the date. Only files newer than the specified date will be presented.
-  - `-exec ls -al {} \;` - This option executes the specified command, using the curly brackets as placeholders for each result. The backslash escapes the next character from being interpreted by the shell because otherwise, the semicolon would terminate the command and not reach the redirection.
-  - `2>/dev/null` This is a `STDERR` redirection to the '`null device`', - this redirection ensures that no errors are displayed in the terminal. This redirection must `not` be an option of the 'find' command.
-- `find / -type f -iname *.conf -size +20k -size -25k -newermt 2020-03-03 -exec ls -al {}\; 2>/dev/null`
-  - find all `*.conf` files, bigger than 20k and smaller than 25k, created after 2020-03-03
-- `find / -type f -iname "*.bak" 2>/dev/null | wc -l`
-  - get how many files exist on the system that have the `*.bak` extension
-- `find / -name "xxd" 2>/dev/null`
-  - find all `xxd` files
-
-#### using logical operators - `-and`, `-or` and `-not`
-
-- `find -name "*chick*" -or -name "*kitty*"`
-- `find -type -f -not -name "*.html*"`
-- `find -cmin -60 -not -name "*.log*"`
-  - anything modified withing te last 60 min and not named `*.log`
-- we can use `&&`, `||` or `!` for logical operators
-
-#### `find -exec`
-
-Provide `find` with our own action to perform using each matching pathname:
-
-- `find -exec command {}`
-  - `{}` are a placeholder for the current pathname (ech match), and the semicolon is required to indicate the end of the command
-- `find ~ -type f -empty -exec ls -l '{}' ';'`
-  - find all files in root(`~`) that are `-empty` and then `-execute ls -l` on eahc path that is passed
-  - the `-exec ls -l` will be run once for each file
-- `find ~ -type f -empty -ok ls -l '{}' ';'`
-  - the `-ok` will ask the user if agrees with each match
-- `find -type f -name "*.html*" -exec cp '{}' '{}-COPY' ';'`
-  - find all files that end with .html
-  - create a copy of each using the cp command
-  - each of the copies ends with "-COPY", so we will end up with files like "index.html-COPY"
-- `find ! -empty -exec cp '{}' '{}-BKP' ';'`
-  - find all files that are not empty
-  - make a copy of each adding `-BKP` to the end of each
-- `find -name "*.txt" | xargs ls -la*`
-
-  - `xargs` will bundle all arguments passed through STDIN from previous command and turn them into a single argument list
-
-#### locate
-
-- `locate fileName` - command used to find files and filesystem - it searches through a prebuilt database of files generated by `updatedb` command or by a daemon - it operates significantly faster than `find`, but requires regular updating of the database;
 
 ### View File Content
 
 View the content of a file, you can use the `cat` command. For example, to view the content of "example.txt," you would type `cat example.txt`. You can also use the `less` command to view the content of a file. The `less` command allows you to view the content of a file one page at a time. For example, to view the content of "example.txt" using the less command, you would type `less example.txt`.
 
-#### `cat`
-
-- display all data inside the file - `cat config.cfg` - concatenates and prints the contents of files
-- `cat` - "concatenate" - command used to create, view and concatenate files - it is usually used to read data from a file and see the content as output; - `cat -n config-cfg` - using the `-n` parameter you will get all tine lines numbered - `cat -b config.cfg` - using the `-b` parameter you will number only the lines with text - `cat > myFile.txt` - the command to create a file named "myFile";
-  specified time (`touch -t 201510290630 file_2.txt`)
-
-#### `more` & `les`s` - pagers
-
-- to read files, we do not necessarily have to use an editor for that. There are two tools called `more` and `less`,
-- these are fundamental `pagers` that allow us to scroll through the file in an interactive view.
-- `more fileName` - display's a text file but it stops for each page
-
-  - will show you the contents of the file with the only possibility to see more by pressing enter (return) - use `q` to quit
-
-- `less fileName` - provides the possibility to scroll, search and more through a file
-  - is a file reader - you can use the arrow to read the contents of the file
-    - `less config.cfg` - will output the entire file and you can look though it with hte arrows and search for text - to quit use `q`
-
-#### `sort`
-
-- depending on which results and files are dealt with, they are rarely sorted. Often it is necessary to sort the desired results alphabetically or numerically to get a better overview
-- `cat /etc/passwd | sort`
-
-- `echo "hello textfile" > file1.txt\` - command that overwrites everything with "hello textfile" into "file.txt";
-- `echo "more hello" >> file1.txt\` - command that appends "more hello" to the content fo the file;
+- <Link href="/blog/snippets/basic-cli-view-file-content" label="Read more here" isInternal={true}/>
 
 ### Edit File Content
 
 To edit the content of a file, you can use a text editor. There are many text editors available for Linux and Unix systems, but the most common ones are `vi` and `nano`. To edit a file using `nano`, you would type `nano example.txt`. To edit a file using `vi`, you would type `vi example.txt`.
 
-#### `nano`
-
-- `nano file1.txt\` - command that opens file.txt in the nano text editing tool;
-- `nano -B [filename]` - backup previous version of a file
-- `nano -B –backupdir=[directory-path]` - backup files into a specific directory
-- `nano -E [filename]` - convert tabs into spaces
-
-#### `vimtutor`
-
-Vim offers an excellent opportunity called `vimtutor` to practice and get familiar with the editor. It may seem very difficult and complicated at first, but it will only feel that way for a short time. The efficiency we gain from Vim once we get used to it is enormous.
-
-- `vimtutor` to open the tutorial
+- <Link href="/blog/snippets/basic-cli-view-file-content" label="Read more here" isInternal={true}/>
 
 ## System Management
 
@@ -229,40 +59,20 @@ Vim offers an excellent opportunity called `vimtutor` to practice and get famili
 To monitor running programs, you can use the `top` command. The `top` command shows a real-time list of the processes running on your system. To exit the top command, you can press `q`.
 The `ps` command is used to display information about running processes. With this command, you can see the process ID, user, CPU and memory usage, and more. The top command provides real-time system monitoring of the processes, including the CPU and memory usage. Additionally, the `htop` command provides a more user-friendly interface for process monitoring.
 
-- `ps` - displays the process that belongs to the cirrent user
-  - `ps -ef` - displays everything runnning on the systrem
-- `top` - real time proceess monitoring
-- `kill` - allows you to send sginals to process based on their PIDs
-  - to send a process signal, you must either be the owner of the process or be logged as the root user
-- `pkill http*` - tool used to stop a process by using their name - for example the previous command will kill all the processes that start with `http`, such as `httpd` services fo the Apache Web Server
+- <Link href="/blog/snippets/basic-cli-monitoring-programs" label="Read more here" isInternal={true}/>
 
 ### Mounting Media
 
 To mount a media device, such as a USB drive or CD-ROM, you can use the `mount` command. For example, to mount a USB drive, you would type `mount /dev/sdb1 /mnt/usb`. To unmount the USB drive, you would type `umount /mnt/usb`.
 The mount command is used to mount storage devices such as hard drives, USB drives, and network shares. When a storage device is mounted, it is accessible as if it were part of the file system.
 
-- `mount` - displays a list of media devices currently mounted on the system
-  - `mount -t ext4` - displays all filesystems with the type of `ext4`
-  - `mount -t vfat /dev/sdb1 /media/disk` - mount the USB memory stick at device `/dev/sdb1` at location `/media/disk`
-  - `-o` - this option allows you to mount the filesystem with a comma-separated
-    - `check=none` - mount the filesystem without performing an integrity check
-- `umount [directory | device]` - use to unmount a media device from the system
+- <Link href="/blog/snippets/basic-cli-mounting-media" label="Read more here" isInternal={true}/>
 
 ### Package Management
 
 To manage software packages on your system, you can use a package manager. The most common package managers for Linux and Unix systems are `apt` and `yum`. To install a package using apt, you would type sudo `apt install packagename`. To install a package using yum, you would type sudo `yum install packagename`.
 
-- `dpkg`- The `dpkg` is a tool to install, build, remove, and manage Debian packages. The primary and more user-friendly front-end for `dpkg` is aptitude.
-- `apt` - provides a high-level command-line interface for the package management system.
-  - total packages installed on a system
-    - `apt list --installed | grep -c "installed"`
-  - install package on Debian - `sudo apt-get install [package-name]`
-  - install package on Ubuntu - `sudo apt install keepassxc`
-- `aptitude` - an alternative to `apt` and is a high-level interface to the package manager.
-- `snap` - Install, configure, refresh, and remove snap packages. Snaps enable the secure distribution of the latest apps and utilities for the cloud, servers, desktops, and the internet of things.
-- `gem` - Gem is the front-end to RubyGems, the standard package manager for Ruby.
-- `pip` - Pip is a Python package installer recommended for installing Python packages that are not available in the Debian archive. It can work with version control repositories (currently only Git, Mercurial, and Bazaar repositories), logs output extensively, and prevents partial installs by downloading all requirements before starting installation.
-- `git` - Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
+- <Link href="/blog/snippets/basic-cli-package-management" label="Read more here" isInternal={true}/>
 
 ### Service and Process Management
 
@@ -270,106 +80,13 @@ Services are background processes that run on the system and provide various fun
 
 Processes, on the other hand, are running instances of a program. The `kill` command is used to terminate a process, and the `killall` command is used to terminate all instances of a process. You can also use the nice command to set the priority of a process.
 
-#### types of services
-
-Internal:
-
-- the relevant services that are required at system startup
-- which perform hardware-related tasks
-  Services that are installed by the user:
-- include all server services - such services run in the background without any user interaction.
-
-- services are called `deamons`, and are identified by the letter `d` at the endof the program name, for example, `sshd`, `systemd`
-- `systemd` is the `Init process` and has the process ID (PID) 1
-- all processes can be viewed under `/proc/`
-- we can use `systemctl` and `update-rc.d` to manage SysV init scripts
-
-#### systemctl
-
-- `systemctl` command is a utility which is responsible for examining and controlling the systemd system and service manager
-  - It is a collection of system management libraries, utilities and daemons which function as a successor to the System V init daemon.
-  - start a service - `systemctl start ssh`
-  - check service status - `systemctl status ssh`
-  - enable service to start at startup - `systemctl enable ssh`
-
-#### kill a process
-
-A process can be: - RUNNING - WAITING (waiting fo an event or system resource) - STOPPED - ZOMBIE (stopped, but still has an entry in the process table)
-Processes can be controlled using `kill`, `pkill`, `pgrep`, `killall` - to interact with a process we must send process - `kill -l` to list all signals
-The most commonly used signals:
-
-- `1` - `SIGHUP` - This is sent to a process when the terminal that controls it is closed.
-- `2` - `SIGINT` - Sent when a user presses `[Ctrl] + C` in the controlling terminal to interrupt a process.
-- `3` - `SIGQUIT` - Sent when a user presses `[Ctrl] + D` to quit.
-- `9` - `SIGKILL` - Immediately kill a process with no clean-up operations.
-- `15` - `SIGTERM` - Program termination.
-- `19` - `SIGSTOP` - Stop the program. It cannot be handled anymore.
-- `20` - `SIGTSTP` - Sent when a user presses `[Ctrl] + Z` to request for a service to suspend. The user can handle it afterward.
-  Kill a frozen program - `kill 9 [PID]`
-
-#### Background a process
-
-Sometimes it will be necessary to put a scan o process in the background to continue using the current session - for that we use [Ctrl + Z] to send the `SIGTSTP` to the kernel
-
-```shell
-ping -c 10 www.hackthebox.eu
-[Ctrl + z]
-ping -c 10 www.google.com
-[Ctrl + z]
-```
-
-- now all programs are stopped in the background
-- list programs that run in the backgroun with `jobs`
-- set a process to run automatically in the backgroun use `&`
-  - `ping -c 10 www.google.com &`
-  - once the process finishes, we will see the result
-
-#### Foreground a process
-
-- we can use the `jobs` command to list all background processes
-- background processes do not require user interaction and we can use the same shell session without waiting until the process finishes first
-- to get a precess in the foreground and interact with it we can use `fg [ID]`
-
-```shell
-root@htb$ ping -c 10 www.google.com &
-root@htb$ jobs
-[1]+ running ping -c 10 www.google.com &
-
-root@htb$ fg 1
-
-ping -c 10 www.hackthebox.eu
---- www.hackthebox.eu ping statistics ---
-...
-```
-
-#### Execute multiple commands
-
-Possibilities to run several commands, one after the other:
-
-- semicolon `;`
-  - executes the commands by ignoring previous commands' results and errors - `echo '1'; echo '2'; echo '3'` - without error - `echo '1'; ls MISSING_FILE; echo '3'` - with error
-- double ampersand characters `&&`
-  - runs the commands one after the other - If there is an error in one of the commands, the following ones will not be executed anymore, and the whole process will be stopped - `echo '1' && ls MISSING_FILE && echo '3'` - with error
-- pipes `|`
-  - depend not only on the correct and error-free operation of the previous processes but also on the previous processes' results
-- the difference between them lies in the previous processes' treatment and depends on whether the previous process was completed successfully or with errors.
+- <Link href="/blog/snippets/basic-cli-service-andprocess-management" label="Read more here" isInternal={true}/>
 
 ### User Management
 
 The `useradd` command is used to create a new user account on the system, and the `userdel` command is used to delete a user account. The `passwd` command is used to change a user's password.
 
-- `sudo` - execute command as a different user
-  - `sudo -i` - changes from normal user to root user
-- `su` - requests appropriate user credentials via PAM and switches to that user ID (the default user is the superuser). A shell is then executed.
-- `useradd` - Creates a new user or update default new user information.
-  - `sudo useradd -m {username}` - create new home directory for a new user
-  - `sudo useradd --lock {surname}` - local a user's password - if you want to lock the account `EXPIRE_DATE` should also be set to 1
-- `userdel`- Deletes a user account and related files.
-  - `userdel -r jenkins` - will delete user together with the home directory of the user
-- `usermod` - Modifies a user account.
-- `addgroup` - Adds a group to the system.
-- `delgroup` - Removes a group from the system.
-- `passwd` - Changes user password.
+- <Link href="/blog/snippets/basic-cli-user-management" label="Read more here" isInternal={true}/>
 
 ### Working with Web Services
 

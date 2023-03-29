@@ -2,7 +2,7 @@ p {
     @include font($body);
 
     color: var(--text-color);
-    margin-top: var(--responsive-spacing-50);
+    margin-top: var(--responsive-spacing-20);
 
     &.indent-block {
         padding-inline: var(--lateral-padding);
