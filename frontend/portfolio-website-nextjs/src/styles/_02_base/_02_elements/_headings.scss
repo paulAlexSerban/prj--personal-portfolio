@@ -56,6 +56,10 @@ h3 {
 
 h4 {
     @include font($heading-400);
+
+    &:not(:first-child) {
+        margin-top: var(--responsive-spacing-50);
+    }
 }
 
 h5 {

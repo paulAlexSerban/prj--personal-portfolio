@@ -19,6 +19,7 @@ $block: "markdownContainer";
 		p,
 		h2,
 		h3,
+		h4,
 		ul,
 		ol,
 		pre {
@@ -37,6 +38,10 @@ $block: "markdownContainer";
 		ol {
 			padding-inline: var(--lateral-padding);
 			list-style: disc;
+		}
+
+		li ul {
+			margin-top: 0;
 		}
 
 		pre {

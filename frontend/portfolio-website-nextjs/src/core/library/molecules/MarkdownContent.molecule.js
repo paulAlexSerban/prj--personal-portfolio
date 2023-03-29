@@ -9,7 +9,9 @@ export default function MarkdownContainer({ markdownContent, articleId }) {
 
   const components = {
     p: (props) => <Paragraph {...props} />,
-    h2: (props) => <Heading level="2" {...props} />,
+    h2: (props) => <Heading level={2} {...props} />,
+    h3: (props) => <Heading level={3} {...props} />,
+    h4: (props) => <Heading level={4} {...props} />,
     Paragraph, Heading, Link
   };
 
@@ -25,6 +27,6 @@ export default function MarkdownContainer({ markdownContent, articleId }) {
 }
 
 MarkdownContainer.propTypes = {
-  markdownContent: PropTypes.string,
+  markdownContent: PropTypes.object,
   articleId: PropTypes.string,
 };

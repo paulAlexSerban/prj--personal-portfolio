@@ -58,7 +58,7 @@ export default function Heading({
 
 Heading.propTypes = {
 	level: PropTypes.number,
-    mainText: PropTypes.string.isRequired,
+    mainText: PropTypes.string,
     subheadingText: PropTypes.string,
     hasSeparator: PropTypes.bool
 };
