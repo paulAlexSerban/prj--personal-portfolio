@@ -16,7 +16,7 @@ $block: "siteNavigation";
     @include e("container") {
         @include flex($main: space-between);
 
-        column-gap: var(--responsive-spacing-20);
+        column-gap: var(--responsive-spacing-15);
         width: 100%;
         flex-wrap: wrap;
 
@@ -27,6 +27,7 @@ $block: "siteNavigation";
 
     @include e("controls") {
         @include flex($main: space-between);
+        
         width: 100%;
         position: relative;
     }

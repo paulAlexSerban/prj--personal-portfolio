@@ -11,19 +11,19 @@ $block: "pagination";
 	@include e("base") {
 		@include flex();
     width: 100%;
-    padding-bottom: var(--responsive-spacing-40);
+    padding-bottom: var(--responsive-spacing-20);
 	}
 
   @include e("list") {
     @include flex();
-    gap: var(--responsive-spacing-20);
+    gap: var(--responsive-spacing-10);
   }
 
   @include e("listItem") {
   }
 
   @include e("link") {
-    padding: var(--responsive-spacing-30);
+    padding: var(--responsive-spacing-15);
 
     &:hover {
       box-shadow: none;

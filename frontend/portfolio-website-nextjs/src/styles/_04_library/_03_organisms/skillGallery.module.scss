@@ -20,7 +20,7 @@ $block: "skillGallery";
     }
 
     @include e("container") {
-        margin-top: var(--responsive-spacing-70);
+        margin-top: var(--responsive-spacing-35);
         grid-column: span 12;
 
         @include breakpoint($tablet) {

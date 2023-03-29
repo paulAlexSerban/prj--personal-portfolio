@@ -8,14 +8,14 @@ $block: "postList";
 \* ------------------------------------ */
 
 .#{$block} {
-    $gap: var(--responsive-spacing-70);
+    $gap: var(--responsive-spacing-35);
     @include e("base") {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: $grid-gutter;
 
         @include breakpoint($tablet) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(var(--column-num), 1fr);
         };
     }
 }

@@ -12,13 +12,13 @@ $block: "navigationList";
         @include m("siteNav") {
             @include flex($direction: column, $cross: flex-start);
 
-            margin-top: var(--responsive-spacing-40);
+            margin-top: var(--responsive-spacing-20);
             width: 100%;
 
             @include breakpoint($tablet) {
                 margin-top: 0;
                 flex-direction: row;
-                gap: var(--responsive-spacing-40);
+                gap: var(--responsive-spacing-20);
                 width: auto;
             }
         }
@@ -26,7 +26,7 @@ $block: "navigationList";
         @include m("pageNav") {
             @include flex($direction: column, $cross: flex-start);
 
-            row-gap: var(--responsive-spacing-40);
+            row-gap: var(--responsive-spacing-20);
         }
 
         @include m("footerNav") {

@@ -23,8 +23,8 @@ $block: "pageNavigation";
     @include e("container") {
         @include flex($direction: column);
 
-        padding: var(--static-spacing-80);
-        column-gap: var(--responsive-spacing-20);
+        padding: var(--static-spacing-15);
+        column-gap: var(--responsive-spacing-10);
         width: 100%;
         border-left: solid 2px black;
     }

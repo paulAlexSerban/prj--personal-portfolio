@@ -29,6 +29,7 @@ function BlogTemplate({ pageContent, siteProps }) {
             blogList={pageContent.section_posts.children.postsOverview.list}
             parentPage={pageContent.section_posts.children.postsOverview.parent_page}
             category={pageContent.section_posts.children.postsOverview.category}
+            cols={2}
           />
         </Section>
         <Section
@@ -40,6 +41,7 @@ function BlogTemplate({ pageContent, siteProps }) {
             blogList={pageContent.section_booknotes.children.postsOverview.list}
             parentPage={pageContent.section_booknotes.children.postsOverview.parent_page}
             category={pageContent.section_booknotes.children.postsOverview.category}
+            cols={2}
           />
         </Section>
         <Section

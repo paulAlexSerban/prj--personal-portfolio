@@ -3,11 +3,11 @@ import PostCard from "@/core/molecules/PostCard.molecule";
 import PropTypes from "prop-types";
 import { base } from "@/styles/molecules/postList.module.scss";
 
-export default function PostList({ list = [], category = {} }) {
+export default function PostList({ list = [], category = {}, cols }) {
     const ID = useId();
 
     return (
-        <ul id={ID} className={base}>
+        <ul id={ID} className={base} style={{'--column-num': cols}}>
             {list.map((post, index) => {
                 return (
                     <li key={index}>

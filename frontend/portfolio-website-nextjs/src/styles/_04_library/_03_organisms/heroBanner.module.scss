@@ -13,7 +13,7 @@ $block: "heroBanner";
 
         width: 100vw;
         background-color: var(--secondary-color);
-        padding: var(--responsive-spacing-50) 0;
+        padding: var(--responsive-spacing-20) 0;
     }
 
     @include e("header", "container") {
@@ -25,7 +25,7 @@ $block: "heroBanner";
         padding-inline: var(--lateral-padding);
 
         &:not(:first-child) {
-            padding-top: var(--responsive-spacing-50);
+            padding-top: var(--responsive-spacing-20);
         }
     }
 

@@ -24,7 +24,7 @@ h2 {
     @include font($heading-200);
 
     &:not(:first-child) {
-        margin-top: var(--responsive-spacing-60);
+        margin-top: var(--responsive-spacing-30);
     }
 
     // &.hasSeparator {
@@ -50,12 +50,16 @@ h3 {
     @include font($heading-300);
 
     &:not(:first-child) {
-        margin-top: var(--responsive-spacing-40);
+        margin-top: var(--responsive-spacing-15);
     }
 }
 
 h4 {
     @include font($heading-400);
+
+    &:not(:first-child) {
+        margin-top: var(--responsive-spacing-15);
+    }
 }
 
 h5 {

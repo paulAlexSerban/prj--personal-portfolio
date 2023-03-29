@@ -15,12 +15,12 @@ $block: 'header';
     transform: translateX(-50%);
     width: 100%;
     background-color: var(--background-color);
-    padding: var(--static-spacing-30) var(--lateral-padding);
+    padding: var(--static-spacing-15) var(--lateral-padding);
     transition: padding 0.35s ease-in-out;
 
     @include m('shrink') {
-      padding-top: var(--static-spacing-10);
-      padding-bottom: var(--static-spacing-10);
+      padding-top: var(--static-spacing-5);
+      padding-bottom: var(--static-spacing-5);
     }
   }
 
