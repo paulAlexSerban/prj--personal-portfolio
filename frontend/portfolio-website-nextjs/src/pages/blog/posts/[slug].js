@@ -4,7 +4,7 @@ import Head from 'next/head';
 import BlogPostTemplate from '@/core/templates/BlogPost.template.js';
 import { Roboto } from 'next/font/google';
 import ContentRepository from '@/core/utils/ContentRepository';
-import getPageDescription from '@/core/utils/getPageDescription';
+import getPageDescription from '@/core/utils/trimPageDescription';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],

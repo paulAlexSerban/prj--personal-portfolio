@@ -1,25 +1,21 @@
 import Head from 'next/head';
-import { useId } from 'react';
 import dynamic from 'next/dynamic';
-const PortfolioOverviewTemplate = dynamic(() => import('@/core/templates/PortfolioOverview.template.js'));
 import { Roboto } from 'next/font/google';
 import ContentRepository from '@/core/utils/ContentRepository';
-import getPageDescription from '@/core/utils/getPageDescription';
+import getPageDescription from '@/core/utils/trimPageDescription';
 
-const roboto = Roboto({
-  display: 'swap',
-  subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  style: ['normal'],
-  variable: '--text-regular',
-});
+const PortfolioOverviewTemplate = dynamic(() => import('@/core/templates/PortfolioOverview.template.js'));
+const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
+const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
+const PortfolioOverview = dynamic(() => import("@/core/library/organisms/PortfolioOverview.organism"));
 
 export default function Portfolio({ siteProps, pageContent }) {
-  const ID = useId();
   const pageTitle = ['Portfolio', '|', siteProps.title].join(' ');
+  const { main, socialMediaLinks } = pageContent;
+  const {heroBanner, section_projectOverview, section_courseworkOverview} = main;
 
   return (
-    <div id={ID} className={roboto.className}>
+    <>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={getPageDescription(pageContent.pageDescription)} />
@@ -27,13 +23,36 @@ export default function Portfolio({ siteProps, pageContent }) {
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
 
-      <PortfolioOverviewTemplate siteProps={siteProps} pageContent={pageContent}></PortfolioOverviewTemplate>
-    </div>
+      <PortfolioOverviewTemplate siteProps={siteProps} pageContent={pageContent}>
+        <HeroBanner
+          pageTitle={heroBanner.pageTitle}
+          subheading={heroBanner.subheading}
+          socialMediaLinks={socialMediaLinks}
+        />
+        <Section
+          headingTitle={section_projectOverview.title}
+          sectionId={section_projectOverview.section_id}
+          subheadingText={section_projectOverview.subheading}
+        >
+          <PortfolioOverview content={section_projectOverview.children.portfolioOverview} />
+        </Section>
+
+        <Section
+          headingTitle={section_courseworkOverview.title}
+          sectionId={section_courseworkOverview.section_id}
+          subheadingText={section_courseworkOverview.subheading}
+        >
+          <PortfolioOverview content={section_courseworkOverview.children.portfolioOverview} />
+        </Section>
+      </PortfolioOverviewTemplate>
+    </>
   );
 }
 
 export async function getStaticProps({}) {
   const contentRepository = new ContentRepository();
+  const projects = await contentRepository.getFilteredContent('projects', ['status'], { status: 'published' });
+  const projectsByDate = projects.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 
   return {
     props: {
@@ -76,14 +95,14 @@ export async function getStaticProps({}) {
             pageTitle: 'Explore My Expertise:',
             subheading: 'A gallery of Web Development Projects and Coursework',
           },
-          section_1: {
+          section_projectOverview: {
             title: 'Projects',
             section_id: 'projects',
             subheading:
               'In my free time, I pursue personal and hobby projects that allow me to showcase my skills and unleash my creativity. These projects not only bring me enjoyment, but also demonstrate my versatility, initiative, and dedication to continuously developing my abilities.',
             children: {
               portfolioOverview: {
-                projects: await contentRepository.getFilteredContent('projects', ['status'], { status: 'published' }),
+                projects: projectsByDate,
                 parentPage: 'portfolio_overview',
                 category: {
                   category_url: 'projects',
@@ -92,14 +111,16 @@ export async function getStaticProps({}) {
               },
             },
           },
-          section_3: {
+          section_courseworkOverview: {
             title: 'Coursework',
             section_id: 'coursework',
             subheading:
               'Academic or educational projects assigned as part of a course or program that demonstrate my ability to apply knowledge and techniques.',
             children: {
               portfolioOverview: {
-                projects: await contentRepository.getFilteredContent('courseworks', ['status'], { status: 'published' }),
+                projects: await contentRepository.getFilteredContent('courseworks', ['status'], {
+                  status: 'published',
+                }),
                 parentPage: 'portfolio_overview',
                 category: {
                   category_url: 'courseworks',

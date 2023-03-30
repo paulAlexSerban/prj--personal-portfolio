@@ -22,26 +22,15 @@ $block: "navigationList";
                 width: auto;
             }
         }
-
-        @include m("pageNav") {
-            @include flex($direction: column, $cross: flex-start);
-
-            row-gap: var(--responsive-spacing-20);
-        }
-
-        @include m("footerNav") {
-        }
     }
-
-    @include e("listItem") {
+    @include e("listItem", "link") {
         display: block;
         width: 100%;
     }
 
     @include e("link") {
-        width: 100%;
-        padding: var(--responsive-spacing-20) 0;
-        display: block;
+        padding: var(--responsive-spacing-15) 0;
+        text-align: right;
 
         &:hover {
             box-shadow: none;

@@ -1,7 +1,7 @@
 ---
 title: 'Boston Film Festival'
-subheading: 'Proof of concept promotional website for the Watch it Outside - Boston Edition 2020'
-excerpt: 'Website prototype'
+subheading: 'Website prototype and proof of concept promotional website for the Watch it Outside - Boston Edition 2020'
+excerpt: "A promotional website that shows that films can appeal to all audiences of all ages, ensuring also advertisements and publications reflect the same ideal."
 pinned: true
 priority: 2
 section: 'portfolio'
@@ -11,6 +11,7 @@ experience: 'personal project'
 repo_url: 'https://github.com/paulAlexSerban/prj--boston-film-festival--website/'
 demo_url: 'https://paulalexserban.github.io/prj--boston-film-festival--website/'
 status: "published"
+date: 'October 10, 2019'
 tags:
   - 'Responsive Web Design'
   - 'Scss/Sass'
@@ -37,47 +38,82 @@ The goals of the website are:
 
 ### Goal Details
 
-Create a first version of the site with a professional website address.
+The primary goal of the website is to promote the outdoor film festivals organized by Watch It Outside Events Co. and to attract a diverse audience to the events. To achieve this goal, the website will provide the following features:
 
-The site should not be missing:
+- **A calendar of upcoming events**: The website will include a calendar that displays the dates and times of upcoming outdoor film festivals. This will make it easy for users to find events that fit their schedule and interests.
+- **Reservations**: The website will allow users to make reservations for the outdoor film festivals. This will help to ensure that users can secure a spot at the events and that the events do not exceed the maximum capacity of 1500 pax.
+- **Film list**: The website will display a list of the films that will be shown at the outdoor film festivals. This will provide users with an idea of the types of films that will be shown and may help to attract users who are interested in specific genres or themes.
+- **News section**: The website will include a news section that will provide users with the latest updates and information about the outdoor film festivals. This will help to keep users informed and engaged with the events.
+- **Social media links**: The website will include links to Watch It Outside Events Co.'s social media accounts. This will allow users to follow the events on social media and stay up-to-date with the latest news and updates.
+- **Registration form**: The website will include a registration form that users can use to sign up for the events. This will make it easy for users to register for the events and receive email notifications about upcoming events.
+- **Links to Boston news and Boston Public Gardens**: The website will include links to Boston news and Boston Public Gardens in the footer. This will help to promote the events to a local audience and provide users with additional information about the events and the location.
 
-- news section;
-- social media links in navigation and footer;
-- film list prototype;
-- registration form prototype;
-- link to Boston News - footer;
-- link to Boston Public Gardens - footer;
-- the site should be fully responsive;
+Overall, the goal of the website is to provide users with a user-friendly and informative platform that promotes the outdoor film festivals and attracts a diverse audience to the events.
 
 ### Target Audience
 
-The audience is of all ages, mixed culture, different background, and common daily concerns.
+The target audience for the website is broad and diverse. It includes people of all ages, cultures, backgrounds, and interests who enjoy watching movies and attending outdoor events. The target audience may include families, couples, groups of friends, and individuals who are looking for entertainment options in their local area.
+
+The target audience may have different reasons for attending the outdoor film festivals. Some may be interested in watching classic films, while others may be interested in seeing the latest releases. Some may be looking for a fun family outing, while others may be interested in meeting new people and socializing with like-minded individuals.
+
+The website will be designed to appeal to this diverse audience by providing a user-friendly interface that is easy to navigate and understand. The website will also be designed to showcase the diversity of films and events, and to emphasize that movies are for everyone, regardless of age, background, or interests.
 
 ### Promise
 
-Movies are for all audiences, no matter age, background or concerns.
+Watch It Outside Events Co. believes that movies are for everyone, no matter their age, background, or concerns. Our outdoor film festivals are designed to showcase a diverse selection of films that appeal to all audiences, with the goal of bringing people together to enjoy the magic of the movies under the stars.
+
+Our promise is to continue to curate events that promote inclusivity and celebrate diversity, and to create a welcoming and accessible space where everyone feels comfortable and at home. We believe that film has the power to inspire, entertain, and educate, and we're committed to sharing that experience with as many people as possible. So join us under the stars, and let's make some movie magic together!
 
 ## Architecture
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+The architecture of the website will follow a JAMStack approach. It will consist of a client-side user interface that communicates with a server-side API to fetch data and render pages. The website will be built using HTML for markup and templating, CSS for styling, and JavaScript for interactivity. Handlebars will be used as the templating language to generate HTML.
+
+The website will be hosted on GitHub Pages, which will serve static HTML, CSS, and JavaScript files. The server-side API will be built using JavaScript and Node.js, which will be responsible for fetching data from the database and serving it to the client. The API will be deployed to a serverless architecture using AWS Lambda and API Gateway.
+
+The client-side and server-side will communicate using RESTful API endpoints. The API will be responsible for handling CRUD operations for the events, reservations, and film list prototypes. The API will also be responsible for sending emails to users who register for events.
 
 ## Infrastructure
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+The infrastructure for the website will be hosted on the cloud. The website will be deployed on GitHub Pages, which will serve the static assets for the client-side. The server-side API will be deployed to AWS Lambda and API Gateway. AWS Lambda provides a serverless architecture that will help to scale the API based on demand. API Gateway will be used to manage the API endpoints and handle the authentication and authorization for the API.
+
+The data for the website will be stored in a cloud-based database. MongoDB will be used as the NoSQL database to store the events, reservations, and film list prototypes. The data will be accessed using Mongoose, which is an Object Data Modeling (ODM) library for MongoDB.
+
+The website will also use third-party services for email notifications, social media links, and Boston news and Boston Public Gardens links.
 
 ## Tech Stack
 
-- Markup and Templating: HTML, Handlebars
-- Layout: CSS, Sass/Scss, Bootstrap
-- User Experience: JavaScript
-- CI/CD: Git, Github, Github Actions
-- Hosting: GitHub Pages
-- Rendering: JAMStack and Server Side Generation with Webpack
+- **Markup and Templating**: HTML, Handlebars
+- **Layout**: CSS, Sass/Scss, Bootstrap
+- **User Experience**: JavaScript
+- **CI/CD**: Git, Github, Github Actions
+- **Hosting**: GitHub Pages
+- **Rendering**: JAMStack and Server Side Generation with Webpack
 
 ## System Design
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+The website will be designed to be fully responsive to ensure that it can be accessed from any device. The website will use a mobile-first approach to ensure that the website is optimized for mobile devices.
 
-## Glossary
+The user interface of the website will be designed using CSS, Sass/Scss, and Bootstrap. The website will use a modern design with a clean and minimalistic look. The navigation will be simple and easy to use, and it will include links to social media, Boston news, and Boston Public Gardens.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+The website will have a news section that will display the latest news and updates from Watch It Outside Events Co. The film list prototype will display the films that will be shown at the outdoor film festivals. The registration form prototype will allow users to register for the events and receive email notifications.
+
+The website will be optimized for SEO, and it will include meta tags, descriptions, and keywords. The website will also be optimized for performance, and it will use techniques like lazy loading, caching, and minification to ensure that it loads fast.
+
+## Post-MVP Improvements
+### Functional Improvements:
+- **User Accounts**: Implement user accounts to allow users to save their preferences and easily make reservations for events.
+- **Online Payment**: Enable users to make payments online to reserve their spot at events, as well as purchase concessions or merchandise.
+- **Film Reviews**: Allow users to submit reviews and ratings for the films they've seen at the outdoor film festivals, which can help attract more users and build a community around the events.
+- **Event Recommendations**: Use data from user accounts and event attendance to provide event recommendations to users based on their preferences and attendance history.
+- **Mobile App**: Create a mobile app version of the website that allows users to access event information, make reservations, and receive notifications.
+- **Interactive Map**: Implement an interactive map that displays the event location and nearby points of interest, such as restaurants or parking facilities.
+- **Social Media Integration**: Integrate the website with social media platforms such as Facebook, Twitter, and Instagram to allow users to share event information and invite their friends to attend.
+
+### Non-Functional Improvements:
+- **Website Speed**: Optimize the website to load quickly and provide a seamless user experience.
+- **Accessibility**: Ensure that the website is accessible to users with disabilities by providing features such as alt text for images, keyboard navigation, and captioning for videos.
+- **Security**: Implement security measures such as SSL certificates, firewalls, and secure authentication to protect user data and prevent unauthorized access.
+- **Scalability**: Design the website with scalability in mind, so that it can handle increased traffic and demand as the events grow in popularity.
+- **Performance Monitoring**: Implement performance monitoring tools to track website performance metrics such as page load time, server response time, and error rates, and use this data to identify and address any performance issues.
+- **SEO**: Optimize the website for search engines by using relevant keywords and meta tags, and ensuring that the website structure is search engine friendly.
+- **Usability Testing**: Conduct usability testing with users to identify any issues or areas for improvement in the website design and functionality.

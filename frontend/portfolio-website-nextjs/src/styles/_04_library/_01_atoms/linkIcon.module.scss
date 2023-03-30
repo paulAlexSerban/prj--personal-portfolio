@@ -9,7 +9,7 @@ $block: "link-icon";
 
 .#{$block} {
   @include e("base") {
-    font-size: 45px;
+    font-size: 35px;
 
     @include breakpoint($desktop) {
       font-size: 55px;

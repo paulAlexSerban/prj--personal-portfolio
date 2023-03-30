@@ -13,19 +13,16 @@ $block: "section";
 		margin-top: var(--responsive-spacing-35);
 		padding-inline: var(--lateral-padding);
 		opacity: 1;
-		transition: opacity 0.3s ease-in;
-
-		@include breakpoint($tablet) {
-			margin-top: var(--responsive-spacing-35);
-		}
+		transition: opacity 0.25s ease-in;
 
 		@include m("inactive") {
-			opacity: 0;
+			opacity: 0.1;
 		}
 	}
 
-	@include e("header", "container", "footer") {
+	@include e("header", "container") {
 		@include flex($direction: column, $cross: flex-start);
+
 		max-width: $max-width;
 	}
 }

@@ -3,7 +3,7 @@ import { useId } from 'react';
 import TagPreviewTemplate from '@/core/templates/TagPreview.template';
 import { Roboto } from 'next/font/google';
 import ContentRepository from '@/core/utils/ContentRepository';
-import getPageDescription from '@/core/utils/getPageDescription';
+import getPageDescription from '@/core/utils/trimPageDescription';
 const roboto = Roboto({
   display: 'swap',
   subsets: ['latin'],

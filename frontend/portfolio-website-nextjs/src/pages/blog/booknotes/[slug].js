@@ -3,7 +3,7 @@ import path from 'path';
 import ContentRepository from '@/core/utils/ContentRepository';
 import Head from 'next/head';
 import BlogPostTemplate from '@/core/templates/BlogPost.template.js';
-import getPageDescription from '@/core/utils/getPageDescription';
+import getPageDescription from '@/core/utils/trimPageDescription';
 import { Roboto } from 'next/font/google';
 const roboto = Roboto({
   display: 'swap',

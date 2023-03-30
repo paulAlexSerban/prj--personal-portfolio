@@ -1,10 +1,11 @@
-import { useId, useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useState} from 'react';
 import { Heading } from '@/core/atoms/typography/all';
-import styles, { base, header, container, footer } from '@/styles/organisms/section.module.scss';
+import styles, { base, header, container} from '@/styles/organisms/section.module.scss';
 import { useInView } from 'react-intersection-observer';
+import classNames from "classnames";
 
 export default function Section({ children, headingTitle, sectionId, subheadingText }) {
-  const ID = useId();
+
   const [visible, setVisible] = useState(false);
   const { ref, inView } = useInView({ threshold: 0 });
 
@@ -14,8 +15,12 @@ export default function Section({ children, headingTitle, sectionId, subheadingT
     }
   }, [inView]);
 
+  const baseClasses = classNames(base, {
+    [styles['base--inactive']] : !visible
+  });
+
   return (
-    <section id={sectionId} className={`${base} ${!visible ? styles['base--inactive'] : ''}`} ref={ref}>
+    <section id={sectionId} className={baseClasses} ref={ref}>
       {headingTitle && (
         <header className={header}>
           <Heading level={2} mainText={headingTitle} hasSeparator={true} subheadingText={subheadingText} />

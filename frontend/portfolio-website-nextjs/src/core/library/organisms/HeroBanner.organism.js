@@ -1,62 +1,34 @@
-import { useId } from "react";
-import { Paragraph, Heading, Link } from "@/core/atoms/typography/all";
-import styles, {
-	base,
-	header,
-	container,
-	wrapper,
-} from "@/styles/organisms/heroBanner.module.scss";
+import { Paragraph, Heading, Link } from '@/core/atoms/typography/all';
+import { base, container, wrapper } from '@/styles/organisms/heroBanner.module.scss';
 
-import SocialMediaList from "../molecules/SocialMediaList.molecule";
-import TagList from "@/core/molecules/TagList.molecule";
+import SocialMediaList from '../molecules/SocialMediaList.molecule';
+import TagList from '@/core/molecules/TagList.molecule';
 
-export default function HeroBanner({
-	pageTitle,
-	subheading,
-	socialMediaLinks = [],
-	date,
-	author,
-	tags,
-}) {
-	const ID = useId();
+export default function HeroBanner({ pageTitle, subheading, socialMediaLinks = [], date, author, tags }) {
+  const hasSocialMediaLinks = socialMediaLinks.length > 0;
+  const hasTags = tags && tags.length > 0;
+  const hasContent = hasSocialMediaLinks || date || hasTags;
 
-	const hasSocialMediaLinks = socialMediaLinks.length > 0;
-	const hasTags = tags && tags.length > 0;
-	const hasContent = hasSocialMediaLinks || date || hasTags;
+  return (
+    <>
+      {pageTitle && (
+        <header className={base}>
+          <div className={container}>
+            <div className={wrapper}>
+              <Heading level={1} mainText={pageTitle} subheadingText={subheading} />
+            </div>
 
-	return (
-		<section id={ID} className={base}>
-			{pageTitle && (
-				<>
-					<header className={header}>
-						<div className={wrapper}>
-							<Heading
-								level={1}
-								mainText={pageTitle}
-								subheadingText={subheading}
-							/>
-						</div>
-					</header>
-					{hasContent && (
-						<div className={container}>
-							<div className={wrapper}>
-								{hasSocialMediaLinks && (
-									<SocialMediaList items={socialMediaLinks} />
-								)}
+            {hasContent && (
+              <div className={wrapper}>
+                {hasSocialMediaLinks && <SocialMediaList items={socialMediaLinks} />}
 
-								{date || author ? (
-									<Paragraph
-										text={`By ${author} ${date ? `on ${date}` : ""}`}
-									/>
-								) : (
-									""
-								)}
-								{hasTags && <TagList tags={tags} />}
-							</div>
-						</div>
-					)}
-				</>
-			)}
-		</section>
-	);
+                {date || author ? <Paragraph text={`By ${author} ${date ? `on ${date}` : ''}`} /> : ''}
+                {hasTags && <TagList tags={tags} />}
+              </div>
+            )}
+          </div>
+        </header>
+      )}
+    </>
+  );
 }

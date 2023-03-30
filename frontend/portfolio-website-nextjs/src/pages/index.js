@@ -4,70 +4,53 @@ import ContentRepository from '@/core/utils/ContentRepository';
 import getSkillList from '@/core/utils/getSkillList';
 import LandingTemplate from '@/core/templates/Landing.template';
 
-const Header = dynamic(() => import('@/core/library/organisms/Header.organism'));
-const Footer = dynamic(() => import('@/core/library/organisms/Footer.organism'));
 const HeroBanner = dynamic(() => import('@/core/library/organisms/HeroBanner.organism'));
-const Main = dynamic(() => import('@/core/library/organisms/Main.organism'));
 const Section = dynamic(() => import('@/core/library/organisms/Section.organism'));
 const ProjectsOverview = dynamic(() => import('@/core/library/organisms/ProjectsOverview.organism'));
 const SkillsOverview = dynamic(() => import('@/core/library/organisms/SkillsOverview.organism'));
 const ContactSection = dynamic(() => import('@/core/library/organisms/ContactSection.organism'));
 const TextArticle = dynamic(() => import('@/core/library/molecules/TextArticle.molecule'));
-import getPageDescription from '@/core/utils/getPageDescription';
+import trimPageDescription from '@/core/utils/trimPageDescription';
+import sortByProperty from '@/core/utils/sortByProperty';
 
 export default function LandingPage({ siteProps, pageContent }) {
+  const { pageDescription, main, mainSkills } = pageContent;
+  const {heroBanner, section_myProjects, section_aboutMe, section_mySkills, section_contactMe} = main;
+  const { socialMediaLinks } = siteProps;
+
   return (
     <>
       <Head>
         <title>{siteProps.title}</title>
-        <meta name="description" content={getPageDescription(pageContent.pageDescription)} />
+        <meta name="description" content={trimPageDescription(pageDescription)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
 
-      <LandingTemplate>
-        <Header siteNavLinks={siteProps.siteNavLinks} />
-        <Main>
-          <HeroBanner
-            pageTitle={pageContent.main.heroBanner.pageTitle}
-            subheading={pageContent.main.heroBanner.subheading}
-            socialMediaLinks={siteProps.socialMediaLinks}
-          />
+      <LandingTemplate siteProps={siteProps}>
+        <HeroBanner
+          pageTitle={heroBanner.pageTitle}
+          subheading={heroBanner.subheading}
+          socialMediaLinks={siteProps.socialMediaLinks}
+        />
 
-          <Section
-            headingTitle={pageContent.main.section_myProjects.title}
-            sectionId={pageContent.main.section_myProjects.section_id}
-          >
-            <ProjectsOverview content={pageContent.main.section_myProjects.children.projectsOverview} />
-          </Section>
+        <Section headingTitle={section_myProjects.title} sectionId={section_myProjects.section_id}>
+          <ProjectsOverview content={section_myProjects.children.projectsOverview} />
+        </Section>
 
-          <Section
-            headingTitle={pageContent.main.section_aboutMe.title}
-            sectionId={pageContent.main.section_aboutMe.section_id}
-          >
-            <TextArticle
-              paragraphs={pageContent.main.section_aboutMe.children.textArticle.paragraphs}
-              colWidth={pageContent.main.section_aboutMe.children.textArticle.colWidth}
-            />
-          </Section>
+        <Section headingTitle={section_aboutMe.title} sectionId={section_aboutMe.section_id}>
+          {/* <TextArticle
+            paragraphs={section_aboutMe.children.textArticle.paragraphs}
+            colWidth={section_aboutMe.children.textArticle.colWidth}
+          /> */}
+        </Section>
 
-          <Section
-            headingTitle={pageContent.main.section_mySkills.title}
-            sectionId={pageContent.main.section_mySkills.section_id}
-          >
-            <SkillsOverview
-              mainSkills={pageContent.mainSkills}
-              skillGallery={pageContent.main.section_mySkills.children.skillsOverview.skills}
-            />
-          </Section>
-          <Section
-            headingTitle={pageContent.main.section_contactMe.title}
-            sectionId={pageContent.main.section_contactMe.section_id}
-          >
-            <ContactSection socialMediaLinks={siteProps.socialMediaLinks} />
-          </Section>
-        </Main>
-        <Footer socialMediaLinks={siteProps.socialMediaLinks} />
+        <Section headingTitle={section_mySkills.title} sectionId={section_mySkills.section_id}>
+          {/* <SkillsOverview mainSkills={mainSkills} skillGallery={section_mySkills.children.skillsOverview.skills} /> */}
+        </Section>
+        <Section headingTitle={section_contactMe.title} sectionId={section_contactMe.section_id}>
+          {/* <ContactSection socialMediaLinks={socialMediaLinks} /> */}
+        </Section>
       </LandingTemplate>
     </>
   );
@@ -75,6 +58,11 @@ export default function LandingPage({ siteProps, pageContent }) {
 
 export async function getStaticProps() {
   const contentRepository = new ContentRepository();
+
+  const projects =  await contentRepository.getFilteredContent('projects', ['pinned', 'status'], {
+    status: 'published',
+  });
+ sortByProperty(projects, ['frontmatter', 'priority'])
 
   return {
     props: {
@@ -116,9 +104,7 @@ export async function getStaticProps() {
             section_id: 'my_projects',
             children: {
               projectsOverview: {
-                projects: await contentRepository.getFilteredContent('projects', ['pinned', 'status'], {
-                  status: 'published',
-                }),
+                projects: sortByProperty(projects, ['frontmatter', 'priority']),
                 parentPage: 'landing',
                 category: {
                   category_url: 'projects',

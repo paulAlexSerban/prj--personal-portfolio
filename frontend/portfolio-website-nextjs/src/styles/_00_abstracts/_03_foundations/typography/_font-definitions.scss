@@ -73,12 +73,13 @@ $page-title: (
 
 $subheading: (
   default: (
-    font-size: convert-rem(24px),
+    font-size: convert-rem(20px),
     line-height: convert-rem(29px),
     font-weight: font-weight(thin),
+    letter-spacing: convert-rem(0.15px),
   ),
   $desktop: (
-    font-size: convert-rem(26px),
+    font-size: convert-rem(24px),
     line-height: convert-rem(33px),
   ),
 );

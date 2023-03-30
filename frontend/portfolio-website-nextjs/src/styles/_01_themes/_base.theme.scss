@@ -47,9 +47,13 @@
   --header-height-default: 80px;
   --header-height-scrolled: 60px;
 
+  @include breakpoint($mobile) {
+    --responsive-spacing-10: 15px;
+    --responsive-spacing-15: 20px;
+  }
+
   @include breakpoint($tablet) {
     --lateral-padding: 25px;
-
     --header-height-default: 100px;
     --header-height-scrolled: 70px;
   }

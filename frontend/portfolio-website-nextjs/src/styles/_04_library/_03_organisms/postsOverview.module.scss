@@ -15,12 +15,12 @@ $block: "postsOverview";
         width: 100%;     
     }
 
+    @include e("container", "footer") {
+        padding-inline: var(--lateral-padding);
+    }
+
     @include e("container") {
         width: 100%;
         padding-bottom: 40px;
-    }
-
-    @include e("footer") {
-        padding-inline: var(--lateral-padding);
     }
 }

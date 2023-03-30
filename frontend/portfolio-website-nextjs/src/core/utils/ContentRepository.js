@@ -2,7 +2,7 @@
 import fsPromises from 'fs/promises';
 import fs from 'fs';
 import path from 'path';
-import { sortByDate } from '@/utils/softByDate';
+import { sortByDate } from '@/core/utils/sortByDate';
 import { serialize } from 'next-mdx-remote/serialize';
 import sanitizeQueryString from '@/utils/sanitizeQueryString';
 import rehypeHighlight from 'rehype-highlight'
