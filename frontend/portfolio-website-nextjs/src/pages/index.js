@@ -2,11 +2,11 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import ContentRepository from '@/core/utils/ContentRepository';
 import getSkillList from '@/core/utils/getSkillList';
-import LandingTemplate from '@/core/templates/Landing.template';
+import GenericTemplate from '@/core/templates/Generic.template';
 
 const HeroBanner = dynamic(() => import('@/core/library/organisms/HeroBanner.organism'));
 const Section = dynamic(() => import('@/core/library/organisms/Section.organism'));
-const ProjectsOverview = dynamic(() => import('@/core/library/organisms/ProjectsOverview.organism'));
+const ContentTeaserList = dynamic(() => import('@/core/library/organisms/ContentTeaserList.organism'));
 const SkillsOverview = dynamic(() => import('@/core/library/organisms/SkillsOverview.organism'));
 const ContactSection = dynamic(() => import('@/core/library/organisms/ContactSection.organism'));
 const TextArticle = dynamic(() => import('@/core/library/molecules/TextArticle.molecule'));
@@ -27,7 +27,7 @@ export default function LandingPage({ siteProps, pageContent }) {
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
 
-      <LandingTemplate siteProps={siteProps}>
+      <GenericTemplate siteProps={siteProps}>
         <HeroBanner
           pageTitle={heroBanner.pageTitle}
           subheading={heroBanner.subheading}
@@ -35,23 +35,23 @@ export default function LandingPage({ siteProps, pageContent }) {
         />
 
         <Section headingTitle={section_myProjects.title} sectionId={section_myProjects.section_id}>
-          <ProjectsOverview content={section_myProjects.children.projectsOverview} />
+          <ContentTeaserList content={section_myProjects.children.projectsOverview}/>
         </Section>
 
         <Section headingTitle={section_aboutMe.title} sectionId={section_aboutMe.section_id}>
-          {/* <TextArticle
+          <TextArticle
             paragraphs={section_aboutMe.children.textArticle.paragraphs}
             colWidth={section_aboutMe.children.textArticle.colWidth}
-          /> */}
+          />
         </Section>
 
         <Section headingTitle={section_mySkills.title} sectionId={section_mySkills.section_id}>
-          {/* <SkillsOverview mainSkills={mainSkills} skillGallery={section_mySkills.children.skillsOverview.skills} /> */}
+          <SkillsOverview mainSkills={mainSkills} skillGallery={section_mySkills.children.skillsOverview.skills} />
         </Section>
         <Section headingTitle={section_contactMe.title} sectionId={section_contactMe.section_id}>
-          {/* <ContactSection socialMediaLinks={socialMediaLinks} /> */}
+          <ContactSection socialMediaLinks={socialMediaLinks} />
         </Section>
-      </LandingTemplate>
+      </GenericTemplate>
     </>
   );
 }
@@ -92,9 +92,10 @@ export async function getStaticProps() {
               textArticle: {
                 colWidth: 8,
                 paragraphs: [
-                  'I am a driven and accomplished web developer with a passion for creating intuitive and innovative web applications. My expertise includes an in-depth understanding of front-end technologies, JavaScript, and JAMStack development, as well as proficiency in React and other cutting-edge technologies.',
-                  'Throughout my career, I have had the opportunity to work on a diverse range of projects, from small business websites to large-scale e-commerce platforms. I take pride in my ability to collaborate effectively with teams, understand the unique needs of clients, and deliver  high-quality solutions that are delivered on time and within budget.',
-                  "Continuous learning and growth is a core aspect of my professional journey. When I'm not coding, you can find me staying up to date with the latest technologies,experimenting with new frameworks and libraries, or designing new systems. I am always eager to learn and grow as a developer, and I am excited to continue building my  skills and expanding my portfolio.",
+                  "As a highly motivated and accomplished web developer, I am deeply passionate about crafting innovative and visually stunning web applications that offer seamless user experiences. With extensive knowledge in front-end technologies, JavaScript, and JAMStack development, I excel in utilizing React and other cutting-edge technologies to develop top-tier solutions tailored to client requirements.",
+                  "Throughout my diverse career, I have successfully tackled projects ranging from bespoke small business websites to large-scale, sophisticated e-commerce platforms. My strong collaborative skills enable me to work effectively within teams, understand clients' distinct needs, and deliver tailored solutions that adhere to timelines and budget constraints.",
+                  "As a developer, I thrive on embracing new challenges and opportunities for growth. I am perpetually exploring new frameworks and libraries, architecting innovative systems, and staying well-informed about emerging technologies, all in the pursuit of expanding my skill set.",
+                  "In my professional journey, I consider continuous learning and growth as the driving forces behind my passion for development. As I advance my skills and broaden my portfolio, I am eager to embark on new projects and redefine the possibilities in the realm of web development.",
                 ],
               },
             },
@@ -104,8 +105,9 @@ export async function getStaticProps() {
             section_id: 'my_projects',
             children: {
               projectsOverview: {
-                projects: sortByProperty(projects, ['frontmatter', 'priority']),
+                list: sortByProperty(projects, ['frontmatter', 'priority']),
                 parentPage: 'landing',
+                section: 'portfolio',
                 category: {
                   category_url: 'projects',
                   category_name: 'projects',

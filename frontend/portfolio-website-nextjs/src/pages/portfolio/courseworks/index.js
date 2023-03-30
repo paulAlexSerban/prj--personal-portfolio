@@ -1,29 +1,36 @@
 import Head from 'next/head';
-import PortfolioCategoryTemplate from '@/core/templates/PortfolioCategory.template.js';
-import { Roboto } from 'next/font/google';
+import GenericTemplate from '@/core/templates/Generic.template.js';
 import ContentRepository from '@/core/utils/ContentRepository';
 import getPageDescription from '@/core/utils/trimPageDescription';
-const roboto = Roboto({
-  display: 'swap',
-  subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  style: ['normal'],
-  variable: '--text-regular',
-});
+import dynamic from 'next/dynamic';
+const HeroBanner = dynamic(() => import('@/core/library/organisms/HeroBanner.organism'));
+const Section = dynamic(() => import('@/core/library/organisms/Section.organism'));
+const ContentTeaserList = dynamic(() => import('@/core/library/organisms/ContentTeaserList.organism'));
 
 export default function PortfolioCategoryPage({ children, pageContent, siteProps }) {
-  const pageTitle = ['Case Studies', '|', siteProps.title].join(' ');
+  const pageTitle = ['Projects', '|', siteProps.title].join(' ');
+  const { main, socialMediaLinks, pageDescription } = pageContent;
+  const { heroBanner, section } = main;
 
   return (
-    <div className={roboto.className}>
+    <>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content={getPageDescription("Discover the coursework of Paul Serban, a talented web developer with a passion for creating stunning, responsive, and user-friendly websites. Explore our portfolio of coursework, including projects in HTML, CSS, JavaScript, React, and more.")}/>
+        <meta name="description" content={getPageDescription(pageDescription)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
-      <PortfolioCategoryTemplate siteProps={siteProps} pageContent={pageContent}></PortfolioCategoryTemplate>
-    </div>
+      <GenericTemplate siteProps={siteProps} pageContent={pageContent}>
+        <HeroBanner
+          pageTitle={heroBanner.pageTitle}
+          subheading={heroBanner.subheading}
+          socialMediaLinks={socialMediaLinks}
+        />
+        <Section>
+          <ContentTeaserList content={section.children.portfolioOverview} showViewAllButton={false} />
+        </Section>
+      </GenericTemplate>
+    </>
   );
 }
 
@@ -32,6 +39,7 @@ export async function getStaticProps() {
   return {
     props: {
       pageContent: {
+        pageDescription: 'A gallery of Web Development Projects and Coursework',  
         main: {
           heroBanner: {
             pageTitle: 'Coursework Gallery',
@@ -42,8 +50,9 @@ export async function getStaticProps() {
             section_id: 'coursework_overview',
             children: {
               portfolioOverview: {
-                projects: await contentRepository.getFilteredContent('courseworks', ['status'], { status: 'published' }),
+                list: await contentRepository.getFilteredContent('courseworks', ['status'], { status: 'published' }),
                 parentPage: 'category_page',
+                section: 'portfolio',
                 category: {
                   category_url: 'courseworks',
                   category_name: 'courseworks',

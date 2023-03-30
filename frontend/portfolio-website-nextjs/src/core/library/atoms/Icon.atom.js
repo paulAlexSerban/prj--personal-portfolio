@@ -55,7 +55,7 @@ export default function Icon({
 		email: <GrMail title="Email" />,
 		document: <GrDocumentText title="Document" />,
 		globe: <FaGlobe title="Globe" />,
-		folder: <FaFolderOpen title="Folder" />,
+		folder: <FaFolderOpen title="Read More" />,
 		linux: <FaLinux title="Linux"/>,
 		bash_shell: <SiGnubash title="Bash/Shell"/>
 	};

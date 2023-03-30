@@ -1,10 +1,10 @@
 @import '../../_00_abstracts/abstracts.scss';
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: 'projectsOverview';
+$block: 'contentTeaserList';
 
 /* ------------------------------------ *\
- * PROJECTS OVERVIEW ORGANISM
+ * CONTENT TEASER LIST ORGANISM
 \* ------------------------------------ */
 
 .#{$block} {
@@ -20,6 +20,7 @@ $block: 'projectsOverview';
 
   @include e('footer') {
     margin-top: var(--responsive-spacing-30);
+
     @include breakpoint($tablet) {
       padding-inline: var(--lateral-padding);
     }

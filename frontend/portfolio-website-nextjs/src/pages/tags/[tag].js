@@ -1,22 +1,15 @@
 import Head from 'next/head';
-import { useId } from 'react';
-import TagPreviewTemplate from '@/core/templates/TagPreview.template';
-import { Roboto } from 'next/font/google';
+import GenericTemplate from '@/core/templates/Generic.template';
+import dynamic from "next/dynamic";
 import ContentRepository from '@/core/utils/ContentRepository';
 import getPageDescription from '@/core/utils/trimPageDescription';
-const roboto = Roboto({
-  display: 'swap',
-  subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  style: ['normal'],
-  variable: '--text-regular',
-});
+const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
+const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
+const ContentTeaserList = dynamic(() => import("@/core/library/organisms/ContentTeaserList.organism"));
 
 export default function TagsPage({ siteProps, pageContent }) {
-  const ID = useId();
-
   return (
-    <div id={ID} className={roboto.className}>
+    <>
       <Head>
         <title>{siteProps.title}</title>
         <meta name="description" content={getPageDescription(pageContent.pageDescription)} />
@@ -24,8 +17,64 @@ export default function TagsPage({ siteProps, pageContent }) {
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
 
-      <TagPreviewTemplate pageContent={pageContent} siteProps={siteProps}></TagPreviewTemplate>
-    </div>
+      <GenericTemplate pageContent={pageContent} siteProps={siteProps}>
+        <HeroBanner
+          pageTitle={pageContent.main.heroBanner.pageTitle}
+          subheading={pageContent.main.heroBanner.subheading}
+        />
+        {pageContent.main.section_1.children.portfolioOverview.list.length > 0 && (
+          <Section
+            headingTitle={pageContent.main.section_1.title}
+            sectionId={pageContent.main.section_1.section_id}
+            subheadingText={pageContent.main.section_1.subheading}
+          >
+            <ContentTeaserList content={pageContent.main.section_1.children.portfolioOverview} />
+          </Section>
+        )}
+        {pageContent.main.section_2.children.portfolioOverview.list.length > 0 && (
+          <Section
+            headingTitle={pageContent.main.section_2.title}
+            sectionId={pageContent.main.section_2.section_id}
+            subheadingText={pageContent.main.section_2.subheading}
+          >
+            <ContentTeaserList content={pageContent.main.section_2.children.portfolioOverview} />
+          </Section>
+        )}
+        {pageContent.main.section_3.children.postsOverview.list.length > 0 && (
+          <Section
+            headingTitle={pageContent.main.section_3.title}
+            sectionId={pageContent.main.section_3.section_id}
+            subheadingText={pageContent.main.section_3.subheading}
+          >
+            <ContentTeaserList
+              content={pageContent.main.section_3.children.postsOverview}
+            />
+          </Section>
+        )}
+        {pageContent.main.section_4.children.postsOverview.list.length > 0 && (
+          <Section
+            headingTitle={pageContent.main.section_4.title}
+            sectionId={pageContent.main.section_4.section_id}
+            subheadingText={pageContent.main.section_4.subheading}
+          >
+            <ContentTeaserList
+              content={pageContent.main.section_4.children.postsOverview}
+            />
+          </Section>
+        )}
+        {pageContent.main.section_5.children.postsOverview.list.length > 0 && (
+          <Section
+            headingTitle={pageContent.main.section_5.title}
+            sectionId={pageContent.main.section_5.section_id}
+            subheadingText={pageContent.main.section_5.subheading}
+          >
+            <ContentTeaserList
+              content={pageContent.main.section_5.children.postsOverview}
+            />
+          </Section>
+        )}
+      </GenericTemplate>
+    </>
   );
 }
 
@@ -54,13 +103,13 @@ export async function getStaticProps({ params: { tag } }) {
     return content.tags;
   });
   const tagName = tags.find((tagObj) => tagObj.tag === tag).name;
-	const getTaggedContent = async (category) => {
-		const fetchedContent = await contentRepository.getFilteredContent(category, ['tags', 'status'], {
-			tags: tag,
-			status: 'published',
-		})
-		return fetchedContent
-	};
+  const getTaggedContent = async (category) => {
+    const fetchedContent = await contentRepository.getFilteredContent(category, ['tags', 'status'], {
+      tags: tag,
+      status: 'published',
+    });
+    return fetchedContent;
+  };
 
   return {
     props: {
@@ -77,8 +126,9 @@ export async function getStaticProps({ params: { tag } }) {
             section_id: 'projects',
             children: {
               portfolioOverview: {
-                projects: await getTaggedContent('projects'),
+                list: await getTaggedContent('projects'),
                 parentPage: 'tag_preview',
+                section: 'portfolio',
                 category: {
                   category_url: 'projects',
                   category_name: 'projects',
@@ -91,7 +141,8 @@ export async function getStaticProps({ params: { tag } }) {
             section_id: 'coursework',
             children: {
               portfolioOverview: {
-                projects: await getTaggedContent('courseworks'),
+                list: await getTaggedContent('courseworks'),
+                section: 'portfolio',
                 parentPage: 'tag_preview',
                 category: {
                   category_url: 'courseworks',
@@ -102,11 +153,12 @@ export async function getStaticProps({ params: { tag } }) {
           },
           section_3: {
             title: 'Posts',
-            section_id: 'coursework',
+            section_id: 'posts',
             children: {
               postsOverview: {
                 list: await getTaggedContent('posts'),
                 parentPage: 'tag_preview',
+                section: 'blog',
                 category: {
                   category_url: 'posts',
                   category_name: 'posts',
@@ -121,6 +173,7 @@ export async function getStaticProps({ params: { tag } }) {
               postsOverview: {
                 list: await getTaggedContent('booknotes'),
                 parentPage: 'tag_preview',
+                section: 'blog',
                 category: {
                   category_url: 'booknotes',
                   category_name: 'booknotes',
@@ -135,6 +188,7 @@ export async function getStaticProps({ params: { tag } }) {
               postsOverview: {
                 list: await getTaggedContent('snippets'),
                 parentPage: 'tag_preview',
+                section: 'blog',
                 category: {
                   category_url: 'snippets',
                   category_name: 'snippets',

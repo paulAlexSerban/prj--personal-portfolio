@@ -11,7 +11,7 @@ $block: "tagList";
     @include e("base") {
         @include flex($main: flex-start);
         
-        max-width: 100%;
+        min-width: 100%;
         flex-wrap: wrap;
         gap: var(--responsive-spacing-5);
         margin-top: var(--responsive-spacing-10);

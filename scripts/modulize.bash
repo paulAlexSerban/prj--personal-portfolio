@@ -4,7 +4,7 @@ MODULIZE_VERSION="1.0.3"
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-. ../config/config.common.env
+source ../config/config.common.env
 
 print_info() {
   echo -e "${GREEN} [ info ] ${NC}" "$1"
@@ -16,17 +16,17 @@ print_error() {
 
 usage() {
   print_error "Usage: $(basename "$0") [-e ENV] [-p PHASE] [-m MODULE]"
-  print_error "   - mandatory: -p PHASE"
-  print_error "   - mandatory: -e ENV"
-  print_error "   - optional:  -m MODULE"
+  print_error " - mandatory: -p PHASE"
+  print_error " - mandatory: -e ENV"
+  print_error " - optional: -m MODULE"
   exit 1
 }
 
 print_header() {
   echo "================================================"
-  echo -e "   Modulze Project Automation"
-  echo -e "   Version: ${BLUE}${MODULIZE_VERSION}${NC}"
-  echo -e "   Author:  ${BLUE}Paul Serban${NC}"
+  echo -e " Modulize Project Automation"
+  echo -e " Version: ${BLUE}${MODULIZE_VERSION}${NC}"
+  echo -e " Author: ${BLUE}Paul Serban${NC}"
   echo "================================================"
 }
 

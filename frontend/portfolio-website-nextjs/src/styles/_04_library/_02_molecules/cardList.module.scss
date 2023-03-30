@@ -1,21 +1,24 @@
 @import "../../_00_abstracts/abstracts.scss";
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: "postList";
+$block: "cardList";
 
 /* ------------------------------------ *\
- * POST LIST MOLECULE
+ * CARD LIST MOLECULE
 \* ------------------------------------ */
 
 .#{$block} {
-    $gap: var(--responsive-spacing-35);
     @include e("base") {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: $grid-gutter;
 
         @include breakpoint($tablet) {
-            grid-template-columns: repeat(var(--column-num), 1fr);
+            grid-template-columns: repeat(2, 1fr);
         };
+
+        @include breakpoint($desktop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }

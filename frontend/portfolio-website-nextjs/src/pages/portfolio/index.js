@@ -4,26 +4,26 @@ import { Roboto } from 'next/font/google';
 import ContentRepository from '@/core/utils/ContentRepository';
 import getPageDescription from '@/core/utils/trimPageDescription';
 
-const PortfolioOverviewTemplate = dynamic(() => import('@/core/templates/PortfolioOverview.template.js'));
+const GenericTemplate = dynamic(() => import('@/core/templates/Generic.template.js'));
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
-const PortfolioOverview = dynamic(() => import("@/core/library/organisms/PortfolioOverview.organism"));
+const ContentTeaserList = dynamic(() => import("@/core/library/organisms/ContentTeaserList.organism"));
 
 export default function Portfolio({ siteProps, pageContent }) {
   const pageTitle = ['Portfolio', '|', siteProps.title].join(' ');
-  const { main, socialMediaLinks } = pageContent;
+  const { main, socialMediaLinks, pageDescription } = pageContent;
   const {heroBanner, section_projectOverview, section_courseworkOverview} = main;
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content={getPageDescription(pageContent.pageDescription)} />
+        <meta name="description" content={getPageDescription(pageDescription)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
 
-      <PortfolioOverviewTemplate siteProps={siteProps} pageContent={pageContent}>
+      <GenericTemplate siteProps={siteProps} pageContent={pageContent}>
         <HeroBanner
           pageTitle={heroBanner.pageTitle}
           subheading={heroBanner.subheading}
@@ -34,7 +34,7 @@ export default function Portfolio({ siteProps, pageContent }) {
           sectionId={section_projectOverview.section_id}
           subheadingText={section_projectOverview.subheading}
         >
-          <PortfolioOverview content={section_projectOverview.children.portfolioOverview} />
+          <ContentTeaserList content={section_projectOverview.children.portfolioOverview} />
         </Section>
 
         <Section
@@ -42,9 +42,9 @@ export default function Portfolio({ siteProps, pageContent }) {
           sectionId={section_courseworkOverview.section_id}
           subheadingText={section_courseworkOverview.subheading}
         >
-          <PortfolioOverview content={section_courseworkOverview.children.portfolioOverview} />
+          <ContentTeaserList content={section_courseworkOverview.children.portfolioOverview} />
         </Section>
-      </PortfolioOverviewTemplate>
+      </GenericTemplate>
     </>
   );
 }
@@ -102,8 +102,9 @@ export async function getStaticProps({}) {
               'In my free time, I pursue personal and hobby projects that allow me to showcase my skills and unleash my creativity. These projects not only bring me enjoyment, but also demonstrate my versatility, initiative, and dedication to continuously developing my abilities.',
             children: {
               portfolioOverview: {
-                projects: projectsByDate,
+                list: projectsByDate,
                 parentPage: 'portfolio_overview',
+                section: 'portfolio',
                 category: {
                   category_url: 'projects',
                   category_name: 'projects',
@@ -118,10 +119,11 @@ export async function getStaticProps({}) {
               'Academic or educational projects assigned as part of a course or program that demonstrate my ability to apply knowledge and techniques.',
             children: {
               portfolioOverview: {
-                projects: await contentRepository.getFilteredContent('courseworks', ['status'], {
+                list: await contentRepository.getFilteredContent('courseworks', ['status'], {
                   status: 'published',
                 }),
                 parentPage: 'portfolio_overview',
+                section: 'portfolio',
                 category: {
                   category_url: 'courseworks',
                   category_name: 'courseworks',

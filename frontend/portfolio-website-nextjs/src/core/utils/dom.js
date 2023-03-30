@@ -28,4 +28,6 @@ const removeClass = (el, className) => {
   el.classList.remove(className);
 };
 
-export default { hasClass, removeClass };
+const DOM = { hasClass, removeClass }
+
+export default DOM;

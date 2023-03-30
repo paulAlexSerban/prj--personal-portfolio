@@ -1,10 +1,10 @@
 @import "../../_00_abstracts/abstracts.scss";
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: "projectCard";
+$block: "card";
 
 /* ------------------------------------ *\
- * PROJECT CARD MOLECULE
+ * CARD MOLECULE
 \* ------------------------------------ */
 
 .#{$block} {
@@ -17,7 +17,7 @@ $block: "projectCard";
         height: 100%;
 
         &:hover {
-            background-color: var(--secondary-color);;
+            background-color: var(--secondary-color);
         }
 
         @include breakpoint($tablet) {
@@ -26,10 +26,10 @@ $block: "projectCard";
     }
 
     @include e("footer") {
-        @include flex($main: space-between);
-
+        @include flex($main: flex-start);
+        flex-wrap: wrap;
         margin-top: auto;
         padding-top: var(--lateral-padding);
-        column-gap: $grid-gutter;
+        gap: $grid-gutter;
     }
 }

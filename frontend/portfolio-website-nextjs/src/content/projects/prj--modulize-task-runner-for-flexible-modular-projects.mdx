@@ -1,7 +1,7 @@
 ---
 title: 'Modulize'
-subheading: 'Bash task runner script for flexible modular projects.'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+subheading: 'A Flexible Task Runner Script for Modular Projects'
+excerpt: 'Modulize is a bash task runner script designed to provide flexibility in managing and executing tasks for modular projects. It allows you to run specific tasks on individual modules or the entire project, making it easier to maintain and control the build process.'
 pinned: true
 priority: 3
 section: 'portfolio'
@@ -16,46 +16,72 @@ tags:
   - 'Bash/Shell'
 ---
 
+## Project Brief
+
+### Summary
+
+Modulize is a bash task runner script designed to provide flexibility in managing and executing tasks for modular projects. It allows you to run specific tasks on individual modules or the entire project, making it easier to maintain and control the build process.
+
+### Goal Details
+
+The main goal of Modulize is to automate the execution of tasks within modular projects, allowing developers to focus on the code and functionality of their applications. By handling tasks such as build, test, and deployment, Modulize reduces the time and effort required to manage these tasks manually.
+
+### Target Audience
+
+Modulize is intended for developers and DevOps engineers working on modular projects, specifically those who need a lightweight and efficient solution for managing tasks within their projects.
+
+### Promise
+
+Modulize promises to streamline the management and execution of tasks within modular projects, offering a simple and flexible solution to improve productivity and reduce the time spent on manual task management.
+
+## Tech Stack
+
+Modulize is implemented using the following technologies:
+
+Bash scripting
+Environment variables and configuration files
+
+## Post-MVP Improvements & To Do's
+
+### Functional Improvements:
+
+- Support for additional task types, such as linting and code analysis.
+- Parallel execution of tasks for improved performance.
+- Integration with Continuous Integration (CI) and Continuous Deployment (CD) tools for seamless project management.
+- Enhanced error handling and reporting capabilities for better debugging.
+- Support for custom task plugins, allowing users to extend Modulize's functionality.
+
+### Non-Functional Improvements:
+
+- Improved documentation and examples for easier adoption.
+- Performance optimizations for faster task execution.
+- Enhanced modularity and code organization for better maintainability.
+
 ## Features
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- Task execution for individual modules or entire projects.
+- Environment-specific configuration support.
+- Automatic discovery of modules and submodules.
+- Simple and intuitive command-line interface.
+- Color-coded output for enhanced readability.
 
 ## Installation
 
 ### Requirements
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- Bash (version 4.0 or higher)
+- Access to a UNIX-based system (Linux, macOS)
 
 ### Install
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- Download or clone the Modulize repository to your local machine.
+- Ensure the main script (modulize.sh) is executable by running chmod +x modulize.sh.
+- Add the script to your PATH, or simply invoke it using its full path when needed.
 
 ## Usage
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+To use Modulize, run the script with the following options:
 
-## License
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-## Credits
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-## Contributing
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-## Changelog
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-## TODO
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-## Donate
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-If you like my work, you can
+- `-p PHASE (mandatory)`: The task phase to run, such as "build" or "test".
+- `-e ENV (mandatory)`: The environment configuration to use, such as "dev" or "prod".
+- `-m MODULE (optional)`: The specific module to run the task on. If not specified, the task will run on all modules

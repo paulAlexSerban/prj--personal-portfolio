@@ -1,14 +1,10 @@
-import { useId } from "react";
-import LinkIcon from "@/core/atoms/LinkIcon.atom";
-import sanitizeQueryString from "@/core/utils/sanitizeQueryString";
-import { base, skillList, listItem } from "@/styles/organisms/skillShowcase.module.scss";
-  
+import LinkIcon from '@/core/atoms/LinkIcon.atom';
+import sanitizeQueryString from '@/core/utils/sanitizeQueryString';
+import { base, skillList, listItem } from '@/styles/organisms/skillShowcase.module.scss';
 
 export default function SkillsShowcase({ list }) {
-  const ID = useId();
-
   return (
-    <div id={ID} className={base}>
+    <div className={base}>
       <ul className={skillList}>
         {list.map((item, index) => {
           return (

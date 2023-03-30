@@ -1,6 +1,7 @@
 ---
 title: "ITaaS Agency"
-excerpt: "Landing page for a business that offers IT-as-a-Service services."
+subheading: "Landing page for a business that offers IT-as-a-Service services."
+excerpt: "A landing page for a fictitious IT-as-a-Service (ITaaS) company to showcase its services and facilitate customer engagement."
 pinned: true
 priority: 1
 section: "portfolio"
@@ -26,26 +27,69 @@ tags:
     - "SSG"
 ---
 
-## Brief Description
+## Project Brief
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+### Summary
+- Develop a landing page for a fictitious IT-as-a-Service (ITaaS) company to showcase its services and facilitate customer engagement.
+- The website will highlight the benefits of using the company's services and provide a way for potential customers to contact the business.
+
+### Goal Details
+- Create a responsive, user-friendly website that effectively promotes the ITaaS services provided by the fictitious company.
+- Integrate a contact form to enable potential customers to easily reach out to the business.
+- Develop an informative Frequently Asked Questions (FAQ) section to address common inquiries and concerns.
+- Feature client testimonials and case studies to establish credibility and trust.
+
+### Target Audience
+- Small and medium-sized businesses in need of IT services and support.
+- Organizations looking to outsource IT management and infrastructure.
+- Businesses searching for cost-effective and scalable IT solutions.
+
+### Value Proposition
+- Deliver a seamless ITaaS experience with tailored solutions designed to meet each client's unique needs.
+- Ensure clients' IT infrastructure remains secure, up-to-date, and efficient.
 
 ## Architecture
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+- A single-page application (SPA) with navigation to different sections.
+- Sections include: Home, Services, About, FAQ, Testimonials, and Contact.
+- Contact form data will be processed and stored using AWS Lambda and API Gateway, and email notifications will be sent through AWS SES.
 
 ## Infrastructure
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+- Use AWS Amplify for hosting, CI/CD, and serverless backend.
+- Leverage AWS Lambda for serverless functions to process contact form submissions and store data.
+- Utilize AWS API Gateway to create secure endpoints for serverless functions.
+- Implement AWS Simple Email Service (SES) for email notifications upon form submissions.
 
 ## Tech Stack
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+- Markup and Templating: HTML, JSX
+- Style and Layout: CSS, SCSS/Sass
+- User Experience: JavaScript, React, Next.js
+- CI/CD: Git, GitHub, GitHub Actions, AWS Amplify
+- Hosting: AWS Amplify
+- Rendering: JAMStack - Static Site Generation (SSG) with NextJS
+- Server-side: AWS Lambda, AWS API Gateway, AWS SES
 
 ## System Design
+- Set up project using Next.js and configure for SSG.
+- Implement the site structure with React components for each section.
+- Style components using CSS and SCSS/Sass.
+- Implement the contact form using React and validate user input.
+- Create AWS Lambda function to process form submissions and store data.
+- Configure AWS API Gateway for secure access to Lambda functions.
+- Integrate AWS SES for email notifications.
+- Set up CI/CD with GitHub Actions and AWS Amplify.
+- Deploy the website using AWS Amplify.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
-
-## Glossary
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut. Lobortis scelerisque fermentum dui faucibus in. Lectus mauris ultrices eros in cursus turpis massa. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tempus quam pellentesque nec nam aliquam. At consectetur lorem donec massa sapien. Phasellus faucibus scelerisque eleifend donec. Libero nunc consequat interdum varius. Nibh mauris cursus mattis molestie a iaculis at erat. Morbi tincidunt ornare massa eget egestas purus viverra. At risus viverra adipiscing at in tellus integer feugiat. Urna id volutpat lacus laoreet non curabitur gravida arcu. Proin fermentum leo vel orci.
+## Post-MVP Improvements
+### Functional Improvements:
+- Implement a client portal for customers to access their account information and manage ITaaS services.
+- Add a live chat feature for instant support and sales inquiries.
+- Integrate a blog for sharing news, updates, and industry insights.
+### Non-Functional Improvements:
+- Perform regular performance optimizations, such as image and code minification, to improve load times and overall user experience.
+- Enhance SEO efforts to increase organic traffic and visibility on search engines.
+- Implement website analytics to track user behavior and engagement, allowing for data-driven optimizations and improvements.
+- Establish A/B testing to identify the most effective design and content choices for maximizing conversions and user satisfaction.
+- Ensure accessibility compliance by adhering to WCAG guidelines, making the website usable for a wider audience, including those with disabilities.
+- Periodically update content and design to keep the website fresh and relevant to the evolving needs of the target audience.
+- Implement a content delivery network (CDN) to improve site performance and reduce latency.
+- Implement a service worker to improve site performance and provide offline support.
