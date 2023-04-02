@@ -1,0 +1,47 @@
+---
+title: "Troubleshooting 'Invalid username or password' errors with gh-pages and GitHub Actions"
+subheading: "A Guide to Troubleshooting and Fixing 'Invalid Username or Password' Errors with gh-pages and GitHub Actions"
+excerpt: "GitHub Pages is a great way to host static websites and web apps, and the gh-pages npm package makes it easy to deploy your site from a GitHub Actions workflow. However, sometimes you may encounter an error that says 'Invalid username or password' when trying to commit with gh-pages. In this blog post, we'll guide you through troubleshooting and fixing this issue. We'll cover steps to check your authentication details, ensure your access token is stored as a secret, and update your workflow to use the secret. By following these steps, you'll be able to authenticate with GitHub and deploy your site to GitHub Pages with confidence."
+status: "published"
+author: "Paul Serban"
+date: "March 29, 2023"
+tags:
+  - "Web Development"
+  - "Github Actions"
+  - "Github Pages"
+---
+
+GitHub Pages is a popular platform for hosting static websites and web apps. With the `gh-pages` npm package, it's easy to deploy your website to GitHub Pages from a GitHub Actions workflow. However, sometimes you might run into an error that says "Invalid username or password" when trying to commit with the `gh-pages`package. In this post, we'll discuss some troubleshooting steps to help you fix this issue.
+
+## Step 1: Check your authentication details
+The "Invalid username or password" error typically occurs when the authentication details provided by the user are incorrect or have expired. Double-check that you're using the correct GitHub access token for authentication in the `gh-pages` package. If you're not sure whether your token is correct, you can generate a new token with the `repo` scope by following these steps:
+
+- Log in to your GitHub account and navigate to your account settings page.
+- Click on "Developer settings", then click on "Personal access tokens".
+- Click the "Generate new token" button.
+- Give your token a description (e.g. "GitHub Actions deploy token").
+- Under "Select scopes", check the box next to "repo" to grant the token access to your repositories.
+- Click the "Generate token" button at the bottom of the page.
+Make sure to copy the token value and store it securely, as you won't be able to see it again once you leave the page.
+
+## Step 2: Ensure your access token is stored as a secret
+Once you have your access token, make sure to store it securely as a secret in your repository's GitHub Actions settings. To do this, follow these steps:
+
+- Navigate to your repository on GitHub and click on "Settings".
+- In the left sidebar, click on "Secrets".
+- Click the "New secret" button.
+- Enter a name for your secret (e.g. "ACCESS_TOKEN").
+- Paste the access token value into the "Value" field.
+- Click the "Add secret" button.
+
+## Step 3: Update your workflow to use the secret
+Finally, you'll need to update your GitHub Actions workflow to use the `ACCESS_TOKEN` secret you just created. To do this, add the following step to your workflow:
+```yaml
+- name: Deploy to GitHub Pages
+  env:
+    ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  run: npm run deploy
+```
+This step assumes that your `deploy` script in your `package.json` file uses the `gh-pages` package to deploy to GitHub Pages.
+
+With these troubleshooting steps, you should now be able to successfully authenticate with GitHub and deploy your site to GitHub Pages using the gh-pages package in your GitHub Actions workflow.

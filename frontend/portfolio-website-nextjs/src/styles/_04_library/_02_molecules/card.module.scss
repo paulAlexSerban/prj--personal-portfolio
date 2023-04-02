@@ -10,8 +10,6 @@ $block: "card";
 .#{$block} {
     @include e("base") {
         @include flex($direction: column, $cross: flex-start, $main: unset);
-
-        margin-inline: calc(var(--lateral-padding) * -1);
         padding: var(--lateral-padding);
         transition: background-color 0.3s ease-in-out;
         height: 100%;
@@ -20,9 +18,7 @@ $block: "card";
             background-color: var(--secondary-color);
         }
 
-        @include breakpoint($tablet) {
-            margin-inline: 0;
-        }
+
     }
 
     @include e("footer") {
