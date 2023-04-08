@@ -88,7 +88,8 @@ const moreNumbers = [0, ...numbers, 4, 5];
 
 Promises are a way to handle asynchronous operations in JavaScript, providing a cleaner and more maintainable approach than traditional callbacks. Async/await is a syntax sugar on top of Promises, allowing developers to write asynchronous code that looks more like synchronous code.
 
-```javascriptasync function fetchData(url) {
+```javascript
+async function fetchData(url) {
   try {
     const response = await fetch(url);
     const data = await response.json();

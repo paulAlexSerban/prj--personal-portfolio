@@ -9,24 +9,39 @@ $block: "pagination";
 
 .#{$block} {
 	@include e("base") {
-		@include flex();
+		@include flex($main: flex-start);
     width: 100%;
     padding-bottom: var(--responsive-spacing-20);
+    padding-inline: var(--lateral-padding);
 	}
 
   @include e("list") {
     @include flex();
-    gap: var(--responsive-spacing-10);
+    gap: var(--responsive-spacing-5);
   }
 
   @include e("listItem") {
   }
 
   @include e("link") {
-    padding: var(--responsive-spacing-15);
+    padding: var(--responsive-spacing-5);
 
-    &:hover {
-      box-shadow: none;
+    @include on-event() {
+      color: var(--color-link-hover);
+      text-decoration: none;
+      box-shadow: 0 3px 0 0 var(--color-link-hover);
+      transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+    @include m("isActive") {
+      box-shadow: 0 1px 0 0 var(--color-link-hover);
+
+      @include on-event() {
+        color: var(--color-link-hover);
+        text-decoration: none;
+        box-shadow: 0 3px 0 0 var(--color-link-hover);
+        transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
     }
   }
 }
