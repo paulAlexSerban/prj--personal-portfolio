@@ -1,0 +1,410 @@
+---
+title: "Implementing GOF Design Patterns in JavaScript"
+subheading: "A Comprehensive Guide to Using the 23 GOF Design Patterns in Object-Oriented JavaScript Programming"
+excerpt: "The GOF (Gang of Four) design patterns are a set of 23 design patterns commonly used in object-oriented programming. These patterns were first introduced in the book 'Design Patterns: Elements of Reusable Object-Oriented Software' by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. In this blog post, we will explore how these patterns can be implemented in JavaScript."
+status: "published"
+author: "Paul Serban"
+date: "April 10, 2023"
+tags:
+  - "Web Development"
+  - "JavaScript"
+  - "Programming"
+  - "Design Patterns"
+  - "Singleton"
+  - "Module"
+  - "Constructor"
+---
+
+The GOF (Gang of Four) design patterns are a set of 23 design patterns commonly used in object-oriented programming. These patterns were first introduced in the book "Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. In this blog post, we will explore how these patterns can be implemented in JavaScript.
+
+## Creational Patterns
+
+Creational patterns are used to create objects in a flexible way, without directly instantiating them. The three creational patterns in the GOF design patterns are:
+
+### Factory Method Pattern: The factory method pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+
+```javascript
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+class Creator {
+  create() {
+    throw new Error('create() method must be implemented');
+  }
+}
+
+class ConcreteCreator extends Creator {
+  create() {
+    return new Product('product1', 100);
+  }
+}
+
+const creator = new ConcreteCreator();
+const product = creator.create();
+console.log(product); // Output: Product {name: "product1", price: 100}
+```
+
+In the above example, we have created a Product class and a Creator class that defines the factory method interface. We have also created a ConcreteCreator subclass that implements the factory method to create a Product instance.
+
+### Abstract Factory Pattern
+
+The abstract factory pattern provides an interface for creating families of related objects, without specifying their concrete classes.
+
+```javascript
+class ProductA {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+class ProductB {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+class Factory {
+  createProductA() {
+    throw new Error('createProductA() method must be implemented');
+  }
+  createProductB() {
+    throw new Error('createProductB() method must be implemented');
+  }
+}
+
+class ConcreteFactory extends Factory {
+  createProductA() {
+    return new ProductA('productA', 50);
+  }
+  createProductB() {
+    return new ProductB('productB', 75);
+  }
+}
+
+const factory = new ConcreteFactory();
+const productA = factory.createProductA();
+const productB = factory.createProductB();
+console.log(productA); // Output: ProductA {name: "productA", price: 50}
+console.log(productB); // Output: ProductB {name: "productB", price: 75}
+```
+
+In the above example, we have created two product classes and a Factory class that defines the abstract factory interface. We have also created a ConcreteFactory subclass that implements the abstract factory to create instances of ProductA and ProductB.
+
+### Singleton Pattern:
+
+The singleton pattern ensures that a class has only one instance and provides a global point of access to that instance.
+
+```javascript
+class Singleton {
+  constructor() {
+    if (!Singleton.instance) {
+      Singleton.instance = this;
+    }
+    return Singleton.instance;
+  }
+}
+
+const instance1 = new Singleton();
+const instance2 = new Singleton();
+console.log(instance1 === instance2); // Output: true
+```
+
+In the above example, we have created a Singleton class that ensures that only one instance is created, and provides a global point of access to that instance.
+
+## Structural Patterns
+
+Structural patterns are used to create relationships between objects and classes. The seven structural patterns in the GOF design patterns are:
+
+### Adapter Pattern
+
+The adapter pattern converts the interface of a class into another interface that clients expect.
+
+```javascript
+class Adaptee {
+  specificRequest() {
+  return "specific request";
+  }
+}
+
+class Target {
+  request() {
+  return "request";
+  }
+}
+
+class Adapter extends Target {
+  constructor(adaptee) {
+    super();
+    this.adaptee = adaptee;
+  }
+  request() {
+    return ${this.adaptee.specificRequest()} from adapter;
+  }
+}
+
+const adaptee = new Adaptee();
+const adapter = new Adapter(adaptee);
+console.log(adapter.request()); // Output: "specific request from adapter"
+```
+
+In the above example, we have created an Adaptee class with a specificRequest method, a Target class with a request method, and an Adapter class that adapts the Adaptee interface to the Target interface.
+
+### Bridge Pattern
+
+The bridge pattern decouples an abstraction from its implementation, allowing them to vary independently.
+
+```javascript
+class Abstraction {
+  constructor(implementation) {
+    this.implementation = implementation;
+  }
+  operation() {
+    return `Abstraction: ${this.implementation.operationImplementation()}`;
+  }
+}
+
+class Implementation {
+  operationImplementation() {
+    throw new Error('operationImplementation() method must be implemented');
+  }
+}
+
+class ConcreteImplementationA extends Implementation {
+  operationImplementation() {
+    return 'ConcreteImplementationA';
+  }
+}
+
+class ConcreteImplementationB extends Implementation {
+  operationImplementation() {
+    return 'ConcreteImplementationB';
+  }
+}
+
+const implementationA = new ConcreteImplementationA();
+const abstractionA = new Abstraction(implementationA);
+console.log(abstractionA.operation()); // Output: "Abstraction: ConcreteImplementationA"
+
+const implementationB = new ConcreteImplementationB();
+const abstractionB = new Abstraction(implementationB);
+console.log(abstractionB.operation()); // Output: "Abstraction: ConcreteImplementationB"
+```
+
+In the above example, we have created an Abstraction class that uses an Implementation interface to provide an operation method. We have also created two ConcreteImplementation subclasses that provide different implementation for the operation method.
+
+### Composite Pattern
+
+The composite pattern allows you to compose objects into a tree-like structure, and work with that structure as if it were a single object.
+
+```javascript
+class Component {
+  constructor(name) {
+    this.name = name;
+  }
+  operation() {
+    throw new Error('operation() method must be implemented');
+  }
+}
+
+class Leaf extends Component {
+  operation() {
+    return `Leaf: ${this.name}`;
+  }
+}
+
+class Composite extends Component {
+  constructor(name) {
+    super(name);
+    this.children = [];
+  }
+  add(component) {
+    this.children.push(component);
+  }
+  remove(component) {
+    const index = this.children.indexOf(component);
+    if (index > -1) {
+      this.children.splice(index, 1);
+    }
+  }
+  operation() {
+    const results = [];
+    for (let i = 0; i < this.children.length; i++) {
+      results.push(this.children[i].operation());
+    }
+    return `Branch: ${this.name} [ ${results.join(', ')} ]`;
+  }
+}
+
+const root = new Composite('root');
+root.add(new Leaf('leaf A'));
+root.add(new Leaf('leaf B'));
+
+const branch = new Composite('branch');
+branch.add(new Leaf('leaf C'));
+branch.add(new Leaf('leaf D'));
+
+root.add(branch);
+console.log(root.operation()); // Output: "Branch: root [ Leaf: leaf A, Leaf: leaf B, Branch: branch [ Leaf: leaf C, Leaf: leaf D ] ]"
+```
+
+In the above example, we have created a Component abstract class with an operation method, and two subclasses, Leaf and Composite. We have also created a Composite subclass that allows us to add and remove child components, and operateon the composite structure as if it were a single object.
+
+### Decorator Pattern
+
+The decorator pattern attaches additional responsibilities to an object dynamically, without modifying its underlying structure.
+
+```javascript
+class Component {
+  operation() {
+    throw new Error('operation() method must be implemented');
+  }
+}
+
+class ConcreteComponent extends Component {
+  operation() {
+    return 'ConcreteComponent';
+  }
+}
+
+class Decorator extends Component {
+  constructor(component) {
+    super();
+    this.component = component;
+  }
+  operation() {
+    return `${this.component.operation()} + Decorator`;
+  }
+}
+
+const component = new ConcreteComponent();
+const decoratorA = new Decorator(component);
+const decoratorB = new Decorator(decoratorA);
+console.log(decoratorB.operation()); // Output: "ConcreteComponent + Decorator + Decorator"
+```
+
+In the above example, we have created a Component abstract class with an operation method, a ConcreteComponent subclass that provides the default implementation of the operation method, and a Decorator subclass that wraps around a Component object and adds additional behavior to the operation method.
+
+### Facade Pattern
+
+The facade pattern provides a unified interface to a set of interfaces in a subsystem, simplifying their usage for clients.
+
+```javascript
+class SubsystemA {
+  operationA() {
+    return 'SubsystemA.operationA';
+  }
+}
+
+class SubsystemB {
+  operationB() {
+    return 'SubsystemB.operationB';
+  }
+}
+
+class Facade {
+  constructor(subsystemA, subsystemB) {
+    this.subsystemA = subsystemA;
+    this.subsystemB = subsystemB;
+  }
+  operation() {
+    const resultA = this.subsystemA.operationA();
+    const resultB = this.subsystemB.operationB();
+    return `Facade: ${resultA} + ${resultB}`;
+  }
+}
+
+const subsystemA = new SubsystemA();
+const subsystemB = new SubsystemB();
+const facade = new Facade(subsystemA, subsystemB);
+console.log(facade.operation()); // Output: "Facade: SubsystemA.operationA + SubsystemB.operationB"
+```
+
+In the above example, we have created two subsystems, SubsystemA and SubsystemB, each with their own operation method. We have also created a Facade class that provides a unified interface to the SubsystemA and SubsystemB operation methods.
+
+### Flyweight Pattern
+
+The flyweight pattern minimizes memory usage by sharing data between objects that are similar.
+
+```javascript
+class Flyweight {
+  constructor(sharedState) {
+    this.sharedState = sharedState;
+  }
+  operation(uniqueState) {
+    const s = JSON.stringify(this.sharedState);
+    const u = JSON.stringify(uniqueState);
+    return `Flyweight: shared (${s}) and unique (${u}) state`;
+  }
+}
+
+class FlyweightFactory {
+  constructor() {
+    this.flyweights = {};
+  }
+  getFlyweight(sharedState) {
+    if (!(sharedState in this.flyweights)) {
+      this.flyweights[sharedState] = new Flyweight(sharedState);
+    }
+    return this.flyweights[sharedState];
+  }
+}
+
+const flyweightFactory = new FlyweightFactory();
+const flyweightA = flyweightFactory.getFlyweight({ a: 1, b: 2 });
+console.log(flyweightA.operation({ c: 3, d: 4 })); // Output: "Flyweight: shared ({"a":1,"b":2}) and unique ({"c":3,"d":4}) state"
+const flyweightB = flyweightFactory.getFlyweight({ a: 1, b: 2 });
+console.log(flyweightB.operation({ e: 5, f: 6 })); // Output: "Flyweight: shared ({"a":1,"b":2}) and unique ({"e":5,"f":6}) state"
+console.log(flyweightA === flyweightB); // Output: true
+```
+
+In the above example, we have created a Flyweight class that stores shared state and an operation method that accepts unique state. We have also created a FlyweightFactory class that creates and manages flyweight objects. The factory ensures that flyweight objects with the same shared state are reused instead of creating new objects.
+
+### Proxy Pattern
+
+The proxy pattern provides a surrogate or placeholder object to control access to another object.
+
+```javascript
+class Subject {
+  operation() {
+    throw new Error('operation() method must be implemented');
+  }
+}
+
+class RealSubject extends Subject {
+  operation() {
+    return 'RealSubject.operation';
+  }
+}
+
+class Proxy extends Subject {
+  constructor(realSubject) {
+    super();
+    this.realSubject = realSubject;
+  }
+  operation() {
+    if (this.checkAccess()) {
+      return this.realSubject.operation();
+    }
+    return 'Proxy.operation';
+  }
+  checkAccess() {
+    return true;
+  }
+}
+
+const realSubject = new RealSubject();
+const proxy = new Proxy(realSubject);
+console.log(proxy.operation()); // Output: "RealSubject.operation"
+```
+
+In the above example, we have created a Subject abstract class with an operation method, a RealSubject subclass that provides the actual implementation of the operation method, and a Proxy subclass that acts as a surrogate or placeholder for the RealSubject object.
+
+## Conclusion
+
+In conclusion, the GOF design patterns provide a set of best practices for object-oriented programming. These patterns can be implemented in JavaScript to solve common programming problems and improve the maintainability and scalability of code. By understanding and applying these patterns, developers can become more efficient and effective in their work.

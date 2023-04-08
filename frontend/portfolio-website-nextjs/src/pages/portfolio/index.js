@@ -62,33 +62,33 @@ export async function getStaticProps({}) {
           {
             label: 'Github',
             icon: 'github',
-            href: 'https://github.com',
+            href: 'https://github.com/paulAlexSerban',
           },
           {
             label: 'CodePen',
             icon: 'codepen',
-            href: 'https://codepen.io',
+            href: 'https://codepen.io/paulalexserban',
           },
           {
             label: 'HackerRank',
             icon: 'hackerrank',
-            href: 'https://www.hackerrank.com',
+            href: 'https://www.hackerrank.com/paul_alex_serban',
           },
           {
             label: 'CodeWars',
             icon: 'codewars',
-            href: 'https://codewars.com',
+            href: 'https://www.codewars.com/users/paulAlexSerban',
           },
-          {
-            label: 'HackTheBox',
-            icon: 'hackthebox',
-            href: 'https://hackthebox.com',
-          },
-          {
-            label: 'TryHackMe',
-            icon: 'tryhackme',
-            href: 'https://tryhackme.com',
-          },
+          // {
+          //   label: 'HackTheBox',
+          //   icon: 'hackthebox',
+          //   href: 'https://hackthebox.com',
+          // },
+          // {
+          //   label: 'TryHackMe',
+          //   icon: 'tryhackme',
+          //   href: 'https://tryhackme.com',
+          // },
         ],
         main: {
           heroBanner: {

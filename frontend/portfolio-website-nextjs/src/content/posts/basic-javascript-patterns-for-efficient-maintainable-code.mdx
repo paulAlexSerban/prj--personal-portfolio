@@ -1,0 +1,96 @@
+---
+title: "Basic JavaScript Patterns for Efficient and Maintainable Code"
+subheading: "A Guide to the Module, Constructor, and Singleton Patterns"
+excerpt: "JavaScript is a versatile programming language that offers many different patterns for organizing and structuring code. By understanding these patterns, we can write more efficient and maintainable code. In this blog post, we will explore some of the basic JavaScript patterns and how to implement them."
+status: "published"
+author: "Paul Serban"
+date: "April 7, 2023"
+tags:
+  - "Web Development"
+  - "JavaScript"
+  - "Programming"
+  - "Design Patterns"
+  - "Singleton"
+  - "Module"
+  - "Constructor"
+---
+
+JavaScript is a versatile programming language that offers many different patterns for organizing and structuring code. By understanding these patterns, we can write more efficient and maintainable code. In this blog post, we will explore some of the basic JavaScript patterns and how to implement them.
+
+## Module Pattern
+The module pattern is a design pattern that encapsulates data and behavior into a single object, called a module. The module pattern uses an IIFE (Immediately Invoked Function Expression) to create a private scope and returns an object that contains public methods and properties.
+
+```javascript
+const myModule = (function() {
+  let privateVariable = "I am private";
+  function privateMethod() {
+    console.log(privateVariable);
+  }
+  return {
+    publicMethod: function() {
+      privateMethod();
+    }
+  };
+})();
+
+myModule.publicMethod(); // Output: "I am private"
+```
+
+In the above example, we have created a module that contains a private variable and a private method, as well as a public method that can access the private method.
+
+## Constructor Pattern
+The constructor pattern is a pattern that creates objects from a constructor function. The constructor function is called with the new keyword and creates a new object that inherits from the constructor's prototype.
+
+```javascript
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function() {
+  console.log(`Hello, my name is ${this.name} and I am ${this.age} years old`);
+};
+
+const person1 = new Person("John", 30);
+person1.greet(); // Output: "Hello, my name is John and I am 30 years old"
+```
+
+In the above example, we have created a Person constructor function that creates a new person object with a name and age property. We have also added a greet method to the Person prototype, which is inherited by all person objects.
+
+## Singleton Pattern
+The singleton pattern is a pattern that ensures that a class has only one instance and provides a global point of access to that instance.
+
+```javascript
+const mySingleton = (function() {
+  let instance;
+  function init() {
+    function privateMethod() {
+      console.log("I am private");
+    }
+    const privateVariable = "I am also private";
+    return {
+      publicMethod: function() {
+        console.log("I am public");
+      },
+      publicProperty: "I am also public"
+    };
+  }
+  return {
+    getInstance: function() {
+      if (!instance) {
+        instance = init();
+      }
+      return instance;
+    }
+  };
+})();
+
+const singleton1 = mySingleton.getInstance();
+const singleton2 = mySingleton.getInstance();
+console.log(singleton1 === singleton2); // Output: true
+```
+
+In the above example, we have created a singleton object using an IIFE. The singleton object contains a private method and a private variable, as well as public methods and properties that can be accessed through the getInstance method.
+
+## Conclusion
+In this blog post, we have explored some of the basic JavaScript patterns, including the module pattern, constructor pattern, and singleton pattern. By understanding these patterns and how to implement them, we can write more efficient and maintainable code. These patterns are just a few examples of the many patterns that can be used in JavaScript programming. As you continue to advance your programming skills, remember to explore more advanced patterns and choose the best one for your specific use case.
