@@ -117,3 +117,105 @@ The website will be optimized for SEO, and it will include meta tags, descriptio
 - **Performance Monitoring**: Implement performance monitoring tools to track website performance metrics such as page load time, server response time, and error rates, and use this data to identify and address any performance issues.
 - **SEO**: Optimize the website for search engines by using relevant keywords and meta tags, and ensuring that the website structure is search engine friendly.
 - **Usability Testing**: Conduct usability testing with users to identify any issues or areas for improvement in the website design and functionality.
+
+## Documentation following the RADIO framework
+
+### Requirements
+#### Functional Requirements
+- The website shall display a list of film categories with links to respective pages for each category.
+- Each category page shall display a list of films that belong to that category.
+- The website shall have a search bar that allows users to search for films by title or category.
+- Each film detail page shall display the film's title, a brief description, and any relevant details such as cast and crew, ratings, and awards.
+- The website shall allow users to add films to a "watchlist" or mark them as "seen" and save this information for future visits.
+- The website shall display a schedule of film screenings, including dates, times, and locations.
+- The website shall provide a form for users to submit feedback or questions about the festival.
+### Non-Functional Requirements
+- The website shall be built using Bootstrap and SCSS to ensure consistency and responsiveness across devices.
+- The website shall use Handlebars to enable dynamic rendering of content and reduce code duplication.
+- The website shall be optimized for performance to ensure fast loading times.
+- The website shall be secure and protect user data, such as watchlist and login information.
+- The website shall be accessible to users with disabilities, including support for screen readers and keyboard navigation.
+
+### Architecture
+#### Overview
+The website for the film festival will be built using a combination of Bootstrap, SCSS, and Handlebars. The website will be organized as a set of pages, each of which will have a specific layout and content based on the purpose of the page.
+
+#### Front-end Architecture
+The front-end architecture will be based on the Bootstrap framework, which provides a set of pre-designed UI components and responsive layouts. The website will be built using HTML, SCSS, and JavaScript, which will be compiled and optimized using a build tool such as Gulp or Webpack.
+
+Handlebars will be used as a templating engine to enable dynamic rendering of content. This will allow us to reuse common HTML components across pages and reduce code duplication. Additionally, we will use a data store, such as a JSON file, to store information about films and categories, which can be accessed and rendered dynamically using Handlebars.
+
+#### Back-end Architecture
+As this is a promo website, there is no requirement for a back-end architecture to handle dynamic data or user interactions. The website will be deployed as a static website and hosted on a CDN, such as Amazon S3 or Netlify.
+
+#### Security and Performance
+To ensure security, all assets and data will be served over HTTPS. Additionally, the website will be scanned for common security vulnerabilities using tools such as OWASP ZAP.
+
+To optimize performance, we will use a number of techniques, including:
+
+- Minimizing asset sizes by compressing images and using minified CSS and JavaScript.
+- Implementing lazy loading for images and other resources to improve initial page load times.
+- Using a content delivery network (CDN) to serve static assets and reduce latency.
+
+### Design
+#### Branding
+The film festival website will be designed with a modern, minimalist aesthetic that highlights the festival's brand and showcases the films being screened. The color palette will consist of a combination of bold, contrasting colors to create a visually striking website.
+
+#### Layout
+The website will use a responsive, mobile-first layout to ensure that it looks good on a wide range of devices, from small mobile phones to large desktop screens. The layout will be built using the Bootstrap grid system, which will allow us to easily create responsive columns and rows.
+
+#### Typography
+We will use a combination of serif and sans-serif fonts to create a professional, modern look for the website. The primary font will be a sans-serif font, such as Roboto, while the secondary font will be a serif font, such as Merriweather.
+
+#### Images
+The website will prominently feature images of the films being screened, as well as stills from the films themselves. Images will be optimized for the web to minimize load times and ensure that the website loads quickly.
+
+#### Navigation
+The website will have a simple, easy-to-use navigation menu that allows users to quickly find the information they need. The navigation menu will be organized by category, with dropdown menus to display subcategories and related pages.
+
+#### User Interface
+The user interface will be designed to be intuitive and easy to use, with clear calls to action and intuitive navigation. Forms and other input fields will be designed to be simple and easy to understand, with clear labels and input validation to prevent errors.
+
+#### Accessibility
+The website will be designed with accessibility in mind, with support for keyboard navigation and screen readers. We will follow best practices for designing accessible websites, including ensuring that all images have alternative text descriptions and that form fields are labeled correctly.
+
+### Implementation
+#### Front-end Implementation
+The front-end implementation of the website will be built using a combination of HTML, SCSS, JavaScript, and Handlebars. We will use Gulp as our build tool to compile and optimize the code.
+
+The HTML code will be structured using the Bootstrap grid system to ensure that the website is responsive and looks good on a wide range of devices. We will use Handlebars templates to create reusable HTML components, such as the film category page and film detail page.
+
+The SCSS code will be used to create custom styles for the website, such as the color palette, typography, and layout. We will use the Bootstrap SCSS variables and mixins to customize the Bootstrap styles.
+
+The JavaScript code will be used to create interactive elements on the website, such as the search bar, watchlist feature, and film rating system. We will use jQuery to simplify DOM manipulation and event handling.
+
+#### Back-end Implementation
+As this is a static website, there is no back-end implementation required. However, we will use a JSON file to store information about films and categories, which will be accessed dynamically using Handlebars templates.
+
+#### Testing
+We will test the website using a combination of automated and manual testing techniques. Automated tests will include browser compatibility testing using tools such as BrowserStack and cross-browser testing using Selenium. We will also perform manual testing on a range of devices and browsers to ensure that the website looks and functions as intended.
+
+#### Deployment
+The website will be deployed as a static website and hosted on a CDN, such as Amazon S3 or Netlify. We will use Gulp to optimize the website for production, including minifying the HTML, CSS, and JavaScript code, compressing images, and configuring caching headers to improve performance.
+
+#### Maintenance and Support
+We will provide ongoing maintenance and support for the website, including updating the website to ensure compatibility with new browsers and devices, fixing any bugs or issues that arise, and providing technical support to users.
+
+### Operations
+#### Deployment
+The website will be deployed as a static website and hosted on a CDN, such as Amazon S3 or Netlify. The deployment process will be automated using a tool such as Jenkins or Travis CI to ensure that the latest version of the code is always deployed to the production environment.
+
+#### Monitoring
+We will monitor the website using a combination of automated and manual techniques to ensure that it is running smoothly and to identify and address any issues that arise. Automated monitoring tools such as Pingdom or New Relic can be used to monitor the uptime, response time, and error rate of the website.
+
+#### Backups and Disaster Recovery
+We will regularly backup the website to ensure that data and files are not lost due to unforeseen events. Backups will be stored on a remote server or in a cloud-based storage solution such as Amazon S3. Disaster recovery procedures will be put in place to ensure that the website can be quickly restored in the event of a failure or outage.
+
+#### Maintenance and Support
+We will provide ongoing maintenance and support for the website, including updating the website to ensure compatibility with new browsers and devices, fixing any bugs or issues that arise, and providing technical support to users. Regular security updates will be performed to ensure that the website is secure and protected from potential vulnerabilities.
+
+#### Performance Optimization
+We will continuously monitor and optimize the performance of the website to ensure that it loads quickly and efficiently. Techniques such as minifying code, compressing images, and using a content delivery network (CDN) will be used to reduce load times and improve the user experience.
+
+#### Scalability
+The website will be designed and built with scalability in mind to ensure that it can handle increasing levels of traffic and data. Cloud-based hosting solutions such as Amazon Web Services or Microsoft Azure can be used to easily scale the website infrastructure as needed.

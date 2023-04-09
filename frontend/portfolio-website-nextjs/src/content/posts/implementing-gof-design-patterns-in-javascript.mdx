@@ -33,13 +33,13 @@ class Product {
 
 class Creator {
   create() {
-    throw new Error('create() method must be implemented');
+    throw new Error("create() method must be implemented");
   }
 }
 
 class ConcreteCreator extends Creator {
   create() {
-    return new Product('product1', 100);
+    return new Product("product1", 100);
   }
 }
 
@@ -71,19 +71,19 @@ class ProductB {
 
 class Factory {
   createProductA() {
-    throw new Error('createProductA() method must be implemented');
+    throw new Error("createProductA() method must be implemented");
   }
   createProductB() {
-    throw new Error('createProductB() method must be implemented');
+    throw new Error("createProductB() method must be implemented");
   }
 }
 
 class ConcreteFactory extends Factory {
   createProductA() {
-    return new ProductA('productA', 50);
+    return new ProductA("productA", 50);
   }
   createProductB() {
-    return new ProductB('productB', 75);
+    return new ProductB("productB", 75);
   }
 }
 
@@ -171,19 +171,19 @@ class Abstraction {
 
 class Implementation {
   operationImplementation() {
-    throw new Error('operationImplementation() method must be implemented');
+    throw new Error("operationImplementation() method must be implemented");
   }
 }
 
 class ConcreteImplementationA extends Implementation {
   operationImplementation() {
-    return 'ConcreteImplementationA';
+    return "ConcreteImplementationA";
   }
 }
 
 class ConcreteImplementationB extends Implementation {
   operationImplementation() {
-    return 'ConcreteImplementationB';
+    return "ConcreteImplementationB";
   }
 }
 
@@ -208,7 +208,7 @@ class Component {
     this.name = name;
   }
   operation() {
-    throw new Error('operation() method must be implemented');
+    throw new Error("operation() method must be implemented");
   }
 }
 
@@ -237,17 +237,17 @@ class Composite extends Component {
     for (let i = 0; i < this.children.length; i++) {
       results.push(this.children[i].operation());
     }
-    return `Branch: ${this.name} [ ${results.join(', ')} ]`;
+    return `Branch: ${this.name} [ ${results.join(", ")} ]`;
   }
 }
 
-const root = new Composite('root');
-root.add(new Leaf('leaf A'));
-root.add(new Leaf('leaf B'));
+const root = new Composite("root");
+root.add(new Leaf("leaf A"));
+root.add(new Leaf("leaf B"));
 
-const branch = new Composite('branch');
-branch.add(new Leaf('leaf C'));
-branch.add(new Leaf('leaf D'));
+const branch = new Composite("branch");
+branch.add(new Leaf("leaf C"));
+branch.add(new Leaf("leaf D"));
 
 root.add(branch);
 console.log(root.operation()); // Output: "Branch: root [ Leaf: leaf A, Leaf: leaf B, Branch: branch [ Leaf: leaf C, Leaf: leaf D ] ]"
@@ -262,13 +262,13 @@ The decorator pattern attaches additional responsibilities to an object dynamica
 ```javascript
 class Component {
   operation() {
-    throw new Error('operation() method must be implemented');
+    throw new Error("operation() method must be implemented");
   }
 }
 
 class ConcreteComponent extends Component {
   operation() {
-    return 'ConcreteComponent';
+    return "ConcreteComponent";
   }
 }
 
@@ -297,13 +297,13 @@ The facade pattern provides a unified interface to a set of interfaces in a subs
 ```javascript
 class SubsystemA {
   operationA() {
-    return 'SubsystemA.operationA';
+    return "SubsystemA.operationA";
   }
 }
 
 class SubsystemB {
   operationB() {
-    return 'SubsystemB.operationB';
+    return "SubsystemB.operationB";
   }
 }
 
@@ -372,13 +372,13 @@ The proxy pattern provides a surrogate or placeholder object to control access t
 ```javascript
 class Subject {
   operation() {
-    throw new Error('operation() method must be implemented');
+    throw new Error("operation() method must be implemented");
   }
 }
 
 class RealSubject extends Subject {
   operation() {
-    return 'RealSubject.operation';
+    return "RealSubject.operation";
   }
 }
 
@@ -391,7 +391,7 @@ class Proxy extends Subject {
     if (this.checkAccess()) {
       return this.realSubject.operation();
     }
-    return 'Proxy.operation';
+    return "Proxy.operation";
   }
   checkAccess() {
     return true;

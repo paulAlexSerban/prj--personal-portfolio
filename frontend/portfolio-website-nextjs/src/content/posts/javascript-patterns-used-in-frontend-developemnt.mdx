@@ -1,18 +1,18 @@
 ---
-title: 'JavaScript Patterns for Frontend Development'
-subheading: 'A Guide to the MVC Pattern, Observer Pattern, and Factory Pattern'
-excerpt: 'Frontend development involves creating the user interface and experience for web applications using HTML, CSS, and JavaScript. In this blog post, we will explore some of the JavaScript patterns commonly used in frontend development and how to implement them.'
-status: 'published'
-author: 'Paul Serban'
-date: 'April 7, 2023'
+title: "JavaScript Patterns for Frontend Development"
+subheading: "A Guide to the MVC Pattern, Observer Pattern, and Factory Pattern"
+excerpt: "Frontend development involves creating the user interface and experience for web applications using HTML, CSS, and JavaScript. In this blog post, we will explore some of the JavaScript patterns commonly used in frontend development and how to implement them."
+status: "published"
+author: "Paul Serban"
+date: "April 9, 2023"
 tags:
-  - 'Web Development'
-  - 'JavaScript'
-  - 'Programming'
-  - 'Design Patterns'
-  - 'Singleton'
-  - 'Module'
-  - 'Constructor'
+  - "Web Development"
+  - "JavaScript"
+  - "Programming"
+  - "Design Patterns"
+  - "Singleton"
+  - "Module"
+  - "Constructor"
 ---
 
 Frontend development involves creating the user interface and experience for web applications using HTML, CSS, and JavaScript. In this blog post, we will explore some of the JavaScript patterns commonly used in frontend development and how to implement them.
@@ -24,7 +24,7 @@ The MVC (Model-View-Controller) pattern is a design pattern used to separate an 
 ```javascript
 class Model {
   constructor() {
-    this.data = ['item 1', 'item 2', 'item 3'];
+    this.data = ["item 1", "item 2", "item 3"];
   }
   getData() {
     return this.data;
@@ -33,12 +33,12 @@ class Model {
 
 class View {
   constructor() {
-    this.list = document.getElementById('list');
+    this.list = document.getElementById("list");
   }
   render(data) {
-    this.list.innerHTML = '';
+    this.list.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
-      const li = document.createElement('li');
+      const li = document.createElement("li");
       li.textContent = data[i];
       this.list.appendChild(li);
     }
@@ -106,7 +106,7 @@ class Observer {
 const subject = new Subject();
 const observer1 = new Observer(subject);
 const observer2 = new Observer(subject);
-subject.setState('new state');
+subject.setState("new state");
 ```
 
 In the above example, we have created a subject class and an observer class for the observer pattern. The subject maintains a list of observers and notifies them automatically of any state changes. The observer registers itself with the subject and is notified of any state changes.
@@ -158,4 +158,5 @@ square.draw(); // Output: "Drawing square with length 10"
 In the above example, we have created two classes for the Circle and Square shapes and a factory class for creating instances of these shapes. The factory class uses a create method to create instances of different shape types based on the input parameters.
 
 ## Conclusion
+
 In this blog post, we have explored some of the JavaScript patterns commonly used in frontend development, including the MVC pattern, observer pattern, and factory pattern. By understanding these patterns and how to implement them, we can write more efficient and maintainable code for creating user interfaces and experiences. These patterns are just a few examples of the many patterns that can be used in frontend development. As you continue to advance your frontend development skills, remember to explore more advanced patterns and choose the best one for your specific use case. By using the appropriate pattern, you can create user interfaces and experiences that are both efficient and effective.
