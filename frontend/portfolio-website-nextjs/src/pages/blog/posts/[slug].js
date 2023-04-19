@@ -14,12 +14,14 @@ const roboto = Roboto({
 });
 export default function PortfolioItemDetail({ children, pageContent, siteProps, frontmatter }) {
   const pageTitle = [frontmatter.title, '|', siteProps.title].join(' ');
+  const keywords = frontmatter.tags.join(', ') + ', ' + frontmatter.categories.join(', ');
   return (
     <div className={roboto.className}>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={getPageDescription(frontmatter.excerpt)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content={keywords}/>
         <link rel="icon" href={siteProps.icons.favicon} />
       </Head>
       <BlogPostTemplate
