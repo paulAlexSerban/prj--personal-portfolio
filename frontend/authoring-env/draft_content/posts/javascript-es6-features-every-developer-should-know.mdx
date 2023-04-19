@@ -1,0 +1,797 @@
+---
+title: 'JavaScript ES6 Features Every Developer Should Know'
+subheading: 'Exploring Advanced JavaScript ES6 Features for Modern Web Development'
+excerpt: 'JavaScript is constantly evolving to accommodate the ever-changing needs of developers. ES6, or ECMAScript 2015, is a major update to JavaScript that introduced several new features and syntax improvements. In this blog post, we will explore some of the most important ES6 features that every JavaScript developer should know to make their code more efficient and maintainable.'
+status: "draft"
+author: 'Paul Serban'
+date: 'April 11, 2023'
+tags:
+  - 'Web Development'
+  - 'JavaScript'
+  - 'ES6'
+  - 'ES2015'
+  - 'ES2016'
+  - 'ES2017'
+  - 'ES2018'
+  - 'ES2019'
+  - 'ES2020'
+  - 'ES2021'
+  - 'ES2022'
+  - 'ES2023'
+---
+
+## Introduction
+
+JavaScript is constantly evolving to accommodate the ever-changing needs of developers. ES6, or ECMAScript 2015, is a major update to JavaScript that introduced several new features and syntax improvements. In this blog post, we will explore some of the most important ES6 features that every JavaScript developer should know to make their code more efficient and maintainable.
+
+## Let and Const
+
+One of the most significant ES6 features is the introduction of new variable declaration keywords: 'let' and 'const'. Unlike 'var', which is function-scoped, 'let' and 'const' are block-scoped, preventing unintended access to variables outside their intended scope.
+
+'let' is used for variables that may be reassigned, while 'const' is used for variables that should not be reassigned. Using 'const' helps developers avoid accidental reassignments and promotes more predictable code.
+
+## Arrow Functions
+
+Arrow functions are a more concise way to write function expressions. They are especially useful when writing small, single-purpose functions. Arrow functions have a shorter syntax, do not bind their own 'this', and implicitly return a value if used without curly braces.
+
+```javascript
+const add = (a, b) => a + b;
+```
+
+## Template Literals
+
+Template literals are a new way to create strings in JavaScript that allow for easier string interpolation and multiline strings. They use backticks (\` \`) instead of single or double quotes, and embedded expressions are denoted by `${expression}`.
+
+```javascript
+const name = 'John';
+const age = 30;
+const message = `My name is ${name} and I am ${age} years old.`;
+```
+
+## Destructuring Assignment
+
+Destructuring assignment allows for easy unpacking of values from arrays or properties from objects into distinct variables. This feature can help simplify code and make it more readable.
+
+```javascript
+const person = { firstName: 'Jane', lastName: 'Doe' };
+const { firstName, lastName } = person;
+```
+
+## Default Parameters
+
+ES6 introduced default parameters, allowing developers to set default values for function parameters. This simplifies function calls and helps avoid errors caused by missing arguments.
+
+```javascript
+function greet(name = 'World') {
+  return `Hello, ${name}!`;
+}
+```
+
+## Rest and Spread Operators
+
+The rest operator (...) allows developers to collect the remaining elements of an iterable into an array. This is useful when working with a variable number of arguments in a function.
+
+The spread operator is the inverse of the rest operator, allowing developers to spread elements from an array or object into individual elements.
+
+```javascript
+// Rest operator
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+
+// Spread operator
+const numbers = [1, 2, 3];
+const moreNumbers = [0, ...numbers, 4, 5];
+```
+
+## Promises and Async/Await
+
+Promises are a way to handle asynchronous operations in JavaScript, providing a cleaner and more maintainable approach than traditional callbacks. Async/await is a syntax sugar on top of Promises, allowing developers to write asynchronous code that looks more like synchronous code.
+
+```javascript
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+```
+
+## Modules
+
+ES6 introduced native support for modules, which allow developers to organize their code into smaller, reusable components. Modules can be imported and exported using the 'import' and 'export' keywords, making it easy to manage dependencies and maintain a clean codebase.
+
+```javascript
+// utils.js
+export function add(a, b) {
+  return a + b;
+}
+
+// app.js
+import { add } from './utils.js';
+console.log(add(1, 2)); // 3
+```
+
+## Classes
+
+JavaScript is a prototype-based language, but ES6 introduced a more familiar syntax for working with object-oriented programming using classes. Classes provide a cleaner and more intuitive way to create objects and manage inheritance.
+
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog('Rex');
+dog.speak(); // Rex barks.
+```
+
+## Enhanced Object Literals
+
+ES6 enhanced object literals, allowing developers to write more concise and expressive code when creating objects. Some of the improvements include shorter syntax for defining methods, computed property names, and the ability to use variable names as property names directly.
+
+```javascript
+const name = 'John';
+const age = 30;
+
+const person = {
+  name,
+  age,
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  },
+  ['prefix_' + 'suffix']: 'computed property',
+};
+```
+
+## Generators
+
+Generators are a special kind of function that can be paused and resumed during execution. They allow developers to create more efficient, memory-friendly code by only generating values when needed. Generators are especially useful when working with large data sets or complex asynchronous tasks.
+
+```javascript
+function* idGenerator() {
+  let id = 1;
+  while (true) {
+    yield id++;
+  }
+}
+
+const gen = idGenerator();
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+```
+
+## Proxies
+
+Proxies are a powerful ES6 feature that allows developers to create a custom wrapper around an object, intercepting and customizing the object's behavior. Proxies can be used for various purposes, such as validation, logging, or performance optimization.
+
+```javascript
+const target = {};
+const handler = {
+  get: (obj, prop) => (prop in obj ? obj[prop] : 'Property not found'),
+};
+
+const proxy = new Proxy(target, handler);
+proxy.name = 'John';
+console.log(proxy.name); // John
+console.log(proxy.age); // Property not found
+```
+
+## Symbols
+
+Symbols are a new primitive data type introduced in ES6. They provide a way to create unique, non-string object keys that are guaranteed not to clash with other keys. Symbols can be used for private properties, meta-data, or to avoid naming collisions in complex applications.
+
+```javascript
+const secretKey = Symbol('secretKey');
+
+const obj = {
+  [secretKey]: 'This is a secret value',
+  publicKey: 'This is a public value',
+};
+
+console.log(obj.secretKey); // undefined
+console.log(obj[secretKey]); // This is a secret value
+```
+
+## Iterators and Iterable Protocol
+
+ES6 introduced the iterable protocol, which allows developers to define how objects should be iterated. This provides more flexibility when working with different data structures or custom objects. The iterable protocol can be implemented using a special method named Symbol.iterator, which returns an iterator object.
+
+```javascript
+const iterableObject = {
+  0: 'zero',
+  1: 'one',
+  2: 'two',
+  length: 3,
+  [Symbol.iterator]() {
+    let index = 0;
+    return {
+      next: () => ({
+        value: this[index],
+        done: index++ >= this.length,
+      }),
+    };
+  },
+};
+
+for (const value of iterableObject) {
+  console.log(value);
+}
+```
+
+## Map and Set
+
+ES6 introduced new collection types, Map and Set, which offer better performance and additional features compared to their object and array counterparts. Maps are ordered collections of key-value pairs, whereas Sets are collections of unique values.
+
+```javascript
+// Map
+const map = new Map();
+map.set('key', 'value');
+console.log(map.get('key')); // value
+console.log(map.has('key')); // true
+map.delete('key');
+
+// Set
+const set = new Set([1, 2, 3, 4, 4]);
+console.log(set.size); // 4
+set.add(5);
+set.delete(1);
+```
+
+## Array and Object Static Methods
+
+ES6 added several static methods to the Array and Object constructors, simplifying common operations and making code more readable. Some of these methods include Array.from(), Array.of(), Object.assign(), and Object.is().
+
+```javascript
+// Array.from()
+const arrayFromIterable = Array.from(iterableObject);
+console.log(arrayFromIterable); // ['zero', 'one', 'two']
+
+// Array.of()
+const arrayWithValues = Array.of(1, 2, 3);
+console.log(arrayWithValues); // [1, 2, 3]
+
+// Object.assign()
+const targetObject = { a: 1, b: 2 };
+const sourceObject = { b: 3, c: 4 };
+Object.assign(targetObject, sourceObject);
+console.log(targetObject); // { a: 1, b: 3, c: 4 }
+
+// Object.is()
+console.log(Object.is(0, -0)); // false
+```
+
+## Tail Call Optimization
+
+Although not yet widely supported by all browsers, tail call optimization is a performance optimization technique introduced in ES6. It allows recursive functions that make a call as their last action to avoid growing the call stack, preventing stack overflow errors and improving performance for deep recursion scenarios.
+
+```javascript
+function factorial(n, acc = 1) {
+  if (n <= 1) {
+    return acc;
+  }
+  return factorial(n - 1, n * acc);
+}
+
+console.log(factorial(5)); // 120
+```
+
+## Reflect API
+
+The Reflect API provides a set of methods that make it easier to work with objects, particularly in conjunction with Proxies. Reflect methods perform common object operations, such as getting or setting properties, creating objects, or invoking functions, in a more consistent and functional way.
+
+```javascript
+const person = { name: 'John' };
+
+// Getting a property using Reflect
+console.log(Reflect.get(person, 'name')); // John
+
+// Setting a property using Reflect
+Reflect.set(person, 'age', 30);
+console.log(person.age); // 30
+```
+
+## Binary and Octal Literals
+
+ES6 introduces binary and octal literals, making it easier to represent and work with numbers in these base systems. Binary literals start with `0b` or `0B`, while octal literals begin with `0o` or `0O`.
+
+```javascript
+const binaryNumber = 0b1101;
+console.log(binaryNumber); // 13
+
+const octalNumber = 0o755;
+console.log(octalNumber); // 493
+```
+
+## Unicode Support
+
+ES6 enhances Unicode support in JavaScript, making it easier to work with non-ASCII characters and providing additional methods for handling Unicode strings. For example, the `String.fromCodePoint()` method allows you to create a string from a Unicode code point, and the `String.prototype.codePointAt()` method retrieves the Unicode code point of a character at a given position.
+
+```javascript
+const emoji = String.fromCodePoint(0x1f600);
+console.log(emoji); // 😀
+
+const codePoint = emoji.codePointAt(0);
+console.log(codePoint); // 128512
+```
+
+## Array.prototype.includes()
+
+The includes() method is a handy addition to the Array prototype in ES6. It checks if an array contains a specific value, returning true if found and false otherwise. This method offers a more intuitive and readable alternative to the indexOf() method for checking value presence in an array.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+console.log(numbers.includes(3)); // true
+console.log(numbers.includes(6)); // false
+```
+
+## GlobalThis
+
+The globalThis object is a standardized way to access the global object in different environments, such as browsers or Node.js. Before the introduction of globalThis, developers had to rely on various workarounds to access the global object, such as using window, self, or global, which were not consistent across all environments.
+
+```javascript
+// Using globalThis to access the global object
+globalThis.myGlobalVariable = 'Hello, World!';
+console.log(globalThis.myGlobalVariable); // Hello, World!
+```
+
+## String Padding
+
+ES6 introduced two new methods for string padding: padStart() and padEnd(). These methods make it easier to pad strings with a specified length and character, simplifying tasks like formatting text or aligning values in columns.
+
+```javascript
+const str = '42';
+
+console.log(str.padStart(5, '0')); // 00042
+console.log(str.padEnd(5, '0')); // 42000
+```
+
+## Object.entries() and Object.values()
+
+ES6 added Object.entries() and Object.values() methods, which return arrays of an object's key-value pairs or values, respectively. These methods make it easier to iterate over an object's properties or values, simplifying common tasks like data manipulation and transformation.
+
+```javascript
+const person = { name: 'John', age: 30 };
+
+console.log(Object.entries(person)); // [['name', 'John'], ['age', 30]]
+console.log(Object.values(person)); // ['John', 30]
+```
+
+## Trailing Commas in Function Parameter Lists and Calls
+
+In ES6, trailing commas are allowed in function parameter lists and function calls. This small syntactic improvement makes it easier to modify or extend code, reducing the risk of syntax errors when adding or removing parameters or arguments.
+
+```javascript
+function example(a, b, c) {
+  return a + b + c;
+}
+
+console.log(example(1, 2, 3)); // 6
+```
+
+## Exponentiation Operator
+
+The exponentiation operator (\*\*) is a new arithmetic operator introduced in ES6 that makes it easier to perform exponentiation operations. It provides a more concise and intuitive syntax compared to using the Math.pow() function.
+
+```javascript
+const base = 2;
+const exponent = 3;
+
+console.log(base ** exponent); // 8
+```
+
+## Async Functions and Await
+
+Although not a part of ES6, async functions and the await keyword were introduced in ECMAScript 2017 (ES8) and have become crucial for modern JavaScript development. These features simplify working with asynchronous code, making it more readable and easier to reason about.
+
+Async functions are declared with the async keyword, and they implicitly return a Promise. The await keyword can only be used inside an async function and makes the function execution pause until the Promise is resolved or rejected.
+
+```javascript
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+fetchData('https://api.example.com/data');
+```
+
+## Shared Memory and Atomics
+
+Introduced in ECMAScript 2017 (ES8), SharedArrayBuffer and Atomics provide a low-level mechanism to share memory between multiple JavaScript threads, allowing developers to build concurrent and parallel programming models. While these features are more advanced and less commonly used, they can be powerful when working with web workers, WebAssembly, or performance-critical applications.
+
+```javascript
+const sharedBuffer = new SharedArrayBuffer(16);
+const sharedArray = new Int32Array(sharedBuffer);
+
+// Using Atomics to perform safe operations on shared memory
+Atomics.store(sharedArray, 0, 42);
+console.log(Atomics.load(sharedArray, 0)); // 42
+```
+
+## Object.getOwnPropertyDescriptors()
+
+Introduced in ECMAScript 2017 (ES8), the Object.getOwnPropertyDescriptors() method returns an object containing all the own property descriptors of a given object. This method can be useful when working with decorators, cloning objects with non-default attributes, or handling dynamic property assignments.
+
+```javascript
+const person = {
+  name: 'John',
+  age: 30,
+};
+
+const descriptors = Object.getOwnPropertyDescriptors(person);
+console.log(descriptors);
+/*
+{
+  name: { value: 'John', writable: true, enumerable: true, configurable: true },
+  age: { value: 30, writable: true, enumerable: true, configurable: true }
+}
+*/
+```
+
+## String.prototype.matchAll()
+
+Introduced in ECMAScript 2020 (ES11), the matchAll() method returns an iterator that yields all the matches of a regular expression in a given string, including capturing groups. This method simplifies iterating through multiple regex matches and provides better access to match information.
+
+```javascript
+const regex = /(\d{4})-(\d{2})-(\d{2})/g;
+const dateString = '2023-04-07, 2022-08-01, 2021-12-25';
+
+for (const match of dateString.matchAll(regex)) {
+  const [fullMatch, year, month, day] = match;
+  console.log(`Year: ${year}, Month: ${month}, Day: ${day}`);
+}
+```
+
+## Optional Chaining
+
+Optional chaining, introduced in ECMAScript 2020 (ES11), is a useful feature that simplifies accessing deeply nested properties of an object. With optional chaining, you can attempt to access a property without worrying about causing a TypeError if an intermediate property is null or undefined.
+
+```javascript
+const user = {
+  name: 'John',
+  address: {
+    street: 'Main St',
+    city: 'New York',
+  },
+};
+
+console.log(user.address?.city); // New York
+console.log(user.phoneNumber?.areaCode); // undefined
+```
+
+## Nullish Coalescing Operator
+
+The nullish coalescing operator (??), introduced in ECMAScript 2020 (ES11), is a logical operator that returns the right-hand operand when the left-hand operand is null or undefined. It is particularly useful when working with default values, as it avoids the issues that can arise when using the logical OR operator (||) with falsy values.
+
+```javascript
+const settings = {
+  darkMode: false,
+  fontSize: null,
+};
+
+const darkMode = settings.darkMode ?? true;
+const fontSize = settings.fontSize ?? 16;
+
+console.log(darkMode); // false
+console.log(fontSize); // 16
+```
+
+## Promise.allSettled()
+
+Promise.allSettled(), introduced in ECMAScript 2020 (ES11), is a useful method that returns a promise that is fulfilled with an array of objects describing the results of all input promises, regardless of whether they were fulfilled or rejected. This method can be helpful when working with multiple promises where you need to know the outcome of each, even if some fail.
+
+```javascript
+const promise1 = Promise.resolve(1);
+const promise2 = Promise.reject(new Error('Something went wrong'));
+const promise3 = Promise.resolve(3);
+
+Promise.allSettled([promise1, promise2, promise3]).then((results) => {
+  results.forEach((result) => console.log(result.status));
+});
+// Output:
+// "fulfilled"
+// "rejected"
+// "fulfilled"
+```
+
+## BigInt
+
+BigInt, introduced in ECMAScript 2020 (ES11), is a new numeric primitive that can represent integers of arbitrary size. This is particularly useful when working with numbers larger than the maximum safe integer in JavaScript (2 \*\* 53 - 1). BigInt allows developers to perform arithmetic operations, comparisons, and bitwise operations with large integers.
+
+```javascript
+const largeNumber = BigInt('123456789012345678901234567890');
+const anotherLargeNumber = BigInt('987654321098765432109876543210');
+
+const result = largeNumber + anotherLargeNumber;
+console.log(result); // 1111111110111111111011111111100n
+```
+
+## Dynamic Import
+Dynamic import, introduced in ECMAScript 2020 (ES11), allows developers to load JavaScript modules dynamically at runtime. This feature is beneficial when working with large applications or when you need to load a module conditionally. Dynamic imports return a promise that resolves to the module object, making it possible to use the async/await syntax.
+
+```javascript
+async function loadModule() {
+  const { default: myFunction } = await import('./my-module.js');
+  myFunction();
+}
+
+loadModule();
+```
+
+## Private Class Fields
+Private class fields, introduced in ECMAScript 2022 (ES13), provide a way to create truly private properties and methods within JavaScript classes. By using the # symbol, you can define private properties and methods that are only accessible within the class itself, preventing external access and improving encapsulation.
+
+```javascript
+class Counter {
+  #count = 0;
+
+  increment() {
+    this.#count++;
+  }
+
+  getCount() {
+    return this.#count;
+  }
+}
+
+const counter = new Counter();
+counter.increment();
+console.log(counter.getCount()); // 1
+console.log(counter.#count); // SyntaxError: Private field '#count' must be declared in an enclosing class
+```
+
+## Logical Assignment Operators
+Logical assignment operators, introduced in ECMAScript 2021 (ES12), are a concise way to perform a logical operation and assignment in a single step. They come in three flavors: ||=, &&=, and ??=. These operators can make your code more concise and easier to read when working with default values or conditional assignments.
+
+```javascript
+// OR assignment (||=)
+let a = 0;
+let b = 42;
+
+a ||= b;
+console.log(a); // 42
+
+// AND assignment (&&=)
+let c = 42;
+let d = 0;
+
+c &&= d;
+console.log(c); // 0
+
+// Nullish coalescing assignment (??=)
+let e = null;
+let f = 42;
+
+e ??= f;
+console.log(e); // 42
+```
+
+## Numeric Separators
+Numeric separators, introduced in ECMAScript 2021 (ES12), allow developers to use the underscore (_) as a separator between digits in numeric literals. This feature improves readability when working with large numbers or numbers with repeating patterns.
+
+```javascript
+const largeNumber = 1_000_000_000;
+console.log(largeNumber); // 1000000000
+
+const binaryNumber = 0b1010_1010_1010;
+console.log(binaryNumber); // 2730
+
+const hexNumber = 0xDEAD_BEEF;
+console.log(hexNumber); // 3735928559
+```
+
+## WeakRef
+WeakRef, introduced in ECMAScript 2021 (ES12), is a mechanism that allows you to create a weak reference to an object. A weak reference doesn't prevent the object from being garbage collected, unlike a strong reference. This feature can be useful when working with large objects or managing caches where you want to minimize memory usage without preventing garbage collection.
+
+```javascript
+class LargeObject {
+  constructor(data) {
+    this.data = data;
+  }
+}
+
+function createWeakRef(obj) {
+  return new WeakRef(obj);
+}
+
+const largeObject = new LargeObject(new Array(1_000_000));
+const weakRef = createWeakRef(largeObject);
+
+console.log(weakRef.deref()); // LargeObject { data: [...] }
+```
+
+## FinalizationRegistry
+FinalizationRegistry, introduced in ECMAScript 2021 (ES12), provides a way to register a cleanup callback for objects that are garbage collected. This feature can be useful when working with external resources or managing memory manually, allowing you to perform cleanup operations when the object is no longer needed.
+```javascript
+const registry = new FinalizationRegistry((heldValue) => {
+  console.log(`Cleanup: ${heldValue}`);
+});
+
+function registerObject(obj) {
+  registry.register(obj, 'Object registered');
+}
+
+const myObject = { data: 'Important data' };
+registerObject(myObject);
+
+// After myObject is garbage collected, the cleanup callback will be called with 'Object registered' as its argument
+```
+
+## RegExp Match Indices
+RegExp match indices, introduced in ECMAScript 2021 (ES12), provide additional information about the start and end indices of captured substrings in a regular expression match. By enabling the d flag in your regular expression, you can access this information through the indices property on the resulting match object.
+
+```javascript
+const regex = /(\d{4})-(\d{2})-(\d{2})/d;
+const dateString = '2023-04-07';
+
+const match = regex.exec(dateString);
+
+if (match) {
+  console.log(match.indices);
+  // Output: [ [ 0, 10 ], [ 0, 4 ], [ 5, 7 ], [ 8, 10 ], groups: undefined ]
+}
+```
+
+## AggregateError
+AggregateError, introduced in ECMAScript 2021 (ES12), is a new error class that represents multiple errors grouped together. This error type is particularly useful when working with Promise combinators like Promise.any() or other situations where multiple errors can occur simultaneously.
+
+```javascript
+const error1 = new Error('First error');
+const error2 = new Error('Second error');
+
+const aggregateError = new AggregateError([error1, error2], 'Multiple errors occurred');
+
+console.log(aggregateError.message); // Multiple errors occurred
+console.log(aggregateError.errors);  // [ Error: First error, Error: Second error ]
+```
+
+## String.prototype.replaceAll()
+The replaceAll() method, introduced in ECMAScript 2021 (ES12), allows you to replace all occurrences of a substring or pattern in a string with a specified replacement. This method simplifies the process of replacing multiple instances of a pattern without using a regular expression with the g flag.
+
+```javascript
+const text = 'JavaScript is awesome! I love JavaScript.';
+
+const newText = text.replaceAll('JavaScript', 'JS');
+console.log(newText); // 'JS is awesome! I love JS.'
+```
+
+## Error Cause
+The error cause, introduced in ECMAScript 2022 (ES13), allows developers to associate additional context with an error by providing a cause property when creating a new error instance. This feature can help developers understand the root cause of an error and improve error handling and debugging.
+
+```javascript
+const originalError = new Error('Failed to fetch data');
+
+try {
+  throw new Error('An error occurred', { cause: originalError });
+} catch (error) {
+  console.log(error.message); // 'An error occurred'
+  console.log(error.cause);   // Error: Failed to fetch data
+}
+```
+
+## Object.hasOwn()
+The Object.hasOwn() method, introduced in ECMAScript 2022 (ES13), is a convenient static method for checking if an object has an own (non-inherited) property with a specified key. It's a more concise alternative to the widely-used Object.prototype.hasOwnProperty.call() approach.
+
+```javascript
+const obj = {
+  key1: 'value1',
+};
+
+console.log(Object.hasOwn(obj, 'key1')); // true
+console.log(Object.hasOwn(obj, 'key2')); // false
+```
+
+## Atomics.waitAsync()
+The Atomics.waitAsync() method, introduced in ECMAScript 2023 (ES14), is an asynchronous version of Atomics.wait() that allows you to wait on a shared memory location without blocking the main thread. This method is particularly useful when working with shared memory and Web Workers, as it enables non-blocking synchronization between threads.
+
+```javascript
+async function asyncWait(buffer, index, expectedValue, timeout) {
+  const result = await Atomics.waitAsync(buffer, index, expectedValue, timeout);
+  console.log(`Result: ${result.value}`);
+}
+
+const sharedArray = new Int32Array(new SharedArrayBuffer(4));
+asyncWait(sharedArray, 0, 0, 1000);
+```
+
+## Array.prototype.findLast() and Array.prototype.findLastIndex()
+The findLast() and findLastIndex() methods, introduced in ECMAScript 2023 (ES14), provide a convenient way to find the last element or index that satisfies a given condition in an array. These methods are useful when working with arrays where you need to locate the last occurrence of a specific element or match a certain criterion.
+
+```javascript
+const numbers = [1, 3, 5, 7, 5, 3, 1];
+
+const lastOddNumber = numbers.findLast((n) => n % 2 !== 0);
+console.log(lastOddNumber); // 1
+
+const lastIndex = numbers.findLastIndex((n) => n % 2 !== 0);
+console.log(lastIndex); // 6
+```
+
+## Pipeline Operator (|>)
+The pipeline operator (|>), currently a Stage 1 proposal for ECMAScript, is a functional programming-inspired feature that allows for more readable and concise code when chaining multiple functions. With the pipeline operator, you can pass the result of one expression as an argument to another expression, simplifying the process of composing functions.
+
+```javascript
+const double = (x) => x * 2;
+const increment = (x) => x + 1;
+
+const result = 5 |> double |> increment;
+console.log(result); // 11
+```
+
+## Decorators
+Decorators, currently a Stage 2 proposal for ECMAScript, provide a way to modify or annotate classes and class members, such as methods and properties. Decorators are higher-order functions that can be used to add or modify functionality, enforce constraints, or provide metadata to classes and their members.
+
+```javascript
+function log(target, key, descriptor) {
+  const originalMethod = descriptor.value;
+
+  descriptor.value = function (...args) {
+    console.log(`Calling ${key} with arguments:`, args);
+    return originalMethod.apply(this, args);
+  };
+
+  return descriptor;
+}
+
+class MyClass {
+  @log
+  myMethod(a, b) {
+    return a + b;
+  }
+}
+
+const obj = new MyClass();
+obj.myMethod(1, 2); // Logs: 'Calling myMethod with arguments: [1, 2]'
+```
+
+## Temporal
+Temporal, currently a Stage 3 proposal for ECMAScript, is a modern date and time library that aims to address the shortcomings of JavaScript's built-in Date object. Temporal provides a comprehensive set of types and functions for working with dates, times, and durations, making it easier to handle complex date and time operations.
+
+```javascript
+const { PlainDate } = Temporal;
+
+const date = PlainDate.from('2023-04-07');
+console.log(date.year); // 2023
+console.log(date.month); // 4
+console.log(date.day); // 7
+
+const nextDay = date.add({ days: 1 });
+console.log(nextDay.toString()); // '2023-04-08'
+```
+
+## Record and Tuple
+Record and Tuple, currently a Stage 2 proposal for ECMAScript, introduce two new immutable data structures to JavaScript: Record, an immutable object, and Tuple, an immutable array. These structures provide a way to create and work with immutable data, which can be beneficial for functional programming and ensuring data integrity.
+
+```javascript
+const rec = #{ x: 1, y: 2 };
+const tup = #[1, 2, 3];
+
+console.log(rec.x); // 1
+console.log(tup[1]); // 2
+
+const updatedRec = #{ ...rec, x: 3 };
+console.log(updatedRec); // #{ x: 3, y: 2 }
+
+const updatedTup = #[...tup.slice(0, 1), 4, ...tup.slice(2)];
+console.log(updatedTup); // #[1, 4, 3]
+```

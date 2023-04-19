@@ -13,7 +13,7 @@ export default function Pagination({ currentPage, numPages }) {
   const isLastPage = currentPage === numPages;
   const prevPage = `/blog/posts/page/${currentPage - 1}`;
   const nextPage = `/blog/posts/page/${currentPage + 1}`;
-  const maxPagesToShow = 3;
+  const maxPagesToShow = 5;
 
   // If there is only one page, do not show pagination
   if (numPages === 1) {

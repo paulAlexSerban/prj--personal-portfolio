@@ -12,7 +12,7 @@ $block: "footer";
         @include flex($direction: column);
 
         width: 100vw;
-        margin: var(--responsive-spacing-20) auto 0;
+        margin: var(--responsive-spacing-60) auto 0;
         background-color: var(--secondary-color);
         padding: var(--responsive-spacing-10) 0;
     }

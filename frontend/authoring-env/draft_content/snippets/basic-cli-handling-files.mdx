@@ -1,0 +1,44 @@
+---
+title: 'Basic CLI: Handling Files'
+excerpt: 'How to create, delete, copy, and move files using the command line.'
+category: 'snippet'
+status: "draft"
+tags:
+  - 'Bash/Shell'
+date: 'Apr 15, 2019'
+---
+
+- Create a new file, you can use the `touch` command. For example, to create a new file called "example.txt," you would type `touch example.txt`.
+- Delete a file, you can use the `rm` command. For example, to delete the "example.txt" file, you would type `rm example.txt`.
+- Copy a file, you can use the `cp` command. For example, to copy the "example.txt" file to a new file called "example2.txt," you would type `cp example.txt example2.txt`.
+- Move a file, you can use the `mv` command. For example, to move the "example.txt" file to a new file called "example2.txt," you would type `mv example.txt example2.txt`.
+
+
+## Creating files and directories
+
+- `touch` - command used to create, update the access date and/or modification date/time-stamp of a computer-file or directory - the `touch`command can be used to create a file without any content - this command can be used when the user does not have data to store at the time of file creation, and the `touch` command can be used to update the access date and/or modification date/time-stamp of a computer-file or directory
+- `touch file_1.txt` - create a file named "file_1.txt"
+- `touch -t YYYYMMDDHHMM file_2.txt` - command used to create a file using a specific date and time;
+- `mkdir myDir` - create a directory named "myDir"
+- `mkdir -p myDir/hello` - create a directory named "myDir" and inside it the directory named "hello" - the `-p` flag will create the directory and all the parent directories if they do not exist
+
+## Copying files
+
+- `cp src_file dest_file` - command used to copy files and group of files or directories - it creates an exact image of a file or directory;
+- `cp file1.txt{,.bkp}` - command that takes the file_name that you want and creates a new file with the same name plus `.bkp` at the end;
+- `cp -R src_directory dest_directory` - the command that copies all files of the source directory to the destination directory, creating any files and directories needed - the additional option ` -R` indicates the recursive copying of directories and subdirectories;
+
+## Moving or renaming files
+
+- `mv` - command used to move one or more files from one place to another - it can be used also to rename a file or folder
+- `mv old_name.txt new_name.txt` - command to rename the file "old_name.txt" to "new_name.txt" - this command actually moves the content from one file to another - **!!! this command overwrites any existing file with the same name without any prompt !!!** - to avoid this, you can use the `-i` flag to prompt the user before overwriting an existing file
+- `mv file.txt [dest-directory]` - the command that moves the file named `file.txt` to the destination folder `dest-directory` - if the destination folder does not exist, it will be created
+
+## Delete files PERMANENTLY
+
+- `rm` - command used to remove/delete a file or an empty directory - it can be used to remove multiple files at once
+- `rm -v` - delete and see the progress of removing files and directories
+- `rm -i` - delete file with prompt to continue or not
+- `rm -rf` - the command that removes, enforces and does not ask for confirmation all the files and subdirectories from the current directory
+- `rm -rf /` - the command that removes everything from the whole computer
+- `rm -rf *` - the command that removes all the files and directories from the computer - **!!! this command is very dangerous and should be used with extreme caution !!!**

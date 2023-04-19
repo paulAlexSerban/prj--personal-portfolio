@@ -2,7 +2,7 @@
 title: "HTML & CSS: Design and Build Websites"
 subheading: "by Jon Duckett"
 excerpt: "A comprehensive guide to the basics of web design and development, a book that provides an introduction to HTML and CSS, two of the most essential technologies used to build and style websites and covers a wide range of topics, including HTML structure, content elements, CSS styles and selectors, graphic design, layout, user experience, and best practices for web development."
-status: "published"
+status: "draft"
 date: "March 3, 2019"
 tags:
     - "Web Development"
