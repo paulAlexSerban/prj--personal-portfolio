@@ -12,6 +12,8 @@ const roboto = Roboto({
   style: ['normal'],
   variable: '--text-regular',
 });
+
+const category = "booknotes";
 export default function PortfolioItemDetail({ children, pageContent, siteProps, frontmatter }) {
   const pageTitle = [frontmatter.title, '|', siteProps.title].join(' ');
   return (
@@ -27,6 +29,7 @@ export default function PortfolioItemDetail({ children, pageContent, siteProps, 
         pageContent={pageContent}
         siteProps={siteProps}
         frontmatter={frontmatter}
+        category={category}
       >
         {children}
       </BlogPostTemplate>
@@ -35,7 +38,7 @@ export default function PortfolioItemDetail({ children, pageContent, siteProps, 
 }
 
 export async function getStaticPaths() {
-  const BLOG_PATH = path.join('src', 'content', 'booknotes');
+  const BLOG_PATH = path.join('src', 'content', category);
   const blogDirs = fs.readdirSync(BLOG_PATH);
 
   const files = fs.readdirSync(BLOG_PATH);
@@ -54,7 +57,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const contentRepository = new ContentRepository();
-  const content = await contentRepository.getPostContent('booknotes', slug);
+  const content = await contentRepository.getPostContent(category, slug);
   return {
     props: {
       ...content,

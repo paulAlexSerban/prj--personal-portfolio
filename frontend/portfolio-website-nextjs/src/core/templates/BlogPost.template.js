@@ -11,7 +11,7 @@ const MarkdownContainer = dynamic(() => import("@/core/molecules/MarkdownContent
 
 import { base } from "@/styles/templates/blogPost.module.scss";
 
-export default function BlogPostTemplate({ children, pageContent, siteProps, frontmatter, caseStudy }) {
+export default function BlogPostTemplate({ children, pageContent, siteProps, frontmatter, caseStudy, category }) {
   const ID = useId();
   const socialMediaLinks = [];
   if (frontmatter && frontmatter.repo_url) {
@@ -38,8 +38,8 @@ export default function BlogPostTemplate({ children, pageContent, siteProps, fro
           pageTitle={frontmatter.title}
           subheading={frontmatter.subheading}
           socialMediaLinks={socialMediaLinks}
-          date={frontmatter.date}
-          author={frontmatter.author}
+          date={category !== 'booknotes' && frontmatter.date}
+          author={category !== 'booknotes' && frontmatter.author}
           tags={frontmatter.tags}
         />
         <Section sectionId={pageContent.slug}>

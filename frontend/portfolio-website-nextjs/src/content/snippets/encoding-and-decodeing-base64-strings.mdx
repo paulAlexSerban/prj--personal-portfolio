@@ -1,0 +1,49 @@
+---
+title: "Base64 Encoding and Decoding: Browser vs Node.js"
+subheading: "What is the difference between btoa/atob and Buffer.from?"
+excerpt: "Explore the differences between base64 encoding and decoding methods in web browsers and Node.js, with examples and explanations for using btoa, atob, and Buffer.from."
+category: "snippet"
+status: "published"
+tags:
+    - "JavaScript"
+    - "Encoding"
+    - "Decoding"
+    - "Base64"
+date: "June 1, 2020"
+---
+
+## Introduction
+
+Base64 is a widely used encoding scheme that converts binary data into an ASCII string format. It is commonly used to transfer binary data, such as images or files, over text-based protocols like HTTP or email. In this blog post, we will explore the different ways to perform base64 encoding and decoding in web browsers and Node.js, and understand the key differences between the two methods.
+
+## The Web-browser Way
+As mentioned in the introduction, web browsers have built-in functions called `btoa` and `atob` that allow for encoding and decoding strings using the base64 algorithm. The `btoa` function encodes a string as base64, while `atob` decodes a base64-encoded string. Here is an example:
+
+```javascript
+const str = "Hello, world!";
+const encoded = btoa(str);
+console.log(encoded); // "SGVsbG8sIHdvcmxkIQ=="
+
+const decoded = atob(encoded);
+console.log(decoded); // "Hello, world!"
+```
+
+## The Node.js Way
+Node.js has its own built-in method for handling base64 encoding and decoding: `Buffer.from`. This method creates a new buffer from a given input, such as a string, an array, or other data types, and specifies the character encoding used to convert a string to a buffer.
+
+```javascript
+const str = "Hello, world!";
+const encoded = Buffer.from(str).toString("base64");
+console.log(encoded); // "SGVsbG8sIHdvcmxkIQ=="
+
+const decoded = Buffer.from(encoded, "base64").toString();
+console.log(decoded); // "Hello, world!"
+```
+
+## What is the difference?
+The main distinction between these two methods lies in their purpose and the environment in which they are used. `btoa` and `atob` are specifically designed for encoding and decoding strings as base64 in web browsers. They are not available in Node.js, and they do not work with other types of data, such as buffers.
+
+On the other hand, `Buffer.from` is a more versatile method used for creating buffers from various types of data in Node.js. Buffers are useful for representing binary data and provide a range of methods for reading, writing, and manipulating binary data. While `Buffer.from` can also convert a string to a buffer, it is not limited to working with strings and can specify the character encoding used to convert a string to a buffer.
+
+## Conclusion
+In conclusion, both web browsers and Node.js provide convenient ways to perform base64 encoding and decoding. `btoa` and `atob` are used for encoding and decoding strings as base64 in web browsers, while `Buffer.from` is used for creating buffers from various types of data in Node.js, including strings. When working with base64 encoding and decoding, it is essential to understand the different methods available and choose the one most suited to your specific environment and requirements.
