@@ -8,12 +8,11 @@ section: 'portfolio'
 category: 'Bash/Shell Scripting'
 type: 'Automation Script'
 experience: 'personal project'
-repo_url: 'https://github.com/'
-demo_url: 'https://github.com/github_pages'
-status: "published"
+repo_url: 'https://github.com/paulAlexSerban/mod--boilerplate-starter-kit'
+status: 'published'
 date: 'October 10, 2022'
 tags:
-  - 'Bash/Shell'
+    - 'Bash/Shell'
 ---
 
 ## Project Brief
@@ -38,50 +37,109 @@ Modulize promises to streamline the management and execution of tasks within mod
 
 Modulize is implemented using the following technologies:
 
-Bash scripting
-Environment variables and configuration files
-
-## Post-MVP Improvements & To Do's
-
-### Functional Improvements:
-
-- Support for additional task types, such as linting and code analysis.
-- Parallel execution of tasks for improved performance.
-- Integration with Continuous Integration (CI) and Continuous Deployment (CD) tools for seamless project management.
-- Enhanced error handling and reporting capabilities for better debugging.
-- Support for custom task plugins, allowing users to extend Modulize's functionality.
-
-### Non-Functional Improvements:
-
-- Improved documentation and examples for easier adoption.
-- Performance optimizations for faster task execution.
-- Enhanced modularity and code organization for better maintainability.
+-   Bash scripting
+-   Environment variables and configuration files
 
 ## Features
 
-- Task execution for individual modules or entire projects.
-- Environment-specific configuration support.
-- Automatic discovery of modules and submodules.
-- Simple and intuitive command-line interface.
-- Color-coded output for enhanced readability.
+-   Task execution for individual modules or entire projects.
+-   Environment-specific configuration support.
+-   Automatic discovery of modules and submodules.
+-   Simple and intuitive command-line interface.
+-   Color-coded output for enhanced readability.
 
 ## Installation
 
 ### Requirements
 
-- Bash (version 4.0 or higher)
-- Access to a UNIX-based system (Linux, macOS)
+-   Bash (version 4.0 or higher)
+-   Access to a UNIX-based system (Linux, macOS)
 
 ### Install
 
-- Download or clone the Modulize repository to your local machine.
-- Ensure the main script (modulize.sh) is executable by running chmod +x modulize.sh.
-- Add the script to your PATH, or simply invoke it using its full path when needed.
+-   Download or clone the Modulize repository to your local machine.
+-   Ensure the main script (modulize.sh) is executable by running `chmod +x modulize.sh`.
+-   Add `config/config.common.env` to your project root directory and add the following environment variables:
+
+```bash
+# 0/ Colors
+NC='\033[0m' # No Color
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+
+# 1/ Project modules in order of execution
+INSTALL_PROJECT_MODULES=("assets" "backend" "frontend")
+UNINSTALL_PROJECT_MODULES=("assets" "frontend" "backend")
+
+# 2/ Project names -------------------------------------------------------
+# Must be lower-case, no spaces and no invalid path chars.
+PROJECT_NAME=project-name
+COMPOSE_PROJECT_NAME=project-name
+```
+
+-   Each module should have a `config.env` file containing the environment-specific configuration for that module.
+    -   Example: `frontend/config.env`
+
+```bash
+# 1/ Module name
+MODULE_NAME="frontend"
+
+# 2/ Project modules in order of execution
+INSTALL_MODULE_SUBPROJECTS=("nextjs-landing-page" "react-gallery-app" "vue-flash-card-app")
+UNINSTALL_MODULE_SUBPROJECTS=("nextjs-landing-page" "react-gallery-app" "vue-flash-card-app")
+```
+
+-   Each module sub-module should have a `config.env` file containing the environment-specific configuration for that sub-module and a scripts directory containing the scripts that can be run by modulize
+
+    -   Example: `frontend/nextjs-landing-page/config.env`
+
+```bash
+# 1/ Module name
+MODULE_NAME="nextjs-landing-page"
+```
+
+    -   Example: `frontend/nextjs-landing-page/scripts/install.bash`
+
+```bash
+#!/bin/bash
+
+# makes sure the folder containing the script will be the root folder
+cd "$(dirname "$0")" || exit
+
+source ../config.env
+
+rm -rfv ../node_modules
+npm --prefix .. install
+```
+
+-   Simply invoke the script with the desired options to run the task on the specified modules.
+
+```bash
+./scripts/modulize.sh  -e dev -p install -m frontend
+```
 
 ## Usage
 
 To use Modulize, run the script with the following options:
 
-- `-p PHASE (mandatory)`: The task phase to run, such as "build" or "test".
-- `-e ENV (mandatory)`: The environment configuration to use, such as "dev" or "prod".
-- `-m MODULE (optional)`: The specific module to run the task on. If not specified, the task will run on all modules
+-   `-p PHASE (mandatory)`: The task phase to run, such as "build" or "test".
+-   `-e ENV (mandatory)`: The environment configuration to use, such as "dev" or "prod".
+-   `-m MODULE (optional)`: The specific module to run the task on. If not specified, the task will run on all modules
+
+## Post-MVP Improvements & To Do's
+
+### Functional Improvements:
+
+-   Support execution of tasks on modules and submodules in order specified in `INSTALL_*` or `UNINSTALL_*` variables
+-   Support for additional task types, such as linting and code analysis.
+-   Parallel execution of tasks for improved performance.
+-   Integration with Continuous Integration (CI) and Continuous Deployment (CD) tools for seamless project management.
+-   Enhanced error handling and reporting capabilities for better debugging.
+-   Support for custom task plugins, allowing users to extend Modulize's functionality.
+
+### Non-Functional Improvements:
+
+-   Improved documentation and examples for easier adoption.
+-   Performance optimizations for faster task execution.
+-   Enhanced modularity and code organization for better maintainability.

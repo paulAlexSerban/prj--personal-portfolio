@@ -23,6 +23,7 @@ $block: "card";
 
     @include e("footer") {
         @include flex($main: flex-start);
+
         flex-wrap: wrap;
         margin-top: auto;
         padding-top: var(--lateral-padding);

@@ -10,7 +10,6 @@ $block: "section";
 .#{$block} {
 	@include e("base") {
 		width: 100%;
-		margin-top: var(--responsive-spacing-35);
 		padding-inline: var(--lateral-padding);
 		opacity: 1;
 		transition: opacity 0.25s ease-in;

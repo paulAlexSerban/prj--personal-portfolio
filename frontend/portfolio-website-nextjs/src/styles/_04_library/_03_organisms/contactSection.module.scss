@@ -9,7 +9,7 @@ $block: "contactSection";
 
 .#{$block} {
     @include e("base") {
-        margin-top: var(--responsive-spacing-35);
+        margin-top: var(--responsive-spacing-3);
 
         @include breakpoint($tablet) {
             padding: 0 var(--lateral-padding) 0;

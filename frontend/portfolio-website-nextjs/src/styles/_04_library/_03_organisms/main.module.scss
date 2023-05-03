@@ -10,14 +10,21 @@ $block: "main";
 .#{$block} {
     @include e("base") {
         max-width: $max-width;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
 
         @include m("isLoading") {
             opacity: 0;
         }
+
+
     }
 
     @include e("container") {
         @include flex($direction: column);
+
+        > * + * {
+            margin-block-start: var(--responsive-spacing-3);
+        }
     }
 }

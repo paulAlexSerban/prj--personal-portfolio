@@ -9,7 +9,6 @@ $block: "burgerButton";
 
 .#{$block} {
     @include e("base") {
-        padding: var(--static-spacing-40);
         position: absolute;
         top: 50%;
         right: 0;

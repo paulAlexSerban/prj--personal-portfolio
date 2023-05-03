@@ -13,7 +13,7 @@ $block: 'heroBanner';
 
     width: 100vw;
     background-color: var(--secondary-color);
-    padding: var(--responsive-spacing-10) 0;
+    padding: var(--responsive-spacing-1) 0;
   }
 
   @include e('container') {
@@ -23,7 +23,7 @@ $block: 'heroBanner';
     width: 100%;
     margin: 0 auto;
     padding-inline: var(--lateral-padding);
-    row-gap: var(--responsive-spacing-40);
+    row-gap: var(--responsive-spacing-2);
   }
 
   @include e('wrapper') {
@@ -33,6 +33,10 @@ $block: 'heroBanner';
 
     @include breakpoint($tablet) {
       grid-column: span 8;
+    }
+
+    > * + * {
+      margin-block-start: var(--responsive-spacing-1);
     }
   }
 }

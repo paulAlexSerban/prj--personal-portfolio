@@ -2,6 +2,23 @@
   #THEMES
 \* ------------------------------------ */
 
+
+@mixin modular-harminc-spaceing-generator($base: 16px, $ratio: 1.5, $minStep: -5, $maxStep: 5, $propertyName: "static-") {
+  $current: $base;
+  @for $i from $minStep through $maxStep {
+      @if $i == 0 {
+          --#{$propertyName}#{$i}: #{convert-rem($current)};
+      }
+      @if $i < 0 {
+          --#{$propertyName}#{$i}: calc(var(--#{$propertyName}#{$i + 1}) / #{$ratio});
+      }
+      
+      @if $i > 0 {
+          --#{$propertyName}#{$i}: calc(var(--#{$propertyName}#{$i - 1}) * #{$ratio});
+      }
+  }
+}
+
 :root {
   --text-color: #{get-color($c-dark, eerie-black)};
   --brand-color: #{get-color($c-gray, davys-grey)};
@@ -10,52 +27,41 @@
   --background-color: #{get-color($c-light, ivory)};
   --text-code: #{$font-family-ubuntu};
   --secondary-color: #{get-color($c-gray, timberwolf)};
+}
 
-  --responsive-spacing-5: 5px;
-  --responsive-spacing-10: 10px;
-  --responsive-spacing-15: 15px;
-  --responsive-spacing-20: 20px;
-  --responsive-spacing-25: 25px;
-  --responsive-spacing-30: 30px;
-  --responsive-spacing-35: 35px;
-  --responsive-spacing-40: 40px;
-  --responsive-spacing-50: 50px;
-  --responsive-spacing-60: 60px;
-  --responsive-spacing-70: 70px;
-  --responsive-spacing-90: 90px;
-  --responsive-spacing-100: 100px;
-  --responsive-spacing-110: 110px;
-  --responsive-spacing-120: 120px;
-  --responsive-spacing-130: 130px;
+:root {
+  @include modular-harminc-spaceing-generator($propertyName: "responsive-spacing-");
 
-  --static-spacing-5: 5px;
-  --static-spacing-10: 10px;
-  --static-spacing-15: 15px;
-  --static-spacing-20: 20px;
-  --static-spacing-25: 25px;
-  --static-spacing-30: 30px;
-  --static-spacing-35: 35px;
-  --static-spacing-40: 40px;
-  --static-spacing-60: 60px;
-  --static-spacing-80: 80px;
-  --static-spacing-90: 90px;
-  --static-spacing-100: 100px;
-  --static-spacing-110: 110px;
-  --static-spacing-120: 120px;
-  --static-spacing-130: 130px;
+  @include modular-harminc-spaceing-generator($propertyName: "static-spacing-");
 
   --lateral-padding: 20px;
   --header-height-default: 80px;
   --header-height-scrolled: 60px;
 
   @include breakpoint($mobile) {
-    --responsive-spacing-10: 15px;
-    --responsive-spacing-15: 20px;
+    @include modular-harminc-spaceing-generator($propertyName: "responsive-spacing-", $ratio: 1.65);
   }
 
   @include breakpoint($tablet) {
     --lateral-padding: 25px;
-    --header-height-default: 100px;
-    --header-height-scrolled: 70px;
+    @include modular-harminc-spaceing-generator($propertyName: "responsive-spacing-", $ratio: 1.75);
   }
+}
+
+:root {
+  --ratio: 1.5;
+  $property-name: "static";
+  --#{$property-name}-5: calc(var(--#{$property-name}-4) / var(--ratio));
+  --#{$property-name}-4: calc(var(--#{$property-name}-3) / var(--ratio));
+  --#{$property-name}-3: calc(var(--#{$property-name}-2) / var(--ratio));
+  --#{$property-name}-2: calc(var(--#{$property-name}-1) / var(--ratio));
+  --#{$property-name}-1: calc(var(--#{$property-name}0) / var(--ratio));
+  
+  --#{$property-name}0: #{convert-rem(16px)};
+  
+  --#{$property-name}1: calc(var(--#{$property-name}0) * var(--ratio));
+  --#{$property-name}2: calc(var(--#{$property-name}1) * var(--ratio));
+  --#{$property-name}3: calc(var(--#{$property-name}2) * var(--ratio));
+  --#{$property-name}4: calc(var(--#{$property-name}3) * var(--ratio));
+  --#{$property-name}5: calc(var(--#{$property-name}4) * var(--ratio));
 }

@@ -8,18 +8,18 @@ $block: "heading";
 \* ------------------------------------ */
 
 .#{$block} {
+
+    
     @include e("main", "subheading") {
         display: block;
     }
 
     @include e("subheading") {
         @include font($subheading);
-
-        margin-top: var(--responsive-spacing-15);
     }
 
     @include e("separator") {
-        padding-bottom: var(--responsive-spacing-25);
+        padding-bottom: var(--responsive-spacing-1);
 
         &:after {
             @include absolute();

@@ -75,7 +75,7 @@ init() {
 
     local MODULE_NAME=$1
 
-    for i in "${PROJECT_MODULES[@]}"; do
+    for i in "${INSTALL_PROJECT_MODULES[@]}"; do
       local MODULE_DIR=../${i}
       # Find all submodules inside the module directory and save them to an array
       local SUBMODULES=($(find "${MODULE_DIR}" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;))
@@ -107,8 +107,8 @@ init() {
   }
 
   if [[ -n "${MODULE}" ]]; then
-    # Loop through the PROJECT_MODULES array and check if the MODULE exists
-    for i in "${PROJECT_MODULES[@]}"; do
+    # Loop through the INSTALL_PROJECT_MODULES array and check if the MODULE exists
+    for i in "${INSTALL_PROJECT_MODULES[@]}"; do
       if [[ "$i" = "${MODULE}" ]]; then
         # if the MODULE exists then execute the PHASE script
         phase ../${MODULE} ${PHASE} ${MODULE}
