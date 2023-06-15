@@ -36,7 +36,7 @@ Launch: [Insert Date]
 Technical Requirements:
 
 Use of modern web technologies such as React, Angular, or Vue.
-Use of a modern back-end framework such as Node.js, Ruby on Rails, or Django.
+Use of a modern backend framework such as Node.js, Ruby on Rails, or Django.
 Implementation of a scalable and secure database to store user data and real estate listings.
 Responsive design for optimal viewing on all devices.
 Cross-browser compatibility for Chrome, Firefox, Safari, and Edge.
