@@ -14,10 +14,12 @@ cp -rfv ../out/* ../../../package/$REPOSITORY_NAME
 cp -rfv ../public/* ../../../package/$REPOSITORY_NAME
 
 ## create a .nojekyll file
-touch ../../../package/$REPOSITORY_NAME/.nojekyll
-echo -e "$GREEN [ info ] $NC .nojekyll created and added. $NC"
+## needed for github pages
+# touch ../../../package/$REPOSITORY_NAME/.nojekyll
+# echo -e "$GREEN [ info ] $NC .nojekyll created and added. $NC"
 
 ## create a CNAME file
-echo "Create a CNAME file"
-touch ../../../package/$REPOSITORY_NAME/CNAME
-echo $DOMAIN > ../../../package/$REPOSITORY_NAME/CNAME
+## needed for github pages
+# echo "Create a CNAME file"
+# touch ../../../package/$REPOSITORY_NAME/CNAME
+# echo $DOMAIN > ../../../package/$REPOSITORY_NAME/CNAME
