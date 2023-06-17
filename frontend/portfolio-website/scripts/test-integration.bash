@@ -4,6 +4,5 @@ cd "$(dirname "$0")" || exit
 
 source ../.env
 
-echo 'Building... - shou copy assets from ./assets/dist to public'
-
-npm --prefix .. run build
+echo 'Running integration tests...'
+echo 'Error: Integration tests are not implemented yet.'
