@@ -1,0 +1,52 @@
+---
+title: 'Basic CLI: Package Management'
+excerpt: 'Learn how to install, build, remove, and manage Linux packages.'
+category: 'snippet'
+status: "draft"
+tags:
+  - 'Bash/Shell'
+date: 'Apr 15, 2019'
+---
+
+- `dpkg`- The `dpkg` is a tool to install, build, remove, and manage Debian packages. The primary and more user-friendly front-end for `dpkg` is aptitude.
+- `apt` - provides a high-level command-line interface for the package management system.
+  - total packages installed on a system
+    - `apt list --installed | grep -c "installed"`
+  - install package on Debian - `sudo apt-get install [package-name]`
+  - install package on Ubuntu - `sudo apt install keepassxc`
+  - remove package on Debian - `sudo apt-get remove [package-name]`
+  - remove package on Ubuntu - `sudo apt remove keepassxc`
+  - update package list - `sudo apt-get update`
+  - upgrade packages - `sudo apt-get upgrade`
+  - upgrade packages with dependencies - `sudo apt-get dist-upgrade`
+- `aptitude` - an alternative to `apt` and is a high-level interface to the package manager.
+  - install package - `sudo aptitude install [package-name]`
+  - remove package - `sudo aptitude remove [package-name]`
+  - update package list - `sudo aptitude update`
+  - upgrade packages - `sudo aptitude upgrade`
+  - upgrade packages with dependencies - `sudo aptitude full-upgrade`
+- `yum` - is a package manager for Red Hat Enterprise Linux, CentOS, and Fedora.
+  - install package - `sudo yum install [package-name]`
+  - remove package - `sudo yum remove [package-name]`
+  - update package list - `sudo yum check-update`
+  - upgrade packages - `sudo yum update`
+  - upgrade packages with dependencies - `sudo yum upgrade`
+- `snap` - Install, configure, refresh, and remove snap packages. Snaps enable the secure distribution of the latest apps and utilities for the cloud, servers, desktops, and the internet of things.
+  - install package - `sudo snap install [package-name]`
+  - remove package - `sudo snap remove [package-name]`
+  - update package list - `sudo snap refresh`
+  - upgrade packages - `sudo snap refresh`
+  - upgrade packages with dependencies - `sudo snap refresh`
+- `gem` - Gem is the front-end to RubyGems, the standard package manager for Ruby.
+  - install package - `sudo gem install [package-name]`
+  - remove package - `sudo gem uninstall [package-name]`
+  - update package list - `sudo gem update`
+  - upgrade packages - `sudo gem update`
+  - upgrade packages with dependencies - `sudo gem update`
+- `pip` - Pip is a Python package installer recommended for installing Python packages that are not available in the Debian archive. It can work with version control repositories (currently only Git, Mercurial, and Bazaar repositories), logs output extensively, and prevents partial installs by downloading all requirements before starting installation.
+  - install package - `sudo pip install [package-name]`
+  - remove package - `sudo pip uninstall [package-name]`
+  - update package list - `sudo pip install --upgrade [package-name]`
+  - upgrade packages - `sudo pip install --upgrade [package-name]`
+  - upgrade packages with dependencies - `sudo pip install --upgrade [package-name]`
+- `git` - Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
