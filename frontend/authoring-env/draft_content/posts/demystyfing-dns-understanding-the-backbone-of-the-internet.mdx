@@ -1,0 +1,44 @@
+---
+title: "Demystifying DNS: Understanding the Backbone of the Internet"
+subheading: "A Comprehensive Guide to the Domain Name System and its Inner Workings"
+excerpt: "In today's highly connected world, the internet has become an integral part of our daily lives. At the core of this vast network lies the Domain Name System (DNS), a critical component that helps us navigate the web with ease. Despite its importance, the DNS often remains a mystery to many. In this blog post, we will unravel the complexities of DNS, explaining how it works and why it's essential for the smooth functioning of the internet."
+status: "draft"
+author: "Paul Serban"
+date: "January 7, 2019"
+tags:
+  - "Internet"
+  - "Http"
+  - "DNS"
+---
+
+## Introduction
+
+In today's highly connected world, the internet has become an integral part of our daily lives. At the core of this vast network lies the Domain Name System (DNS), a critical component that helps us navigate the web with ease. Despite its importance, the DNS often remains a mystery to many. In this blog post, we will unravel the complexities of DNS, explaining how it works and why it's essential for the smooth functioning of the internet.
+
+## What is DNS?
+
+The Domain Name System (DNS) is a hierarchical and decentralized system responsible for translating human-friendly domain names (e.g., www.example.com) into their corresponding IP addresses (e.g., 192.0.2.1). This translation is crucial because computers and other devices on the internet use IP addresses to locate and communicate with each other. DNS acts as the internet's phone book, enabling us to access websites and online services using easy-to-remember domain names instead of having to memorize numeric IP addresses.
+
+## How DNS Works: A Step-by-Step Overview
+
+When you enter a URL (Uniform Resource Locator) into your web browser's address bar, several steps occur behind the scenes to retrieve the desired webpage. Let's break down the process:
+
+- **Browser cache check**: First, your web browser checks its local cache to see if it has the IP address for the requested domain name. If it finds a match, the browser sends an HTTP request to the corresponding IP address, bypassing the need for further DNS resolution.
+- **Operating system cache check**: If the browser cache does not have the required information, the operating system (OS) checks its own cache. Like the browser cache, the OS cache stores recently resolved domain names and their IP addresses. If the OS cache has the necessary information, it passes it back to the browser, which can then send an HTTP request to the appropriate IP address.
+- **Recursive DNS query**: If neither the browser nor the OS cache contains the required information, the system sends a recursive query to a DNS resolver, usually provided by your Internet Service Provider (ISP) or a third-party DNS service like Google Public DNS or Cloudflare. The DNS resolver checks its cache for the domain name's IP address. If the address is available, the resolver returns it to the browser.
+- **Iterative DNS query**: If the DNS resolver does not have the IP address cached, it initiates an iterative query process that starts with the root DNS servers. These 13 root servers are the top-level authoritative sources for DNS information and maintain information about the top-level domains (TLDs) such as .com, .org, .net, and so on.
+- **Top-level domain (TLD) server**: The root server responds to the query with a referral to the appropriate TLD server responsible for the domain's TLD (e.g., .com). The DNS resolver then sends a query to the TLD server, asking for the IP address of the domain's nameserver.
+- **Domain's nameserver**: The TLD server responds with the domain's nameserver information. The DNS resolver sends another query, this time to the domain's nameserver, asking for the IP address associated with the requested domain name.
+- **IP address retrieval**: The domain's nameserver responds with the corresponding IP address. The DNS resolver caches this information and returns the IP address to the browser.
+- **HTTP request and webpage loading**: With the IP address in hand, the browser sends an HTTP request to the web server hosting the website associated with the domain name. The web server processes the request, retrieves the requested content, and sends it back to the browser.
+- **Rendering the webpage**: Finally, the browser receives the content from the web server, parses the HTML, CSS, and JavaScript, and renders the webpage for display.
+
+## Caching and Time-to-Live (TTL)
+ 
+To reduce the load on DNS servers and speed up the domain name resolution process, caching is widely used. As previously mentioned, browsers, operating systems, and DNS resolvers all store DNS information in their caches. Each DNS record has a Time-to-Live (TTL) value, which determines how long the record should be stored in the cache before it's considered stale and needs to be refreshed. TTL values can range from a few minutes to several days, depending on the domain owner's preferences and the nature of the domain.
+
+## Conclusion
+
+The Domain Name System (DNS) is a critical component of the internet, enabling seamless navigation and communication between devices. By understanding how DNS works, we can appreciate the intricate processes that occur behind the scenes every time we enter a URL into our browsers. As the internet continues to expand, DNS will continue to evolve, ensuring that we can effortlessly access the online resources and services that have become essential in our daily lives.
+
+

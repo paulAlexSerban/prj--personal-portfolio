@@ -1,0 +1,32 @@
+---
+title: 'Basic CLI: User Management'
+excerpt: 'Learn how to manage users and groups in Linux.'
+category: 'snippet'
+status: "draft"
+tags:
+  - 'Bash/Shell'
+date: 'Apr 15, 2019'
+---
+
+- `sudo` - execute command as a different user
+  - `sudo -i` - changes from normal user to root user
+  - `sudo -u {username} {command}` - execute command as a different user
+- `su` - requests appropriate user credentials via PAM and switches to that user ID (the default user is the superuser). A shell is then executed.
+- `useradd` - Creates a new user or update default new user information.
+  - `sudo useradd -m {username}` - create new home directory for a new user
+  - `sudo useradd --lock {surname}` - local a user's password - if you want to lock the account `EXPIRE_DATE` should also be set to 1
+  - `sudo useradd --shell /bin/false {username}` - set a user's shell to `/bin/false` - this will prevent the user from logging in
+  - `sudo useradd --uid {uid} {username}` - set a user's UID
+  - `sudo useradd --gid {gid} {username}` - set a user's GID
+  - `sudo useradd --groups {group1,group2} {username}` - set a user's secondary groups
+  - `sudo useradd --home-dir {path} {username}` - set a user's home directory
+  - `sudo useradd --comment {comment} {username}` - set a user's comment field
+  - `sudo useradd --skel {path} {username}` - set a user's skeleton directory
+  - `sudo useradd --create-home {username}` - create a home directory for the user
+  - `sudo useradd --system {username}` - create a system user
+- `userdel`- Deletes a user account and related files.
+  - `userdel -r jenkins` - will delete user together with the home directory of the user
+- `usermod` - Modifies a user account.
+- `addgroup` - Adds a group to the system
+- `delgroup` - Removes a group from the system.
+- `passwd` - Changes user password.

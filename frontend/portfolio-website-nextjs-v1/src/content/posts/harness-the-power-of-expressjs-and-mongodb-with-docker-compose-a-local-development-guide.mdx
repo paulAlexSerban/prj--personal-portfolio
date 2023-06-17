@@ -1,0 +1,112 @@
+---
+title: "Harness the Power of Express.js and MongoDB with Docker Compose: A Local Development Guide"
+subheading: "Streamline Your Express.js and MongoDB Development Environment Using Docker Compose"
+excerpt: "Discover how to streamline your web development process by setting up a local development environment using Express.js, MongoDB, and Docker Compose. Our comprehensive guide offers step-by-step instructions, complete with code snippets, to help you master this crucial aspect of modern backend development."
+status: "published"
+author: "Paul Serban"
+date: "June 15, 2023"
+categories:
+  - Web Development
+  - Backend Development
+  - Database Management
+  - Docker
+  - Express.js
+  - MongoDB
+tags:
+  - Express.js
+  - MongoDB
+  - Docker Compose
+  - Local Development Environment
+  - Node.js
+  - NoSQL Database
+  - JSON Data Storage
+  - Docker Applications
+  - Web Development
+  - Backend Development
+  - Containerization
+  - Database Configuration
+  - Application Development
+  - API Development
+  - Multi-container Docker Applications
+---
+
+*Introduction*
+
+Embarking on a new project can often mean configuring your environment to work harmoniously with all the tools you plan on using. In this tutorial, we're going to alleviate this stress by harnessing the power of Docker Compose to quickly and efficiently set up a local development environment for an Express.js application using MongoDB.
+
+## The Power Trio: Express.js, MongoDB, and Docker Compose
+
+Express.js stands as one of the pillars of the Node.js world, providing a minimalist and flexible framework for building web applications and APIs. MongoDB, a document-based NoSQL database, complements Express.js by providing an intuitive, JSON-like data storage solution.
+
+Docker Compose enters the scene by enabling developers to define and manage multi-container Docker applications. It allows us to specify our services, including Express.js and MongoDB, in a YAML file and manage them with simple commands.
+
+## Setting Up Your Local Environment
+
+Before we start, make sure you have Docker and Docker Compose installed on your machine. Docker is available for Windows, macOS, and Linux distributions. Visit the Docker website for installation instructions that suit your OS.
+
+## Creating Your Express.js Application
+
+First, let's bootstrap our Express.js application. We'll create a basic "Hello, World!" application.
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(port, () => {
+  console.log(`Express app listening at http://localhost:${port}`);
+});
+```
+
+## Configuring MongoDB with Docker Compose
+
+Now, let's set up MongoDB using Docker Compose. Create a `docker-compose.yml` file in your project root.
+
+```yaml
+version: '3'
+services:
+  mongo:
+      image: mongo:latest
+      environment:
+          - MONGO_INITDB_ROOT_USERNAME=root
+          - MONGO_INITDB_ROOT_PASSWORD=password
+      ports:
+          - "27017:27017"
+      volumes:
+          - .tmp-data:/data/db
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+    environment:
+        - DB_LOCAL_URI=mongodb://localhost:27017/myDatabase
+        - MONGO_USERNAME=root
+        - MONGO_PASSWORD=password
+        - MONGO_HOSTNAME=mongo
+        - MONGO_PORT=27017
+        - MONGO_DB=myDatabase
+    volumes:
+      - .:/usr/src/app/
+      - /usr/src/app/node_modules
+```
+
+This setup allows us to run MongoDB and our Express.js application in separate containers, with MongoDB accessible via port 27017, and our application via port 3000.
+
+## Bringing it All Together
+
+With our `docker-compose.yml` file in place, we can now run our services with the command `docker-compose up`. Docker Compose will build our Express.js application, run the MongoDB container, and link the two together.
+
+Now, navigate to `http://localhost:3000` in your web browser, and you should be greeted with "Hello, World!".
+
+## Conclusion
+
+With a few simple steps and Docker Compose, we can create a streamlined, consistent, and reproducible development environment. This setup not only saves time but also reduces potential errors that could occur from misconfigured environments. Docker Compose, Express.js, and MongoDB truly are a powerful trio for any developer's toolkit. Now, go forth and build your Express.js and MongoDB applications with confidence and efficiency!
+
+## More Reads
+- <Link href="/blog/posts/mastering-mongodb-a-comprehensive-introduction" label={`Mastering MongoDB: A Comprehensive Introduction`} isInternal={true} />
