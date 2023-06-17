@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.3.0...v1.4.0) (2023-06-17)
+
+
+### Features
+
+* some small issue ([cecfd0d](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/cecfd0da7000c2dcfd7c8e073775d0c8a11ecb56))
+
+# [1.3.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.2.0...v1.3.0) (2023-06-17)
+
+
+### Features
+
+* **scripts:** added publish scripts ([546a2ba](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/546a2babb3366b47dc07369e5c0fa6645e2e9ed3))
+
 # [1.2.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.1.0...v1.2.0) (2023-06-17)
 
 
