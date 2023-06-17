@@ -64,6 +64,10 @@ jobs:
               uses: github/codeql-action/init@v2
               with:
                   languages: ${{ matrix.language }}
+            - name: "📥  Checkout repository"
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
 
             - name: "🏗️  Autobuild"
               uses: github/codeql-action/autobuild@v2
