@@ -1,15 +1,19 @@
 {
   "name": "prj--personal-portfolio",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
-    "lint": "bash scripts/modulize.bash -e dev -p lint -m portfolio-website-nextjs",
+    "test:unit": "echo \"Error: no unit-test specified\"",
+    "test:integration": "echo \"Error: no integration-test specified\"",
+    "lint": "echo \"Error: no lint specified\"",
     "lint:scripts": "shellcheck ./**/*.bash",
     "install:ci": "npm ci --omit=dev --ignore-scripts",
     "install:root": "npm install",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format:check": "echo \"Error: no format check specified\"",
+    "build": "echo \"Error: no build specified\"",
+    "package": "echo \"Error: no package specified\""
   },
   "author": "",
   "license": "ISC",
