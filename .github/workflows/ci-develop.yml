@@ -21,6 +21,8 @@ jobs:
         steps:
             - name: "📥  Checkout repository"
               uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
 
             - name: "🔍  Verify Changed Files"
               uses: tj-actions/changed-files@v35
@@ -45,9 +47,32 @@ jobs:
                   npm i -g npm@latest
                   npm ci
 
+    code-scanning:
+        name: "🔍 Code Scanning"
+        runs-on: ubuntu-latest
+        needs: prepare
+        permissions:
+            actions: read
+            contents: read
+            security-events: write
+        strategy:
+            fail-fast: false
+            matrix:
+                language: ["javascript"]
+        steps:
+            - name: "🚀 Initialize CodeQL"
+              uses: github/codeql-action/init@v2
+              with:
+                  languages: ${{ matrix.language }}
+
+            - name: "🏗️  Autobuild"
+              uses: github/codeql-action/autobuild@v2
+            - name: Perform CodeQL Analysis
+              uses: github/codeql-action/analyze@v2
+
     formatting:
         name: Formatting
-        needs: prepare
+        needs: code-scanning
         runs-on: ubuntu-latest
         steps:
             - name: "Check code formatting"
@@ -56,7 +81,7 @@ jobs:
 
     linting:
         name: Linting
-        needs: formatting
+        needs: code-scanning
         runs-on: ubuntu-latest
         steps:
             - name: "Check code linting"
@@ -65,7 +90,7 @@ jobs:
 
     unit-tests:
         name: Unit Tests
-        needs: formatting
+        needs: [linting, formatting]
         runs-on: ubuntu-latest
         steps:
             - name: "Run unit tests"
@@ -74,27 +99,9 @@ jobs:
 
     integration-tests:
         name: Integration Tests
-        needs: formatting
+        needs: [linting, formatting]
         runs-on: ubuntu-latest
         steps:
             - name: "Run integration tests"
               run: |
                   echo \"Error: no integration-test specified\"
-
-    build:
-        name: Build
-        needs: [unit-tests, integration-tests]
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Build project"
-              run: |
-                  echo \"Error: no build specified\"
-
-    package:
-        name: Package
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Package project"
-              run: |
-                  echo \"Error: no package specified\"
