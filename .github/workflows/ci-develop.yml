@@ -12,6 +12,7 @@ on:
 
 env:
     NODE_VERSION: 16.19.0
+    FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website
 
 jobs:
     prepare:
@@ -49,52 +50,51 @@ jobs:
         needs: prepare
         runs-on: ubuntu-latest
         steps:
-          - name: "Check code formatting"
-            run: |
-              npm run format:check
-
+            - name: "Check code formatting"
+              run: |
+                  npm run format:check
 
     linting:
         name: Linting
-        needs: [prepare, formatting]
+        needs: formatting
         runs-on: ubuntu-latest
         steps:
-          - name: "Check code linting"
-            run: |
-              npm run lint
+            - name: "Check code linting"
+              run: |
+                  npm run lint
 
     unit-tests:
         name: Unit Tests
-        needs: [formatting, linting]
+        needs: linting
         runs-on: ubuntu-latest
         steps:
-          - name: "Run unit tests"
-            run: |
-              npm run test:unit
+            - name: "Run unit tests"
+              run: |
+                  npm run test:unit
 
     integration-tests:
         name: Integration Tests
-        needs: [formatting, linting, unit-tests]
+        needs: unit-tests
         runs-on: ubuntu-latest
         steps:
-          - name: "Run integration tests"
-            run: |
-              npm run test:integration
+            - name: "Run integration tests"
+              run: |
+                  npm run test:integration
 
     build:
         name: Build
         needs: integration-tests
         runs-on: ubuntu-latest
         steps:
-          - name: "Build project"
-            run: |
-              npm run build
+            - name: "Build project"
+              run: |
+                  npm run build
 
     package:
         name: Package
         needs: build
         runs-on: ubuntu-latest
         steps:
-          - name: "Package project"
-            run: |
-              npm run package
+            - name: "Package project"
+              run: |
+                  npm run package
