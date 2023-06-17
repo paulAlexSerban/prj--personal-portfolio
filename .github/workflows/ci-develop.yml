@@ -74,7 +74,7 @@ jobs:
 
     integration-tests:
         name: Integration Tests
-        needs: unit-tests
+        needs: formatting
         runs-on: ubuntu-latest
         steps:
             - name: "Run integration tests"
