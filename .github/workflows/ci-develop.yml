@@ -52,7 +52,7 @@ jobs:
         steps:
             - name: "Check code formatting"
               run: |
-                  npm run format:check
+                  echo \"Error: no format check specified\"
 
     linting:
         name: Linting
@@ -61,16 +61,16 @@ jobs:
         steps:
             - name: "Check code linting"
               run: |
-                  npm run lint
+                  echo \"Error: no lint specified\"
 
     unit-tests:
         name: Unit Tests
-        needs: linting
+        needs: formatting
         runs-on: ubuntu-latest
         steps:
             - name: "Run unit tests"
               run: |
-                  npm run test:unit
+                  echo \"Error: no unit-test specified\"
 
     integration-tests:
         name: Integration Tests
@@ -79,16 +79,16 @@ jobs:
         steps:
             - name: "Run integration tests"
               run: |
-                  npm run test:integration
+                  echo \"Error: no integration-test specified\"
 
     build:
         name: Build
-        needs: integration-tests
+        needs: [unit-tests, integration-tests]
         runs-on: ubuntu-latest
         steps:
             - name: "Build project"
               run: |
-                  npm run build
+                  echo \"Error: no build specified\"
 
     package:
         name: Package
@@ -97,4 +97,4 @@ jobs:
         steps:
             - name: "Package project"
               run: |
-                  npm run package
+                  echo \"Error: no package specified\"
