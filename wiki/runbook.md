@@ -1,0 +1,8 @@
+-   if github-pages - set .env:
+    -   DOMAIN=https://paulalexserban.github.io/
+-   if aws (prod) - set .env:
+    -   DOMAIN=https://paulserban.eu/
+-   if aws (stage/test) - set .env:
+    -   DOMAIN=https://stage.paulserban.eu/
+-   id aws (develop) - set .env:
+    -   DOMAIN=https://deelopv.paulserban.eu/

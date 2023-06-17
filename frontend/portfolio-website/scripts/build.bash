@@ -4,5 +4,4 @@ cd "$(dirname "$0")" || exit
 
 source ../.env
 
-rm -rfv ../node_modules
-npm --prefix .. install
+npm --prefix .. run build
