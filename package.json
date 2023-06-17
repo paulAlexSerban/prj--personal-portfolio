@@ -1,6 +1,6 @@
 {
   "name": "prj--personal-portfolio",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "install:ci": "npm ci --omit=dev --ignore-scripts",
     "install:root": "npm install",
     "prepare": "husky install",
-    "format:check":"echo \"Error: no format check specified\"",
+    "format:check": "echo \"Error: no format check specified\"",
     "build": "echo \"Error: no build specified\"",
     "package": "echo \"Error: no package specified\""
   },
