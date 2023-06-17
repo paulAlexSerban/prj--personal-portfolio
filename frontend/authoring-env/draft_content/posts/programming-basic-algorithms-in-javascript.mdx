@@ -1,0 +1,142 @@
+---
+title: 'Programming Basic Algorithms in JavaScript'
+subheading: 'A Guide to Sorting, Searching, and Recursion'
+excerpt: 'Algorithms are a fundamental part of computer science and programming. They are a set of steps that solve a specific problem, and they are used to manipulate and process data efficiently. In this blog post, we will explore some of the basic algorithms in JavaScript and how to implement them.'
+status: "draft"
+author: 'Paul Serban'
+date: 'April 6, 2023'
+tags:
+  - 'Web Development'
+  - 'JavaScript'
+  - 'Data Structures'
+  - 'Programming'
+  - 'Algorithms'
+  - 'Computer Science'
+  - 'Frontend'
+  - 'Backend'
+  - 'Fullstack'
+  - 'Software Engineering'
+---
+
+Algorithms are a fundamental part of computer science and programming. They are a set of steps that solve a specific problem, and they are used to manipulate and process data efficiently. In this blog post, we will explore some of the basic algorithms in JavaScript and how to implement them.
+
+## Sorting Algorithms
+
+Sorting algorithms are used to rearrange elements in a collection in a specific order. There are many different sorting algorithms, but two of the most common ones are bubble sort and insertion sort.
+
+## Bubble Sort
+
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
+
+```javascript
+function bubbleSort(arr) {
+  const n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+const arr = [64, 34, 25, 12, 22, 11, 90];
+console.log(bubbleSort(arr)); // Output: [ 11, 12, 22, 25, 34, 64, 90 ]
+```
+
+## Insertion Sort
+
+Insertion sort is another simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+
+```javascript
+function insertionSort(arr) {
+  const n = arr.length;
+  for (let i = 1; i < n; i++) {
+    const current = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > current) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = current;
+  }
+  return arr;
+}
+
+const arr = [64, 34, 25, 12, 22, 11, 90];
+console.log(insertionSort(arr)); // Output: [ 11, 12, 22, 25, 34, 64, 90 ]
+```
+
+## Search Algorithms
+
+Search algorithms are used to find a specific item in a collection. There are many different search algorithms, but two of the most common ones are linear search and binary search.
+
+## Linear Search
+
+Linear search is a simple search algorithm that checks each item in a collection in order until the desired item is found.
+
+```javascript
+function linearSearch(arr, x) {
+  const n = arr.length;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] === x) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+const arr = [64, 34, 25, 12, 22, 11, 90];
+const x = 22;
+console.log(linearSearch(arr, x)); // Output: 4
+```
+
+## Binary Search
+
+Binary search is a more efficient search algorithm that works by repeatedly dividing the search interval in half.
+
+```javascript
+function binarySearch(arr, x) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (arr[mid] === x) {
+      return mid;
+    } else if (arr[mid] < x) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  return -1;
+}
+
+const arr = [11, 12, 22, 25, 34, 64, 90];
+const x = 22;
+console.log(binarySearch(arr, x)); // Output: 2
+```
+
+
+## Recursion
+Recursion is a technique in programming where a function calls itself to solve a problem. It is often used to solve problems that can be broken down into smaller, simpler problems.
+
+```javascript
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+console.log(factorial(5)); // Output: 120
+```
+
+In the above example, the factorial function calls itself to solve the problem of calculating the factorial of a number.
+
+## Conclusion
+In this blog post, we have explored some of the basic algorithms in JavaScript, including sorting algorithms, search algorithms, and recursion. By understanding these algorithms and how to implement them, we can write more efficient and effective code that solves complex problems. These algorithms are just the tip of the iceberg, and there are many more advanced algorithms that can be used in more complex programming scenarios. As you continue to advance your programming skills, remember to explore more advanced algorithms and choose the best one for your specific use case.

@@ -1,0 +1,11 @@
+/* ------------------------------------ *\
+ * LISTS
+\* ------------------------------------ */
+
+ul, li {
+    @include font($body);
+}
+
+ul {
+    margin-top: var(--responsive-spacing-2);
+}

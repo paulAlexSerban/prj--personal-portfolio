@@ -1,0 +1,74 @@
+---
+title: 'Content Security Policy (CSP): Your Essential Guide to a More Secure Web'
+subheading: 'Enhancing Web Security with Content Security Policy (CSP)'
+excerpt: 'In the world of web development, security is of paramount importance. With an ever-growing number of attacks being carried out on websites, developers are increasingly looking for ways to protect their online properties. One of these security measures is the implementation of Content Security Policy (CSP). This blog post will delve into what CSP is, how it works, and why you should consider using it on your websites.'
+status: "draft"
+author: 'Paul Serban'
+date: 'May 21, 2019'
+tags:
+  - 'Internet'
+  - 'Security'
+  - 'Web'
+  - 'Web Development'
+  - 'Web Security'
+  - 'Content Security Policy'
+---
+
+## Introduction
+
+In the world of web development, security is of paramount importance. With an ever-growing number of attacks being carried out on websites, developers are increasingly looking for ways to protect their online properties. One of these security measures is the implementation of Content Security Policy (CSP). This blog post will delve into what CSP is, how it works, and why you should consider using it on your websites.
+
+## What is Content Security Policy (CSP)?
+
+Content Security Policy (CSP) is a security feature that helps prevent cross-site scripting (XSS) and other code injection attacks. It is a web standard that allows website owners to define the sources of content that should be allowed to load on their web pages. By specifying a list of approved sources, CSP can reduce the risk of malicious content being injected into a website.
+
+## How does CSP work?
+
+CSP is implemented by adding an HTTP header to a website's response. This header, called "Content-Security-Policy," contains a set of directives that dictate the approved sources of content for the website. For example, the following CSP header will only allow content to be loaded from the same origin as the web page:
+
+```shell
+Content-Security-Policy: default-src 'self';
+```
+
+When a browser receives a web page with a CSP header, it will enforce the specified policies. If a piece of content attempts to load from an unapproved source, the browser will block it and issue a violation report.
+
+## CSP Directives
+
+CSP offers a variety of directives to control different aspects of content loading on a web page. Some of the most common directives include:
+
+- default-src: Specifies the default policy for loading content.
+- script-src: Specifies the allowed sources for JavaScript.
+- style-src: Specifies the allowed sources for CSS.
+- img-src: Specifies the allowed sources for images.
+- media-src: Specifies the allowed sources for media content, such as video and audio.
+- font-src: Specifies the allowed sources for web fonts.
+- connect-src: Specifies the allowed sources for XMLHttpRequest, WebSocket, and EventSource connections.
+
+## Why should you use CSP?
+
+There are several benefits to implementing CSP on your website:
+
+- Improved security: By controlling the sources of content that can be loaded on your website, you can reduce the risk of XSS and other code injection attacks.
+- Reduced reliance on inline scripts and styles: Inline scripts and styles can be a security risk, as they can be more easily manipulated by attackers. CSP encourages the use of external files, which are less vulnerable to tampering.
+- Violation reporting: CSP allows you to set up a reporting endpoint to receive violation reports from browsers. This can help you detect and address potential security issues.
+
+## Getting started with CSP
+
+Implementing CSP on your website can be a straightforward process. Begin by identifying the sources of content for your web pages, and then create a policy that allows only those sources. Remember to test your policy thoroughly before deploying it on your live website.
+
+Keep in mind that implementing CSP may require changes to your website's codebase, especially if you are relying heavily on inline scripts and styles. It's crucial to evaluate the trade-offs between security and development effort to determine if CSP is the right solution for your website.
+
+## Conclusion
+
+Content Security Policy (CSP) is a powerful security feature that can help protect your website from XSS and other code injection attacks. By allowing you to define the sources of content that can be loaded on your web pages, CSP can greatly reduce the risk of malicious content being injected into your website. If you're looking to improve your website's security, consider implementing CSP as part of your overall security strategy.
+
+
+
+## Free resources:
+<Link href="https://web.dev/why-https-matters/" label="web.dev - Why HTTPS Matters" isInternal={false}/>
+<Link href="https://en.wikipedia.org/wiki/OWASP" label="Wikipedia - OWASP" isInternal={false}/>
+<Link href="https://github.com/0xRadi/OWASP-Web-Checklist" label="github.com - OWASP Web Application Security Testing Checklist" isInternal={false}/>
+<Link href="https://sucuri.net/guides/owasp-top-10-security-vulnerabilities-2020/" label="securi.net - OWASP Top 10 Security Risks" isInternal={false}/>
+<Link href="https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html" label="cheatsheetseries.owasp.org - OWASP Cheatsheets" isInternal={false}/>
+<Link href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" label="mdn.org - Content Security Policy (CSP)" isInternal={false}/>
+<Link href="https://www.youtube.com/playlist?list=PLH8n_ayg-60J9i3nsLybper-DR3zJw6Z5" label="youtube.com - OWASP ZAP Step-by-Step Tutorial" isInternal={false}/>

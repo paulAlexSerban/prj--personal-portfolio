@@ -1,0 +1,101 @@
+---
+title: 'Basics of Shell Scripting'
+subheading: 'A quick introduction to Bash and shell scripting'
+excerpt: 'If you are new to Linux or Unix-like systems, you have probably heard of Bash and shell scripting. Bash is the most common shell for Linux and Unix systems, and it is used for managing files, running programs, and automating tasks. In this blog post, we will cover the basics of Bash and shell scripting.'
+status: "draft"
+author: 'Paul Serban'
+date: 'April 14, 2019'
+tags:
+  - 'Web Development'
+  - 'Bash/Shell'
+---
+
+If you're new to Linux or Unix-like systems, you've probably heard of Bash and shell scripting. Bash is the most common shell for Linux and Unix systems, and it's used for managing files, running programs, and automating tasks. In this blog post, we'll cover the basics of Bash and shell scripting.
+
+## Workflow
+
+### Navigation through the file-system
+
+The first thing you need to know is how to navigate the file system. To do this, you need to use the `cd` command. The `cd` command stands for "change directory," and it allows you to move around the file system. For example, to move to the root directory, you would type `cd /`.
+
+- <Link href="/blog/snippets/basic-cli-navigating-the-file-system" label="Read more" isInternal={true}/>
+
+### View and list directory content
+
+To view the content of a directory, you need to use the `ls` command. The `ls` command lists the files and directories in the current directory. To list all files and directories, including hidden ones, you can use the `-a` flag, like this: `ls -a`.
+
+- <Link href="/blog/snippets/basic-cli-view-and-list-directory-content" label="Read more here" isInternal={true}/>
+
+### Handling Files
+
+To create a new file, you can use the `touch` command. For example, to create a new file called "example.txt," you would type `touch example.txt`. To delete a file, you can use the `rm` command. For example, to delete the "example.txt" file, you would type `rm example.txt`.
+
+- <Link href="/blog/snippets/basic-cli-handling-files" label="Read more here" isInternal={true}/>
+
+
+### Find Files and Directories, and Compare
+
+It is crucial to be able to find the files and folders we need. Once we have gained access to a Linux based system, it will be essential to find configuration files, scripts created by users or the administrator, and other files and folders. We do not have to manually browse through every single folder and check when modified for the last time. There are some tools we can use to make this work easier.
+
+- <Link href="/blog/snippets/basic-cli-find-files-and-directories-and-compare" label="Read more here" isInternal={true}/>
+
+
+### View File Content
+
+View the content of a file, you can use the `cat` command. For example, to view the content of "example.txt," you would type `cat example.txt`. You can also use the `less` command to view the content of a file. The `less` command allows you to view the content of a file one page at a time. For example, to view the content of "example.txt" using the less command, you would type `less example.txt`.
+
+- <Link href="/blog/snippets/basic-cli-view-file-content" label="Read more here" isInternal={true}/>
+
+### Edit File Content
+
+To edit the content of a file, you can use a text editor. There are many text editors available for Linux and Unix systems, but the most common ones are `vi` and `nano`. To edit a file using `nano`, you would type `nano example.txt`. To edit a file using `vi`, you would type `vi example.txt`.
+
+- <Link href="/blog/snippets/basic-cli-view-file-content" label="Read more here" isInternal={true}/>
+
+## System Management
+
+### Monitoring Programs
+
+To monitor running programs, you can use the `top` command. The `top` command shows a real-time list of the processes running on your system. To exit the top command, you can press `q`.
+The `ps` command is used to display information about running processes. With this command, you can see the process ID, user, CPU and memory usage, and more. The top command provides real-time system monitoring of the processes, including the CPU and memory usage. Additionally, the `htop` command provides a more user-friendly interface for process monitoring.
+
+- <Link href="/blog/snippets/basic-cli-monitoring-programs" label="Read more here" isInternal={true}/>
+
+### Mounting Media
+
+To mount a media device, such as a USB drive or CD-ROM, you can use the `mount` command. For example, to mount a USB drive, you would type `mount /dev/sdb1 /mnt/usb`. To unmount the USB drive, you would type `umount /mnt/usb`.
+The mount command is used to mount storage devices such as hard drives, USB drives, and network shares. When a storage device is mounted, it is accessible as if it were part of the file system.
+
+- <Link href="/blog/snippets/basic-cli-mounting-media" label="Read more here" isInternal={true}/>
+
+### Package Management
+
+To manage software packages on your system, you can use a package manager. The most common package managers for Linux and Unix systems are `apt` and `yum`. To install a package using apt, you would type sudo `apt install packagename`. To install a package using yum, you would type sudo `yum install packagename`.
+
+- <Link href="/blog/snippets/basic-cli-package-management" label="Read more here" isInternal={true}/>
+
+### Service and Process Management
+
+Services are background processes that run on the system and provide various functionalities. The `systemctl` command is used to manage services and can be used to start, stop, restart, and enable or disable services.
+
+Processes, on the other hand, are running instances of a program. The `kill` command is used to terminate a process, and the `killall` command is used to terminate all instances of a process. You can also use the nice command to set the priority of a process.
+
+- <Link href="/blog/snippets/basic-cli-service-andprocess-management" label="Read more here" isInternal={true}/>
+
+### User Management
+
+The `useradd` command is used to create a new user account on the system, and the `userdel` command is used to delete a user account. The `passwd` command is used to change a user's password.
+
+- <Link href="/blog/snippets/basic-cli-user-management" label="Read more here" isInternal={true}/>
+
+### Working with Web Services
+
+The `curl` command is a powerful tool for transferring data to and from web servers. It can be used to download files, send data to web forms, and perform various other web-related tasks. The `wget` command is similar to` curl`, but it is designed specifically for downloading files.
+
+## Conclusion
+
+Bash and shell scripting are essential skills for any Linux or Unix system administrator. With the above-mentioned commands and techniques, you can navigate the file system, manage files and processes, and perform various system management tasks efficiently. There is a lot more to learn about Bash and shell scripting, but this post should give you a solid foundation to start with.
+
+## More Reads
+- <Link href="/blog/posts/bash-scripting-intro" label="Bash Scripting: Introduction - Automate tasks, manipulate files and directories, and run complex operations on the command line" isInternal={true}/>
+- <Link href="/blog/snippets/terminal-keyboard-shortcuts" label="Command-line and Terminal Keyboard Shortcuts - Increase Your Productivity with These Essential Shortcuts" isInternal={true}/>

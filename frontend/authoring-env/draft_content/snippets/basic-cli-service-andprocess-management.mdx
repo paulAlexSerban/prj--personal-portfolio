@@ -1,0 +1,92 @@
+---
+title: 'Basic CLI: Services And Process Management'
+excerpt: 'Learn how to manage services and processes on your Linux server.'
+category: 'snippet'
+status: "draft"
+tags:
+  - 'Bash/Shell'
+date: 'Apr 15, 2019'
+---
+
+## Types of Services
+
+Internal:
+
+- the relevant services that are required at system startup
+- which perform hardware-related tasks
+  Services that are installed by the user:
+- include all server services - such services run in the background without any user interaction.
+
+- services are called `deamons`, and are identified by the letter `d` at the endof the program name, for example, `sshd`, `systemd`
+- `systemd` is the `Init process` and has the process ID (PID) 1
+- all processes can be viewed under `/proc/`
+- we can use `systemctl` and `update-rc.d` to manage SysV init scripts
+
+## `systemctl`
+
+- `systemctl` command is a utility which is responsible for examining and controlling the systemd system and service manager
+  - It is a collection of system management libraries, utilities and daemons which function as a successor to the System V init daemon.
+  - start a service - `systemctl start ssh`
+  - check service status - `systemctl status ssh`
+  - enable service to start at startup - `systemctl enable ssh`
+
+## `kill` a process
+
+A process can be: - RUNNING - WAITING (waiting fo an event or system resource) - STOPPED - ZOMBIE (stopped, but still has an entry in the process table)
+Processes can be controlled using `kill`, `pkill`, `pgrep`, `killall` - to interact with a process we must send process - `kill -l` to list all signals
+The most commonly used signals:
+
+- `1` - `SIGHUP` - This is sent to a process when the terminal that controls it is closed.
+- `2` - `SIGINT` - Sent when a user presses `[Ctrl] + C` in the controlling terminal to interrupt a process.
+- `3` - `SIGQUIT` - Sent when a user presses `[Ctrl] + D` to quit.
+- `9` - `SIGKILL` - Immediately kill a process with no clean-up operations.
+- `15` - `SIGTERM` - Program termination.
+- `19` - `SIGSTOP` - Stop the program. It cannot be handled anymore.
+- `20` - `SIGTSTP` - Sent when a user presses `[Ctrl] + Z` to request for a service to suspend. The user can handle it afterward.
+  Kill a frozen program - `kill 9 [PID]`
+
+## Background a Process
+
+Sometimes it will be necessary to put a scan o process in the background to continue using the current session - for that we use [Ctrl + Z] to send the `SIGTSTP` to the kernel
+
+```shell
+ping -c 10 www.hackthebox.eu
+[Ctrl + z]
+ping -c 10 www.google.com
+[Ctrl + z]
+```
+
+- now all programs are stopped in the background
+- list programs that run in the backgroun with `jobs`
+- set a process to run automatically in the backgroun use `&`
+  - `ping -c 10 www.google.com &`
+  - once the process finishes, we will see the result
+
+## Foreground a Process
+
+- we can use the `jobs` command to list all background processes
+- background processes do not require user interaction and we can use the same shell session without waiting until the process finishes first
+- to get a precess in the foreground and interact with it we can use `fg [ID]`
+
+```shell
+root@htb$ ping -c 10 www.google.com &
+root@htb$ jobs
+[1]+ running ping -c 10 www.google.com &
+
+root@htb$ fg 1
+
+ping -c 10 www.hackthebox.eu
+--- www.hackthebox.eu ping statistics ---
+...
+```
+
+## Execute multiple commands
+
+Possibilities to run several commands, one after the other:
+- semicolon `;`
+  - executes the commands by ignoring previous commands' results and errors - `echo '1'; echo '2'; echo '3'` - without error - `echo '1'; ls MISSING_FILE; echo '3'` - with error
+- double ampersand characters `&&`
+  - runs the commands one after the other - If there is an error in one of the commands, the following ones will not be executed anymore, and the whole process will be stopped - `echo '1' && ls MISSING_FILE && echo '3'` - with error
+- pipes `|`
+  - depend not only on the correct and error-free operation of the previous processes but also on the previous processes' results
+- the difference between them lies in the previous processes' treatment and depends on whether the previous process was completed successfully or with errors.

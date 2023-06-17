@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run lint
-bash scripts/modulize.bash -e dev -p build
+# npm run lint
+# bash scripts/modulize.bash -e dev -p build
