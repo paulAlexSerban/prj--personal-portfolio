@@ -4,7 +4,6 @@ cd "$(dirname "$0")" || exit
 
 source ../.env
 
-bash 
 bash build.bash
 bash package.bash
 
