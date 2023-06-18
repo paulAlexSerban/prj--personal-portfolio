@@ -52,6 +52,9 @@
       ],
       "@/content/*": [
         "content/*"
+      ],
+      "@/context/*": [
+        "./src/context/*"
       ]
     }
   }

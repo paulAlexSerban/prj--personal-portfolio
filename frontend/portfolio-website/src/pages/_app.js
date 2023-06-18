@@ -1,5 +1,14 @@
 import "@/styles/base/index.scss";
 
-export default function App({ Component, pageProps }) {
-    return <Component {...pageProps} />;
+import { SitePropsProvider } from "@/context/SitePropsContext";
+
+function App({ Component, pageProps }) {
+    return (
+        <SitePropsProvider>
+            <Component {...pageProps} />
+        </SitePropsProvider>
+    );
 }
+
+export default App;
+
