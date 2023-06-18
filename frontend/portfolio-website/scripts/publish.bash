@@ -4,6 +4,10 @@ cd "$(dirname "$0")" || exit
 
 source ../.env
 
+npm run --prefix ../../../ lint
+npm run --prefix ../../../ format:check
+bash test-unit.bash
+bash test-integration.bash
 bash build.bash
 bash package.bash
 
@@ -16,18 +20,19 @@ aws s3 ls
 
 # Based on git branch, set TARGET_HOST
 case $GIT_BRANCH in
-  develop)
-    TARGET_HOST=("develop.paulserban.eu")
-    ;;
-  release)
-    TARGET_HOST=("stage.paulserban.eu")
-    ;;
-  main)
-    TARGET_HOST=("paulserban.eu" "www.paulserban.eu")
-    ;;
-  *)
-    echo "Unknown branch. Can't set TARGET_HOST."
-    ;;
+develop)
+  ## using array to be able to add more hosts
+  TARGET_HOST=("develop.paulserban.eu")
+  ;;
+release)
+  TARGET_HOST=("stage.paulserban.eu")
+  ;;
+main)
+  TARGET_HOST=("paulserban.eu")
+  ;;
+*)
+  echo "Unknown branch. Can't set TARGET_HOST."
+  ;;
 esac
 
 # Print the target hosts
@@ -36,3 +41,5 @@ for i in "${TARGET_HOST[@]}"; do
   ls -la ../../../package/$REPOSITORY_NAME
   aws s3 sync ../../../package/$REPOSITORY_NAME s3://$i --delete
 done
+
+bash publish-content.bash
