@@ -1,3 +1,13 @@
+# [1.5.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.4.0...v1.5.0) (2023-06-18)
+
+
+### Features
+
+* **header:** added header styles ([29b1172](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/29b1172122181f1f2caaf6a238d639e57307909e))
+* **scripts adjustments:** some scripts adjustments ([9f4bdef](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/9f4bdeffdd720e9441c87a948ddc6f5b99c11ad1))
+* **sections:** added section and extra descriptyion ([ef7ece9](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/ef7ece93a4a0134ac8a7acad9dbfcf11ee335aff))
+* **wip:** initial styles ([b709575](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/b709575a0a1a0ef5a169b32dfb464c4a2b78e14e))
+
 # [1.4.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.3.0...v1.4.0) (2023-06-17)
 
 

@@ -172,6 +172,20 @@ $body-small: (
   )
 );
 
+$body-xSmall: (
+  default: (
+    font-size: convert-rem(12px),
+    font-weight: 400,
+    line-height: convert-rem(18px),
+    letter-spacing: 0.005em,
+  ),
+  $desktop: (
+    font-size: convert-rem(14px),
+    line-height: convert-rem(18px),
+    letter-spacing: 0.008em,
+  )
+);
+
 $body-large: (
   default: (
     font-size: convert-rem(19px),
