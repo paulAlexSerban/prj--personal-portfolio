@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { useSiteProps } from "@/context/SitePropsContext";
-import { PageProvider, usePageProps } from "@/context/PageContext"; // Correct the path accordingly
+import useSiteProps from "@/core/hooks/useSiteProps";
+import { PageProvider } from "@/core/context/PageContext";
+import usePageProps from "@/core/hooks/usePageProps";
 import dynamic from "next/dynamic";
 import { Heading, Paragraph } from "@/core/library/atoms/typography";
 import GenericTemplate from "@/core/templates/Generic.template";

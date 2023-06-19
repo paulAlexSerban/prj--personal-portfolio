@@ -1,6 +1,6 @@
 import "@/styles/base/index.scss";
 
-import { SitePropsProvider } from "@/context/SitePropsContext";
+import { SitePropsProvider } from "@/core/context/SitePropsContext";
 
 function App({ Component, pageProps }) {
     return (

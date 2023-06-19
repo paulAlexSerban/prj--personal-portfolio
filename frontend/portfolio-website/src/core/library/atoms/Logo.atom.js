@@ -2,7 +2,7 @@ import styles, { base, main, sub } from "@/styles/atoms/logo.module.scss";
 import { Link } from "@/core/library/atoms/typography";
 import classNames from "classnames";
 import { memo } from "react";
-import { useSiteProps } from "@/context/SitePropsContext";
+import useSiteProps from "@/core/hooks/useSiteProps";
 import PropTypes from "prop-types";
 
 /**

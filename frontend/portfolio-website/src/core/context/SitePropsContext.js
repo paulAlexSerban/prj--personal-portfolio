@@ -2,8 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import content from "@/content/siteProps.json";
 import { encodeToBase64 } from "@/core/utils/base64";
 
-const SitePropsContext = createContext(null);
-
+export const SitePropsContext = createContext(null);
 export function SitePropsProvider({ children }) {
     const [siteProps, setSiteProps] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -38,18 +37,3 @@ export function SitePropsProvider({ children }) {
     return <SitePropsContext.Provider value={siteProps}>{children}</SitePropsContext.Provider>;
 }
 
-/**
- * This hook is used to access the site props from the SitePropsContext.
- * @returns {Object} Returns the site props.
- * 
- * Useful for ensuring that the site props are available before rendering the page.
- * Instead of exporting SitePropsContext directly without any checks, you can export a custom hook
- * that throws an error if the site props are not available.
- */
-export function useSiteProps() {
-    const context = useContext(SitePropsContext);
-    if (context === null) {
-        throw new Error("useSiteProps must be used within a SitePropsProvider");
-    }
-    return context;
-}
