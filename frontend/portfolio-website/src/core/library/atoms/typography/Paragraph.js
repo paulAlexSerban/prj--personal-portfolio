@@ -17,7 +17,6 @@ import classNames from 'classnames';
  * @param {Node} props.children The children of the paragraph. If provided, this will override the `text` prop.
  * @returns {React.Node} Returns the Paragraph component.
  */
-
 function Paragraph({ classNames: classes = [], text, children }) {
   return (
     <p className={classNames(classes)}>

@@ -1,18 +1,17 @@
-import GenericTemplate from "@/core/templates/Generic.template";
 import Head from "next/head";
 import { useSiteProps } from "@/context/SitePropsContext";
-import { IndexPageProvider, IndexPageContext } from "@/context/pages/IndexPageContext"; // Correct the path accordingly
-import { useContext } from "react";
+import { PageProvider, usePageProps } from "@/context/PageContext"; // Correct the path accordingly
 import dynamic from "next/dynamic";
-import { Paragraph } from "@/core/library/atoms/typography";
+import { Heading, Paragraph } from "@/core/library/atoms/typography";
+import GenericTemplate from "@/core/templates/Generic.template";
+import LinkList from "@/core/library/molecules/LinkList.molecule";
+import content from "@/content/pages/index.json";
+
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
-import { decodeFromBase64, encodeToBase64 } from "@/core/utils/base64";
 
-import { Heading } from "@/core/library/atoms/typography";
-import LinkList from "@/core/library/molecules/LinkList.molecule";
 function IndexPage() {
-    const pageContent = useContext(IndexPageContext);
+    const pageContent = usePageProps();
     const { title, main } = pageContent;
     const { icons, socialMediaLinks } = useSiteProps();
 
@@ -29,14 +28,9 @@ function IndexPage() {
                     subheading={main.heroBanner.subheading}
                     // socialMediaLinks={siteProps.socialMediaLinks}
                 />
-                <Section
-                    headingTitle={main.section_1.title}
-                    subheadingText={"Note: Website is under construction!"}
-                    hasSeparator={false}
-                >
+                <Section headingTitle={main.section_1.title} hasSeparator={false}>
                     <Paragraph>{main.section_1.content.paragraph_1}</Paragraph>
-                    <Paragraph>{main.section_1.content.paragraph_2}</Paragraph>
-                    <Heading level={3}>Find me on:</Heading>
+                    <Heading level={3}>{main.section_1.content.heading_1}</Heading>
                     <LinkList links={socialMediaLinks} />
                 </Section>
             </GenericTemplate>
@@ -44,10 +38,19 @@ function IndexPage() {
     );
 }
 
-export default function Index() {
+export default function Index({ pageContent }) {
     return (
-        <IndexPageProvider>
+        <PageProvider value={pageContent}>
             <IndexPage />
-        </IndexPageProvider>
+        </PageProvider>
     );
+}
+
+// Fetch data at build time
+export async function getStaticProps() {
+    return {
+        props: {
+            pageContent: content,
+        },
+    };
 }
