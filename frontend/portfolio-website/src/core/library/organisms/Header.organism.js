@@ -31,7 +31,7 @@ export default function Header() {
     return (
         <header className={base} ref={headerRef}>
             <div className={container}>
-                <Logo isShrink={isShrink} />
+                <Logo isShrink={isShrink} href={"/"}/>
             </div>
         </header>
     );
