@@ -2,7 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-source ../.env
+source ../.env.development
 
 echo -e "📦  Package $FORMATTED_NAME"
 
