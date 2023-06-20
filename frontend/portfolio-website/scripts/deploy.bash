@@ -2,7 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-source ../.env
+source ../.env.development
 
 npm run --prefix ../../../ lint
 npm run --prefix ../../../ format:check
@@ -25,9 +25,12 @@ develop)
   TARGET_HOST=("develop.paulserban.eu")
   ;;
 release)
-  TARGET_HOST=("stage.paulserban.eu")
+  TARGET_HOST=("test.paulserban.eu")
   ;;
 main)
+  TARGET_HOST=("stage.paulserban.eu")
+  ;;
+production)
   TARGET_HOST=("paulserban.eu")
   ;;
 *)

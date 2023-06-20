@@ -1,0 +1,113 @@
+name: CI/CD - Main
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        types: [synchronize]
+    workflow_dispatch:
+
+env:
+    NODE_VERSION: 16.19.0
+    FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+    prepare:
+        name: Prepare
+        runs-on: ubuntu-latest
+        permissions:
+            actions: read
+            contents: read
+            security-events: write
+        strategy:
+            fail-fast: false
+            matrix:
+                language: ["javascript"]
+        steps:
+            - name: "📥  Checkout repository"
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            - name: "🔍  Verify Changed Files"
+              uses: tj-actions/changed-files@v35
+              id: changed-frontend-portfolio-website-files
+              with:
+                  files: ${{ env.FE_NEXTJS_PROJECT_ROOT }}/**/*
+            - name: "Check code scanning"
+              run: |
+                  echo \"Error: no code scanning checks implemented\"
+            # - name: "🚀 Initialize CodeQL"
+            #   uses: github/codeql-action/init@v2
+            #   with:
+            #       languages: ${{ matrix.language }}
+            # - name: "📥  Checkout repository"
+            #   uses: actions/checkout@v3
+            #   with:
+            #       fetch-depth: 0
+
+            # - name: "🏗️  Autobuild"
+            #   uses: github/codeql-action/autobuild@v2
+            # - name: Perform CodeQL Analysis
+            #   uses: github/codeql-action/analyze@v2
+
+            - name: "🔄  Cache node_modules"
+              uses: actions/cache@v3
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: "🔧  Setup NodeJS ${{ env.NODE_VERSION }}"
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ env.NODE_VERSION }}
+
+            - name: "🔧  Install npm@latest & CI Deps"
+              run: |
+                  npm i -g npm@latest
+                  npm ci
+
+            - name: "Check code formatting"
+              run: |
+                  echo \"Error: no format check specified\"
+
+            - name: "🔧  Install project modules dependencies"
+              run: |
+                  bash modulize.bash -e production -p install
+
+            - name: "Check code linting"
+              run: |
+                  echo \"Error: no lint specified\"
+
+            - name: "Run unit tests"
+              run: |
+                  echo \"Error: no unit-test specified\"
+
+            - name: "Run integration tests"
+              run: |
+                  echo \"Error: no integration-test specified\"
+
+            - name: "Build"
+              run: |
+                  bash modulize.bash -e production -p build
+
+            - name: "Package"
+              run: |
+                  bash modulize.bash -e production -p package
+
+            - name: Deploy
+              uses: reggionick/s3-deploy@v3
+              with:
+                  folder: package/prj--portfolio-website
+                #   bucket: ${{ secrets.S3_STAGE_BUCKET }}
+                #   bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+                #   dist-id: ${{ secrets.CLOUDFRONT_STAGE_DISTRIBUTION_ID }}
+                  invalidation: /
+                  delete-removed: true
+                  no-cache: true
+                  private: true
+                  filesToInclude: ".*/*,*/*,**"

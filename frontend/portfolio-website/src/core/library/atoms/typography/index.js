@@ -1,5 +1,5 @@
-import Paragraph from "./Paragraph.atom";
-import Heading from "./Heading.atom";
-import Link from "./Link.atom";
+import Paragraph from "./Paragraph";
+import Heading from "./Heading";
+import Link from "./Link";
 
 export { Paragraph, Heading, Link };
