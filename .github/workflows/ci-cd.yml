@@ -98,3 +98,4 @@ jobs:
             - name: "Deploy"
               run: |
                   echo \"Error: no deploy specified\"
+                  echo "save to arfifact ./package"
