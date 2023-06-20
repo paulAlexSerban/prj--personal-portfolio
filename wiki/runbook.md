@@ -13,11 +13,16 @@
 - More AWS CLI S3 commands
     -   (AWS CLI S3 commands)[https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html]
 
--   if github-pages - set .env:
-    -   DOMAIN=https://paulalexserban.github.io/
+
+## IDEAS
 -   if aws (prod) - set .env:
     -   DOMAIN=https://paulserban.eu/
--   if aws (stage/test) - set .env:
+-   if aws (stage) - set .env:
     -   DOMAIN=https://stage.paulserban.eu/
+-  if aws (test) - set .env:
+    -   DOMAIN=https://test.paulserban.eu/
 -   id aws (develop) - set .env:
-    -   DOMAIN=https://deelopv.paulserban.eu/
+    -   DOMAIN=https://develop.paulserban.eu/
+
+## NOTES
+- before running `bash modulize.bash -e dev -p develop` RUN `bash modulize.bash -e dev -p build` sync content accordingly

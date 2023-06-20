@@ -1,4 +1,4 @@
-name: CI - Develop
+name: CI/CD
 
 on:
     push:
@@ -112,3 +112,21 @@ jobs:
             - name: "Run integration tests"
               run: |
                   echo \"Error: no integration-test specified\"
+
+    build:
+        name: Build
+        needs: [linting, formatting, unit-tests, integration-tests]
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Build"
+              run: |
+                  echo \"Error: no build specified\"
+
+    deploy:
+        name: Deploy
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Deploy"
+              run: |
+                  echo \"Error: no deploy specified\"

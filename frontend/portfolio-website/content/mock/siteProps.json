@@ -1,0 +1,55 @@
+{
+    "name": "Paul Serban",
+    "role": "Software Engineer",
+    "domainName": "paulserban.eu",
+    "icons": {
+        "favicon": "favicon.ico"
+    },
+    "logo": {
+        "alt": "Go to home page link.",
+        "ariaLabel": "Go to home page link."
+    },
+    "socialMediaLinks": [
+        {
+            "label": "LinkedIn",
+            "icon": "linkedin_v2",
+            "href": "https://www.linkedin.com/in/paulalexs/",
+            "isInternal": false
+        },
+        {
+            "label": "GitHub",
+            "icon": "github",
+            "href": "https://github.com/paulAlexSerban",
+            "isInternal": false
+        },
+        {
+            "label": "Codepaen",
+            "icon": "codepen",
+            "href": "https://codepen.io/paulalexserban",
+            "isInternal": false
+        },
+        {
+            "label": "HackerRank",
+            "icon": "hackerrank",
+            "href": "https://www.hackerrank.com/paul_alex_serban",
+            "isInternal": false
+        },
+        {
+            "label": "CodeWars",
+            "icon": "codewars",
+            "href": "https://www.codewars.com/users/paulAlexSerban",
+            "isInternal": false
+        },
+        {
+            "label": "Email",
+            "icon": "email",
+            "href": "mailto:paul.alex.serban@gmail.com",
+            "isInternal": false,
+            "isEncoded": true
+        }
+    ],
+    "siteNavLinks": [
+        { "label": "portfolio", "href": "/portfolio", "isInternal": true },
+        { "label": "blog", "href": "/blog", "isInternal": true }
+    ]
+}

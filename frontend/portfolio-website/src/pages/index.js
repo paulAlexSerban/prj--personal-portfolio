@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { Heading, Paragraph } from "@/core/library/atoms/typography";
 import GenericTemplate from "@/core/templates/Generic.template";
 import LinkList from "@/core/library/molecules/LinkList.molecule";
-import content from "@/content/pages/index.json";
+import content from "@/content/dist/pages/index.json";
 
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));

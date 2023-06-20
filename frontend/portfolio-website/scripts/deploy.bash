@@ -25,9 +25,12 @@ develop)
   TARGET_HOST=("develop.paulserban.eu")
   ;;
 release)
-  TARGET_HOST=("stage.paulserban.eu")
+  TARGET_HOST=("test.paulserban.eu")
   ;;
 main)
+  TARGET_HOST=("stage.paulserban.eu")
+  ;;
+production)
   TARGET_HOST=("paulserban.eu")
   ;;
 *)

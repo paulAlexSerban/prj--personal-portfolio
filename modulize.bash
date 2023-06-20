@@ -66,6 +66,10 @@ NODE_ENV=$ENV
 export $NODE_ENV
 print_info "Running in ${BLUE} ${NODE_ENV} ${NC} mode"
 
+# Get current git branch
+export GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+echo "Current branch: $GIT_BRANCH"
+
 init() {
   phase() {
     local PHASE_PATH=${1}

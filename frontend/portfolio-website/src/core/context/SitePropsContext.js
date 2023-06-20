@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import content from "@/content/siteProps.json";
 import { encodeToBase64 } from "@/core/utils/base64";
+import content from "@/content/dist/siteProps.json";
+const { GIT_BRANCH } = process.env;
 
 export const SitePropsContext = createContext(null);
 export function SitePropsProvider({ children }) {
