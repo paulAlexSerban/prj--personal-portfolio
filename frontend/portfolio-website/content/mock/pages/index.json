@@ -1,15 +1,15 @@
 {
-    "title": "Paul Serban | Software Engineer",
+    "title": "Jon Doe | Unicorn Software Engineer",
     "main": {
         "heroBanner": {
             "pageTitle": "Welcome!",
-            "subheading": "I'm Paul, a passionate Software Engineer with a distinct proficiency in Front-end development. My passion lies in crafting dynamic, user-friendly web applications that harness the power of cutting-edge technology."
+            "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus."
         },
         "section_1": {
             "title": "About Me",
             "content": {
-                "paragraph_1": "With a robust skill set in React, JavaScript, TypeScript, and the MERN stack, I excel at creating web solutions that are both aesthetically pleasing and functionally robust. Furthermore, my expertise extends to deploying and managing applications with Docker, AWS, leveraging GitOps strategies, and implementing DevOps practices, ensuring streamlined, efficient, and scalable development processes.",
-                "heading_1": "Find me here:"
+                "paragraph_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.",
+                "heading_1": "Lorem me sit:"
             }
         }
     }

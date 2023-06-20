@@ -102,8 +102,8 @@ jobs:
             - name: "Upload Artifact"
               uses: actions/upload-artifact@v3
               with:
-                  name: my-artifact
-                  path: package/prj--portfolio-website # or path/to/artifact
+                  name: package-personal-website
+                  path: package/prj--portfolio-website/ # or path/to/artifact
 
             # - name: Deploy
             #   uses: reggionick/s3-deploy@v3
