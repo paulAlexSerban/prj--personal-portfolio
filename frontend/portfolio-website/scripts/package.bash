@@ -11,7 +11,7 @@ mkdir -p ../../../package/$REPOSITORY_NAME
 
 ## copy the files to the package folder
 cp -rfv ../out/* ../../../package/$REPOSITORY_NAME
-cp -rfv ../public/* ../../../package/$REPOSITORY_NAME
+# cp -rfv ../public/* ../../../package/$REPOSITORY_NAME
 
 ## create a .nojekyll file
 ## needed for github pages

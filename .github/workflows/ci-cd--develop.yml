@@ -15,8 +15,8 @@ env:
     # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
-    prepare:
-        name: Prepare
+    deploy:
+        name: Deploy
         runs-on: ubuntu-latest
         permissions:
             actions: read
