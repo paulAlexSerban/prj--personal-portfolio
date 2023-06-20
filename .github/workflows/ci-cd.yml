@@ -124,7 +124,8 @@ jobs:
         steps:
             - name: "Build"
               run: |
-                  bash modulize.bash -e production -p build
+                  pwd
+                  ls -la
 
     deploy:
         name: Deploy
