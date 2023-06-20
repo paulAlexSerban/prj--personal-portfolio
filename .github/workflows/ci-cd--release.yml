@@ -1,11 +1,9 @@
-name: CI/CD
+name: CI/CD - Release
 
 on:
     push:
         branches:
             - release
-            - main
-            - develop
     pull_request:
         types: [synchronize]
     workflow_dispatch:
@@ -13,6 +11,8 @@ on:
 env:
     NODE_VERSION: 16.19.0
     FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
     prepare:
@@ -93,9 +93,21 @@ jobs:
 
             - name: "Build"
               run: |
-                bash modulize.bash -e production -p build
+                  bash modulize.bash -e production -p build
 
-            - name: "Deploy"
+            - name: "Package"
               run: |
-                  echo \"Error: no deploy specified\"
-                  echo "save to arfifact ./package"
+                  bash modulize.bash -e production -p package
+
+            - name: Deploy
+              uses: reggionick/s3-deploy@v3
+              with:
+                  folder: build
+                  bucket: ${{ secrets.S3_STAGE_BUCKET }}
+                  bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+                  dist-id: ${{ secrets.CLOUDFRONT_STAGE_DISTRIBUTION_ID }}
+                  invalidation: /
+                  delete-removed: true
+                  no-cache: true
+                  private: true
+                  files-to-include: ".*/*,*/*,**"
