@@ -2,13 +2,13 @@
     "title": "Jon Doe | Unicorn Software Engineer",
     "main": {
         "heroBanner": {
-            "pageTitle": "Welcome!",
+            "pageTitle": "Adipiscing eli!",
             "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus."
         },
         "section_1": {
-            "title": "About Me",
+            "title": "Sed Vitae Sapien",
             "content": {
-                "paragraph_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.",
+                "paragraph_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.",
                 "heading_1": "Lorem me sit:"
             }
         }
