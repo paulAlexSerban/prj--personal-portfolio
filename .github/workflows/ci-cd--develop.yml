@@ -11,8 +11,8 @@ on:
 env:
     NODE_VERSION: 16.19.0
     FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website
-    # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
     deploy:
@@ -105,15 +105,15 @@ jobs:
                   name: package-personal-website
                   path: package/prj--portfolio-website/ # or path/to/artifact
 
-            # - name: Deploy
-            #   uses: reggionick/s3-deploy@v3
-            #   with:
-            #       folder: build
-            #       bucket: ${{ secrets.S3_DEVELOP_BUCKET }}
-            #       bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-            #       dist-id: ${{ secrets.CLOUDFRONT_DEVELOP_DISTRIBUTION_ID }}
-            #       invalidation: /
-            #       delete-removed: true
-            #       no-cache: true
-            #       private: true
-            #       files-to-include: ".*/*,*/*,**"
+            - name: Deploy
+              uses: reggionick/s3-deploy@v3
+              with:
+                  folder: package/prj--portfolio-website
+                  bucket: ${{ secrets.S3_DEVELOP_BUCKET }}
+                  bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+                  dist-id: ${{ secrets.CLOUDFRONT_DEVELOP_DISTRIBUTION_ID }}
+                  invalidation: /
+                  delete-removed: true
+                  no-cache: true
+                  private: true
+                  files-to-include: ".*/*,*/*,**"
