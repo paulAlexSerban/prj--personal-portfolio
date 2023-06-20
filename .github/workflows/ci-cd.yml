@@ -47,6 +47,10 @@ jobs:
                   npm i -g npm@latest
                   npm ci
 
+            - name: "🔧  Install project modules dependencies"
+              run: |
+                  bash modulize.bash -e production -p install
+
     code-scanning:
         name: "🔍 Code Scanning"
         runs-on: ubuntu-latest
