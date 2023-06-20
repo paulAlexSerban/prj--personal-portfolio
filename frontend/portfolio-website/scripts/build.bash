@@ -6,7 +6,7 @@ source ../.env.development
 
 echo 'Building... - shou copy assets from ./assets/dist to public'
 
-echo 'git branch ---->' $GIT_BRANCH
+echo 'Git Branch: ' $GIT_BRANCH
 
 if [ "$GIT_BRANCH" = "release" ]; then
   echo 'Building for test'
