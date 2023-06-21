@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.5.0...v1.6.0) (2023-06-20)
+
+
+### Features
+
+* **context:** adjusted context use ([52977ff](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/52977ff3093580e69e3cc3327448d0347e064365))
+* **hooks:** separated hooks from context ([28f8eaa](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/28f8eaa62239a9f32d613c7a9e243768a72b7b66))
+* **init:** links and logo updates ([bf14701](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/bf147013e05d1433a1a45c2813a3f1bc6de1078c))
+
 # [1.5.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.4.0...v1.5.0) (2023-06-18)
 
 

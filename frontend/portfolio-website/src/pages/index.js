@@ -1,27 +1,20 @@
-import GenericTemplate from "@/core/templates/Generic.template";
-
 import Head from "next/head";
-import { useSiteProps } from "@/context/SitePropsContext";
-import { IndexPageProvider, IndexPageContext } from "@/context/pages/IndexPageContext"; // Correct the path accordingly
-import { useContext } from "react";
+import useSiteProps from "@/core/hooks/useSiteProps";
+import { PageProvider } from "@/core/context/PageContext";
+import usePageProps from "@/core/hooks/usePageProps";
 import dynamic from "next/dynamic";
-import { Paragraph } from "@/core/library/atoms/typography";
+import { Heading, Paragraph } from "@/core/library/atoms/typography";
+import GenericTemplate from "@/core/templates/Generic.template";
+import LinkList from "@/core/library/molecules/LinkList.molecule";
+import content from "@/content/dist/pages/index.json";
+
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
-import { decodeFromBase64, encodeToBase64 } from "@/core/utils/base64";
 
 function IndexPage() {
-    const pageContent = useContext(IndexPageContext);
+    const pageContent = usePageProps();
     const { title, main } = pageContent;
     const { icons, socialMediaLinks } = useSiteProps();
-
-    const handleMouseEnter = (el) => {
-        el.href = decodeFromBase64(el.getAttribute("href"));
-    };
-
-    const handleMouseLeave = (el) => {
-        el.href = encodeToBase64(el.getAttribute("href"));
-    };
 
     return (
         <>
@@ -36,44 +29,29 @@ function IndexPage() {
                     subheading={main.heroBanner.subheading}
                     // socialMediaLinks={siteProps.socialMediaLinks}
                 />
-                <Section
-                    headingTitle={main.section_1.title}
-                    subheadingText={"Note: Website is under construction!"}
-                    hasSeparator={false}
-                >
+                <Section headingTitle={main.section_1.title} hasSeparator={false}>
                     <Paragraph>{main.section_1.content.paragraph_1}</Paragraph>
-                    <Paragraph>{main.section_1.content.paragraph_2}</Paragraph>
-                    <h3>Find me on:</h3>
-                    <ul>
-                        {socialMediaLinks.map((link) => {
-                            const { label, href, isEncoded } = link;
-                            return (
-                                <li key={label}>
-                                    <a
-                                        href={href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onMouseEnter={isEncoded ? (e) => handleMouseEnter(e.target) : null}
-                                        onMouseLeave={isEncoded ? (e) => handleMouseLeave(e.target) : null}
-                                        onTouchStart={isEncoded ? (e) => handleMouseEnter(e.target) : null}
-                                        onTouchEnd={isEncoded ? (e) => handleMouseLeave(e.target) : null}
-                                    >
-                                        {label}
-                                    </a>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                    <Heading level={3}>{main.section_1.content.heading_1}</Heading>
+                    <LinkList links={socialMediaLinks} />
                 </Section>
             </GenericTemplate>
         </>
     );
 }
 
-export default function Index() {
+export default function Index({ pageContent }) {
     return (
-        <IndexPageProvider>
+        <PageProvider value={pageContent}>
             <IndexPage />
-        </IndexPageProvider>
+        </PageProvider>
     );
+}
+
+// Fetch data at build time
+export async function getStaticProps() {
+    return {
+        props: {
+            pageContent: content,
+        },
+    };
 }

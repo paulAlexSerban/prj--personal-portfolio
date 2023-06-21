@@ -6,7 +6,7 @@ PORJECT_AUTHOR=$(node -p "require('./package.json').author")
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-. ./.env
+. ./.env.development
 
 # Colors for printing messages
 NC='\033[0m' # No Color
@@ -66,6 +66,10 @@ NODE_ENV=$ENV
 export $NODE_ENV
 print_info "Running in ${BLUE} ${NODE_ENV} ${NC} mode"
 
+# Get current git branch
+export GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+echo "Current branch: $GIT_BRANCH"
+
 init() {
   phase() {
     local PHASE_PATH=${1}
@@ -98,13 +102,13 @@ init() {
         if [[ "$DIR" == "scripts" ]]; then
           phase ./${i} ${PHASE} ${i}
         fi
-        if [[ ! -f "./${i}/.env" ]]; then
+        if [[ ! -f "./${i}/.env.development" ]]; then
           phase ./${i}/${DIR} ${PHASE} ${DIR}
         fi
       done
 
-      if [[ -f "./${i}/.env" ]]; then
-        . "./${i}/.env"
+      if [[ -f "./${i}/.env.development" ]]; then
+        . "./${i}/.env.development"
 
         for j in "${INSTALL_MODULE_SUBPROJECTS[@]}"; do
           phase ./${i}/${j} ${PHASE} ${j}
