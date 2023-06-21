@@ -13,6 +13,7 @@ env:
     FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website
     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    S3_BUCKET_REGION: ${{ secrets.S3_BUCKET_REGION }}
 
 jobs:
     deploy:
@@ -92,6 +93,9 @@ jobs:
                   echo \"Error: no integration-test specified\"
 
             - name: "Build"
+              env:
+                AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
               run: |
                   bash modulize.bash -e production -p build
 
