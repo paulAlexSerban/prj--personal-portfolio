@@ -87,6 +87,9 @@ jobs:
                   echo \"Error: no integration-test specified\"
 
             - name: "Build"
+              env:
+                S3_BUCKET_REGION:  ${{ secrets.S3_BUCKET_REGION }}
+                S3_CONTENT_PRODUCTION_BUCKET: ${{ secrets.S3_CONTENT_PRODUCTION_BUCKET }}
               run: |
                   bash modulize.bash -e production -p build
 
