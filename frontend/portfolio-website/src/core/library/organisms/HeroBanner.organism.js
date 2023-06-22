@@ -43,6 +43,8 @@ const HeroBannerComponent = React.forwardRef(
       );
     }
   );
+
+  HeroBannerComponent.displayName = "HeroBannerComponent";
   
   /**
    * The HeroBanner component with scroll visibility behavior.

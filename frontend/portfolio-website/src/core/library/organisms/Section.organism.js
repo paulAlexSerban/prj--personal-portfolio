@@ -25,6 +25,8 @@ const SectionComponent = React.forwardRef(({ children, headingTitle, sectionId, 
       </section>
     );
   });
+
+  SectionComponent.displayName = "SectionComponent";
   
   /**
    * The Section component with scroll visibility behavior.
