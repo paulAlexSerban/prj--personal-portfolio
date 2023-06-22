@@ -1,14 +1,9 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext } from "react";
 import { encodeToBase64 } from "@/core/utils/base64";
 import content from "@/content/dist/siteProps.json";
-const { GIT_BRANCH } = process.env;
 
 export const SitePropsContext = createContext(null);
 export function SitePropsProvider({ children }) {
-    const [siteProps, setSiteProps] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
         /**
          * Instead of modifying the original content object in the useEffect, consider creating a 
          * copy of content and modifying that instead. This ensures that you're not repeatedly 
@@ -26,15 +21,7 @@ export function SitePropsProvider({ children }) {
             }
             return link.href;
         });
-        setSiteProps(contentDeepCopy);
-        setIsLoading(false); // Once siteProps is set, update isLoading state to false
-    }, []);
 
-    // if siteProps is still loading, render a loading message or component
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
-
-    return <SitePropsContext.Provider value={siteProps}>{children}</SitePropsContext.Provider>;
+    return <SitePropsContext.Provider value={contentDeepCopy}>{children}</SitePropsContext.Provider>;
 }
 
