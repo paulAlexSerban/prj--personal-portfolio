@@ -20,6 +20,7 @@ export default function Header() {
     useEffect(() => {
         // do not use an arrow function here, to ensure that the function is the same on each render and thus the event listener is not added multiple times
         // if an arrow function is used, the event listener will be added multiple times, and the cleanup will not remove all of them
+        // NO! : document.addEventListener("scroll", () => headerShrink());
         document.addEventListener("scroll", headerShrink);
 
         // Cleanup
