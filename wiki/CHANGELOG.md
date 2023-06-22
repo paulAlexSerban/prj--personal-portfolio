@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.6.0...v1.7.0) (2023-06-22)
+
+
+### Features
+
+* added scroll spy visibility mechanism ([6535ee4](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/6535ee489fb7269c9da5b446926ca0f5a408b5bc))
+* missing displayName ([8267b70](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/8267b70862427045bae3be49d07e121fcb249541))
+
 # [1.6.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.5.0...v1.6.0) (2023-06-20)
 
 
