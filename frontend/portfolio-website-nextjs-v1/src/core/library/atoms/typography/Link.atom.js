@@ -101,9 +101,7 @@ export default function LinkAtom({
             target={isInternal ? "_self" : "_blank"}
             rel="noreferrer"
             className={className}
-            data-internal-link={isInternal}
-            data-prefetch={prefetch}
-            data-scroll-to-link={isScrollTo}
+
             ref={linkRef}
           >
             {children || label}

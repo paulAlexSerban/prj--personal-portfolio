@@ -9,13 +9,17 @@ $block: "section";
 
 .#{$block} {
     @include e("base") {
+
         width: 100%;
-        padding-inline: var(--lateral-padding);
         opacity: 1;
-        transition: opacity 0.25s ease-in;
+        transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
         @include m("inactive") {
             opacity: 0.1;
+        }
+
+        @include m("half") {
+            background-color: var(--secondary-color);
         }
 
         > * + * {
@@ -27,6 +31,7 @@ $block: "section";
         @include flex($direction: column, $cross: flex-start);
 
         max-width: $max-width;
+        padding-inline: var(--lateral-padding);
     }
 
     @include e("container") {
