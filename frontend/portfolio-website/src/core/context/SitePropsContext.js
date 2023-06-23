@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { encodeToBase64 } from "@/core/utils/base64";
+import { encodeToBase64 } from "@/core/utils";
 import content from "@/content/dist/siteProps.json";
 
 export const SitePropsContext = createContext(null);

@@ -7,7 +7,8 @@ import { Heading, Paragraph } from "@/core/library/atoms/typography";
 import GenericTemplate from "@/core/templates/Generic.template";
 import LinkList from "@/core/library/molecules/LinkList.molecule";
 import content from "@/content/dist/pages/index.json";
-import ScrollVisibility from "@/core/library/organisms/hoc/ScrollVisibility";
+import SkillsShowcase from "@/core/library/organisms/SkillShowcase.organism";
+import SkillGallery from "@/core/library/organisms/SkillGallery.organism";
 
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
@@ -16,7 +17,6 @@ function IndexPage() {
     const pageContent = usePageProps();
     const { title, main } = pageContent;
     const { icons, socialMediaLinks } = useSiteProps();
-
     return (
         <>
             <Head>
@@ -26,19 +26,18 @@ function IndexPage() {
             </Head>
             <GenericTemplate>
                 <HeroBanner
-                    pageTitle={main.heroBanner.pageTitle}
-                    subheading={main.heroBanner.subheading}
+                    pageTitle={main.heroBanner.content[0].pageTitle}
+                    subheading={main.heroBanner.content[1].subheading}
                     // socialMediaLinks={siteProps.socialMediaLinks}
                 />
-                <Section headingTitle={main.section_1.title} hasSeparator={false}>
-                    <Paragraph>{main.section_1.content.paragraph_1}</Paragraph>
-                    <Heading level={3}>{main.section_1.content.heading_1}</Heading>
+                <Section headingTitle={main.section__aboutMe.content[0].title.main} hasSeparator={false}>
+                    <Paragraph>{main.section__aboutMe.content[1].children[0].content[0].text}</Paragraph>
+                    <Heading level={3}>{main.section__aboutMe.content[1].children[1].content[0].main}</Heading>
                     <LinkList links={socialMediaLinks} />
-                </Section>{" "}
-                <Section headingTitle={main.section_1.title} hasSeparator={false}>
-                    <Paragraph>{main.section_1.content.paragraph_1}</Paragraph>
-                    <Heading level={3}>{main.section_1.content.heading_1}</Heading>
-                    <LinkList links={socialMediaLinks} />
+                </Section>
+                <Section headingTitle={main.section__mySkills.content[0].title.main} hasSeparator={false}>
+                    <SkillsShowcase list={main.section__mySkills.content[1].children[0].content} />
+                    <SkillGallery list={main.section__mySkills.content[1].children[1].content} />
                 </Section>
             </GenericTemplate>
         </>

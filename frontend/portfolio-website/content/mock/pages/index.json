@@ -2,15 +2,146 @@
     "title": "Jon Doe | Unicorn Software Engineer",
     "main": {
         "heroBanner": {
-            "pageTitle": "Adipiscing eli!",
-            "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. "
+            "organism": {
+                "id": "indexPage-heroBanner",
+                "type:": "heroBanner"
+            },
+            "content": [
+                { "pageTitle": "Adipiscing eli!" },
+                {
+                    "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. "
+                }
+            ]
         },
-        "section_1": {
-            "title": "Sed Vitae Sapien",
-            "content": {
-                "paragraph_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante",
-                "heading_1": "Lorem me sit:"
-            }
+        "section__aboutMe": {
+            "organism": {
+                "id": "about-me-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "title": {
+                        "main": "Sed Vitae Sapien"
+                    }
+                },
+                {
+                    "children": [
+                        {
+                            "atom": {
+                                "id": "about-me-paragraph-1",
+                                "type": "paragraph"
+                            },
+                            "content": [
+                                {
+                                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien ut ante"
+                                }
+                            ]
+                        },
+                        {
+                            "atom": {
+                                "id": "folowMe-link-list-heading",
+                                "type": "heading"
+                            },
+                            "content": [
+                                {
+                                    "level": 3,
+                                    "main": "Find me here:",
+                                    "hasSeparator": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "section__mySkills": {
+            "organism": {
+                "id": "my-skills-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "title": {
+                        "main": "My Skills"
+                    }
+                },
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "skills-showcase",
+                                "type": "skillShowcase"
+                            },
+                            "content": [
+                                { "name": "JavaScript", "iconName": "javascript", "tag": "javascript" },
+                                { "name": "React.js", "iconName": "reactjs", "tag": "reactjs" },
+                                { "name": "Node.js", "iconName": "nodejs", "tag": "nodejs" },
+                                { "name": "Docker", "iconName": "docker", "tag": "docker" },
+                                { "name": "AWS", "iconName": "aws", "tag": "aws" },
+                                { "name": "Bash/Shell", "iconName": "bash_shell", "tag": "bashshell" },
+                                { "name": "Linux", "iconName": "linux", "tag": "linux" }
+                            ]
+                        },
+                        {
+                            "organism": {
+                                "id": "skill-overview",
+                                "type": "skillOverview"
+                            },
+                            "content": [
+                                {
+                                    "groupCategory": "technical",
+                                    "groups": [
+                                        {
+                                            "name": "Programming Languages",
+                                            "list": ["JavaScript", "TypeScript", "Php", "Python", "Rust", "Java"]
+                                        },
+                                        {
+                                            "name": "Frameworks & Libraries",
+                                            "list": [
+                                                "Bootstrap",
+                                                "React.js",
+                                                "Next.js",
+                                                "jQuery",
+                                                "Express.js",
+                                                "Node.js",
+                                                "Wordpress",
+                                                "Ghost CMS",
+                                                "Strapi CMS"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Front-end Tools",
+                                            "list": ["Webpack", "Gulp", "Scss/Sass", "Babel", "npm", "esLint", "Jest"]
+                                        },
+                                        {
+                                            "name": "DevOps",
+                                            "list": ["AWS", "Git", "Docker", "Linux", "Bash/Shell", "Github Actions"]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "groupCategory": "soft",
+                                    "list": [
+                                        "Communication",
+                                        "Problem-solving",
+                                        "Analytical thinking",
+                                        "Stress management",
+                                        "Scheduling",
+                                        "Time management",
+                                        "Organizational",
+                                        "Project management",
+                                        "Leadership",
+                                        "Teamwork",
+                                        "Customer Service",
+                                        "Ability to work independently",
+                                        "Flexibility"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     }
 }
