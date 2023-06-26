@@ -15,7 +15,7 @@ $block: 'pill';
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-      background-color: var(--background-color);
+      background-color: var(--secondary-color);
     }
 
     a {

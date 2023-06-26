@@ -33,8 +33,6 @@ function IndexPage() {
                 />
                 <Section headingTitle={main.section__aboutMe.content[0].title.main} hasSeparator={false}>
                     <Paragraph>{main.section__aboutMe.content[1].children[0].content[0].text}</Paragraph>
-                    <Heading level={3}>{main.section__aboutMe.content[1].children[1].content[0].main}</Heading>
-                    <LinkList links={socialMediaLinks} />
                 </Section>
                 <Section headingTitle={main.section__mySkills.content[0].title.main} hasSeparator={false}>
                     <SkillsShowcase list={main.section__mySkills.content[1].children[0].content} />
