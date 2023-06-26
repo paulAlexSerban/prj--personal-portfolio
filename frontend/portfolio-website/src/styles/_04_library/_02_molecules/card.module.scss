@@ -15,6 +15,7 @@ $block: "card";
         height: 100%;
 
         &:hover {
+            --tooltip-background-color: var(--secondary-color);
             background-color: var(--background-color);
         }
 

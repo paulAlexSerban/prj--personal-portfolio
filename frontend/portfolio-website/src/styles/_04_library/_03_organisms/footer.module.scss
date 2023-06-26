@@ -10,6 +10,7 @@ $block: "footer";
 .#{$block} {
     @include e("base") {
         @include flex($direction: column);
+        --tooltip-background-color: var(--secondary-color);
 
         width: 100vw;
         padding: var(--responsive-spacing-0) 0 0;
