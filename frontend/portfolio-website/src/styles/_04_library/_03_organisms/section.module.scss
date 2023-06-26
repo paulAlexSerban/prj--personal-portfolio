@@ -9,7 +9,6 @@ $block: "section";
 
 .#{$block} {
     @include e("base") {
-
         width: 100%;
         opacity: 1;
         transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -35,6 +34,11 @@ $block: "section";
     }
 
     @include e("container") {
+        > * {
+            @include breakpoint($tablet) {
+                padding-inline: var(--lateral-padding);
+            }
+        }
         > * + * {
             margin-block-start: var(--responsive-spacing-1);
         }
