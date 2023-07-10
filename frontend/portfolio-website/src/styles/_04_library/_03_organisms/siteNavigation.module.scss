@@ -11,6 +11,7 @@ $block: "siteNavigation";
     @include e("base") {
         max-width: $max-width;
         width: 100%;
+        padding: var(--static-spacing--2) var(--lateral-padding);
     }
 
     @include e("container") {
@@ -27,7 +28,7 @@ $block: "siteNavigation";
 
     @include e("controls") {
         @include flex($main: space-between);
-        
+
         width: 100%;
         position: relative;
     }
@@ -46,16 +47,6 @@ $block: "siteNavigation";
 
         @include breakpoint($ultra-wide) {
             padding-inline: var(--lateral-padding);
-        }
-    }
-
-    @include e("navToggle") {
-        justify-content: flex-end;
-        align-content: center;
-        height: 100%;
-
-        @include breakpoint($tablet) {
-            display: none;
         }
     }
 

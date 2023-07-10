@@ -1,35 +1,48 @@
-@import '../../_00_abstracts/abstracts.scss';
+@import "../../_00_abstracts/abstracts.scss";
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: 'header';
+$block: "header";
 
 /* ------------------------------------ *\
  * HEADER ORGANISM
 \* ------------------------------------ */
 
 .#{$block} {
-  @include e('base') {
-    @include fixed($top: 0, $left: 50%, $z-index: 'header');
-    @include flex();
+    @include e("base") {
+        @include fixed($top: 0, $left: 50%, $z-index: "header");
+        @include flex($direction: column);
 
-    transform: translateX(-50%);
-    width: 100%;
-    background-color: var(--background-color);
-    padding: var(--static-spacing--2) 0;
-    transition: padding 0.8s ease-in-out, background-color 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: var(--background-color);
+        padding: var(--static-spacing--2) 0;
+        transition: padding 0.8s ease-in-out, background-color 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+        box-shadow: 0px 16px 32px 0px #0000000d;
 
-    @include m('shrink') {
-      padding-top: var(--static-spacing--3);
-      padding-bottom: var(--static-spacing--3);
+        @include breakpoint($tablet) {
+            flex-direction: row;
+        }
+
+        @include m("shrink") {
+            padding-top: var(--static-spacing--3);
+            padding-bottom: var(--static-spacing--3);
+        }
     }
+
+    @include e("container") {
+        @include flex($direction: row, $main: space-between);
+
+        padding: var(--static-spacing--2) var(--lateral-padding);
+        max-width: $max-width;
+        width: 100%;
   }
 
-  @include e('container') {
-    @include flex($direction: column);
+    @include e("navToggle") {
+        height: 100%;
+        position: relative;
 
-    padding: var(--static-spacing--2) var(--lateral-padding);
-    max-width: $max-width;
-    width: 100%;
-    margin: 0 auto;
-  }
+        @include breakpoint($tablet) {
+            display: none;
+        }
+    }
 }
