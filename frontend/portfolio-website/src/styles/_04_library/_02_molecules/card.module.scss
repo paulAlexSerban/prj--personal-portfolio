@@ -19,6 +19,13 @@ $block: "card";
             background-color: var(--background-color);
         }
 
+        @include m("half") {
+            background-color: var(--background-color);
+
+            @include breakpoint($tablet) {
+                background-color: transparent;
+            }
+        }
 
     }
 

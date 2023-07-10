@@ -1,25 +1,11 @@
-import { useState, useEffect } from "react";
 import styles, { base, container, header, footer } from "@/styles/molecules/card.module.scss";
-import { useInView } from "react-intersection-observer";
 import { Paragraph, Heading, Link } from "@/core/atoms/typography";
 import TagList from "./TagList.molecule";
 import LinkIcon from "@/core/atoms/LinkIcon.atom";
-import classNames from "classnames";
+import { forwardRef } from "react";
+import ScrollVisibility from "../molecules/hoc/ScrollVisibility";
 
-export default function Card({ content, category, section }) {
-    const [visible, setVisible] = useState(false);
-    const { ref, inView } = useInView({ threshold: 0 });
-
-    useEffect(() => {
-        if (inView) {
-            setVisible(true);
-        }
-    }, [inView]);
-
-    const classes = classNames(base, {
-        [styles["base--inactive"]]: !visible,
-    });
-
+const CardComponent = forwardRef(({ content, category, section, className }, ref) => {
     const prjTitle = content.title;
     const prjSubheading = content.subheading;
     const prjType = content.type;
@@ -30,7 +16,7 @@ export default function Card({ content, category, section }) {
     const prjSlug = `/${section}/${category.category_url}/${content.slug}`;
 
     return (
-        <article className={classes} ref={ref}>
+        <article className={className} ref={ref}>
             <header className={header}>
                 <Link href={prjSlug} isInternal={true}>
                     <Heading level={3} mainText={prjTitle} subheadingText={prjSubheading} />
@@ -53,4 +39,16 @@ export default function Card({ content, category, section }) {
             )}
         </article>
     );
-}
+});
+
+CardComponent.displayName = "CardComponent";
+
+const Card = (props) => {
+    return (
+        <ScrollVisibility styles={styles} baseClass={base} scrollOperator="gte">
+            <CardComponent {...props} />
+        </ScrollVisibility>
+    );
+};
+
+export default Card;

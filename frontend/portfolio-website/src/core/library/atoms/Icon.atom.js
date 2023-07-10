@@ -14,7 +14,17 @@ import {
     FaFolderOpen,
     FaLinux,
 } from "react-icons/fa";
-import { SiCodewars, SiTryhackme, SiHackthebox, SiJavascript, SiReact, SiAmazonaws, SiGnubash } from "react-icons/si";
+import {
+    SiCodewars,
+    SiTryhackme,
+    SiHackthebox,
+    SiJavascript,
+    SiReact,
+    SiAmazonaws,
+    SiGnubash,
+    SiAngular,
+    SiTypescript,
+} from "react-icons/si";
 import { GrMail, GrLinkedinOption, GrDocumentText } from "react-icons/gr";
 
 export default function Icon({ iconName = "github", classNames = [], ...rest }) {
@@ -44,6 +54,8 @@ export default function Icon({ iconName = "github", classNames = [], ...rest }) 
         folder: <FaFolderOpen title="Read More" />,
         linux: <FaLinux title="Linux" />,
         bash_shell: <SiGnubash title="Bash/Shell" />,
+        angular: <SiAngular title="Angular" />,
+        typescript: <SiTypescript title="TypeScript" />,
     };
 
     const selectedIcon = icon[iconName] || <FaGlobe title="Globe" />;

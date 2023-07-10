@@ -60,13 +60,13 @@
                                 "type": "skillShowcase"
                             },
                             "content": [
-                                { "name": "JavaScript", "iconName": "javascript", "tag": "javascript" },
+                                { "name": "TypeScript", "iconName": "typescript", "tag": "typescript" },
                                 { "name": "React.js", "iconName": "reactjs", "tag": "reactjs" },
+                                { "name": "Angular", "iconName": "angular", "tag": "angular" },
                                 { "name": "Node.js", "iconName": "nodejs", "tag": "nodejs" },
                                 { "name": "Docker", "iconName": "docker", "tag": "docker" },
                                 { "name": "AWS", "iconName": "aws", "tag": "aws" },
-                                { "name": "Bash/Shell", "iconName": "bash_shell", "tag": "bashshell" },
-                                { "name": "Linux", "iconName": "linux", "tag": "linux" }
+                                { "name": "Bash/Shell", "iconName": "bash_shell", "tag": "bashshell" }
                             ]
                         },
                         {
@@ -88,12 +88,15 @@
                                                 "Bootstrap",
                                                 "React.js",
                                                 "Next.js",
+                                                "Angular",
+                                                "Redux",
                                                 "jQuery",
                                                 "Express.js",
                                                 "Node.js",
                                                 "Wordpress",
                                                 "Ghost CMS",
-                                                "Strapi CMS"
+                                                "Strapi CMS",
+                                                "Adobe Experience Manager"
                                             ]
                                         },
                                         {

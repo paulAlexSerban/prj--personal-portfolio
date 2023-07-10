@@ -41,6 +41,7 @@ $block: "section";
                 padding-inline: var(--lateral-padding);
             }
         }
+        
         > * + * {
             margin-block-start: var(--responsive-spacing-1);
         }

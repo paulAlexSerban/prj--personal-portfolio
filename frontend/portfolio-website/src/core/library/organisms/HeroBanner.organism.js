@@ -1,4 +1,4 @@
-import ScrollVisibility from "./hoc/ScrollVisibility";
+import ScrollVisibility from "../molecules/hoc/ScrollVisibility";
 import React from "react";
 import { Paragraph, Heading } from "@/core/atoms/typography";
 import styles, { base, container, wrapper } from "@/styles/organisms/heroBanner.module.scss";
