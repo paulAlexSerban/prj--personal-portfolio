@@ -10,8 +10,11 @@ $block: "siteNavigation";
 .#{$block} {
     @include e("base") {
         max-width: $max-width;
+        padding-block: var(--static-spacing--5);
         width: 100%;
-        padding: var(--static-spacing--2) var(--lateral-padding);
+        @include breakpoint($tablet) {
+            width: auto;
+        }
     }
 
     @include e("container") {

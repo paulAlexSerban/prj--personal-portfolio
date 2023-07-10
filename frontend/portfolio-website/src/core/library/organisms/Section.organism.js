@@ -1,6 +1,6 @@
 import ScrollVisibility from "../molecules/hoc/ScrollVisibility";
 import { Heading } from "@/core/atoms/typography";
-import styles, { base, header, container } from "@/styles/organisms/section.module.scss";
+import styles, { base, content, header, container } from "@/styles/organisms/section.module.scss";
 import { forwardRef } from "react";
 
 /**
@@ -16,12 +16,19 @@ import { forwardRef } from "react";
 const SectionComponent = forwardRef(({ children, headingTitle, sectionId, subheadingText, className }, ref) => {
     return (
         <section id={sectionId} className={className} ref={ref}>
-            {headingTitle && (
-                <header className={header}>
-                    <Heading level={2} mainText={headingTitle} hasSeparator={true} subheadingText={subheadingText} />
-                </header>
-            )}
-            {children && <div className={container}>{children}</div>}
+            <div className={content}>
+                {headingTitle && (
+                    <header className={header}>
+                        <Heading
+                            level={2}
+                            mainText={headingTitle}
+                            hasSeparator={true}
+                            subheadingText={subheadingText}
+                        />
+                    </header>
+                )}
+                {children && <div className={container}>{children}</div>}
+            </div>
         </section>
     );
 });

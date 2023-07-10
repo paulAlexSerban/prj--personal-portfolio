@@ -22,6 +22,14 @@ $block: "section";
             --tooltip-background-color: var(--background-color);
             background-color: var(--secondary-color);
         }
+    }
+
+    @include e("content") {
+        max-width: $max-width;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
 
         > * + * {
             margin-block-start: var(--responsive-spacing-1);
@@ -35,7 +43,16 @@ $block: "section";
         padding-inline: var(--lateral-padding);
     }
 
+    @include e("header") {
+        grid-column: span 12;
+
+        @include breakpoint($tablet) {
+          grid-column: span 8;
+        }
+    }
+
     @include e("container") {
+        grid-column: span 12;
         > * {
             @include breakpoint($tablet) {
                 padding-inline: var(--lateral-padding);

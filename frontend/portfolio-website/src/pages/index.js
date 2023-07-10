@@ -3,9 +3,8 @@ import useSiteProps from "@/core/hooks/useSiteProps";
 import { PageProvider } from "@/core/context/PageContext";
 import usePageProps from "@/core/hooks/usePageProps";
 import dynamic from "next/dynamic";
-import { Heading, Paragraph } from "@/core/library/atoms/typography";
+import { Paragraph } from "@/core/library/atoms/typography";
 import GenericTemplate from "@/core/templates/Generic.template";
-import LinkList from "@/core/library/molecules/LinkList.molecule";
 import content from "@/content/dist/pages/index.json";
 import SkillsShowcase from "@/core/library/organisms/SkillShowcase.organism";
 import SkillGallery from "@/core/library/organisms/SkillGallery.organism";
@@ -29,7 +28,7 @@ function IndexPage() {
                 <HeroBanner
                     pageTitle={main.heroBanner.content[0].pageTitle}
                     subheading={main.heroBanner.content[1].subheading}
-                    // socialMediaLinks={siteProps.socialMediaLinks}
+                    socialMediaLinks={socialMediaLinks}
                 />
                 <Section headingTitle={main.section__aboutMe.content[0].title.main} hasSeparator={false}>
                     <Paragraph>{main.section__aboutMe.content[1].children[0].content[0].text}</Paragraph>
@@ -41,7 +40,7 @@ function IndexPage() {
                 <Section
                     headingTitle={main.section__myProjects.content[0].title.main}
                     hasSeparator={true}
-                    subheadingText={main.section__myProjects.content[0].title.main}
+                    subheadingText={main.section__myProjects.content[0].title.sub}
                 >
                     <PostsOverview
                         content={main.section__myProjects.content[1].children[0].content}
@@ -54,6 +53,7 @@ function IndexPage() {
 }
 
 export default function Index({ pageContent }) {
+    console.log(pageContent)
     return (
         <PageProvider value={pageContent}>
             <IndexPage />

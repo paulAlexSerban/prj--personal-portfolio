@@ -2,6 +2,7 @@ import ScrollVisibility from "../molecules/hoc/ScrollVisibility";
 import React from "react";
 import { Paragraph, Heading } from "@/core/atoms/typography";
 import styles, { base, container, wrapper } from "@/styles/organisms/heroBanner.module.scss";
+import SocialMediaList from '../molecules/SocialMediaList.molecule';
 
 /**
  * The HeroBanner component with scroll visibility behavior.
@@ -33,6 +34,7 @@ const HeroBannerComponent = React.forwardRef(
   
                 {hasContent && (
                   <div className={wrapper}>
+                    {hasSocialMediaLinks && <SocialMediaList items={socialMediaLinks} />}
                     {date || author ? <Paragraph text={`By ${author} ${date ? `on ${date}` : ""}`} /> : ""}
                   </div>
                 )}

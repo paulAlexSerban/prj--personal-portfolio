@@ -40,7 +40,7 @@ $block: "footer";
         @include flex($main: flex-start, $direction: column, $cross: flex-start);
         width: 100%;
 
-        gar: var(--responsive-spacing--1);
+        gap: var(--responsive-spacing-1);
 
         > * {
             width: 25%;
@@ -55,11 +55,12 @@ $block: "footer";
         gap: var(--responsive-spacing--4);
         background-color: var(--secondary-color);
         padding-block: var(--responsive-spacing--2);
-        padding-inline: calc((100vw - #{$max-width}) / 2 + var(--lateral-padding));
+
 
         @include breakpoint($tablet) {
             flex-direction: row;
             justify-content: space-between;
+            padding-inline: calc((100vw - #{$max-width}) / 2 + var(--lateral-padding));
         }
     }
 

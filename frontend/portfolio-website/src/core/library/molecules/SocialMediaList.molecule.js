@@ -3,7 +3,6 @@ import styles, { base, listItem } from "@/styles/molecules/socialMediaList.modul
 import LinkIcon from "@/core/atoms/LinkIcon.atom";
 
 export default function SocialMediaList({ items = [], position = "", classNames }) {
-
     return (
         <ul className={`${base} ${classNames}`}>
             {items.map((item, index) => {

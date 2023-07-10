@@ -51,8 +51,9 @@ export default function Header() {
                 <div className={navToggle} onClick={handleToggle}>
                     <BurgerButton isToggled={navToggled} />
                 </div>
+                <SiteNavigation links={siteNavLinks} isShrink={isShrink} isOpen={navToggled} />
             </div>
-            <SiteNavigation links={siteNavLinks} isShrink={isShrink} isOpen={navToggled} />
+
         </header>
     );
 }
