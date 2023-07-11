@@ -9,6 +9,7 @@ import content from "@/content/dist/pages/index.json";
 import SkillsShowcase from "@/core/library/organisms/SkillShowcase.organism";
 import SkillGallery from "@/core/library/organisms/SkillGallery.organism";
 import PostsOverview from "@/core/library/organisms/PostsOverview.organism";
+import ContentRepository from "@/core/utils/ContentRepository";
 
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
@@ -16,6 +17,7 @@ const Section = dynamic(() => import("@/core/library/organisms/Section.organism"
 function IndexPage() {
     const pageContent = usePageProps();
     const { title, main } = pageContent;
+    const { heroBanner, section__aboutMe, section__myProjects, section__mySkills } = main;
     const { icons, socialMediaLinks } = useSiteProps();
     return (
         <>
@@ -26,24 +28,24 @@ function IndexPage() {
             </Head>
             <GenericTemplate>
                 <HeroBanner
-                    pageTitle={main.heroBanner.content[0].pageTitle}
-                    subheading={main.heroBanner.content[1].subheading}
+                    pageTitle={heroBanner.content[0].pageTitle}
+                    subheading={heroBanner.content[1].subheading}
                     socialMediaLinks={socialMediaLinks}
                 />
-                <Section headingTitle={main.section__aboutMe.content[0].title.main} hasSeparator={false}>
-                    <Paragraph>{main.section__aboutMe.content[1].children[0].content[0].text}</Paragraph>
+                <Section headingTitle={section__aboutMe.content[0].title.main} hasSeparator={false}>
+                    <Paragraph>{section__aboutMe.content[1].children[0].content[0].text}</Paragraph>
                 </Section>
-                <Section headingTitle={main.section__mySkills.content[0].title.main} hasSeparator={false}>
-                    <SkillsShowcase list={main.section__mySkills.content[1].children[0].content} />
-                    <SkillGallery list={main.section__mySkills.content[1].children[1].content} />
+                <Section headingTitle={section__mySkills.content[0].title.main} hasSeparator={false}>
+                    <SkillsShowcase list={section__mySkills.content[1].children[0].content} />
+                    <SkillGallery list={section__mySkills.content[1].children[1].content} />
                 </Section>
                 <Section
-                    headingTitle={main.section__myProjects.content[0].title.main}
+                    headingTitle={section__myProjects.content[0].title.main}
                     hasSeparator={true}
-                    subheadingText={main.section__myProjects.content[0].title.sub}
+                    subheadingText={section__myProjects.content[0].title.sub}
                 >
                     <PostsOverview
-                        content={main.section__myProjects.content[1].children[0].content}
+                        content={section__myProjects.content[1].children[0].content}
                         showViewAllButton={true}
                     />
                 </Section>
@@ -53,7 +55,6 @@ function IndexPage() {
 }
 
 export default function Index({ pageContent }) {
-    console.log(pageContent)
     return (
         <PageProvider value={pageContent}>
             <IndexPage />
@@ -63,125 +64,21 @@ export default function Index({ pageContent }) {
 
 // Fetch data at build time
 export async function getStaticProps() {
-    content.main.section__myProjects.content[1].children[0].content.list = [
-        {
-            title: "Lorem project title",
-            subheading: "Subheading lorem project",
-            type: "project type",
-            tags: [
-                "javascript",
-                "frontend",
-                "reactjs",
-                "scss",
-                "html",
-                "webpack",
-                "handlebars",
-            ],
-            excerpt:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit.",
-            repo_url: "https://github.com/paulAlexSerban",
-            demo_url: "https://loremProjects.eu",
-            slug: "loremproject",
-        },
-        {
-            title: "Lorem project title",
-            subheading: "Subheading lorem project",
-            type: "project type",
-            tags: [
-                "javascript",
-                "frontend",
-                "reactjs",
-                "scss",
-                "html",
-                "webpack",
-                "handlebars",
-            ],
-            excerpt:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit.",
-            repo_url: "https://github.com/paulAlexSerban",
-            demo_url: "https://loremProjects.eu",
-            slug: "loremproject",
-        },
-        {
-            title: "Lorem project title",
-            subheading: "Subheading lorem project",
-            type: "project type",
-            tags: [
-                "javascript",
-                "frontend",
-                "reactjs",
-                "scss",
-                "html",
-                "webpack",
-                "handlebars",
-            ],
-            excerpt:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit.",
-            repo_url: "https://github.com/paulAlexSerban",
-            demo_url: "https://loremProjects.eu",
-            slug: "loremproject",
-        },
-        {
-            title: "Lorem project title",
-            subheading: "Subheading lorem project",
-            type: "project type",
-            tags: [
-                "javascript",
-                "frontend",
-                "reactjs",
-                "scss",
-                "html",
-                "webpack",
-                "handlebars",
-            ],
-            excerpt:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit.",
-            repo_url: "https://github.com/paulAlexSerban",
-            demo_url: "https://loremProjects.eu",
-            slug: "loremproject",
-        },
-        {
-            title: "Lorem project title",
-            subheading: "Subheading lorem project",
-            type: "project type",
-            tags: [
-                "javascript",
-                "frontend",
-                "reactjs",
-                "scss",
-                "html",
-                "webpack",
-                "handlebars",
-            ],
-            excerpt:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit.",
-            repo_url: "https://github.com/paulAlexSerban",
-            demo_url: "https://loremProjects.eu",
-            slug: "loremproject",
-        },
-        {
-            title: "Lorem project title",
-            subheading: "Subheading lorem project",
-            type: "project type",
-            tags: [
-                "javascript",
-                "frontend",
-                "reactjs",
-                "scss",
-                "html",
-                "webpack",
-                "handlebars",
-            ],
-            excerpt:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit. Sed vitae sapien ut ante venenatis dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sap, consectetur adipiscing elit.",
-            repo_url: "https://github.com/paulAlexSerban",
-            demo_url: "https://loremProjects.eu",
-            slug: "loremproject",
-        },
-    ]
+    const contentRepository = new ContentRepository();
+    await contentRepository.init();
+    const pageContent = await getParsedPageContent(contentRepository);
+
     return {
         props: {
-            pageContent: content,
+            pageContent,
         },
     };
+}
+
+async function getParsedPageContent(contentRepository) {
+    const projects = await contentRepository.pinnedContent.projects;
+    const projectsFrontmatter = projects.map((project) => project.content.frontmatter);
+    content.main.section__myProjects.content[1].children[0].content.list = projectsFrontmatter;
+
+    return content;
 }

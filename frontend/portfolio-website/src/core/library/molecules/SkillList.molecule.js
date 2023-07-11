@@ -1,5 +1,5 @@
 import { Heading, Link } from "@/core/atoms/typography";
-import { sanitizeQueryString } from "@/core/utils";
+import { sanitizeQueryString } from "@/core/utils/TextUtils";
 import { base, list, listItem } from "@/styles/molecules/skillList.module.scss";
 
 export default function SkillList({ skillList = [], isGroup = false }) {

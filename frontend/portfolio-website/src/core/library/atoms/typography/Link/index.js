@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { decodeFromBase64, encodeToBase64 } from "@/core/utils/base64";
+import { decodeFromBase64, encodeToBase64 } from "@/core/utils/TextUtils";
 import { useCallback } from "react";
 import InternalLink from "./InternalLink";
 import ExternalLink from "./ExternalLink";

@@ -92,9 +92,15 @@ export default function Footer() {
             </div>
             <div className={bottom}>
                 <span className={copyrightText}>{currentYear} &copy; Paul Serban. All rights reserved.</span>
-                <Link className={domainUrl} ariaLabel="www.paulserban.eu" isInternal={true} href="/">
-                    www.paulserban.eu
-                </Link>
+                <span>
+                    <Link className={domainUrl} ariaLabel="www.paulserban.eu" isInternal={true} href="/">
+                        www.paulserban.eu
+                    </Link>
+                    {"  "}|{"  "}
+                    <Link className={domainUrl} ariaLabel="Sitemap" isInternal={true} href="/sitemap.xml">
+                        Sitemap
+                    </Link>
+                </span>
             </div>
         </footer>
     );

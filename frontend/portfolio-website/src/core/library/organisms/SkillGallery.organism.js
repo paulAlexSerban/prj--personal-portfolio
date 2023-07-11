@@ -1,7 +1,7 @@
 import { Heading } from "@/core/atoms/typography";
 import { base, container } from "@/styles/organisms/skillGallery.module.scss";
 import SkillList from "../molecules/SkillList.molecule";
-import { capitalizeFirstLetter } from "@/core/utils";
+import { capitalizeFirstLetter } from "@/core/utils/TextUtils";
 
 export default function SkillGallery({ list = [] }) {
     return (
