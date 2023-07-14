@@ -66,19 +66,13 @@ export default function Index({ pageContent }) {
 export async function getStaticProps() {
     const contentRepository = new ContentRepository();
     await contentRepository.init();
-    const pageContent = await getParsedPageContent(contentRepository);
-
-    return {
-        props: {
-            pageContent,
-        },
-    };
-}
-
-async function getParsedPageContent(contentRepository) {
     const projects = await contentRepository.pinnedContent.projects;
     const projectsFrontmatter = projects.map((project) => project.content.frontmatter);
     content.main.section__myProjects.content[1].children[0].content.list = projectsFrontmatter;
 
-    return content;
+    return {
+        props: {
+            pageContent: content,
+        },
+    };
 }
