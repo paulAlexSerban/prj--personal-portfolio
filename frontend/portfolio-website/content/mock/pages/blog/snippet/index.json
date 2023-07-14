@@ -1,0 +1,43 @@
+{
+    "title": "All Snippets | Jon Doe | Unicorn Software Engineer",
+    "pageDescription": "I write code snippets to help me learn new skills and improve my abilities. I write articles on software engineering and web development to share my knowledge and experience with others.",
+    "main": {
+        "heroBanner": {
+            "organism": {
+                "id": "indexPage-heroBanner",
+                "type:": "heroBanner"
+            },
+            "content": [
+                { "pageTitle": "Snippets" },
+                {
+                    "subheading": "I write code snippets to help me learn new skills and improve my abilities. I write articles on software engineering and web development to share my knowledge and experience with others."
+                }
+            ]
+        },
+        "section__posts": {
+            "organism": {
+                "id": "my-snippet-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "posts-overview",
+                                "type": "postsOverview"
+                            },
+                            "content": {
+                                "section": "blog",
+                                "category": { "category_name": "snippet", "category_url": "snippet" },
+                                "list": []
+                            },
+                            "showViewAllButton": false,
+                            "showPagination": true
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
