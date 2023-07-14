@@ -47,7 +47,7 @@ export default function Header() {
     return (
         <header className={base} ref={headerRef}>
             <div className={container}>
-                <Logo isShrink={isShrink} href={"/"} />
+                <Logo isShrink={isShrink} href={"/"} ariaLabel="Home page link." />
                 <div className={navToggle} onClick={handleToggle}>
                     <BurgerButton isToggled={navToggled} />
                 </div>

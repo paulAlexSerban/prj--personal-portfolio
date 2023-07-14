@@ -48,7 +48,7 @@ export default function Footer() {
                             },
                             {
                                 label: "My Projects",
-                                href: "/projects",
+                                href: "/project",
                                 isEncoded: false,
                                 isInternal: true,
                             },

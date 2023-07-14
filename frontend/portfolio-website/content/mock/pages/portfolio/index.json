@@ -35,7 +35,7 @@
                             },
                             "content": {
                                 "section": "portfolio",
-                                "category": { "category_name": "projects", "category_url": "projects" },
+                                "category": { "category_name": "project", "category_url": "project" },
                                 "list": []
                             },
                             "showViewAllButton": true

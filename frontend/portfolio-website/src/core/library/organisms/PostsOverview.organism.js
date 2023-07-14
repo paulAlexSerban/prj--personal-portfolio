@@ -17,7 +17,7 @@ export default function PostsOverview({ content, showViewAllButton = true, colum
                                 arialabel={`View all ${category.category_name}`}
                                 href={`/${section}/${category.category_url}`}
                                 isInternal={true}
-                            >{`View all ${category.category_name}`}</Link>
+                            >{`View all ${category.category_name}s`}</Link>
                         </div>
                     )}
                 </article>

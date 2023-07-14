@@ -35,7 +35,7 @@
                             },
                             "content": {
                                 "section": "blog",
-                                "category": { "category_name": "posts", "category_url": "posts" },
+                                "category": { "category_name": "post", "category_url": "post" },
                                 "list": []
                             },
                             "showViewAllButton": true
@@ -65,7 +65,7 @@
                             },
                             "content": {
                                 "section": "blog",
-                                "category": { "category_name": "booknotes", "category_url": "booknotes" },
+                                "category": { "category_name": "booknote", "category_url": "booknote" },
                                 "list": []
                             },
                             "showViewAllButton": true
@@ -95,7 +95,7 @@
                             },
                             "content": {
                                 "section": "blog",
-                                "category": { "category_name": "snippets", "category_url": "snippets" },
+                                "category": { "category_name": "snippet", "category_url": "snippet" },
                                 "list": []
                             },
                             "showViewAllButton": true

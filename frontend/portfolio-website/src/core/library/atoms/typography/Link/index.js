@@ -42,9 +42,9 @@ export default function LinkAtom({ href, children, classNames, isEncoded, isInte
             });
         }
     }, []);
-
     return isInternal ? (
-        <InternalLink href={href} classNames={classNames} ariaLabel={ariaLabel} handleClick={handleClick}>
+
+        <InternalLink href={href} classNames={classNames} ariaLabel={ariaLabel}>
             {children}
         </InternalLink>
     ) : (
