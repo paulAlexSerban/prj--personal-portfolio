@@ -48,13 +48,13 @@ export default function Footer() {
                             },
                             {
                                 label: "My Projects",
-                                href: "/project",
+                                href: "/portfolio/project",
                                 isEncoded: false,
                                 isInternal: true,
                             },
                             {
                                 label: "Coursework",
-                                href: "/coursework",
+                                href: "/portfolio/coursework",
                                 isEncoded: false,
                                 isInternal: true,
                             },
@@ -70,19 +70,19 @@ export default function Footer() {
                             },
                             {
                                 label: "Posts",
-                                href: "/posts",
+                                href: "/blog/post",
                                 isEncoded: false,
                                 isInternal: true,
                             },
                             {
                                 label: "Snippets",
-                                href: "/snippets",
+                                href: "/blog/snippet",
                                 isEncoded: false,
                                 isInternal: true,
                             },
                             {
                                 label: "Book Notes",
-                                href: "/booknotes",
+                                href: "/blog/booknote",
                                 isEncoded: false,
                                 isInternal: true,
                             },

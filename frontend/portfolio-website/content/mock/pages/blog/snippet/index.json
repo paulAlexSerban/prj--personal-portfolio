@@ -14,7 +14,7 @@
                 }
             ]
         },
-        "section__posts": {
+        "section__snippets": {
             "organism": {
                 "id": "my-snippet-section",
                 "type": "section"

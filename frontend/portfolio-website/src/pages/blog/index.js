@@ -76,11 +76,10 @@ export default function Portfolio({ pageContent }) {
 }
 
 export async function getStaticProps() {
-    const contentRepository = new ContentRepository();
+    const contentRepository = new ContentRepository('blog/');
     await contentRepository.init();
 
     const posts = await contentRepository.pinnedContent.posts;
-
     const booknotes = await contentRepository.pinnedContent.booknotes;
     const snippets = await contentRepository.pinnedContent.snippets;
 

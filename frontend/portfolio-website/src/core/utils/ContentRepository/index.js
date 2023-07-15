@@ -9,9 +9,15 @@ const CONTENT_DIRECTORY = "./content/dist";
 const TYPE_PATTERNS = /projects|coursework|posts|booknotes|snippets/;
 
 class ContentRepository {
-    constructor() {
+    constructor(jsonContentPath = "") {
         this.contentFiles = [];
         this.parsedContent = {};
+        this.jsonContentPath = jsonContentPath;
+    }
+
+    async getPageJsonContent(jsonContentPath) {
+        const pageJsonContent = await import(`@/content/dist/pages/${jsonContentPath}index.json`);
+        return pageJsonContent;
     }
 
     async setupContentFiles() {
@@ -51,6 +57,7 @@ class ContentRepository {
                 if (!filename.endsWith(".mdx")) continue;
                 const slug = filename.replace(".mdx", "");
                 const content = await this.getContent(`${path}/${filename}`);
+                content.frontmatter.slug = slug;
                 parsedContent[typeName].push({
                     slug,
                     path: path,
@@ -113,16 +120,6 @@ class ContentRepository {
             return acc; // This line is important
         }, []);
         return categories;
-    }
-
-    async init() {
-        this.contentFiles = await this.setupContentFiles();
-        this.parsedContent = await this.setupParsedContent();
-        this.tags = await this.setupTags();
-        this.categories = await this.setupCategories();
-        this.publishedContent = await this.setupPublishedContent();
-        this.sortedContent = await this.setupSortedContent();
-        this.pinnedContent = await this.setupPinnedContent();
     }
 
     async all() {
@@ -210,6 +207,17 @@ class ContentRepository {
             return acc;
         }, {});
         return content;
+    }
+
+    async init() {
+        this.content = await this.getPageJsonContent(this.jsonContentPath);
+        this.contentFiles = await this.setupContentFiles();
+        this.parsedContent = await this.setupParsedContent();
+        this.tags = await this.setupTags();
+        this.categories = await this.setupCategories();
+        this.publishedContent = await this.setupPublishedContent();
+        this.sortedContent = await this.setupSortedContent();
+        this.pinnedContent = await this.setupPinnedContent();
     }
 }
 
