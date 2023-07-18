@@ -42,7 +42,7 @@ $block: 'heroBanner';
     }
 
     > * + * {
-      margin-block-start: var(--responsive-spacing-1);
+      margin-top: var(--responsive-spacing-1);
     }
   }
 }

@@ -14,7 +14,6 @@ $block: "socialMediaList";
         column-gap: var(--responsive-spacing-1);
         align-self: flex-start;
         flex-wrap: wrap;
-        margin-top: 0;
     }
 
     @include e("listItem") {

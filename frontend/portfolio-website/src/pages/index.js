@@ -4,7 +4,7 @@ import { PageProvider } from "@/core/context/PageContext";
 import usePageProps from "@/core/hooks/usePageProps";
 import dynamic from "next/dynamic";
 import { Paragraph } from "@/core/library/atoms/typography";
-import GenericTemplate from "@/core/templates/Generic.template";
+import GenericTemplate from "@/core/system/templates/Generic.template";
 import content from "@/content/dist/pages/index.json";
 import SkillsShowcase from "@/core/library/organisms/SkillShowcase.organism";
 import SkillGallery from "@/core/library/organisms/SkillGallery.organism";

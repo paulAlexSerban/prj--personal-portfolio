@@ -56,10 +56,12 @@ $block: "footer";
         background-color: var(--secondary-color);
         padding-block: var(--responsive-spacing--2);
 
-
         @include breakpoint($tablet) {
             flex-direction: row;
             justify-content: space-between;
+        }
+
+        @include breakpoint($desktop-xl) {
             padding-inline: calc((100vw - #{$max-width}) / 2 + var(--lateral-padding));
         }
     }

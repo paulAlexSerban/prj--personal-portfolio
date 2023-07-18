@@ -85,11 +85,13 @@
                                         {
                                             "name": "Frameworks & Libraries",
                                             "list": [
-                                                "Bootstrap",
                                                 "React.js",
+                                                "Redux",
                                                 "Next.js",
                                                 "Angular",
-                                                "Redux",
+                                                "Bootstrap",
+                                                "Material UI",
+                                                "Shopify",
                                                 "jQuery",
                                                 "Express.js",
                                                 "Node.js",

@@ -93,14 +93,12 @@ class ContentRepository {
                 if (itemTags && itemTags.length > 0) {
                     itemTags.forEach((tag) => {
                         const sanitizedTag = sanitizeQueryString(tag);
-                        if (!acc.includes(sanitizedTag)) {
-                            acc.push(sanitizedTag);
-                        }
+                        acc[sanitizedTag] = tag;
                     });
                 }
             });
             return acc; // This line is important
-        }, []);
+        }, {});
         return tags;
     }
 
@@ -137,22 +135,22 @@ class ContentRepository {
     }
 
     async findByTag(type, tag) {
-        const content = this.parsedContent[type].filter((item) => item.content.scope.frontmatter.tags.includes(tag));
+        const content = this.parsedContent[type].filter((item) => item.content.frontmatter.tags.includes(tag));
         return content;
     }
 
     async findByCategory(type, category) {
-        const content = this.parsedContent[type].filter((item) => item.content.scope.frontmatter.category === category);
+        const content = this.parsedContent[type].filter((item) => item.content.frontmatter.category === category);
         return content;
     }
 
     async findByDate(type, date) {
-        const content = this.parsedContent[type].filter((item) => item.content.scope.frontmatter.date === date);
+        const content = this.parsedContent[type].filter((item) => item.content.frontmatter.date === date);
         return content;
     }
 
     async findByStatus(type, status) {
-        const content = this.parsedContent[type].filter((item) => item.content.scope.frontmatter.status === status);
+        const content = this.parsedContent[type].filter((item) => item.content.frontmatter.status === status);
         return content;
     }
 

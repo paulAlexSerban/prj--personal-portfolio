@@ -3,7 +3,7 @@ import React from "react";
 import { Paragraph, Heading } from "@/core/atoms/typography";
 import styles, { base, container, wrapper } from "@/styles/organisms/heroBanner.module.scss";
 import SocialMediaList from '../molecules/SocialMediaList.molecule';
-
+import TagList from '@/core/molecules/TagList.molecule';
 /**
  * The HeroBanner component with scroll visibility behavior.
  * @component
@@ -22,7 +22,6 @@ const HeroBannerComponent = React.forwardRef(
       const hasSocialMediaLinks = socialMediaLinks.length > 0;
       const hasTags = tags && tags.length > 0;
       const hasContent = hasSocialMediaLinks || date || hasTags;
-  
       return (
         <>
           {pageTitle && (
@@ -34,6 +33,7 @@ const HeroBannerComponent = React.forwardRef(
   
                 {hasContent && (
                   <div className={wrapper}>
+                    {hasTags && <TagList tags={tags} />}
                     {hasSocialMediaLinks && <SocialMediaList items={socialMediaLinks} />}
                     {date || author ? <Paragraph text={`By ${author} ${date ? `on ${date}` : ""}`} /> : ""}
                   </div>

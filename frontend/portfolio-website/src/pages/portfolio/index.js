@@ -7,7 +7,7 @@ import content from "@/content/dist/pages/portfolio/index.json";
 import ContentRepository from "@/core/utils/ContentRepository";
 import { trimPageDescription } from "@/core/utils/TextUtils";
 
-const GenericTemplate = dynamic(() => import("@/core/templates/Generic.template.js"));
+const GenericTemplate = dynamic(() => import("@/core/system/templates/Generic.template.js"));
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
 const PostsOverview = dynamic(() => import("@/core/library/organisms/PostsOverview.organism"));
@@ -66,7 +66,7 @@ export default function Portfolio({ pageContent }) {
 }
 
 export async function getStaticProps() {
-    const contentRepository = new ContentRepository('portfolio/');
+    const contentRepository = new ContentRepository();
     await contentRepository.init();
     const projects = await contentRepository.pinnedContent.projects;
     const coursework = await contentRepository.pinnedContent.coursework;

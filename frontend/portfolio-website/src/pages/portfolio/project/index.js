@@ -7,7 +7,7 @@ import content from "@/content/dist/pages/portfolio/project/index.json";
 import ContentRepository from "@/core/utils/ContentRepository";
 import { trimPageDescription } from "@/core/utils/TextUtils";
 
-const GenericTemplate = dynamic(() => import("@/core/templates/Generic.template.js"));
+const GenericTemplate = dynamic(() => import("@/core/system/templates/Generic.template.js"));
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 const Section = dynamic(() => import("@/core/library/organisms/Section.organism"));
 const PostsOverview = dynamic(() => import("@/core/library/organisms/PostsOverview.organism"));

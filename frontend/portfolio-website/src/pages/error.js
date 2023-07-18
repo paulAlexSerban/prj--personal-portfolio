@@ -1,6 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import GenericTemplate from "@/core/templates/Generic.template";
+import GenericTemplate from "@/core/system/templates/Generic.template";
 import useSiteProps from "@/core/hooks/useSiteProps";
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
 
