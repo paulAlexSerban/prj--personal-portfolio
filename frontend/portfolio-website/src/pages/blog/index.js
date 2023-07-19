@@ -87,9 +87,9 @@ export async function getStaticProps() {
     const booknotesFrontmatter = booknotes.map((booknote) => booknote.content.frontmatter);
     const snippetsFrontmatter = snippets.map((snippet) => snippet.content.frontmatter);
 
-    content.main.section__posts.content[1].children[0].content.list = postsFrontmatter;
-    content.main.section__booknotes.content[1].children[0].content.list = booknotesFrontmatter;
-    content.main.section__snippets.content[1].children[0].content.list = snippetsFrontmatter;
+    content.main.section__posts.content[1].children[0].content.list = postsFrontmatter.slice(0, 6);
+    content.main.section__booknotes.content[1].children[0].content.list = booknotesFrontmatter.slice(0, 6);
+    content.main.section__snippets.content[1].children[0].content.list = snippetsFrontmatter.slice(0, 6);
 
     return {
         props: {

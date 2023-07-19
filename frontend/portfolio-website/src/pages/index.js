@@ -68,8 +68,7 @@ export async function getStaticProps() {
     await contentRepository.init();
     const projects = await contentRepository.pinnedContent.projects;
     const projectsFrontmatter = projects.map((project) => project.content.frontmatter);
-    content.main.section__myProjects.content[1].children[0].content.list = projectsFrontmatter;
-
+    content.main.section__myProjects.content[1].children[0].content.list = projectsFrontmatter.slice(0, 6);
     return {
         props: {
             pageContent: content,

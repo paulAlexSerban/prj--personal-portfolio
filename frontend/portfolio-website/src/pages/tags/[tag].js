@@ -114,7 +114,7 @@ export async function getStaticProps({ params: { tag, name } }) {
     const snippets = await contentRepository.findByTag("snippets", tagName);
     const posts = await contentRepository.findByTag("posts", tagName);
 
-    content.main.heroBanner.content[0].pageTitle = `Tag: #${tagName}`;
+    content.main.heroBanner.content[0].pageTitle = `#${tagName}`;
     content.main.heroBanner.content[1].subheading = content.main.heroBanner.content[1].subheading.replace(
         "{0}",
         tagName
@@ -126,11 +126,11 @@ export async function getStaticProps({ params: { tag, name } }) {
     const snippetsFrontmatter = snippets.map((snippet) => snippet.content.frontmatter);
     const postsFrontmatter = posts.map((post) => post.content.frontmatter);
 
-    content.main.section__projects.content[1].children[0].content.list = projectsFrontmatter;
-    content.main.section__coursework.content[1].children[0].content.list = courseworkFrontmatter;
-    content.main.section__booknotes.content[1].children[0].content.list = booknotesFrontmatter;
-    content.main.section__snippets.content[1].children[0].content.list = snippetsFrontmatter;
-    content.main.section__posts.content[1].children[0].content.list = postsFrontmatter;
+    content.main.section__projects.content[1].children[0].content.list = projectsFrontmatter.slice(0, 9);
+    content.main.section__coursework.content[1].children[0].content.list = courseworkFrontmatter.slice(0, 9);
+    content.main.section__booknotes.content[1].children[0].content.list = booknotesFrontmatter.slice(0, 9);
+    content.main.section__snippets.content[1].children[0].content.list = snippetsFrontmatter.slice(0, 9);
+    content.main.section__posts.content[1].children[0].content.list = postsFrontmatter.slice(0, 9);
 
     return {
         props: {

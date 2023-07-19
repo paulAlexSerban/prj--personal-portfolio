@@ -23,6 +23,8 @@ const nextConfig = {
     },
     output: 'export',
     // Optional: Add a trailing slash to all paths `/about` -> `/about/`
+    // It is needed for AWS S3 static hosting to support clean URLs (instead of example.com/about.html it will be example.com/about/)
+    // IDEA POST: How to fix AWS S3 static hosting to support clean URLs (instead of example.com/about.html it will be example.com/about/)
     trailingSlash: true,
     // Optional: Change the output directory `out` -> `dist`
     // distDir: 'dist',
