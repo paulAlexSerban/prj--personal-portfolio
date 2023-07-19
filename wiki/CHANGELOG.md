@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.0...v1.8.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* **icon:** added missing icons ([0ecf783](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/0ecf783e60f218dcf9cd533da5d0ef54a3125832))
+
 # [1.8.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.7.0...v1.8.0) (2023-07-19)
 
 
