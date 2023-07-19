@@ -13,6 +13,7 @@ import {
     FaGlobe,
     FaFolderOpen,
     FaLinux,
+    FaJava
 } from "react-icons/fa";
 import {
     SiCodewars,
@@ -24,6 +25,11 @@ import {
     SiGnubash,
     SiAngular,
     SiTypescript,
+    SiCss3,
+    SiHtml5,
+    SiPhp,
+    SiPython,
+    SiRust
 } from "react-icons/si";
 import { GrMail, GrLinkedinOption, GrDocumentText } from "react-icons/gr";
 
@@ -31,10 +37,19 @@ export default function Icon({ iconName = "github", classNames = [], ...rest }) 
     const classes = classNames.join(" ");
 
     const icon = {
+        angular: <SiAngular title="Angular" />,
+        aws: <SiAmazonaws title="Amazon Web Services" />,
+        bash_shell: <SiGnubash title="Bash/Shell" />,
         codepen: <FaCodepen title="CodePen" />,
         codewars: <SiCodewars title="Codewars" />,
+        css: <SiCss3 title="CSS" />,
+        document: <GrDocumentText title="Document" />,
+        email: <GrMail title="Email" />,
         github: <FaGithub title="GitHub" />,
+        globe: <FaGlobe title="Globe" />,
         hackerrank: <FaHackerrank title="HackerRank" />,
+        html: <SiHtml5 title="HTML" />,
+        java: <FaJava title="Java" />,
         linkedin: <FaLinkedin title="LinkedIn" />,
         tryhackme: <SiTryhackme title="TryHackMe" />,
         hackthebox: <SiHackthebox title="Hack The Box" />,
@@ -42,19 +57,16 @@ export default function Icon({ iconName = "github", classNames = [], ...rest }) 
         instagram: <FaInstagram title="Instagram" />,
         mastodon: <FaMastodon title="Mastodon" />,
         medium: <FaMediumM title="Medium" />,
+        php: <SiPhp title="PHP" />,
+        python: <SiPython title="Python" />,
+        rust: <SiRust title="Rust" />,
         javascript: <SiJavascript title="JavaScript" />,
         reactjs: <SiReact title="React" />,
         nodejs: <FaNodeJs title="Node.js" />,
         docker: <FaDocker title="Docker" />,
-        aws: <SiAmazonaws title="Amazon Web Services" />,
         linkedin_v2: <GrLinkedinOption title="LinkedIn" />,
-        email: <GrMail title="Email" />,
-        document: <GrDocumentText title="Document" />,
-        globe: <FaGlobe title="Globe" />,
         folder: <FaFolderOpen title="Read More" />,
         linux: <FaLinux title="Linux" />,
-        bash_shell: <SiGnubash title="Bash/Shell" />,
-        angular: <SiAngular title="Angular" />,
         typescript: <SiTypescript title="TypeScript" />,
     };
 
