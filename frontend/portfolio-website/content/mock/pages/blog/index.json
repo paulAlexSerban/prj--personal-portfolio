@@ -1,0 +1,108 @@
+{
+    "title": "Blog | Jon Doe | Unicorn Software Engineer",
+    "pageDescription": "Insightful articles on software engineering and web development by Jon Doe, a skilled software engineer and web developer.",
+    "main": {
+        "heroBanner": {
+            "organism": {
+                "id": "indexPage-heroBanner",
+                "type:": "heroBanner"
+            },
+            "content": [
+                { "pageTitle": "Blog" },
+                {
+                    "subheading": "Coding with purpose, and blogging about it."
+                }
+            ]
+        },
+        "section__posts": {
+            "organism": {
+                "id": "my-posts-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "title": {
+                        "main": "Posts",
+                        "sub": "I write articles on software engineering and web development to share my knowledge and experience with others. I hope that my articles will help others learn and grow as developers, and that they will inspire others to share their own knowledge and experience."
+                    }
+                },
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "posts-overview",
+                                "type": "postsOverview"
+                            },
+                            "content": {
+                                "section": "blog",
+                                "category": { "category_name": "post", "category_url": "post" },
+                                "list": []
+                            },
+                            "showViewAllButton": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "section__booknotes": {
+            "organism": {
+                "id": "my-booknotes-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "title": {
+                        "main": "Booknotes",
+                        "sub": "I read books on software engineering and web development to learn new skills and improve my abilities. I write booknotes to help me retain what I've learned, and to share my knowledge and experience with others."
+                    }
+                },
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "posts-overview",
+                                "type": "postsOverview"
+                            },
+                            "content": {
+                                "section": "blog",
+                                "category": { "category_name": "booknote", "category_url": "booknote" },
+                                "list": []
+                            },
+                            "showViewAllButton": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "section__snippets": {
+            "organism": {
+                "id": "my-snippets-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "title": {
+                        "main": "Snippets",
+                        "sub": "I write code snippets to help me learn new skills and improve my abilities. I write articles on software engineering and web development to share my knowledge and experience with others."
+                    }
+                },
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "posts-overview",
+                                "type": "postsOverview"
+                            },
+                            "content": {
+                                "section": "blog",
+                                "category": { "category_name": "snippet", "category_url": "snippet" },
+                                "list": []
+                            },
+                            "showViewAllButton": true
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

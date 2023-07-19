@@ -46,4 +46,4 @@ else
   cp -rfv ../content/mock/* ../content/dist/
 fi
 
-npm --prefix .. run build
+export SITE_URL && npm --prefix .. run build

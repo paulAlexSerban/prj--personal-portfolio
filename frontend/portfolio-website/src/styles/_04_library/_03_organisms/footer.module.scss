@@ -1,0 +1,76 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "footer";
+
+/* ------------------------------------ *\
+ * FOOTER ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include flex($direction: column);
+        --tooltip-background-color: var(--secondary-color);
+
+        width: 100vw;
+        padding: var(--responsive-spacing-0) 0 0;
+
+        > * + * {
+            margin-block-start: var(--responsive-spacing-1);
+        }
+    }
+
+    @include e("container", "bottom") {
+        @include flex($cross: flex-start, $direction: column, $main: flex-start);
+
+        width: 100%;
+
+        padding-inline: var(--lateral-padding);
+    }
+
+    @include e("container") {
+        max-width: $max-width;
+
+        > * + * {
+            margin-block-start: var(--responsive-spacing-1);
+        }
+    }
+
+    @include e("footerNav") {
+        @include flex($main: flex-start, $direction: column, $cross: flex-start);
+        width: 100%;
+
+        gap: var(--responsive-spacing-1);
+
+        > * {
+            width: 25%;
+        }
+
+        @include breakpoint($tablet) {
+            flex-direction: row;
+        }
+    }
+
+    @include e("bottom") {
+        gap: var(--responsive-spacing--4);
+        background-color: var(--secondary-color);
+        padding-block: var(--responsive-spacing--2);
+
+        @include breakpoint($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include breakpoint($desktop-xl) {
+            padding-inline: calc((100vw - #{$max-width}) / 2 + var(--lateral-padding));
+        }
+    }
+
+    @include e("copyrightText") {
+        @include font($body-small);
+    }
+
+    @include e("domainUrl") {
+        @include font($link-small);
+    }
+}
