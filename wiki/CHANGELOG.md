@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.1...v1.8.2) (2023-07-19)
+
+
+### Bug Fixes
+
+* set showViewAllButton false on all post type overview pages ([304de29](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/304de294a630ce769bd65f33bc0d7aae52f9820f))
+
 ## [1.8.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.0...v1.8.1) (2023-07-19)
 
 
