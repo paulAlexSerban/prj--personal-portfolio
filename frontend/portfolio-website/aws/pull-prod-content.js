@@ -1,7 +1,7 @@
 const { S3Client, ListObjectsCommand, GetObjectCommand } = require("@aws-sdk/client-s3");
 const path = require("path");
 const fs = require("fs");
-require('dotenv').config()
+require("dotenv").config();
 // const dotenv = require("dotenv");
 // dotenv.config({ path: path.resolve(__dirname, "..", "..", "..", ".env") });
 const REGION = process.env.S3_BUCKET_REGION;

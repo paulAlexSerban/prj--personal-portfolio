@@ -106,7 +106,7 @@ class ContentRepository {
   async getFilteredContent(category, frontmatterKeys, values = {}) {
     const filteredContent = await this.getContent().then((fetchedContent) => {
       const { content } = fetchedContent;
-      return this.#filterByFrontmatter(content[category], frontmatterKeys, values);
+      // return this.#filterByFrontmatter(content[category], frontmatterKeys, values);
     });
 
     return filteredContent;

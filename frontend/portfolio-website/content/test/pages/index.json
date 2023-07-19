@@ -1,16 +1,189 @@
 {
     "title": "Paul Serban | Super Testing Software Engineer ",
     "main": {
+
         "heroBanner": {
-            "pageTitle": "Welcome!",
-            "subheading": "I'm Paul, a passionate Software Engineer with a distinct proficiency in Front-end development. My passion lies in crafting dynamic, user-friendly web applications that harness the power of cutting-edge technology."
+            "organism": {
+                "id": "indexPage-heroBanner",
+                "type:": "heroBanner"
+            },
+            "content": [
+                { "pageTitle": "Welcome!" },
+                {
+                    "subheading": "I'm Paul, a passionate Software Engineer with a distinct proficiency in Front-end development. My passion lies in crafting dynamic, user-friendly web applications that harness the power of cutting-edge technology."
+                }
+            ]
         },
-        "section_1": {
-            "title": "About Me",
-            "content": {
-                "paragraph_1": "With a robust skill set in React, JavaScript, TypeScript, and the MERN stack, I excel at creating web solutions that are both aesthetically pleasing and functionally robust. Furthermore, my expertise extends to deploying and managing applications with Docker, AWS, leveraging GitOps strategies, and implementing DevOps practices, ensuring streamlined, efficient, and scalable development processes.",
-                "heading_1": "Find me here:"
-            }
+        "section__aboutMe": {
+            "organism": {
+                "id": "about-me-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "title": {
+                        "main": "About Me"
+                    }
+                },
+                {
+                    "children": [
+                        {
+                            "atom": {
+                                "id": "about-me-paragraph-1",
+                                "type": "paragraph"
+                            },
+                            "content": [
+                                {
+                                    "text": "With a robust skill set in React, JavaScript, TypeScript, and the MERN stack, I excel at creating web solutions that are both aesthetically pleasing and functionally robust. Furthermore, my expertise extends to deploying and managing applications with Docker, AWS, leveraging GitOps strategies, and implementing DevOps practices, ensuring streamlined, efficient, and scalable development processes."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+                "section__mySkills": {
+            "organism": {
+                "id": "my-skills-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "title": {
+                        "main": "My Skills"
+                    }
+                },
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "skills-showcase",
+                                "type": "skillShowcase"
+                            },
+                            "content": [
+                                { "name": "JavaScript", "iconName": "javascript", "tag": "javascript" },
+                                { "name": "Css", "iconName": "css", "tag": "css"},
+                                { "name": "HTML", "iconName": "html", "tag": "html"},
+                                { "name": "Php", "iconName": "php", "tag": "php" },
+                                { "name": "Python", "iconName": "python", "tag": "python" },
+                                { "name": "Rust", "iconName": "rust", "tag": "rust" },
+                                { "name": "Java", "iconName": "java", "tag": "java" },
+                                { "name": "TypeScript", "iconName": "typescript", "tag": "typescript" },
+                                { "name": "React.js", "iconName": "reactjs", "tag": "reactjs" },
+                                { "name": "Angular", "iconName": "angular", "tag": "angular" },
+                                { "name": "Node.js", "iconName": "nodejs", "tag": "nodejs" },
+                                { "name": "Docker", "iconName": "docker", "tag": "docker" },
+                                { "name": "AWS", "iconName": "aws", "tag": "aws" },
+                                { "name": "Bash/Shell", "iconName": "bash_shell", "tag": "bashshell" }
+                            ]
+                        },
+                        {
+                            "organism": {
+                                "id": "skill-overview",
+                                "type": "skillOverview"
+                            },
+                            "content": [
+                                {
+                                    "groupCategory": "technical",
+                                    "groups": [
+                                        {
+                                            "name": "Programming Languages",
+                                            "list": ["JavaScript", "TypeScript", "Php", "Python", "Rust", "Java"]
+                                        },
+                                        {
+                                            "name": "Frameworks & Libraries",
+                                            "list": [
+                                                "React.js",
+                                                "Redux",
+                                                "Next.js",
+                                                "Angular",
+                                                "Bootstrap",
+                                                "Material UI",
+                                                "Shopify",
+                                                "jQuery",
+                                                "Express.js",
+                                                "Node.js",
+                                                "Wordpress",
+                                                "Ghost CMS",
+                                                "Strapi CMS",
+                                                "Adobe Experience Manager",
+                                                "Selenium",
+                                                "Cypress",
+                                                "Jest",
+                                                "Enzyme",
+                                                "Mocha"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Front-end Tools",
+                                            "list": ["Webpack", "Gulp", "Scss/Sass", "Babel", "npm", "esLint", "Jest", "Enzyme", "Mocha"]
+                                        },
+                                        {
+                                            "name": "DevOps",
+                                            "list": ["AWS", "Git", "Docker", "Linux", "Bash/Shell", "Github Actions", "Gitlab CI/CD", "Jenkins", "Kubernetes", "Terraform", "Ansible", "Puppet", "Chef"]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "groupCategory": "soft",
+                                    "list": [
+                                        "Communication",
+                                        "Problem-solving",
+                                        "Analytical thinking",
+                                        "Stress management",
+                                        "Scheduling",
+                                        "Time management",
+                                        "Organizational",
+                                        "Project management",
+                                        "Leadership",
+                                        "Teamwork",
+                                        "Customer Service",
+                                        "Ability to work independently",
+                                        "Flexibility",
+                                        "Adaptability",
+                                        "Creativity",
+                                        "Attention to detail",
+                                        "Critical thinking",
+                                        "Decision making",
+                                        "Negotiation",
+                                        "Conflict resolution"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "section__myProjects": {
+            "organism": {
+                "id": "my-projects-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "title": {
+                        "main": "My Projects",
+                        "sub": "Here is a short list of projects I worked on in order to sharpen my skills."
+                    }
+                },
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "posts-overview",
+                                "type": "postsOverview"
+                            },
+                            "content": {
+                                "section": "portfolio",
+                                "category": { "category_name": "project", "category_url": "project" },
+                                "list": []
+                            },
+                            "showViewAllButton": true
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

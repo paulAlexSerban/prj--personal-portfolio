@@ -24,7 +24,7 @@
         "src/core/library/organisms/*"
       ],
       "@/core/templates/*": [
-        "src/core/templates/*"
+        "src/core/system/templates/*"
       ],
       "@/styles/base/*": [
         "src/styles/_02_base/*"

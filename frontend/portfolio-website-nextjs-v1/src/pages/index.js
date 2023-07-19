@@ -59,11 +59,8 @@ export default function LandingPage({ siteProps, pageContent }) {
 export async function getStaticProps() {
   const contentRepository = new ContentRepository();
 
-  const projects =  await contentRepository.getFilteredContent('projects', ['pinned', 'status'], {
-    status: 'published',
-  });
- sortByProperty(projects, ['frontmatter', 'priority'])
-
+  const projects =  await contentRepository.getContent();
+  console.log(projects);
   return {
     props: {
       pageContent: {

@@ -1,0 +1,43 @@
+{
+    "title": "All Blog Posts | Paul 'Jon Doe' Posting | Unicorn Software Engineer The Blogger",
+    "pageDescription": "Insightful articles on software engineering and web development by Jon Doe, a skilled software engineer and web developer.",
+    "main": {
+        "heroBanner": {
+            "organism": {
+                "id": "indexPage-heroBanner",
+                "type:": "heroBanner"
+            },
+            "content": [
+                { "pageTitle": "Blog Posts" },
+                {
+                    "subheading": "Insightful articles on software engineering and web development by Jon Doe, a skilled software engineer and web developer."
+                }
+            ]
+        },
+        "section__posts": {
+            "organism": {
+                "id": "my-posts-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "posts-overview",
+                                "type": "postsOverview"
+                            },
+                            "content": {
+                                "section": "blog",
+                                "category": { "category_name": "post", "category_url": "post" },
+                                "list": []
+                            },
+                            "showViewAllButton": false,
+                            "showPagination": true
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

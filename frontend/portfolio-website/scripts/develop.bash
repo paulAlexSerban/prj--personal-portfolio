@@ -4,4 +4,4 @@ cd "$(dirname "$0")" || exit
 
 source ../.env.development
 
-npm --prefix .. run develop
+export SITE_URL && npm --prefix .. run develop
