@@ -35,7 +35,7 @@ function PostPage() {
                 <Section>
                     <PostsOverview
                         content={main.section__posts.content[0].children[0].content}
-                        showViewAllButton={true}
+                        showViewAllButton={false}
                     />
                 </Section>
             </GenericTemplate>

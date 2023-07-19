@@ -35,7 +35,7 @@ function ProjectPage() {
                 <Section>
                     <PostsOverview
                         content={main.section__myProjects.content[0].children[0].content}
-                        showViewAllButton={true}
+                        showViewAllButton={false}
                     />
                 </Section>
             </GenericTemplate>

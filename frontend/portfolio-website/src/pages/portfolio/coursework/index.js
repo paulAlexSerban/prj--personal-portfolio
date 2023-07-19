@@ -35,7 +35,7 @@ function CourseworkPage() {
                 <Section>
                     <PostsOverview
                         content={main.section__coursework.content[0].children[0].content}
-                        showViewAllButton={true}
+                        showViewAllButton={false}
                     />
                 </Section>
             </GenericTemplate>

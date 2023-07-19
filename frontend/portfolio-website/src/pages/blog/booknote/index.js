@@ -35,7 +35,7 @@ function BooknotePage() {
                 <Section>
                     <PostsOverview
                         content={main.section__booknotes.content[0].children[0].content}
-                        showViewAllButton={true}
+                        showViewAllButton={false}
                     />
                 </Section>
             </GenericTemplate>
