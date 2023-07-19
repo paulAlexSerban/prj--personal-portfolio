@@ -1,0 +1,43 @@
+{
+    "title": "All Projects | Paul Alexandru Serban | Unicorn Software Engineer",
+    "pageDescription": "All projects by Jon Doe, Unicorn Software Engineer.",
+    "main": {
+        "heroBanner": {
+            "organism": {
+                "id": "indexPage-heroBanner",
+                "type:": "heroBanner"
+            },
+            "content": [
+                { "pageTitle": "Project Gallery" },
+                {
+                    "subheading": "A gallery of all my projects in an descending list, latest to oldest"
+                }
+            ]
+        },
+        "section__myProjects": {
+            "organism": {
+                "id": "my-projects-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "posts-overview",
+                                "type": "postsOverview"
+                            },
+                            "content": {
+                                "section": "portfolio",
+                                "category": { "category_name": "project", "category_url": "project" },
+                                "list": []
+                            },
+                            "showViewAllButton": false,
+                            "showPagination": true
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
