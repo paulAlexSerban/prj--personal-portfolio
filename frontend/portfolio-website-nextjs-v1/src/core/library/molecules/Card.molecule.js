@@ -40,7 +40,6 @@ export default function Card({ content, category, section }) {
       </header>
       <div className={container}>
         <Paragraph text={prjExcerpt} />
-
       </div>
       {(prjDemo || prjGhRepo || prjTags) && <footer className={footer}>
       <TagList tags={prjTags} />

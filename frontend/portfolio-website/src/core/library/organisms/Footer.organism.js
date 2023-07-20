@@ -1,4 +1,4 @@
-import { base, container, bottom, copyrightText, domainUrl, footerNav } from "@/styles/organisms/footer.module.scss";
+import { base, container, bottom, copyrightText, domainUrl, footerNav, linkList } from "@/styles/organisms/footer.module.scss";
 import { Link } from "@/core/atoms/typography";
 import SocialMediaList from "../molecules/SocialMediaList.molecule";
 import LinkList from "../molecules/LinkList.molecule";

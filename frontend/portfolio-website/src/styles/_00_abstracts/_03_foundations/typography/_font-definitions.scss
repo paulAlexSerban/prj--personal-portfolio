@@ -4,20 +4,20 @@
 
 $body: (
   default: (
-    font-size: convert-rem(17px),
-    line-height: convert-rem(23px),
+    font-size: convert-rem(14px),
+    line-height: convert-rem(18px),
     font-weight: font-weight(regular),
     letter-spacing: convert-rem(0.5px),
   ),
   $desktop: (
-    font-size: convert-rem(19px),
-    line-height: convert-rem(27px),
+    font-size: convert-rem(16px),
+    line-height: convert-rem(22px),
   )
 );
 
 $code: (
   default: (
-    font-size: convert-rem(15px),
+    font-size: convert-rem(13px),
     line-height: convert-rem(20px),
     font-weight: font-weight(thin),
     letter-spacing: convert-rem(0.5px),
@@ -56,8 +56,8 @@ $page-title: (
 
 $subheading: (
   default: (
-    font-size: convert-rem(20px),
-    line-height: convert-rem(29px),
+    font-size: convert-rem(17px),
+    line-height: convert-rem(22px),
     font-weight: font-weight(thin),
     letter-spacing: convert-rem(0.15px),
   ),
@@ -69,8 +69,8 @@ $subheading: (
 
 $heading-100: (
   default: (
-    font-size: convert-rem(48px),
-    line-height: convert-rem(58px),
+    font-size: convert-rem(36px),
+    line-height: convert-rem(42px),
     font-weight: font-weight(heavy),
     letter-spacing: convert-rem(-1.5px),
   ),
@@ -82,8 +82,8 @@ $heading-100: (
 
 $heading-200: (
   default: (
-    font-size: convert-rem(39px),
-    line-height: convert-rem(42px),
+    font-size: convert-rem(30px),
+    line-height: convert-rem(36px),
     font-weight: font-weight(heavy),
     letter-spacing: convert-rem(-0.5px),
   ),
@@ -95,22 +95,22 @@ $heading-200: (
 
 $heading-300: (
   default: (
-    font-size: convert-rem(33px),
-    line-height: convert-rem(38px),
+    font-size: convert-rem(26px),
+    line-height: convert-rem(32px),
     font-weight: font-weight(heavy),
     letter-spacing: 0,
   ),
   $desktop: (
-    font-size: convert-rem(38px),
-    line-height: convert-rem(41px),
+    font-size: convert-rem(28px),
+    line-height: convert-rem(34px),
     letter-spacing: convert-rem(0.75px),
   )
 );
 
 $heading-400: (
   default: (
-    font-size: convert-rem(24px),
-    line-height: convert-rem(27px),
+    font-size: convert-rem(22px),
+    line-height: convert-rem(24px),
     font-weight: font-weight(heavy),
   ),
   $desktop: (
@@ -228,15 +228,14 @@ $button-small: (
 
 $link: (
   default: (
-    font-size: convert-rem(16px),
+    font-size: convert-rem(14px),
     line-height: convert-rem(18px),
-    font-weight: normal,
+    font-weight: font-weight(regular),
     letter-spacing: convert-rem(0.5px),
-    text-decoration: none,
   ),
   $desktop: (
-    font-size: convert-rem(17px),
-    line-height: 22px,
+    font-size: convert-rem(16px),
+    line-height: convert-rem(22px),
   )
 );
 

@@ -24,8 +24,8 @@ $block: "header";
         }
 
         @include m("shrink") {
-            padding-top: var(--static-spacing--3);
-            padding-bottom: var(--static-spacing--3);
+            padding-top: var(--static-spacing--6);
+            padding-bottom: var(--static-spacing--6);
         }
     }
 

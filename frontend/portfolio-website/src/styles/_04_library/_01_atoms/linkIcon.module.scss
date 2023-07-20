@@ -9,11 +9,15 @@ $block: "link-icon";
 
 .#{$block} {
     @include e("base") {
-        font-size: 35px;
+        font-size: 33px;
         position: relative;
 
+        @include breakpoint($tablet) {
+            font-size: 45px;
+        }
+
         @include breakpoint($desktop) {
-            font-size: 55px;
+            font-size: 50px;
         }
 
         @include on-event() {
@@ -24,7 +28,7 @@ $block: "link-icon";
           @include font($button-small);
             position: absolute;
             top: 0;
-            background: var(--tooltip-background-color);
+            background: var(--focus-background-color);
             color: black;
             padding: 5px 8px;
             border-radius: 5px;
@@ -41,7 +45,7 @@ $block: "link-icon";
                 content: "";
                 height: 8px;
                 width: 8px;
-                background: var(--tooltip-background-color);
+                background: var(--focus-background-color);
                 bottom: -3px;
                 transform: translate(-50%) rotate(45deg);
                 transition: all 0.3s ease-out;

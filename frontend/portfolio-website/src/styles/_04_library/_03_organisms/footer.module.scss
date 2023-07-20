@@ -10,7 +10,7 @@ $block: "footer";
 .#{$block} {
     @include e("base") {
         @include flex($direction: column);
-        --tooltip-background-color: var(--secondary-color);
+        --focus-background-color: var(--secondary-color);
 
         width: 100vw;
         padding: var(--responsive-spacing-0) 0 0;
@@ -43,7 +43,10 @@ $block: "footer";
         gap: var(--responsive-spacing-1);
 
         > * {
-            width: 25%;
+
+            @include breakpoint($tablet) {
+                width: 25%;
+            }
         }
 
         @include breakpoint($tablet) {

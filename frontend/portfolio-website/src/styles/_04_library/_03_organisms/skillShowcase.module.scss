@@ -9,12 +9,13 @@ $block: "skillShowcase";
 
 .#{$block} {
     @include e("base") {
+        grid-column: span 12;
     }
 
     @include e("skillList") {
         @include flex($main: flex-start);
 
-        column-gap: var(--responsive-spacing-2);
+        column-gap: var(--responsive-spacing-0);
         row-gap: var(--responsive-spacing-1);
         flex-wrap: wrap;
         margin-top: 0;

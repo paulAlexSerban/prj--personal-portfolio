@@ -11,6 +11,7 @@ $block: 'markdownContainer';
   @include e('base') {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-column: span 12;
 
     p,
     h2,
@@ -45,7 +46,8 @@ $block: 'markdownContainer';
       padding: var(--responsive-spacing-2);
       overflow-x: scroll;
       overflow-y: hidden;
-      background-color: var(--secondary-color);
+      background-color: var(--focus-background-color);
+      transition: background-color 0.3s ease-in-out;
     }
 
     > * + * {

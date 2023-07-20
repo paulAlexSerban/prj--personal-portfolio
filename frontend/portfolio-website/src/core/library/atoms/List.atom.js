@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 
-export default function List({ items = [] }) {
-  return (
-      <ul>
-          {items.map((item, index) => (
-              <li key={index}>{item}</li>
-          ))}
-      </ul>
-  );
+export default function List({  items = [] }) {
+    return (
+        <ul>
+            {items.map((item, index) => (
+                <li key={index}>{item}</li>
+            ))}
+        </ul>
+    );
 }
 
 /**
@@ -17,5 +17,5 @@ export default function List({ items = [] }) {
  * - The items prop is an array of elements.
  */
 List.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.node),
+    items: PropTypes.arrayOf(PropTypes.node),
 };
