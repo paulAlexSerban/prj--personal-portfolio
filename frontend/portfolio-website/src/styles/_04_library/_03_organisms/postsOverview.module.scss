@@ -12,6 +12,7 @@ $block: 'contentTeaserList';
     @include flex($direction: column, $cross: flex-start);
 
     width: 100%;
+    grid-column: span 12;
   }
 
   @include e('container') {

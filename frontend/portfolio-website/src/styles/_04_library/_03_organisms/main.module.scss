@@ -18,7 +18,7 @@ $block: "main";
         @include flex($direction: column);
 
         > * + * {
-            padding-block-start: var(--responsive-spacing-3);
+            padding-block-start: var(--responsive-spacing-2);
             padding-block-end: var(--responsive-spacing-1);
 
             > * {

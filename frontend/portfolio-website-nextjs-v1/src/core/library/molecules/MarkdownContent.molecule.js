@@ -2,7 +2,7 @@ import { useId } from 'react';
 import PropTypes from 'prop-types';
 import { base } from '@/styles/molecules/markdownContainer.module.scss';
 import { MDXRemote } from 'next-mdx-remote';
-import { Paragraph, Heading, Link } from "@/core/atoms/typography/all.js";
+import { Paragraph, Heading, Link } from "@/core/atoms/typography";
 
 export default function MarkdownContainer({ markdownContent, articleId }) {
   const ID = useId();

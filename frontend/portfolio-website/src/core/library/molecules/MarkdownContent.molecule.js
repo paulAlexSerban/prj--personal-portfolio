@@ -2,6 +2,7 @@ import { useId } from "react";
 import { base } from "@/styles/molecules/markdownContainer.module.scss";
 import { MDXRemote } from "next-mdx-remote";
 import { Paragraph, Heading, Link } from "@/core/atoms/typography";
+import LinkList from "@/core/library/molecules/LinkList.molecule";
 
 export default function MarkdownContainer({ markdownContent, articleId }) {
     const ID = useId();
@@ -13,6 +14,7 @@ export default function MarkdownContainer({ markdownContent, articleId }) {
         Paragraph,
         Heading,
         Link,
+        LinkList,
     };
 
     return (

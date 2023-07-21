@@ -9,7 +9,7 @@ $block: "section";
 
 .#{$block} {
     @include e("base") {
-        --tooltip-background-color: var(--secondary-color);
+        --focus-background-color: var(--secondary-color);
         width: 100%;
         opacity: 1;
         transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -19,7 +19,7 @@ $block: "section";
         }
 
         @include m("half") {
-            --tooltip-background-color: var(--background-color);
+            --focus-background-color: var(--background-color);
             background-color: var(--secondary-color);
         }
     }
@@ -53,6 +53,9 @@ $block: "section";
 
     @include e("container") {
         grid-column: span 12;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
         > * {
             @include breakpoint($tablet) {
                 padding-inline: var(--lateral-padding);
