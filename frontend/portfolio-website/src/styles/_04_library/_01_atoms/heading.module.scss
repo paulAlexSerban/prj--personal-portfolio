@@ -16,6 +16,8 @@ $block: "heading";
 
     @include e("subheading") {
         @include font($subheading);
+
+        color: get-color($c-dark, dark-60);
     }
 
     @include e("separator") {

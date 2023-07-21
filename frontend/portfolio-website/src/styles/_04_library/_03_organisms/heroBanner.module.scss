@@ -14,11 +14,11 @@ $block: 'heroBanner';
     width: 100vw;
     padding: var(--responsive-spacing-1) 0;
     transition: background-color 0.3s ease-in-out;
-    --tooltip-background-color: var(--secondary-color);
+    --focus-background-color: var(--secondary-color);
 
     @include m("half") {
       background-color: var(--secondary-color);
-      --tooltip-background-color: var(--background-color);
+      --focus-background-color: var(--background-color);
     }
   }
 

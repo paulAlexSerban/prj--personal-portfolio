@@ -24,7 +24,7 @@ export default function LinkList({ links = [] }) {
     }
 
     return (
-        <List
+        <List 
             items={links.map((link, index) => {
                 const { label, href, isEncoded, isInternal, ...linkProps } = link;
                 // Using index as a fallback key
