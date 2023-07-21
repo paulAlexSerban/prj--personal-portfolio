@@ -15,8 +15,7 @@ $block: "skillShowcase";
     @include e("skillList") {
         @include flex($main: flex-start);
 
-        column-gap: var(--responsive-spacing-0);
-        row-gap: var(--responsive-spacing-1);
+        gap: var(--responsive-spacing-1);
         flex-wrap: wrap;
         margin-top: 0;
     }

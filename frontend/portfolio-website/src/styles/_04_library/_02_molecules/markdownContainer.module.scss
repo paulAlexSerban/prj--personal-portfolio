@@ -49,6 +49,7 @@ $block: 'markdownContainer';
       background-color: var(--focus-background-color);
       transition: background-color 0.3s ease-in-out;
     }
+    
 
     > * + * {
       margin-block-start: var(--responsive-spacing-0);

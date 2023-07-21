@@ -38,6 +38,6 @@ $block: "card";
         flex-wrap: wrap;
         margin-top: auto;
         padding-top: var(--lateral-padding);
-        gap: $grid-gutter;
+        gap: var(--responsive-spacing-1);
     }
 }

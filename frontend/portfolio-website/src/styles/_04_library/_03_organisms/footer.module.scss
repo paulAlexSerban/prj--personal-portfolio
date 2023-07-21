@@ -59,6 +59,10 @@ $block: "footer";
         background-color: var(--secondary-color);
         padding-block: var(--responsive-spacing--2);
 
+        &, a {
+            color: get-color($c-dark, dark-60);
+        }
+
         @include breakpoint($tablet) {
             flex-direction: row;
             justify-content: space-between;
