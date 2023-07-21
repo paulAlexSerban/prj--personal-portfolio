@@ -1,3 +1,11 @@
+## [1.8.3](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.2...v1.8.3) (2023-07-21)
+
+
+### Bug Fixes
+
+* **design:** adjustments ([13f82f6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/13f82f6b29c833f6017066b5d363d782ba80b263))
+* **design:** design adjustments ([c8188f6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/c8188f621c6abad11b7358ce91f527e0d7b06ac7))
+
 ## [1.8.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.1...v1.8.2) (2023-07-19)
 
 
