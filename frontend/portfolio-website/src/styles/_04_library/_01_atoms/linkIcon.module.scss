@@ -59,5 +59,13 @@ $block: "link-icon";
               text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
             }
         }
+
+        @include m("footer") {
+            font-size: 24px;
+
+            @include breakpoint($tablet) {
+                font-size: 28px;
+            }
+        }
     }
 }
