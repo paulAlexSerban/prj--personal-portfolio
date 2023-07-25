@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.3...v1.8.4) (2023-07-25)
+
+
+### Bug Fixes
+
+* adjust font sizes ([01ed897](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/01ed897f2f7477dcd32a13c1688cc40310e0fe22))
+
 ## [1.8.3](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.2...v1.8.3) (2023-07-21)
 
 

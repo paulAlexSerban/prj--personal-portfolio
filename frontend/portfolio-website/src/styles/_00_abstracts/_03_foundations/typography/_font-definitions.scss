@@ -59,14 +59,14 @@ $page-title: (
 
 $subheading: (
   default: (
-    font-size: $base-font-size-default,
-    line-height: convert-rem(19px),
+    font-size: convert-rem(19px),
+    line-height: convert-rem(24px),
     font-weight: font-weight(thin),
     letter-spacing: convert-rem(0.2px),
   ),
   $desktop: (
-    font-size: $base-font-size-desktop,
-    line-height: convert-rem(22px),
+    font-size: convert-rem(22px),
+    line-height: convert-rem(26px),
   ),
 );
 
