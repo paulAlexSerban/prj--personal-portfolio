@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.4...v1.9.0) (2023-08-07)
+
+
+### Features
+
+* updated test content ([3e0d82d](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/3e0d82d6b3af97ff0ea01594cedb9f31710f9bfb))
+
 ## [1.8.4](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.3...v1.8.4) (2023-07-25)
 
 
