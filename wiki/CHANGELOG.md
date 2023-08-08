@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.9.0...v1.9.1) (2023-08-08)
+
+
+### Bug Fixes
+
+* **fonts:** small update ([d034894](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/d0348948db1e67c41f4aa5a2685b1b856db6093c))
+
 # [1.9.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.4...v1.9.0) (2023-08-07)
 
 
