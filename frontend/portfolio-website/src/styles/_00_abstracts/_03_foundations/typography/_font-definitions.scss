@@ -99,13 +99,13 @@ $heading-200: (
 $heading-300: (
   default: (
     font-size: convert-rem(26px),
-    line-height: convert-rem(32px),
+    line-height: convert-rem(30px),
     font-weight: font-weight(heavy),
     letter-spacing: 0,
   ),
   $desktop: (
     font-size: convert-rem(28px),
-    line-height: convert-rem(34px),
+    line-height: convert-rem(32px),
     letter-spacing: convert-rem(0.75px),
   )
 );
@@ -113,12 +113,12 @@ $heading-300: (
 $heading-400: (
   default: (
     font-size: convert-rem(22px),
-    line-height: convert-rem(24px),
+    line-height: convert-rem(26px),
     font-weight: font-weight(heavy),
   ),
   $desktop: (
-    font-size: convert-rem(30px),
-    line-height: convert-rem(33px),
+    font-size: convert-rem(26px),
+    line-height: convert-rem(30px),
     letter-spacing: convert-rem(0.5px),
   )
 );
