@@ -11,7 +11,7 @@
 pre {
   .hljs {
     color: #24292e;
-    background: var(--secondary-color);
+    background: var(--focus-backfroun-color);
   }
   
   .hljs-doctag,
@@ -123,4 +123,8 @@ pre {
   .hljs-tag {
     /* purposely ignored */
   }
+}
+
+pre, code {
+  @include font($code);
 }

@@ -14,9 +14,11 @@ $block: 'heroBanner';
     width: 100vw;
     padding: var(--responsive-spacing-1) 0;
     transition: background-color 0.3s ease-in-out;
+    --focus-background-color: var(--secondary-color);
 
     @include m("half") {
       background-color: var(--secondary-color);
+      --focus-background-color: var(--background-color);
     }
   }
 
@@ -40,7 +42,7 @@ $block: 'heroBanner';
     }
 
     > * + * {
-      margin-block-start: var(--responsive-spacing-1);
+      margin-top: var(--responsive-spacing-1);
     }
   }
 }

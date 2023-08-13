@@ -1,3 +1,73 @@
+## [1.9.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.9.0...v1.9.1) (2023-08-08)
+
+
+### Bug Fixes
+
+* **fonts:** small update ([d034894](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/d0348948db1e67c41f4aa5a2685b1b856db6093c))
+
+# [1.9.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.4...v1.9.0) (2023-08-07)
+
+
+### Features
+
+* updated test content ([3e0d82d](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/3e0d82d6b3af97ff0ea01594cedb9f31710f9bfb))
+
+## [1.8.4](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.3...v1.8.4) (2023-07-25)
+
+
+### Bug Fixes
+
+* adjust font sizes ([01ed897](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/01ed897f2f7477dcd32a13c1688cc40310e0fe22))
+
+## [1.8.3](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.2...v1.8.3) (2023-07-21)
+
+
+### Bug Fixes
+
+* **design:** adjustments ([13f82f6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/13f82f6b29c833f6017066b5d363d782ba80b263))
+* **design:** design adjustments ([c8188f6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/c8188f621c6abad11b7358ce91f527e0d7b06ac7))
+
+## [1.8.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.1...v1.8.2) (2023-07-19)
+
+
+### Bug Fixes
+
+* set showViewAllButton false on all post type overview pages ([304de29](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/304de294a630ce769bd65f33bc0d7aae52f9820f))
+
+## [1.8.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.0...v1.8.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* **icon:** added missing icons ([0ecf783](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/0ecf783e60f218dcf9cd533da5d0ef54a3125832))
+
+# [1.8.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.7.0...v1.8.0) (2023-07-19)
+
+
+### Bug Fixes
+
+* **logo:** fixed logo link issue sending to undeinfined ([6a937a5](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/6a937a5ccb10a0ae7e8d2ffead15e09179d87075))
+* **next.config.js:** trailing slash fix ([7726eb3](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/7726eb3d350380e76cdbf440b923bec28ac87658))
+* **portfolio and blog:** added portfolio and index pages ([42114e8](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/42114e8e631cb58efa3263a80d83bd51ed3463e2))
+
+
+### Features
+
+* **assets:** added build and placeholder image ([1585472](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/15854723c2d78a9a4f51e5141764ffc218164434))
+* **contentrepository:** initial implementation ([cb006ab](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/cb006ab8e2f76717628d166679620e963cda56cc))
+* **footer:** added footer ([dc1302a](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/dc1302aaf94fab70864b144ce54169112f1795e6))
+* **linklist and card highlight:** adjusted skill list to look good on mobile and added scroll spy ([468fba5](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/468fba58e724baee2350ca728553e76b2521c891))
+* **major:** added lorem content tags pages and more ([fa722fa](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/fa722fa0e8345afe7d41981b34d73784c92b17a8))
+* **pages:** added new pages ([4d00f8f](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/4d00f8f167aec21cc5a13e4a64bbff2a4b751669))
+* **portfolio and blog:** add portfolio and blog page ([f54dc92](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/f54dc9284d031830910705b9c559f6b018e2bbd9))
+* **posts overview pages:** limit post overview component sto list only 6 items ([35bad90](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/35bad90cbf56c0d564c1fa69685df82b2ee60fe3))
+* **postsoverview:** added posts overcview component ([fdb43ee](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/fdb43eef277776b51ea732f46cdec715b87bdfba))
+* **public:** added pull assets to public dir js function ([19e38e9](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/19e38e989e4640fa8bbfa56eabcb5f8c75b6e988))
+* **scripts:** added aws publish scripts ([fd74fb3](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/fd74fb3638db0c0efdc922353ebca915c80644fd))
+* **site navigation:** added site nabgation ([bcefff1](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/bcefff1b9241e4aa6e654351abc67a3a239b961b))
+* **skill list:** adjusted content schema and add skills overview ([bb1402a](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/bb1402abb175eb17b2255d6596fdc4bf9518f0a0))
+* **tooltip:** added tooltip to isonlinks ([a572a5d](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/a572a5d26b35c124d028077fb17b36ad8bb0cca6))
+
 # [1.7.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.6.0...v1.7.0) (2023-06-22)
 
 

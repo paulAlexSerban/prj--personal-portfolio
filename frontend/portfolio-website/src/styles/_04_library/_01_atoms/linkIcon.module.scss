@@ -1,0 +1,71 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "link-icon";
+
+/* ------------------------------------ *\
+ * LINK ICON ATOM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        font-size: 33px;
+        position: relative;
+
+        @include breakpoint($tablet) {
+            font-size: 45px;
+        }
+
+        @include breakpoint($desktop) {
+            font-size: 50px;
+        }
+
+        @include on-event() {
+            box-shadow: none;
+        }
+
+        @include e("tooltip") {
+          @include font($button-small);
+            position: absolute;
+            top: 0;
+            background: var(--focus-background-color);
+            color: black;
+            padding: 5px 8px;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease-out;
+            white-space: nowrap;
+
+
+
+            &::before {
+                position: absolute;
+                content: "";
+                height: 8px;
+                width: 8px;
+                background: var(--focus-background-color);
+                bottom: -3px;
+                transform: translate(-50%) rotate(45deg);
+                transition: all 0.3s ease-out;
+            }
+
+            .base:hover & {
+              top: -35px;
+              opacity: 1;
+              visibility: visible;
+              pointer-events: auto;
+              text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        @include m("footer") {
+            font-size: 24px;
+
+            @include breakpoint($tablet) {
+                font-size: 28px;
+            }
+        }
+    }
+}

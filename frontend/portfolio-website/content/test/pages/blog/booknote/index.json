@@ -1,0 +1,43 @@
+{
+    "title": "All Booknotes | Doe Paul Jon Serban | Booknote Taker and Unicorn Software Engineer",
+    "pageDescription": "I read books on software engineering and web development to learn new skills and improve my abilities. I write booknotes to help me retain what I've learned, and to share my knowledge and experience with others.",
+    "main": {
+        "heroBanner": {
+            "organism": {
+                "id": "indexPage-heroBanner",
+                "type:": "heroBanner"
+            },
+            "content": [
+                { "pageTitle": "Book Notes" },
+                {
+                    "subheading": "I read books on software engineering and web development to learn new skills and improve my abilities. I write booknotes to help me retain what I've learned, and to share my knowledge and experience with others."
+                }
+            ]
+        },
+        "section__booknotes": {
+            "organism": {
+                "id": "my-posts-section",
+                "type": "section"
+            },
+            "content": [
+                {
+                    "children": [
+                        {
+                            "organism": {
+                                "id": "posts-overview",
+                                "type": "postsOverview"
+                            },
+                            "content": {
+                                "section": "blog",
+                                "category": { "category_name": "booknote", "category_url": "booknote" },
+                                "list": []
+                            },
+                            "showViewAllButton": false,
+                            "showPagination": true
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

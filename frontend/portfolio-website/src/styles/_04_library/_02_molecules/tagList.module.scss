@@ -1,0 +1,23 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "tagList";
+
+/* ------------------------------------ *\
+ * TAG LIST MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include flex($main: flex-start);
+        
+        min-width: 100%;
+        flex-wrap: wrap;
+        margin-left: -14px;
+        margin-top: 0;
+    }
+
+    @include e("listItem") {
+
+    }
+}
