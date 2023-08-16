@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.9.1...v1.10.0) (2023-08-16)
+
+
+### Features
+
+* what i do section renders only if section has content ([d2aab3a](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/d2aab3a9ba606690c7de9388d5f442675f0d2c54))
+
 ## [1.9.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.9.0...v1.9.1) (2023-08-08)
 
 
