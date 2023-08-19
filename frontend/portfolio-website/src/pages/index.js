@@ -72,7 +72,7 @@ function IndexPage() {
                     <SkillsShowcase list={section__mySkills.content[1].children[0].content} />
                     <SkillGallery list={section__mySkills.content[1].children[1].content} />
                 </Section>
-                {section__whatIDo.content[1].children.length && (
+                {section__whatIDo.content[1].children.length !== 0 && (
                     <Section headingTitle={section__whatIDo.content[0].title.main} hasSeparator={false}>
                         {section__whatIDo.content[1].children.map((child, index) => (
                             <Paragraph key={index}>{child.content[0].text}</Paragraph>
