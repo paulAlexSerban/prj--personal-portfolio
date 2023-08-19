@@ -1,7 +1,16 @@
 {
-    "title": "Paul Serban | Super Testing Software Engineer ",
+    "title": "Paul Serban | Software Engineer ",
+    "author": "Paul Serban",
+    "excerpt": "With a distinct proficiency in Front-end development, specializing in ReactJS, NextJS, UI Architecture, proficient in NodeJS, Agile practices, GitOps, CI/CD and Cloud Development with AWS, crafting dynamic, user-friendly web applications that harness the power of cutting-edge technology.",
+    "tags": ["Paul Serban", "Software Engineer", "Front-end Developer", "React.js", "Next.js", "UI Architecture", "NodeJS", "Agile", "GitOps", "CI/CD", "Cloud Development", "AWS", "web applications"],
+    "robots": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "url": "https://paulserban.eu",
+    "type": "website",
+    "site_name": "Paul Serban | Software Engineer ",
+    "image": "/promise-from-setTimeout-1280_720.avif",
+    "locale": "en_US",
     "main": {
-
         "heroBanner": {
             "organism": {
                 "id": "indexPage-heroBanner",
@@ -10,7 +19,7 @@
             "content": [
                 { "pageTitle": "Welcome!" },
                 {
-                    "subheading": "I'm Paul, a passionate Software Engineer with a distinct proficiency in Front-end development. My passion lies in crafting dynamic, user-friendly web applications that harness the power of cutting-edge technology."
+                    "subheading": "I'm Paul, a passionate Software Engineer with a distinct proficiency in Front-end development, specializing in ReactJS, NextJS, UI Architecture, proficient in NodeJS, Agile practices, GitOps, CI/CD and Cloud Development with AWS. My passion lies in crafting dynamic, user-friendly web applications that harness the power of cutting-edge technology."
                 }
             ]
         },
@@ -34,7 +43,7 @@
                             },
                             "content": [
                                 {
-                                    "text": "As a dedicated Front-End Software Engineer with over 4 years of experience, I bring a wealth of knowledge in architecting, building, and refining user-centric front-end designs. My expertise lies in employing ReactJS, NextJS, and an array of front-end libraries to create seamless, responsive, and component-driven web solutions. The foundation of my problem-solving prowess lies in my proficiency with JavaScript, TypeScript, Python, and PHP, fostering a relentless drive for excellence."
+                                    "text": "I am a passionate Software Engineer with a specialized focus on Front-End Development. My expertise spans the entire web development process, from conceptualization and architectural planning to system design, full-stack coding, and troubleshooting."
                                 }
                             ]
                         },
@@ -45,29 +54,40 @@
                             },
                             "content": [
                                 {
-                                    "text": "My specialization extends to web accessibility, web performance, and semantic HTML, ensuring all projects adhere to the highest web standards. Furthermore, my proficiency in front-end UI libraries such as jQuery, Bootstrap, UIKit, and Tailwind, combined with skills in NodeJS, ExpressJS, and Git, streamlines collaboration and accelerates development cycles."
+                                    "text": "With hands-on experience in JavaScript, React.js, Webpack, and Node.js, I excel at creating seamless, responsive, and component-driven web solutions. I have a proven track record in architecting, building, and refining user-centric front-end designs, utilising the latest front-end approaches and UI libraries such as Tailwind, Bootstrap, and UIKit."
                                 }
                             ]
                         },
                         {
                             "atom": {
-                                "id": "about-me-paragraph-3",
+                                "id": "about-me-paragraph-5",
                                 "type": "paragraph"
                             },
                             "content": [
                                 {
-                                    "text": "I utilize strategic project management planning and Scrum methodologies to ensure seamless project execution. My proficiency with AWS cloud development, Docker, and DevOps processes enables me to manage, scale, and secure applications effectively."
+                                    "text": "Being focused on front-end, my specialisation extends to web accessibility and web performance, ensuring all projects adhere to the highest web standards through strategic optimisations and adhering to high web standards."
                                 }
                             ]
                         },
                         {
                             "atom": {
-                                "id": "about-me-paragraph-4",
+                                "id": "about-me-paragraph-6",
                                 "type": "paragraph"
                             },
                             "content": [
                                 {
-                                    "text": "As a DevOps practitioner and CI/CD pipelines adept, I ensure a streamlined Software Development Lifecycle (SDLC), using GitHub Actions and other automation tools to improve efficiency. I am also adept at implementing mobile-first development practices and progressive enhancement to optimize web experiences."
+                                    "text": "My skills extend beyond coding: I am adept at employing Agile methodologies and Scrum practices, fostering positive and productive team environments through open communication. As a DevOps enthusiast, I am proficient with AWS, Docker, and CI/CD pipelines, specifically with GitHub Actions, ensuring streamlined Software Development Life Cycles and efficient, scalable, and secure applications."
+                                }
+                            ]
+                        },
+                        {
+                            "atom": {
+                                "id": "about-me-paragraph-8",
+                                "type": "paragraph"
+                            },
+                            "content": [
+                                {
+                                    "text": "I am a continuous learner, committed to staying updated with the latest industry trends and deepening my understanding of system design with an aim to evolve into a Software Architect role."
                                 }
                             ]
                         }
@@ -75,7 +95,7 @@
                 }
             ]
         },
-                "section__mySkills": {
+        "section__mySkills": {
             "organism": {
                 "id": "my-skills-section",
                 "type": "section"
@@ -94,13 +114,6 @@
                                 "type": "skillShowcase"
                             },
                             "content": [
-                                { "name": "JavaScript", "iconName": "javascript", "tag": "javascript" },
-                                { "name": "Css", "iconName": "css", "tag": "css"},
-                                { "name": "HTML", "iconName": "html", "tag": "html"},
-                                { "name": "Php", "iconName": "php", "tag": "php" },
-                                { "name": "Python", "iconName": "python", "tag": "python" },
-                                { "name": "Rust", "iconName": "rust", "tag": "rust" },
-                                { "name": "Java", "iconName": "java", "tag": "java" },
                                 { "name": "TypeScript", "iconName": "typescript", "tag": "typescript" },
                                 { "name": "React.js", "iconName": "reactjs", "tag": "reactjs" },
                                 { "name": "Angular", "iconName": "angular", "tag": "angular" },
@@ -139,21 +152,16 @@
                                                 "Wordpress",
                                                 "Ghost CMS",
                                                 "Strapi CMS",
-                                                "Adobe Experience Manager",
-                                                "Selenium",
-                                                "Cypress",
-                                                "Jest",
-                                                "Enzyme",
-                                                "Mocha"
+                                                "Adobe Experience Manager"
                                             ]
                                         },
                                         {
                                             "name": "Front-end Tools",
-                                            "list": ["Webpack", "Gulp", "Scss/Sass", "Babel", "npm", "esLint", "Jest", "Enzyme", "Mocha"]
+                                            "list": ["Webpack", "Gulp", "Scss/Sass", "Babel", "npm", "esLint", "Jest"]
                                         },
                                         {
                                             "name": "DevOps",
-                                            "list": ["AWS", "Git", "Docker", "Linux", "Bash/Shell", "Github Actions", "Gitlab CI/CD", "Jenkins", "Kubernetes", "Terraform", "Ansible", "Puppet", "Chef"]
+                                            "list": ["AWS", "Git", "Docker", "Linux", "Bash/Shell", "Github Actions"]
                                         }
                                     ]
                                 },
@@ -172,14 +180,7 @@
                                         "Teamwork",
                                         "Customer Service",
                                         "Ability to work independently",
-                                        "Flexibility",
-                                        "Adaptability",
-                                        "Creativity",
-                                        "Attention to detail",
-                                        "Critical thinking",
-                                        "Decision making",
-                                        "Negotiation",
-                                        "Conflict resolution"
+                                        "Flexibility"
                                     ]
                                 }
                             ]
@@ -230,52 +231,7 @@
                     }
                 },
                 {
-                    "children": [
-                        {
-                            "atom": {
-                                "id": "about-me-paragraph-5",
-                                "type": "paragraph"
-                            },
-                            "content": [
-                                {
-                                    "text": "As a passionate Software Engineer with a focus on Front-End, my skills span the entire web development process from conceptualization and architectural planning to system design, full-stack coding, and troubleshooting."
-                                }
-                            ]
-                        },
-                        {
-                            "atom": {
-                                "id": "about-me-paragraph-6",
-                                "type": "paragraph"
-                            },
-                            "content": [
-                                {
-                                    "text": "With a profound understanding of UI/UX, I design and implement robust, efficient, responsive, and accessible web applications. Leveraging my proficiency in programming languages, front-end libraries, and cloud development, I deliver modular projects within timelines and budgets."
-                                }
-                            ]
-                        },
-                        {
-                            "atom": {
-                                "id": "about-me-paragraph-7",
-                                "type": "paragraph"
-                            },
-                            "content": [
-                                {
-                                    "text": "Well-versed in Agile methodologies and equipped with robust communication skills, I promote open communication and foster a positive and productive team environment."
-                                }
-                            ]
-                        },
-                        {
-                            "atom": {
-                                "id": "about-me-paragraph-8",
-                                "type": "paragraph"
-                            },
-                            "content": [
-                                {
-                                    "text": "I believe in continuous learning and staying updated with the latest industry trends to provide the best solutions per project requirements. Simultaneously, I strive to deepen my understanding of system design, aiming to evolve into a software architect role. My technology journey is guided by the belief that every conquered challenge adds a new tool to my developer toolkit, better equipping me to build the future."
-                                }
-                            ]
-                        }
-                    ]
+                    "children": []
                 }
             ]
         }

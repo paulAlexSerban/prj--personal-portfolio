@@ -1,4 +1,5 @@
-import Head from 'next/head';
+import BaseMeta from '@/core/system/meta/Base.meta';
+import OpenGraph from '@/core/system/meta/OpenGraph.meta';
 import useSiteProps from '@/core/hooks/useSiteProps';
 import { PageProvider } from '@/core/context/PageContext';
 import usePageProps from '@/core/hooks/usePageProps';
@@ -16,16 +17,36 @@ const Section = dynamic(() => import('@/core/library/organisms/Section.organism'
 
 function IndexPage() {
     const pageContent = usePageProps();
-    const { title, main } = pageContent;
+    const { title, main, excerpt, author, tags, robots, type, image, url, site_name, locale, assetsPath } = pageContent;
     const { heroBanner, section__aboutMe, section__myProjects, section__mySkills, section__whatIDo } = main;
     const { icons, socialMediaLinks } = useSiteProps();
+
     return (
         <>
-            <Head>
-                <title>{title}</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href={icons.favicon} />
-            </Head>
+            <BaseMeta
+                title={title}
+                description={excerpt}
+                keywords={tags.join(', ')}
+                robots={robots}
+                assetsPath={assetsPath}
+                author={author}
+                favicon={icons.favicon}
+            />
+            <OpenGraph
+                title={title}
+                description={excerpt}
+                keywords={tags.join(', ')}
+                image={image}
+                url={url}
+                type={type}
+                robots={robots}
+                assetsPath={assetsPath}
+                author={author}
+                favicon={icons.favicon}
+                siteName={site_name}
+                locale={locale}
+            />
+
             <GenericTemplate>
                 <HeroBanner
                     pageTitle={heroBanner.content[0].pageTitle}
@@ -78,6 +99,8 @@ export async function getStaticProps() {
     const projects = await contentRepository.pinnedContent.projects;
     const projectsFrontmatter = projects.map((project) => project.content.frontmatter);
     content.main.section__myProjects.content[1].children[0].content.list = projectsFrontmatter.slice(0, 6);
+    const assetsPath = process.env.ASSETS_PATH;
+    content.assetsPath = assetsPath;
     return {
         props: {
             pageContent: content,
