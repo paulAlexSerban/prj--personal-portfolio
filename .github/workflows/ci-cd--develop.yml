@@ -15,6 +15,7 @@ env:
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     S3_BUCKET_REGION: ${{ secrets.S3_BUCKET_REGION }}
     SITE_URL: ${{ secrets.DEV_SITE_URL }}
+    ASSETS_PATH: ${{ secrets.ASSETS_PATH }}
 
 jobs:
     deploy:

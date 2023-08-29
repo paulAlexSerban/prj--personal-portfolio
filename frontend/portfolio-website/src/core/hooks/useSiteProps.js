@@ -9,6 +9,7 @@ import { SitePropsContext } from "@/core/context/SitePropsContext";
  * that throws an error if the site props are not available.
  */
 export default function useSiteProps() {
+
   const context = useContext(SitePropsContext);
   if (context === null) {
       throw new Error("useSiteProps must be used within a SitePropsProvider");

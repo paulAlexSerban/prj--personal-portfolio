@@ -1,6 +1,15 @@
 {
-    "title": "All Coursework | Jon Doe | Unicorn Software Engineer",
-    "pageDescription": "Academic or educational projects assigned as part of a course or program that demonstrate my ability to apply knowledge and techniques.",
+    "title": "All Coursework | Paul Serban | Software Engineer",
+    "author": "Paul Serban",   
+    "excerpt": "Academic or educational projects assigned as part of a course or program that demonstrate my ability to apply knowledge and techniques.",
+    "tags": ["Paul Serban", "Software Engineer", "Portfolio", "Web Development", "Coursework"],
+    "robots": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "url": "https://paulserban.eu/portfolio/coursework",
+    "type": "website",
+    "site_name": "Paul Serban | Software Engineer ",
+    "image": "/laptop-codeeditor-1280_720.avif",
+    "locale": "en_US",
     "main": {
         "heroBanner": {
             "organism": {
