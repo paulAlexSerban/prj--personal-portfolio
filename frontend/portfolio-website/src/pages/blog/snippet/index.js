@@ -1,4 +1,5 @@
-import Head from "next/head";
+import BaseMeta from '@/core/system/meta/Base.meta';
+import OpenGraph from '@/core/system/meta/OpenGraph.meta';
 import dynamic from "next/dynamic";
 import useSiteProps from "@/core/hooks/useSiteProps";
 import { PageProvider } from "@/core/context/PageContext";
@@ -14,17 +15,35 @@ const PostsOverview = dynamic(() => import("@/core/library/organisms/PostsOvervi
 
 function SnippetPage() {
     const pageContent = usePageProps();
-    const { title, pageDescription, main } = pageContent;
+    const { title, excerpt, main, assetsPath, tags, robots, author, image, url, type, site_name, locale } = pageContent;
     const { icons, socialMediaLinks } = useSiteProps();
 
     return (
         <>
-            <Head>
-                <title>{title}</title>
-                <meta name="description" content={trimPageDescription(pageDescription)} />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href={icons.favicon} />
-            </Head>
+            <BaseMeta
+                title={title}
+                description={excerpt}
+                keywords={tags.join(', ')}
+                robots={robots}
+                assetsPath={assetsPath}
+                author={author}
+                favicon={icons.favicon}
+            />
+
+            <OpenGraph
+                title={title}
+                description={excerpt}
+                keywords={tags.join(', ')}
+                image={image}
+                url={url}
+                type={type}
+                robots={robots}
+                assetsPath={assetsPath}
+                author={author}
+                favicon={icons.favicon}
+                siteName={site_name}
+                locale={locale}
+            />
 
             <GenericTemplate>
                 <HeroBanner
@@ -57,6 +76,9 @@ export async function getStaticProps() {
     const snippet = await contentRepository.sortedContent.snippets;
     const snippetFrontmatter = snippet.map((post) => post.content.frontmatter);
     content.main.section__snippets.content[0].children[0].content.list = snippetFrontmatter;
+
+    const assetsPath = process.env.ASSETS_PATH;
+    content.assetsPath = assetsPath;
 
     return {
         props: {

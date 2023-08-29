@@ -1,6 +1,15 @@
 {
-    "title": "Jon Doe | Unicorn Software Engineer",
-    "pageDescription": "All related work related to {0} tag.",
+    "title": "Paul Serban | Software Engineer ",
+    "author": "Paul Serban",   
+    "excerpt": "All related work related to {0} tag.",
+    "tags": ["Paul Serban", "Software Engineer"],
+    "robots": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "url": "https://paulserban.eu/tags/{0}/",
+    "type": "website",
+    "site_name": "Paul Serban | Software Engineer ",
+    "image": "/laptop-codeeditor-1280_720.avif",
+    "locale": "en_US",
     "main": {
         "heroBanner": {
             "organism": {

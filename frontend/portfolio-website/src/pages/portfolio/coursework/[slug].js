@@ -27,6 +27,12 @@ export async function getStaticProps({ params: { slug } }) {
     const contentRepository = new ContentRepository();
     await contentRepository.init();
     const content = await contentRepository.findOne("coursework", slug);
+
+    const url = 'https://paulserban.eu/portfolio/coursework/' + slug;
+    content.url = url;
+
+    const assetsPath = process.env.ASSETS_PATH;
+    content.assetsPath = assetsPath;
     return {
         props: {
             pageContent: content.content,
