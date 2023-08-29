@@ -154,6 +154,7 @@ export async function getStaticProps({ params: { tag, name } }) {
     content.main.section__posts.content[1].children[0].content.list = postsFrontmatter.slice(0, 9);
 
     const assetsPath = process.env.ASSETS_PATH;
+    console.log({ assetsPath });
     content.assetsPath = assetsPath;
 
     return {
