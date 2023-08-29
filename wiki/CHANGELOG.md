@@ -1,3 +1,39 @@
+# [1.10.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.9.1...v1.10.0) (2023-08-16)
+
+
+### Features
+
+* what i do section renders only if section has content ([d2aab3a](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/d2aab3a9ba606690c7de9388d5f442675f0d2c54))
+
+## [1.9.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.9.0...v1.9.1) (2023-08-08)
+
+
+### Bug Fixes
+
+* **fonts:** small update ([d034894](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/d0348948db1e67c41f4aa5a2685b1b856db6093c))
+
+# [1.9.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.4...v1.9.0) (2023-08-07)
+
+
+### Features
+
+* updated test content ([3e0d82d](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/3e0d82d6b3af97ff0ea01594cedb9f31710f9bfb))
+
+## [1.8.4](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.3...v1.8.4) (2023-07-25)
+
+
+### Bug Fixes
+
+* adjust font sizes ([01ed897](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/01ed897f2f7477dcd32a13c1688cc40310e0fe22))
+
+## [1.8.3](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.2...v1.8.3) (2023-07-21)
+
+
+### Bug Fixes
+
+* **design:** adjustments ([13f82f6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/13f82f6b29c833f6017066b5d363d782ba80b263))
+* **design:** design adjustments ([c8188f6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/c8188f621c6abad11b7358ce91f527e0d7b06ac7))
+
 ## [1.8.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.8.1...v1.8.2) (2023-07-19)
 
 
