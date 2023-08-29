@@ -1,6 +1,15 @@
 {
-    "title": "All Projects | Jon Doe | Unicorn Software Engineer",
-    "pageDescription": "All projects by Jon Doe, Unicorn Software Engineer.",
+    "title": "All Projects | Paul Serban | Software Engineer",
+    "author": "Paul Serban",   
+    "excerpt": "All projects by Paul Serban, Software Engineer.",
+    "tags": ["Paul Serban", "Software Engineer", "Portfolio", "Web Development", "Project"],
+    "robots": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "url": "https://paulserban.eu/portfolio/project",
+    "type": "website",
+    "site_name": "Paul Serban | Software Engineer ",
+    "image": "/laptop-codeeditor-1280_720.avif",
+    "locale": "en_US",
     "main": {
         "heroBanner": {
             "organism": {

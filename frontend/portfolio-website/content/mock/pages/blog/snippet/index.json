@@ -1,6 +1,15 @@
 {
-    "title": "All Snippets | Jon Doe | Unicorn Software Engineer",
-    "pageDescription": "I write code snippets to help me learn new skills and improve my abilities. I write articles on software engineering and web development to share my knowledge and experience with others.",
+    "title": "All Snippets | Paul Serban | Software Engineer",
+    "author": "Paul Serban",   
+    "excerpt": "I write code snippets to help me learn new skills and improve my abilities. I write articles on software engineering and web development to share my knowledge and experience with others.",
+    "tags": ["Paul Serban", "Software Engineer", "Blog", "Web Development", "Posts", "Booknotes",  "Snippets"],
+    "robots": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "url": "https://paulserban.eu/blog/snippet",
+    "type": "website",
+    "site_name": "Paul Serban | Software Engineer ",
+    "image": "/laptop-codeeditor-1280_720.avif",
+    "locale": "en_US",
     "main": {
         "heroBanner": {
             "organism": {

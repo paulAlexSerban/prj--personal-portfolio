@@ -1,3 +1,18 @@
+# [1.11.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.10.0...v1.11.0) (2023-08-29)
+
+
+### Bug Fixes
+
+* **ci issue:** ci issue ([ceab00c](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/ceab00c3fbe235abb43799fa2fbca1cefa3a8d70))
+* remove leftover 0 ([f624637](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/f624637600282656e828e5c236998d475ce5b9d6))
+
+
+### Features
+
+* **clean:** clean assets ([cdca302](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/cdca3027be4e6effc7121330503078064550df4b))
+* **open-graph:** implemented open graph ([4dc0bca](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/4dc0bca3809a7e8f63834c1f31f9eee3436d1be0))
+* **workflows:** small path fix ([00e8bd1](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/00e8bd1bd9597e1788f96c51e2998890b72b932e))
+
 # [1.10.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.9.1...v1.10.0) (2023-08-16)
 
 

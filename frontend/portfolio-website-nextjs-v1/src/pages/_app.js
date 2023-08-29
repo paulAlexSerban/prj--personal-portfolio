@@ -6,7 +6,7 @@ import { encodeToBase64 } from "@/core/utils/string/base64";
 export default function App({ Component, pageProps }) {
 	pageProps.siteProps = {
 		icons: {
-			favicon: "favicon.ico",
+			favicon: "favicon.svg",
 		},
 		title: "Paul Serban | Front-end Software Engineer",
 		socialMediaLinks: [
