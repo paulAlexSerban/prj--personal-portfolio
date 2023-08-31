@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.11.1...v1.11.2) (2023-08-31)
+
+
+### Bug Fixes
+
+* ci cd issue ([35c0213](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/35c02134a0092335dca29853c6ec176282041e3d))
+
 ## [1.11.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.11.0...v1.11.1) (2023-08-31)
 
 
