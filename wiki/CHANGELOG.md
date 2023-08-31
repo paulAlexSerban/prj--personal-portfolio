@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.11.0...v1.11.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* **scroll:** set scrollRestoration TRUE ([ea1b3a5](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/ea1b3a5ac7a244d514063c443572189fbe073e86))
+
 # [1.11.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.10.0...v1.11.0) (2023-08-29)
 
 
