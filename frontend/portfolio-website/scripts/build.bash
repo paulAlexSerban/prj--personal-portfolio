@@ -32,7 +32,7 @@ elif [ "$GIT_BRANCH" = "main" ]; then
   echo "Copying content from ./content/prod to ./content/dist"
   cp -rfv ../content/prod/* ../content/dist/
 
-elif [ "$GIT_BRANCH" = "production" ]; then
+elif [[ "$GIT_BRANCH" == production* ]]; then
   echo 'Building for production'
   pullS3Content
   cleanDistFolder
