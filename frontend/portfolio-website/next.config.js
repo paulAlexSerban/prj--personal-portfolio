@@ -28,6 +28,9 @@ const nextConfig = {
     trailingSlash: true,
     // Optional: Change the output directory `out` -> `dist`
     // distDir: 'dist',
+    experimental: {
+        scrollRestoration: true,
+      }
 };
 
 // Merge MDX config with Next.js config
