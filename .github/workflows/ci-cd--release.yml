@@ -68,10 +68,10 @@ jobs:
               with:
                   node-version: ${{ env.NODE_VERSION }}
 
-            - name: "🔧  Install npm@latest & CI Deps"
-              run: |
-                  npm i -g npm@latest
-                  npm ci
+          #  - name: "🔧  Install npm@latest & CI Deps"
+           #   run: |
+               #   npm i -g npm@latest
+               #   npm ci
 
             - name: "Check code formatting"
               run: |
