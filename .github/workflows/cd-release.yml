@@ -10,7 +10,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     env:
-      NODE_VERSION: 16.19.0
+      NODE_VERSION: 18.17.1
       SITE_URL: https://paulalexserban.github.io/prj--personal-portfolio
     steps:
       - name: "📥 checkout repository"
