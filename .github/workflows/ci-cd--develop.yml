@@ -9,7 +9,7 @@ on:
     workflow_dispatch:
 
 env:
-    NODE_VERSION: 16.19.0
+    NODE_VERSION: 18.17.1
     FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website
     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
