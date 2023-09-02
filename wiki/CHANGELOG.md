@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.11.2...v1.12.0) (2023-09-02)
+
+
+### Features
+
+* **node version:** update-node 18.17.1 ([9197fae](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/9197faefcca30ded0a733de7aa352ac282fec64d))
+
 ## [1.11.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.11.1...v1.11.2) (2023-08-31)
 
 
