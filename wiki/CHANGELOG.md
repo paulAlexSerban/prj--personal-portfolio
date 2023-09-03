@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.12.0...v1.13.0) (2023-09-03)
+
+
+### Features
+
+* multiple adjustments ([ab857b8](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/ab857b86805496f59c64f6120411a4fb56fe1dea))
+
 # [1.12.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.11.2...v1.12.0) (2023-09-02)
 
 
