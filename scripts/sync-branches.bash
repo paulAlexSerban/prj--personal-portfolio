@@ -1,11 +1,11 @@
 #!/bin/bash
 
 ### PRODUCTION / env: PRODUCTION
-echo "Checkout ot PRODUCTION branch"
-git checkout production
+# echo "Checkout ot PRODUCTION branch"
+# git checkout production
 
-echo "Pull changes on PRODUCTION branch"
-git pull
+# echo "Pull changes on PRODUCTION branch"
+# git pull
 
 ### MAIN / env: STAGE
 echo "Checkout ot MAIN branch"
@@ -14,11 +14,11 @@ git checkout main
 echo "Pull changes on MAIN branch"
 git pull
 
-echo "Merge PRODUCTION branch in MAIN branch"
-git merge production
+# echo "Merge PRODUCTION branch in MAIN branch"
+# git merge production
 
-echo "Push synchronized MAIN branch to remote repository"
-git push
+# echo "Push synchronized MAIN branch to remote repository"
+# git push
 
 ### RELEASE / env: TEST
 echo "Checkout RELEASE branch"
