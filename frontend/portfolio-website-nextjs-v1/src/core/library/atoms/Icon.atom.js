@@ -22,7 +22,8 @@ import {
 	SiJavascript,
 	SiReact,
 	SiAmazonaws,
-	SiGnubash
+	SiGnubash,
+	SiLeetcode
 } from "react-icons/si";
 import { GrMail, GrLinkedinOption, GrDocumentText } from "react-icons/gr";
 
@@ -57,7 +58,8 @@ export default function Icon({
 		globe: <FaGlobe title="Globe" />,
 		folder: <FaFolderOpen title="Read More" />,
 		linux: <FaLinux title="Linux"/>,
-		bash_shell: <SiGnubash title="Bash/Shell"/>
+		bash_shell: <SiGnubash title="Bash/Shell"/>,
+		leetcode: <SiLeetcode title="LeetCode"/>
 	};
 
 	const selectedIcon = icon[iconName] || <FaGlobe title="Globe" />;
