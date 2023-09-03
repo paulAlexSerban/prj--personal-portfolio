@@ -23,6 +23,12 @@
             "isInternal": false
         },
         {
+            "label": "LeetCode",
+            "icon": "leetcode",
+            "href": "https://leetcode.com/paulSerban/",
+            "isInternal": false
+        },
+        {
             "label": "Codepaen",
             "icon": "codepen",
             "href": "https://codepen.io/jondoe",

@@ -1,15 +1,15 @@
-import fsPromises from "fs/promises";
-import path from "path";
-import { serialize } from "next-mdx-remote/serialize";
-import { sanitizeQueryString } from "@/utils/TextUtils";
-import rehypeHighlight from "rehype-highlight";
-import rehypeAttr from "rehype-attr";
+import fsPromises from 'fs/promises';
+import path from 'path';
+import { serialize } from 'next-mdx-remote/serialize';
+import { sanitizeQueryString } from '@/utils/TextUtils';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeAttr from 'rehype-attr';
 
-const CONTENT_DIRECTORY = "./content/dist";
+const CONTENT_DIRECTORY = './content/dist';
 const TYPE_PATTERNS = /projects|coursework|posts|booknotes|snippets/;
 
 class ContentRepository {
-    constructor(jsonContentPath = "") {
+    constructor(jsonContentPath = '') {
         this.contentFiles = [];
         this.parsedContent = {};
         this.jsonContentPath = jsonContentPath;
@@ -54,8 +54,8 @@ class ContentRepository {
             parsedContent[typeName] = [];
 
             for (const filename of files) {
-                if (!filename.endsWith(".mdx")) continue;
-                const slug = filename.replace(".mdx", "");
+                if (!filename.endsWith('.mdx')) continue;
+                const slug = filename.replace('.mdx', '');
                 const content = await this.getContent(`${path}/${filename}`);
                 content.frontmatter.slug = slug;
                 parsedContent[typeName].push({
@@ -73,14 +73,14 @@ class ContentRepository {
 
     async getContent(filePath) {
         try {
-            const markdownWithMeta = await fsPromises.readFile(filePath, "utf-8");
-            const mdxSource = await serialize(markdownWithMeta, {
+            const markdownWithMeta = await fsPromises.readFile(filePath, 'utf-8');
+
+            return await serialize(markdownWithMeta, {
                 parseFrontmatter: true,
                 mdxOptions: {
                     rehypePlugins: [rehypeHighlight, rehypeAttr],
                 },
             });
-            return mdxSource;
         } catch (error) {
             console.error(`Error reading file: ${filePath}`, error);
         }
@@ -135,7 +135,10 @@ class ContentRepository {
     }
 
     async findByTag(type, tag) {
-        const content = this.parsedContent[type].filter((item) => item.content.frontmatter.tags.includes(tag));
+        const content = this.parsedContent[type].filter((item) => { 
+            const tags = item.content.frontmatter.tags;
+            return tags.includes(tag)
+        });
         return content;
     }
 
@@ -168,7 +171,7 @@ class ContentRepository {
     async setupPublishedContent() {
         const content = Object.keys(this.parsedContent).reduce((acc, type) => {
             const publishedContent = this.parsedContent[type].filter(
-                (item) => item.content.frontmatter.status === "published"
+                (item) => item.content.frontmatter.status === 'published'
             );
             acc[type] = publishedContent;
             return acc;
@@ -178,17 +181,17 @@ class ContentRepository {
 
     async allDrafts() {
         const content = Object.keys(this.parsedContent).reduce((acc, type) => {
-            const draftContent = this.parsedContent[type].filter((item) => item.content.frontmatter.status === "draft");
+            const draftContent = this.parsedContent[type].filter((item) => item.content.frontmatter.status === 'draft');
             acc.push(...draftContent);
             return acc;
         }, []);
         return content;
     }
 
-    async setupSortedContent(order = "desc") {
+    async setupSortedContent(order = 'desc') {
         const content = Object.keys(this.publishedContent).reduce((acc, type) => {
             const sortedContent = this.publishedContent[type].sort((a, b) => {
-                return order === "asc"
+                return order === 'asc'
                     ? new Date(a.content.frontmatter.date) - new Date(b.content.frontmatter.date)
                     : new Date(b.content.frontmatter.date) - new Date(a.content.frontmatter.date);
             });

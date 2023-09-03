@@ -74,11 +74,11 @@ $heading-100: (
   default: (
     font-size: convert-rem(36px),
     line-height: convert-rem(42px),
-    font-weight: font-weight(heavy),
-    letter-spacing: convert-rem(-1.5px),
+    font-weight: font-weight(bold),
+    letter-spacing: convert-rem(-2px),
   ),
   $desktop: (
-    font-size: convert-rem(72px),
+    font-size: convert-rem(64px),
     line-height: convert-rem(72px),
   )
 );
@@ -87,7 +87,7 @@ $heading-200: (
   default: (
     font-size: convert-rem(30px),
     line-height: convert-rem(36px),
-    font-weight: font-weight(heavy),
+    font-weight: font-weight(bold),
     letter-spacing: convert-rem(-0.5px),
   ),
   $desktop: (
@@ -100,7 +100,7 @@ $heading-300: (
   default: (
     font-size: convert-rem(26px),
     line-height: convert-rem(30px),
-    font-weight: font-weight(heavy),
+    font-weight: font-weight(bold),
     letter-spacing: 0,
   ),
   $desktop: (
@@ -114,7 +114,7 @@ $heading-400: (
   default: (
     font-size: convert-rem(22px),
     line-height: convert-rem(26px),
-    font-weight: font-weight(heavy),
+    font-weight: font-weight(bold),
   ),
   $desktop: (
     font-size: convert-rem(26px),
@@ -127,7 +127,7 @@ $heading-500: (
   default: (
     font-size: convert-rem(24px),
     line-height: convert-rem(27px),
-    font-weight: font-weight(heavy),
+    font-weight: font-weight(bold),
   ),
   $desktop: (
     font-size: convert-rem(30px),
@@ -140,7 +140,7 @@ $heading-600: (
   default: (
     font-size: convert-rem(20px),
     line-height: convert-rem(26px),
-    font-weight: font-weight(heavy),
+    font-weight: font-weight(bold),
   ),
   $desktop: (
     font-size: convert-rem(24px),

@@ -29,7 +29,8 @@ import {
     SiHtml5,
     SiPhp,
     SiPython,
-    SiRust
+    SiRust,
+    SiLeetcode
 } from "react-icons/si";
 import { GrMail, GrLinkedinOption, GrDocumentText } from "react-icons/gr";
 
@@ -68,6 +69,7 @@ export default function Icon({ iconName = "github", classNames = [], ...rest }) 
         folder: <FaFolderOpen title="Read More" />,
         linux: <FaLinux title="Linux" />,
         typescript: <SiTypescript title="TypeScript" />,
+        leetcode: <SiLeetcode title="LeetCode"/>
     };
 
     const selectedIcon = icon[iconName] || <FaGlobe title="Globe" />;

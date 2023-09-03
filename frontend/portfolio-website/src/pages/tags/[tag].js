@@ -131,7 +131,6 @@ export async function getStaticProps({ params: { tag, name } }) {
     const booknotes = await contentRepository.findByTag('booknotes', tagName);
     const snippets = await contentRepository.findByTag('snippets', tagName);
     const posts = await contentRepository.findByTag('posts', tagName);
-
     content.excerpt = content.excerpt.replace('{0}', tagName);
     content.tags.push(tagName);
     content.main.heroBanner.content[0].pageTitle = `#${tagName}`;
