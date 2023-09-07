@@ -10,7 +10,7 @@ export default function BaseMeta({ title, description, keywords, robots, assetsP
             {author && <meta name="author" content={author} />}
             {robots && <meta name="robots" content={robots} />}
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel="icon" href={`${assetsPath}/icons${favicon}`} />
+            <link rel="icon" href={`${assetsPath}${favicon}`} />
             {date && <meta name="date" content={date} />}
             <meta name="prerender-status-code" content="200" />
             <meta name="prerender" content="true" />
