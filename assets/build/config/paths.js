@@ -9,7 +9,7 @@ export const paths = {
     },
   },
   dist: {
-    dir: `./dist`,
-    images: `dist/images`,
+    dir: `./dist/assets`,
+    images: `dist/assets/images`,
   },
 };
