@@ -6,12 +6,14 @@
 
 a {
     @include font($link);
+
     @include on-event() {
         color: var(--color-link-hover);
         text-decoration: none;
-        box-shadow: 0 1px 0 0 var(--color-link-hover);
+        box-shadow: 0 2px 0 0 var(--color-link-hover);
         transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
 
     color: var(--color-link);
+    outline-offset: 4px;
 }

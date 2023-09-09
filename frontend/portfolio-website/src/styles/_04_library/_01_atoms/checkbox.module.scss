@@ -1,0 +1,88 @@
+@import '../../_00_abstracts/abstracts.scss';
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: 'checkbox';
+
+/* ------------------------------------ *\
+ * checkbox ATOM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e('base') {
+      @include flex($main: flex-start);
+      gap: $gutter;
+
+      --input-color: var(--text-color);
+      width: 100%;
+      position: relative;
+
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    
+      &:hover,
+      &:focus {
+        .checkbox {
+          box-shadow: inset 0px 0px 0px 4px var(--input-color);
+        }
+      }
+    }
+
+    @include e('input') {
+      z-index: -1;
+      appearance: none;
+      display: block;
+      opacity: 0;
+
+      &:checked {
+        ~ .checkbox {
+          box-shadow: inset 0px 0px 0px 4px var(--input-color);
+  
+          .icon {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    @include e("checkbox") {
+      background-color: transparent;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      height: $baseline * 3;
+      width: $baseline * 3;
+      border-radius: 5px;
+      box-shadow: inset 0px 0px 0px 1px var(--input-color);
+      transition: box-shadow 0.2s ease-in-out;
+    }
+
+    @include e("labelStyle") {
+      position: relative;
+      top: 0;
+      left: $baseline * 3;
+      color: var(--input-color);
+      width: calc(100% - 35px);
+    }
+  
+    @include e("icon") {
+      opacity: 0;
+      color: var(--input-color);
+      transition: opacity 0.2s ease-in-out;
+      font-size: 30px;
+      line-height: 30px;
+      height: 100%;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-52%, -45%);
+    }
+  
+    [data-invalid="true"] & {
+      --input-color: red;
+    }
+}

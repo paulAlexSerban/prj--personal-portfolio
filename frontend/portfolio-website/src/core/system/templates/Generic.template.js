@@ -1,10 +1,12 @@
-import { Roboto } from "next/font/google";
+
 import { base } from "@/styles/templates/generic.module.scss";
 import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("@/core/library/organisms/Header.organism"));
 const Main = dynamic(() => import("@/core/library/organisms/Main.organism"));
 const Footer = dynamic(() => import("@/core/library/organisms/Footer.organism"));
+
+import { Roboto } from "next/font/google";
 const roboto = Roboto({
     display: "swap",
     subsets: ["latin"],
