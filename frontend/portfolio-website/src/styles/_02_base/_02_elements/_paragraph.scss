@@ -6,7 +6,7 @@ p {
 
     @include breakpoint($tablet) {
         grid-column: span 8;
-      }
+    }
 
     &.indent-block {
         padding-inline: var(--lateral-padding);

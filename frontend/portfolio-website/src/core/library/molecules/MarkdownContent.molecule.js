@@ -3,6 +3,7 @@ import { base } from "@/styles/molecules/markdownContainer.module.scss";
 import { MDXRemote } from "next-mdx-remote";
 import { Paragraph, Heading, Link } from "@/core/atoms/typography";
 import LinkList from "@/core/library/molecules/LinkList.molecule";
+import ImageSvg from "@/core/library/atoms/ImageSvg.atom";
 
 export default function MarkdownContainer({ markdownContent, articleId }) {
     const ID = useId();
@@ -15,6 +16,7 @@ export default function MarkdownContainer({ markdownContent, articleId }) {
         Heading,
         Link,
         LinkList,
+        ImageSvg
     };
 
     return (

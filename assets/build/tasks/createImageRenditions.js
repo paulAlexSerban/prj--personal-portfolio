@@ -106,10 +106,10 @@ export const createImageRenditions = (done) => {
 
     const jsonRenditionsManifest = JSON.stringify(renditionsManifest);
     // Write JSON string to file
-    fs.writeFile("./dist/images/manifest.json", jsonRenditionsManifest, (err) => {
-        if (err) throw err;
-        console.log("JSON file has been saved.");
-    });
+    // fs.writeFile("./dist/images/manifest.json", jsonRenditionsManifest, (err) => {
+    //     if (err) throw err;
+    //     console.log("JSON file has been saved.");
+    // });
     logger.info("Finished image resizing");
     done();
 };

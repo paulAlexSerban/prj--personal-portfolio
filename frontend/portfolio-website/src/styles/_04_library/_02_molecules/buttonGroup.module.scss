@@ -1,0 +1,19 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "buttonGroup";
+
+/* ------------------------------------ *\
+ * BUTTON GROUP MOLECULE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        @include flex($direction: column, $main: flex-start);
+        gap: 1rem;
+
+        @include breakpoint($desktop) {
+            flex-direction: row;
+        }
+    }
+}

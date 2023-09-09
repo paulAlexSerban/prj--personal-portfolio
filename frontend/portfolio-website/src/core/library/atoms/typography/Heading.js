@@ -35,12 +35,12 @@ export default function Heading({
 			);
 		case 3:
 			return (
-				<h3 className={hasSeparator ? styles.separator : null}>
+				<h3 className={[styles.main, hasSeparator ? styles.separator : null].join(' ')}>
 					{innerText}
 				</h3>
 			);
 		case 4:
-			return <h4>{innerText}</h4>;
+			return <h4 className={styles.main}>{innerText}</h4>;
 		case 5:
 			return <h5>{innerText}</h5>;
 		case 6:

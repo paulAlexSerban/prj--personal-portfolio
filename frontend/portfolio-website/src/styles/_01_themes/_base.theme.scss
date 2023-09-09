@@ -7,7 +7,7 @@
     $ratio: 1.5,
     $minStep: -5,
     $maxStep: 5,
-    $propertyName: "static-"
+    $propertyName: 'static-'
 ) {
     $current: $base;
     @for $i from $minStep through $maxStep {
@@ -29,27 +29,27 @@
     --brand-color: #{get-color($c-gray, davys-grey)};
     --color-link: #{get-color($c-dark, eerie-black)};
     --color-link-hover: #{get-color($c-gray, ebony)};
-    --background-color: #{get-color($c-light, ivory)};
+    --background-color: #{get-color($c-gray, timberwolf)};
     --text-code: #{$font-family-ubuntu};
-    --secondary-color: #{get-color($c-gray, timberwolf)};
+    --secondary-color: #{get-color($c-light, ivory)};
 }
 
 :root {
     --lateral-padding: 20px;
     --header-height-default: 80px;
     --header-height-scrolled: 60px;
-    
-    @include modular-harminc-spaceing-generator($propertyName: "static-spacing-");
 
-    @include modular-harminc-spaceing-generator($propertyName: "responsive-spacing-");
+    @include modular-harminc-spaceing-generator($propertyName: 'static-spacing-');
+
+    @include modular-harminc-spaceing-generator($propertyName: 'responsive-spacing-');
 
     @include breakpoint($mobile) {
-        @include modular-harminc-spaceing-generator($propertyName: "responsive-spacing-", $ratio: 1.65);
+        @include modular-harminc-spaceing-generator($propertyName: 'responsive-spacing-', $ratio: 1.65);
     }
 
     @include breakpoint($tablet) {
         --lateral-padding: 25px;
-        @include modular-harminc-spaceing-generator($propertyName: "responsive-spacing-", $ratio: 1.75);
+        @include modular-harminc-spaceing-generator($propertyName: 'responsive-spacing-', $ratio: 1.75);
     }
 }
 
