@@ -1,3 +1,21 @@
+# [1.14.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.13.0...v1.14.0) (2023-09-09)
+
+
+### Bug Fixes
+
+* assets source update ([258f484](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/258f48432f280e3c73c95baaa42387115177c802))
+* **csp:** added meta tag ([37d846d](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/37d846dcb4ef6a27698e4cb7a286a5db32997c56))
+
+
+### Features
+
+* **assets:** adjusted assets directory ([7c29066](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/7c29066333bda5d820ad1ff164b61fee0869d818))
+* **content:** removed mock content and adjusted assets paths ([2de75f7](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/2de75f7a74bae69c484d246b76fd8986d1524d15))
+* **cookie banner and analytics:** added ([c364547](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/c364547952ae2cc7245ffb12c0aa162fc3eec94e))
+* **cookies:** wip ([f11eb7f](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/f11eb7ffb3ab2fb72444d294e8791787ffcc44f3))
+* **gtm:** added gtm ([cb9f8f6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/cb9f8f6f172b1cc42f86380130bb982863a93013))
+* **imagesvg:** added imageSvg feature ([00e6c3a](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/00e6c3a646b5d2d96608c02a66473f82e61eabf4))
+
 # [1.13.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.12.0...v1.13.0) (2023-09-03)
 
 
