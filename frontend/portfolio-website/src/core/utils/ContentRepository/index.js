@@ -16,8 +16,7 @@ class ContentRepository {
     }
 
     async getPageJsonContent(jsonContentPath) {
-        const pageJsonContent = await import(`@/content/dist/pages/${jsonContentPath}index.json`);
-        return pageJsonContent;
+        return await import(`@/content/dist/pages/${jsonContentPath}index.json`);
     }
 
     async setupContentFiles() {
@@ -27,19 +26,17 @@ class ContentRepository {
             const filteredItems = contentItems.filter((item) => item.isDirectory() && TYPE_PATTERNS.test(item.name));
 
             // Use Promise.all to read all directories in parallel
-            const itemsWithFiles = await Promise.all(
-                filteredItems.map(async (item) => {
-                    const itemPath = path.resolve(CONTENT_DIRECTORY, item.name);
-                    const itemFiles = await fsPromises.readdir(itemPath);
-                    return {
-                        typeName: item.name,
-                        path: itemPath,
-                        files: itemFiles,
-                    };
-                })
-            );
-
-            return itemsWithFiles;
+            return await Promise.all(
+                            filteredItems.map(async (item) => {
+                                const itemPath = path.resolve(CONTENT_DIRECTORY, item.name);
+                                const itemFiles = await fsPromises.readdir(itemPath);
+                                return {
+                                    typeName: item.name,
+                                    path: itemPath,
+                                    files: itemFiles,
+                                };
+                            })
+                        );
         } catch (err) {
             console.error(err);
             // You might want to re-throw the error or handle it in another way
@@ -54,7 +51,9 @@ class ContentRepository {
             parsedContent[typeName] = [];
 
             for (const filename of files) {
-                if (!filename.endsWith('.mdx')) continue;
+                if (!filename.endsWith('.mdx')) {
+                  continue;
+                }
                 const slug = filename.replace('.mdx', '');
                 const content = await this.getContent(`${path}/${filename}`);
                 content.frontmatter.slug = slug;
@@ -87,37 +86,35 @@ class ContentRepository {
     }
 
     async setupTags() {
-        const tags = Object.keys(this.parsedContent).reduce((acc, type) => {
-            this.parsedContent[type].forEach((item) => {
-                const itemTags = item.content.frontmatter.tags;
-                if (itemTags && itemTags.length > 0) {
-                    itemTags.forEach((tag) => {
-                        const sanitizedTag = sanitizeQueryString(tag);
-                        acc[sanitizedTag] = tag;
+        return Object.keys(this.parsedContent).reduce((acc, type) => {
+                    this.parsedContent[type].forEach((item) => {
+                        const itemTags = item.content.frontmatter.tags;
+                        if (itemTags && itemTags.length > 0) {
+                            itemTags.forEach((tag) => {
+                                const sanitizedTag = sanitizeQueryString(tag);
+                                acc[sanitizedTag] = tag;
+                            });
+                        }
                     });
-                }
-            });
-            return acc; // This line is important
-        }, {});
-        return tags;
+                    return acc; // This line is important
+                }, {});
     }
 
     async setupCategories() {
-        const categories = Object.keys(this.parsedContent).reduce((acc, type) => {
-            this.parsedContent[type].forEach((item) => {
-                const itemCategories = item.content.frontmatter.categories;
-                if (itemCategories && itemCategories.length > 0) {
-                    itemCategories.forEach((category) => {
-                        const sanitizedCategory = sanitizeQueryString(category);
-                        if (!acc.includes(sanitizedCategory)) {
-                            acc.push(sanitizedCategory);
+        return Object.keys(this.parsedContent).reduce((acc, type) => {
+                    this.parsedContent[type].forEach((item) => {
+                        const itemCategories = item.content.frontmatter.categories;
+                        if (itemCategories && itemCategories.length > 0) {
+                            itemCategories.forEach((category) => {
+                                const sanitizedCategory = sanitizeQueryString(category);
+                                if (!acc.includes(sanitizedCategory)) {
+                                    acc.push(sanitizedCategory);
+                                }
+                            });
                         }
                     });
-                }
-            });
-            return acc; // This line is important
-        }, []);
-        return categories;
+                    return acc; // This line is important
+                }, []);
     }
 
     async all() {
@@ -125,89 +122,78 @@ class ContentRepository {
     }
 
     async findOne(type, slug) {
-        const content = this.parsedContent[type].find((item) => item.slug === slug);
-        return content;
+        return this.parsedContent[type].find((item) => item.slug === slug);
     }
 
     async findByType(type) {
-        const content = this.parsedContent[type];
-        return content;
+        return this.parsedContent[type];
     }
 
     async findByTag(type, tag) {
-        const content = this.parsedContent[type].filter((item) => { 
-            const tags = item.content.frontmatter.tags;
-            return tags.includes(tag)
-        });
-        return content;
+        return this.parsedContent[type].filter((item) => { 
+                    const {tags} = item.content.frontmatter;
+                    return tags.includes(tag)
+                });
     }
 
     async findByCategory(type, category) {
-        const content = this.parsedContent[type].filter((item) => item.content.frontmatter.category === category);
-        return content;
+        return this.parsedContent[type].filter((item) => item.content.frontmatter.category === category);
     }
 
     async findByDate(type, date) {
-        const content = this.parsedContent[type].filter((item) => item.content.frontmatter.date === date);
-        return content;
+        return this.parsedContent[type].filter((item) => item.content.frontmatter.date === date);
     }
 
     async findByStatus(type, status) {
-        const content = this.parsedContent[type].filter((item) => item.content.frontmatter.status === status);
-        return content;
+        return this.parsedContent[type].filter((item) => item.content.frontmatter.status === status);
     }
 
     async findAllBySlug(slug) {
-        const content = Object.keys(this.parsedContent).reduce((acc, type) => {
-            const foundContent = this.parsedContent[type].find((item) => item.slug === slug);
-            if (foundContent) {
-                acc.push(foundContent);
-            }
-            return acc;
-        }, []);
-        return content;
+        return Object.keys(this.parsedContent).reduce((acc, type) => {
+                    const foundContent = this.parsedContent[type].find((item) => item.slug === slug);
+                    if (foundContent) {
+                        acc.push(foundContent);
+                    }
+                    return acc;
+                }, []);
     }
 
     async setupPublishedContent() {
-        const content = Object.keys(this.parsedContent).reduce((acc, type) => {
-            const publishedContent = this.parsedContent[type].filter(
-                (item) => item.content.frontmatter.status === 'published'
-            );
-            acc[type] = publishedContent;
-            return acc;
-        }, {});
-        return content;
+        return Object.keys(this.parsedContent).reduce((acc, type) => {
+                    const publishedContent = this.parsedContent[type].filter(
+                        (item) => item.content.frontmatter.status === 'published'
+                    );
+                    acc[type] = publishedContent;
+                    return acc;
+                }, {});
     }
 
     async allDrafts() {
-        const content = Object.keys(this.parsedContent).reduce((acc, type) => {
-            const draftContent = this.parsedContent[type].filter((item) => item.content.frontmatter.status === 'draft');
-            acc.push(...draftContent);
-            return acc;
-        }, []);
-        return content;
+        return Object.keys(this.parsedContent).reduce((acc, type) => {
+                    const draftContent = this.parsedContent[type].filter((item) => item.content.frontmatter.status === 'draft');
+                    acc.push(...draftContent);
+                    return acc;
+                }, []);
     }
 
     async setupSortedContent(order = 'desc') {
-        const content = Object.keys(this.publishedContent).reduce((acc, type) => {
-            const sortedContent = this.publishedContent[type].sort((a, b) => {
-                return order === 'asc'
-                    ? new Date(a.content.frontmatter.date) - new Date(b.content.frontmatter.date)
-                    : new Date(b.content.frontmatter.date) - new Date(a.content.frontmatter.date);
-            });
-            acc[type] = sortedContent;
-            return acc;
-        }, {});
-        return content;
+        return Object.keys(this.publishedContent).reduce((acc, type) => {
+                    const sortedContent = this.publishedContent[type].sort((a, b) => {
+                        return order === 'asc'
+                            ? new Date(a.content.frontmatter.date) - new Date(b.content.frontmatter.date)
+                            : new Date(b.content.frontmatter.date) - new Date(a.content.frontmatter.date);
+                    });
+                    acc[type] = sortedContent;
+                    return acc;
+                }, {});
     }
 
     async setupPinnedContent() {
-        const content = Object.keys(this.sortedContent).reduce((acc, type) => {
-            const pinnedContent = this.sortedContent[type].filter((item) => item.content.frontmatter.pinned === true);
-            acc[type] = pinnedContent;
-            return acc;
-        }, {});
-        return content;
+        return Object.keys(this.sortedContent).reduce((acc, type) => {
+                    const pinnedContent = this.sortedContent[type].filter((item) => item.content.frontmatter.pinned === true);
+                    acc[type] = pinnedContent;
+                    return acc;
+                }, {});
     }
 
     async init() {

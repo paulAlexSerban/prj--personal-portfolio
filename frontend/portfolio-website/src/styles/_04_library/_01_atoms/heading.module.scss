@@ -9,6 +9,14 @@ $block: "heading";
 
 .#{$block} {
 
+    @include e("main") {
+        grid-column: span 12;
+
+        @include breakpoint($tablet) {
+            grid-column: span 8;
+        }
+    }
+
     
     @include e("main", "subheading") {
         display: block;

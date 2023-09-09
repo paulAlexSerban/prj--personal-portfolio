@@ -4,13 +4,23 @@ cd "$(dirname "$0")" || exit
 
 source ../.env.development
 
+# Colors for printing messages
+NC='\033[0m' # No Color
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+
+print_info() {
+  echo -e "${GREEN} [ info ] ${NC}" "$1"
+}
+
 function pullS3Assets() {
-  echo "Pulling content from prod AWS S3 bucket to  ./content/prod folder, set cache TTL to 24h"
+  print_info "Pulling assets from AWS S3 bucket to ./public folder"
   node ../aws/pull-assets.js
 }
 
 function cleanDistFolder() {
-  echo "Cleaning ./content/dist folder"
+  echo "Cleaning ../public folder"
   rm -rfv ../public/*
   mkdir -p ../public
 }

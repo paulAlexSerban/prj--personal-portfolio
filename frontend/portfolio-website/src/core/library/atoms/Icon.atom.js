@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import {
     FaGithub,
     FaLinkedin,
@@ -13,8 +13,8 @@ import {
     FaGlobe,
     FaFolderOpen,
     FaLinux,
-    FaJava
-} from "react-icons/fa";
+    FaJava,
+} from 'react-icons/fa';
 import {
     SiCodewars,
     SiTryhackme,
@@ -30,12 +30,13 @@ import {
     SiPhp,
     SiPython,
     SiRust,
-    SiLeetcode
-} from "react-icons/si";
-import { GrMail, GrLinkedinOption, GrDocumentText } from "react-icons/gr";
+    SiLeetcode,
+} from 'react-icons/si';
+import { BsCheck } from 'react-icons/bs';
+import { GrMail, GrLinkedinOption, GrDocumentText } from 'react-icons/gr';
 
-export default function Icon({ iconName = "github", classNames = [], ...rest }) {
-    const classes = classNames.join(" ");
+export default function Icon({ iconName = 'github', classNames = [], ...rest }) {
+    const classes = classNames.join(' ');
 
     const icon = {
         angular: <SiAngular title="Angular" />,
@@ -69,7 +70,8 @@ export default function Icon({ iconName = "github", classNames = [], ...rest }) 
         folder: <FaFolderOpen title="Read More" />,
         linux: <FaLinux title="Linux" />,
         typescript: <SiTypescript title="TypeScript" />,
-        leetcode: <SiLeetcode title="LeetCode"/>
+        leetcode: <SiLeetcode title="LeetCode" />,
+        checkmark: <BsCheck title="Check" />,
     };
 
     const selectedIcon = icon[iconName] || <FaGlobe title="Globe" />;

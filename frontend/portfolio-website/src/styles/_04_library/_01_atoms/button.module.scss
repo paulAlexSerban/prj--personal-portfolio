@@ -1,0 +1,47 @@
+@import '../../_00_abstracts/abstracts.scss';
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: 'button';
+
+/* ------------------------------------ *\
+ * BUTTON ATOM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e('base') {
+        @include font($button);
+        padding: ($baseline * 2) $gutter;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        min-width: 160px;
+        width: 100%;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+        &:focus {
+            outline-offset: 4px;
+        }
+
+        @include breakpoint($desktop) {
+            width: auto;
+            max-width: 50%;
+        }
+
+        @include m('primary') {
+            color: var(--secondary-color);
+            background-color: var(--color-link);
+            &:hover {
+                background-color: var(--color-link-hover);
+            }
+        }
+
+        @include m('secondary') {
+            color: var(--color-link);
+            background-color: var(--background-color);
+            &:hover {
+                color: var(--secondary-color);
+                background-color: var(--color-link-hover);
+            }
+        }
+    }
+}

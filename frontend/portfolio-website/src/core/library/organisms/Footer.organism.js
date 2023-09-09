@@ -11,6 +11,8 @@ import { Link } from '@/core/atoms/typography';
 import SocialMediaList from '../molecules/SocialMediaList.molecule';
 import LinkList from '../molecules/LinkList.molecule';
 import useSiteProps from '@/core/hooks/useSiteProps';
+import { CookieContext } from '@/context/CookieContext';
+import { useContext } from 'react';
 
 const date = new Date();
 const currentYear = date.getFullYear();
@@ -18,34 +20,14 @@ const currentYear = date.getFullYear();
 export default function Footer() {
     const { socialMediaLinks } = useSiteProps();
     const hasSocialMediaLinks = socialMediaLinks.length > 0;
+    const { setCookieSettingsVisible } = useContext(CookieContext);
 
     return (
         <footer className={base}>
             <div className={container}>
                 {hasSocialMediaLinks && <SocialMediaList items={socialMediaLinks} position="footer" />}
                 <div className={footerNav}>
-                    {/* <LinkList
-                        links={[
-                            {
-                                label: "Curriculum Vitae",
-                                href: "/curriculum-vitae",
-                                isEncoded: false,
-                                isInternal: true,
-                            },
-                            {
-                                label: "Contact Me",
-                                href: "/contact-me",
-                                isEncoded: false,
-                                isInternal: true,
-                            },
-                            {
-                                label: "Cookie Settings",
-                                href: "#cookie-settings",
-                                isEncoded: false,
-                                isInternal: true,
-                            },
-                        ]}
-                    /> */}
+
                     <LinkList
                         links={[
                             // {
@@ -101,6 +83,35 @@ export default function Footer() {
                                 isEncoded: false,
                                 isInternal: true,
                             },
+                        ]}
+                    />
+                                        <LinkList
+                        links={[
+                            // {
+                            //     label: "Curriculum Vitae",
+                            //     href: "/curriculum-vitae",
+                            //     isEncoded: false,
+                            //     isInternal: true,
+                            // },
+                            // {
+                            //     label: "Contact Me",
+                            //     href: "/contact-me",
+                            //     isEncoded: false,
+                            //     isInternal: true,
+                            // },
+                            {
+                                label: "Cookie Settings",
+                                href: "#cookie-settings",
+                                isEncoded: false,
+                                isInternal: true,
+                                handleClick: () => setCookieSettingsVisible(true),
+                            },
+                            {
+                                label: "Cookie Policy",
+                                href: "/cookie_policy",
+                                isEncoded: false,
+                                isInternal: true,
+                            }
                         ]}
                     />
                 </div>

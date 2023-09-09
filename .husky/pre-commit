@@ -3,3 +3,14 @@
 
 # npm run lint
 # bash scripts/modulize.bash -e dev -p build
+
+ # check if there are staged files under /assets/source/images OR /assets/source/diagrams
+if git diff --cached --name-only | grep -q "assets/source/images"; then
+  echo "🚫  Please do not commit files under /assets/source/images"
+  exit 1
+fi
+
+if git diff --cached --name-only | grep -q "assets/source/diagrams"; then
+  echo "🚫  Please do not commit files under /assets/source/diagrams"
+  exit 1
+fi

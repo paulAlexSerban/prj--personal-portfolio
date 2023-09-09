@@ -35,7 +35,7 @@ async function uploadDirectory(directory, prefix, s3FilePaths) {
         const s3Key = join(prefix, entry);
 
         if (s3FilePaths.includes(s3Key)) {
-            console.log(`File "${s3Key}" already exists in S3 bucket "${BUCKET_NAME}". Skipping upload.`);
+            console.log(`[ WARNING ] File "${s3Key}" already exists in S3 bucket "${BUCKET_NAME}". Skipping upload. - RENAME FILE TO UPLOAD`);
             continue;
         }
 
@@ -50,7 +50,7 @@ async function uploadDirectory(directory, prefix, s3FilePaths) {
             };
 
             await s3.send(new PutObjectCommand(params));
-            console.log(`Successfully uploaded file "${s3Key}" to S3 bucket "${BUCKET_NAME}"`);
+            console.log(`[ INFO ] Successfully uploaded file "${s3Key}" to S3 bucket "${BUCKET_NAME}"`);
         } else if (statSync(entryPath).isDirectory()) {
             await uploadDirectory(entryPath, s3Key, s3FilePaths);
         }
