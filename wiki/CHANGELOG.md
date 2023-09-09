@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.0...v1.14.1) (2023-09-09)
+
+
+### Bug Fixes
+
+* **hotjar:** init implementtaion ([25d2262](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/25d2262a3a07be20be241299f387657a2ea40b5a))
+
 # [1.14.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.13.0...v1.14.0) (2023-09-09)
 
 
