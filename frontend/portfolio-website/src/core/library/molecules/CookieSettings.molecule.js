@@ -3,6 +3,7 @@ import { CookieContext } from '@/context/CookieContext';
 import { base, header, content } from '@/styles/molecules/cookieSettings.module.scss';
 import { Paragraph, Heading, Link } from '@/core/atoms/typography';
 import { Button, Checkbox, Fieldset } from '@/core/atoms/form';
+import RichText from './RichText.molecule';
 import { Roboto } from 'next/font/google';
 const roboto = Roboto({
     display: 'swap',
@@ -13,8 +14,12 @@ const roboto = Roboto({
 });
 
 const CookieSettings = () => {
-    const { cookieSettings, saveSettings } = useContext(CookieContext);
+    const { cookieSettings, saveSettings, cookieSettingsVisible } = useContext(CookieContext);
     const [localSettings, setLocalSettings] = useState(cookieSettings);
+
+    if (!cookieSettingsVisible) {
+        return null;
+    }
 
     const handleSave = () => {
         saveSettings(localSettings);
@@ -30,39 +35,48 @@ const CookieSettings = () => {
     return (
         <div className={[base, roboto.className].join(' ')}>
             <header className={header}>
-                <Heading level="3">Cookie Settings</Heading>
+                <Heading level="2">Cookie Settings</Heading>
             </header>
             <div className={content}>
-                <Paragraph>
-                    The website is using cookies to provide you with the best possible experience. The website is using:
-                    essential cookies to work correctly and secure, basic analytics cookies to know how the website is
-                    used and to help improve how the site performs and marketing cookies to show relevant ads.
-                    Non-essential cookies will not be placed unless you have given us permission to do so. You can read
-                    more about the{' '}
-                    <Link href="/privacy-policy" target="_blank" isInternal={true}>
-                        Privacy Policy
-                    </Link>{' '}
-                    and{' '}
-                    <Link href="/cookie-policy" target="_blank" isInternal={true}>
-                        Cookie Policy
-                    </Link>
-                    .
-                </Paragraph>
+                <RichText>
+                    <Paragraph>
+                        You control how the website is using cookies. Find out more about the cookies we use below and
+                        choose which you want to accept.
+                    </Paragraph>
+                    <Paragraph>
+                        If you accept all cookies, the website can get better performances and you will see more
+                        relevant content and faster. Your preferences will be saved for 1 year, and you can change them
+                        at any time using the &quot;Cookie Settings&quot; link in the footer.
+                    </Paragraph>
+                    <Paragraph>
+                        You can read more about the{' '}
+                        <Link href="/cookie_policy" target="_blank" isInternal={true}>
+                            Cookie Policy
+                        </Link>
+                        .
+                    </Paragraph>
+                </RichText>
 
                 <Fieldset>
-                    <Checkbox checked={localSettings.essential} name="essential" disabled={true} label="Essential" inputId="essentialCookiesCheck"/>
+                    <Checkbox
+                        checked={localSettings.essential}
+                        name="essential"
+                        disabled={true}
+                        label="Essential cookies, required for website to function properly and security purposes. These cookies can't be disabled."
+                        inputId="essentialCookiesCheck"
+                    />
                     <Checkbox
                         checked={localSettings.analytics}
                         name="analytics"
                         onChange={handleCheckboxChange}
-                        label="Analytics"
+                        label="Analytics cookies, used to measure how the website is used. We use this information to improve the website experience."
                         inputId="analyticsCookiesCheck"
                     />
                     <Checkbox
                         checked={localSettings.marketing}
                         name="marketing"
                         onChange={handleCheckboxChange}
-                        label="Marketing"
+                        label="Marketing cookies, used to personalize ads and content based on your interests. This information may also be shared with third parties for this purpose."
                         inputId="marketingCookiesCheck"
                     />
                 </Fieldset>

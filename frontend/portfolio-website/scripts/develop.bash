@@ -2,6 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
+source ../.env
 source ../.env.development
 
-export SITE_URL && npm --prefix .. run develop
+export GA_MEASUREMENT_ID && export SITE_URL && npm --prefix .. run develop

@@ -2,6 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
+source ../.env
 source ../.env.development
 
 # Colors for printing messages
@@ -43,4 +44,4 @@ else
   cp -rfv ../content/test/* ../content/dist/
 fi
 
-export SITE_URL && npm --prefix .. run build
+export GA_MEASUREMENT_ID && export SITE_URL && npm --prefix .. run build

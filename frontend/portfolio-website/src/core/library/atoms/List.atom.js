@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-export default function List({  items = [] }) {
+export default function List({  items = [], classNames= [] }) {
     return (
-        <ul>
+        <ul className={classNames.join(' ')}>
             {items.map((item, index) => (
                 <li key={index}>{item}</li>
             ))}

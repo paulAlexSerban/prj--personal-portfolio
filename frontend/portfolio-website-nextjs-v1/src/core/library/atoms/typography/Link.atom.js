@@ -93,36 +93,35 @@ export default function LinkAtom({
 
   return (
     <>
-      {!isEncoded ? (
-        <Link href={hrefString} legacyBehavior>
-          <a
-            id={ID}
-            aria-label={ariaLabel || label}
-            target={isInternal ? "_self" : "_blank"}
-            rel="noreferrer"
-            className={className}
-
-            ref={linkRef}
-          >
-            {children || label}
-          </a>
-        </Link>
-      ) : (
-				<a
-            id={ID}
-						href={hrefString}
-            aria-label={ariaLabel || label}
-            target={isInternal ? "_self" : "_blank"}
-            rel="noreferrer"
-            className={className}
-            data-internal-link={isInternal}
-            data-prefetch={prefetch}
-            data-scroll-to-link={isScrollTo}
-            ref={linkRef}
-          >
-            {children || label}
-          </a>
-      )}
+      {isEncoded ? 
+       				<a
+                   id={ID}
+       						href={hrefString}
+                   aria-label={ariaLabel || label}
+                   target={isInternal ? "_self" : "_blank"}
+                   rel="noreferrer"
+                   className={className}
+                   data-internal-link={isInternal}
+                   data-prefetch={prefetch}
+                   data-scroll-to-link={isScrollTo}
+                   ref={linkRef}
+                 >
+                   {children || label}
+                 </a>
+              : 
+               <Link href={hrefString} legacyBehavior>
+                 <a
+                   id={ID}
+                   aria-label={ariaLabel || label}
+                   target={isInternal ? "_self" : "_blank"}
+                   rel="noreferrer"
+                   className={className}
+       
+                   ref={linkRef}
+                 >
+                   {children || label}
+                 </a>
+               </Link>}
     </>
   );
 }
