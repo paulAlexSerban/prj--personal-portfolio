@@ -5,7 +5,7 @@ export default function BaseMeta({ title, description, keywords, robots, assetsP
     const ContentSecurityPolicy = [
         "default-src 'self'",
         "img-src 'self' https: data: https://www.googletagmanager.com;",
-        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://metrics.hotjar.io https://static.hotjar.com https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://www.google.com https://googleads.g.doubleclick.net https://www.gstatic.com;",
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://script.hotjar.com https://metrics.hotjar.io https://static.hotjar.com https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://www.google.com https://googleads.g.doubleclick.net https://www.gstatic.com;",
         "child-src https://www.gstatic.com;",
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
         "font-src 'self' https://fonts.gstatic.com;",
