@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.1...v1.14.2) (2023-09-10)
+
+
+### Bug Fixes
+
+* **tags:** change of approach ([7caea46](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/7caea4696d5b8f749be37703339da7824e370e1b))
+
 ## [1.14.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.0...v1.14.1) (2023-09-09)
 
 
