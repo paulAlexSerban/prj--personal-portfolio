@@ -41,7 +41,7 @@ function App({ Component, pageProps }) {
                             dataLayer.push(arguments);
                         }
                         gtag('js', new Date());
-                        gtag('config', ${gtag.GA_MEASUREMENT_ID}, {
+                        gtag('config', "G-MNGBFKWWK5", {
                             page_path: window.location.pathname,
                         });`}
                 </Script>

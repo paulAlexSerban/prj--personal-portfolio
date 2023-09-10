@@ -40,7 +40,7 @@ const CookieBanner = () => {
     return (
         <article className={[base, roboto.className, mounted ? '' : styles['base--hidden']].join(' ')}>
             <header className={header}>
-                <Heading level="3">This website is using cookies to improve your experience. </Heading>
+                <Heading level={3}>This website is using cookies to improve your experience. </Heading>
             </header>
 
             <div className={content}>
