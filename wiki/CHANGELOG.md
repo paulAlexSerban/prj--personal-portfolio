@@ -1,3 +1,24 @@
+## [1.14.4](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.3...v1.14.4) (2023-09-10)
+
+
+### Bug Fixes
+
+* **hotjar:** csp issue ([feae6bc](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/feae6bcfe3d868a12a9b9fa0a838ae94207a239d))
+
+## [1.14.3](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.2...v1.14.3) (2023-09-10)
+
+
+### Bug Fixes
+
+* **tags:** fix ([d7c1e30](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/d7c1e3056d9c12883b88fcc5df42dc153305850b))
+
+## [1.14.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.1...v1.14.2) (2023-09-10)
+
+
+### Bug Fixes
+
+* **tags:** change of approach ([7caea46](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/7caea4696d5b8f749be37703339da7824e370e1b))
+
 ## [1.14.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.0...v1.14.1) (2023-09-09)
 
 
