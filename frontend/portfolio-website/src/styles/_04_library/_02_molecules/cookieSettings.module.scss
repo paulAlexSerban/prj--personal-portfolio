@@ -19,6 +19,8 @@ $block: 'cookieSettings';
         width: 100%;
         transition: bottom 0.8s ease-in-out, opacity 0.8s ease-in-out;
         opacity: 1;
+        max-height: 100%;
+        overflow-y: auto;
     }
 
     @include e('header', 'content') {

@@ -3,7 +3,7 @@ import { decodeFromBase64, encodeToBase64 } from '@/core/utils/TextUtils';
 import { useCallback } from 'react';
 import InternalLink from './InternalLink';
 import ExternalLink from './ExternalLink';
-
+import { event as gtagEvent } from '@/lib/gtag';
 export default function LinkAtom({
     href,
     children,
@@ -25,6 +25,23 @@ export default function LinkAtom({
         if (isEncoded) {
             eventLink.href = encodeToBase64(eventLink.getAttribute('href'));
         }
+    };
+
+    const handleLinkClick = (ev) => {
+        handleClick && handleClick(ev);
+        // const eventLink = ev.target.nodeName === 'a' ? ev.target : ev.target.closest('a');
+        // const eventLabel = eventLink.getAttribute('href');
+        // const eventCategory = eventLink.getAttribute('data-event-category');
+        // const eventAction = eventLink.getAttribute('data-event-action');
+        // const eventValue = eventLink.getAttribute('data-event-value');
+        // if (eventCategory && eventAction) {
+        //     gtagEvent({
+        //         action: eventAction,
+        //         category: eventCategory,
+        //         label: eventLabel,
+        //         value: eventValue,
+        //     });
+        // }
     };
 
     // NOT IN USED, BUT COULD HELP IN THE FUTURE: logic here was used to fetch pages before navigating to them in order to improve performance
@@ -52,7 +69,7 @@ export default function LinkAtom({
     //     }
     // }, []);
     return isInternal ? (
-        <InternalLink href={href} classNames={classNames} ariaLabel={ariaLabel} handleClick={handleClick}>
+        <InternalLink href={href} classNames={classNames} ariaLabel={ariaLabel} onClick={handleLinkClick}>
             {children}
         </InternalLink>
     ) : (
@@ -62,6 +79,7 @@ export default function LinkAtom({
             ariaLabel={ariaLabel}
             handleMouseEnter={isEncoded ? handleMouseEnter : null}
             handleMouseLeave={isEncoded ? handleMouseLeave : null}
+            onClick={handleLinkClick}
         >
             {children}
         </ExternalLink>

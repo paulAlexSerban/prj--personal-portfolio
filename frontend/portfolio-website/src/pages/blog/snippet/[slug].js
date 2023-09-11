@@ -1,11 +1,10 @@
-import ContentRepository from "@/core/utils/ContentRepository";
+import getInstance from '@/core/utils/ContentRepository';
 import Post from "@/core/system/pages/Post.page.js";
 export default Post;
 
 
 export async function getStaticPaths() {
-    const contentRepository = new ContentRepository();
-    await contentRepository.init();
+    const contentRepository = await getInstance();  // Use the `getInstance` function
     const snippets = await contentRepository.findByType("snippets");
 
     const paths = Object.values(snippets).map((value) => {
@@ -24,8 +23,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-    const contentRepository = new ContentRepository();
-    await contentRepository.init();
+    const contentRepository = await getInstance();  // Use the `getInstance` function
     const content = await contentRepository.findOne("snippets", slug);
 
     const url = 'https://paulserban.eu/blog/snippet/' + slug;

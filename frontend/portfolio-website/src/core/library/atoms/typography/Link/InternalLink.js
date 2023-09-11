@@ -1,8 +1,8 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
-export default function InternalLink({ href, classNames, ariaLabel, children, handleClick }) {
+export default function InternalLink({ href, classNames, ariaLabel, children, onClick }) {
     return (
-        <Link href={href} aria-label={ariaLabel} rel="noreferrer" className={classNames} onClick={handleClick}>
+        <Link href={href} aria-label={ariaLabel} rel="noreferrer" className={classNames} onClick={onClick}>
             {children}
         </Link>
     );

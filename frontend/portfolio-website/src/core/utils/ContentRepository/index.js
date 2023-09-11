@@ -10,9 +10,14 @@ const TYPE_PATTERNS = /projects|coursework|posts|booknotes|snippets/;
 
 class ContentRepository {
     constructor(jsonContentPath = '') {
-        this.contentFiles = [];
-        this.parsedContent = {};
-        this.jsonContentPath = jsonContentPath;
+
+        if (!ContentRepository.instance) {
+            this.contentFiles = [];
+            this.parsedContent = {};
+            this.jsonContentPath = jsonContentPath;
+            ContentRepository.instance = this;
+        }
+        return ContentRepository.instance;
     }
 
     async getPageJsonContent(jsonContentPath) {
@@ -27,16 +32,16 @@ class ContentRepository {
 
             // Use Promise.all to read all directories in parallel
             return await Promise.all(
-                            filteredItems.map(async (item) => {
-                                const itemPath = path.resolve(CONTENT_DIRECTORY, item.name);
-                                const itemFiles = await fsPromises.readdir(itemPath);
-                                return {
-                                    typeName: item.name,
-                                    path: itemPath,
-                                    files: itemFiles,
-                                };
-                            })
-                        );
+                filteredItems.map(async (item) => {
+                    const itemPath = path.resolve(CONTENT_DIRECTORY, item.name);
+                    const itemFiles = await fsPromises.readdir(itemPath);
+                    return {
+                        typeName: item.name,
+                        path: itemPath,
+                        files: itemFiles,
+                    };
+                })
+            );
         } catch (err) {
             console.error(err);
             // You might want to re-throw the error or handle it in another way
@@ -52,7 +57,7 @@ class ContentRepository {
 
             for (const filename of files) {
                 if (!filename.endsWith('.mdx')) {
-                  continue;
+                    continue;
                 }
                 const slug = filename.replace('.mdx', '');
                 const content = await this.getContent(`${path}/${filename}`);
@@ -86,35 +91,42 @@ class ContentRepository {
     }
 
     async setupTags() {
-        return Object.keys(this.parsedContent).reduce((acc, type) => {
-                    this.parsedContent[type].forEach((item) => {
-                        const itemTags = item.content.frontmatter.tags;
-                        if (itemTags && itemTags.length > 0) {
-                            itemTags.forEach((tag) => {
-                                const sanitizedTag = sanitizeQueryString(tag);
-                                acc[sanitizedTag] = tag;
-                            });
-                        }
+        const tags = Object.keys(this.parsedContent).reduce((acc, type) => {
+            this.parsedContent[type].forEach((item) => {
+                const itemTags = item.content.frontmatter.tags;
+                if (itemTags && itemTags.length > 0) {
+                    itemTags.forEach((tag) => {
+                        const sanitizedTag = sanitizeQueryString(tag);
+                        acc[sanitizedTag] = tag;
                     });
-                    return acc; // This line is important
-                }, {});
+                }
+            });
+            return acc; // This line is important
+        }, {});
+
+        return Object.keys(tags)
+            .sort()
+            .reduce((acc, key) => {
+                acc[key] = tags[key];
+                return acc;
+            }, {});
     }
 
     async setupCategories() {
         return Object.keys(this.parsedContent).reduce((acc, type) => {
-                    this.parsedContent[type].forEach((item) => {
-                        const itemCategories = item.content.frontmatter.categories;
-                        if (itemCategories && itemCategories.length > 0) {
-                            itemCategories.forEach((category) => {
-                                const sanitizedCategory = sanitizeQueryString(category);
-                                if (!acc.includes(sanitizedCategory)) {
-                                    acc.push(sanitizedCategory);
-                                }
-                            });
+            this.parsedContent[type].forEach((item) => {
+                const itemCategories = item.content.frontmatter.categories;
+                if (itemCategories && itemCategories.length > 0) {
+                    itemCategories.forEach((category) => {
+                        const sanitizedCategory = sanitizeQueryString(category);
+                        if (!acc.includes(sanitizedCategory)) {
+                            acc.push(sanitizedCategory);
                         }
                     });
-                    return acc; // This line is important
-                }, []);
+                }
+            });
+            return acc; // This line is important
+        }, []);
     }
 
     async all() {
@@ -130,10 +142,10 @@ class ContentRepository {
     }
 
     async findByTag(type, tag) {
-        return this.parsedContent[type].filter((item) => { 
-                    const {tags} = item.content.frontmatter;
-                    return tags.includes(tag)
-                });
+        return this.parsedContent[type].filter((item) => {
+            const { tags } = item.content.frontmatter;
+            return tags.includes(tag);
+        });
     }
 
     async findByCategory(type, category) {
@@ -150,50 +162,50 @@ class ContentRepository {
 
     async findAllBySlug(slug) {
         return Object.keys(this.parsedContent).reduce((acc, type) => {
-                    const foundContent = this.parsedContent[type].find((item) => item.slug === slug);
-                    if (foundContent) {
-                        acc.push(foundContent);
-                    }
-                    return acc;
-                }, []);
+            const foundContent = this.parsedContent[type].find((item) => item.slug === slug);
+            if (foundContent) {
+                acc.push(foundContent);
+            }
+            return acc;
+        }, []);
     }
 
     async setupPublishedContent() {
         return Object.keys(this.parsedContent).reduce((acc, type) => {
-                    const publishedContent = this.parsedContent[type].filter(
-                        (item) => item.content.frontmatter.status === 'published'
-                    );
-                    acc[type] = publishedContent;
-                    return acc;
-                }, {});
+            const publishedContent = this.parsedContent[type].filter(
+                (item) => item.content.frontmatter.status === 'published'
+            );
+            acc[type] = publishedContent;
+            return acc;
+        }, {});
     }
 
     async allDrafts() {
         return Object.keys(this.parsedContent).reduce((acc, type) => {
-                    const draftContent = this.parsedContent[type].filter((item) => item.content.frontmatter.status === 'draft');
-                    acc.push(...draftContent);
-                    return acc;
-                }, []);
+            const draftContent = this.parsedContent[type].filter((item) => item.content.frontmatter.status === 'draft');
+            acc.push(...draftContent);
+            return acc;
+        }, []);
     }
 
     async setupSortedContent(order = 'desc') {
         return Object.keys(this.publishedContent).reduce((acc, type) => {
-                    const sortedContent = this.publishedContent[type].sort((a, b) => {
-                        return order === 'asc'
-                            ? new Date(a.content.frontmatter.date) - new Date(b.content.frontmatter.date)
-                            : new Date(b.content.frontmatter.date) - new Date(a.content.frontmatter.date);
-                    });
-                    acc[type] = sortedContent;
-                    return acc;
-                }, {});
+            const sortedContent = this.publishedContent[type].sort((a, b) => {
+                return order === 'asc'
+                    ? new Date(a.content.frontmatter.date) - new Date(b.content.frontmatter.date)
+                    : new Date(b.content.frontmatter.date) - new Date(a.content.frontmatter.date);
+            });
+            acc[type] = sortedContent;
+            return acc;
+        }, {});
     }
 
     async setupPinnedContent() {
         return Object.keys(this.sortedContent).reduce((acc, type) => {
-                    const pinnedContent = this.sortedContent[type].filter((item) => item.content.frontmatter.pinned === true);
-                    acc[type] = pinnedContent;
-                    return acc;
-                }, {});
+            const pinnedContent = this.sortedContent[type].filter((item) => item.content.frontmatter.pinned === true);
+            acc[type] = pinnedContent;
+            return acc;
+        }, {});
     }
 
     async init() {
@@ -208,4 +220,15 @@ class ContentRepository {
     }
 }
 
-export default ContentRepository;
+let instance = null;
+
+async function getInstance(jsonContentPath = '') {
+    if (!instance) {
+        instance = new ContentRepository(jsonContentPath);
+        await instance.init();
+        Object.freeze(instance);
+    }
+    return instance;
+}
+
+export default getInstance;

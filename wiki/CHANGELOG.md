@@ -1,3 +1,24 @@
+## [1.14.8](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.7...v1.14.8) (2023-09-11)
+
+
+### Bug Fixes
+
+* modal issues fixed ([b684935](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/b68493514fb23b9cd1e2776713663340ac912a52))
+
+## [1.14.7](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.6...v1.14.7) (2023-09-11)
+
+
+### Bug Fixes
+
+* **multiple fixes and added back to top button:** added ([ecc48dc](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/ecc48dc373e246a70dcb535710be5d65b167d88a))
+
+## [1.14.6](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.5...v1.14.6) (2023-09-11)
+
+
+### Bug Fixes
+
+* **ga4:** improved google analytics implementation ([53b5b74](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/53b5b74af25784a68270257e5bc877794951bbb6))
+
 ## [1.14.5](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.4...v1.14.5) (2023-09-11)
 
 

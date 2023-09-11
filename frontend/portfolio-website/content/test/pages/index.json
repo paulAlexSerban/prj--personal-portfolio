@@ -116,7 +116,6 @@
                             "content": [
                                 { "name": "TypeScript", "iconName": "typescript", "tag": "typescript" },
                                 { "name": "React.js", "iconName": "reactjs", "tag": "reactjs" },
-                                { "name": "Angular", "iconName": "angular", "tag": "angular" },
                                 { "name": "Node.js", "iconName": "nodejs", "tag": "nodejs" },
                                 { "name": "Docker", "iconName": "docker", "tag": "docker" },
                                 { "name": "AWS", "iconName": "aws", "tag": "aws" },

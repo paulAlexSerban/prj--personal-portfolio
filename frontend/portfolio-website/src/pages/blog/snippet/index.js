@@ -5,7 +5,7 @@ import useSiteProps from "@/core/hooks/useSiteProps";
 import { PageProvider } from "@/core/context/PageContext";
 import usePageProps from "@/core/hooks/usePageProps";
 import content from "@/content/dist/pages/blog/snippet/index.json";
-import ContentRepository from "@/core/utils/ContentRepository";
+import getInstance from '@/core/utils/ContentRepository';
 import { trimPageDescription } from "@/core/utils/TextUtils";
 
 const GenericTemplate = dynamic(() => import("@/core/system/templates/Generic.template.js"));
@@ -71,8 +71,7 @@ export default function Portfolio({ pageContent }) {
 }
 
 export async function getStaticProps() {
-    const contentRepository = new ContentRepository('blog/snippet/');
-    await contentRepository.init();
+    const contentRepository = await getInstance();  // Use the `getInstance` function
     const snippet = await contentRepository.sortedContent.snippets;
     const snippetFrontmatter = snippet.map((post) => post.content.frontmatter);
     content.main.section__snippets.content[0].children[0].content.list = snippetFrontmatter;

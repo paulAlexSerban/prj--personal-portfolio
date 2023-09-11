@@ -5,7 +5,7 @@ import useSiteProps from "@/core/hooks/useSiteProps";
 import { PageProvider } from "@/core/context/PageContext";
 import usePageProps from "@/core/hooks/usePageProps";
 import content from "@/content/dist/pages/portfolio/project/index.json";
-import ContentRepository from "@/core/utils/ContentRepository";
+import getInstance from '@/core/utils/ContentRepository';
 import { trimPageDescription } from "@/core/utils/TextUtils";
 
 const GenericTemplate = dynamic(() => import("@/core/system/templates/Generic.template.js"));
@@ -71,8 +71,7 @@ export default function Portfolio({ pageContent }) {
 }
 
 export async function getStaticProps() {
-    const contentRepository = new ContentRepository('portfolio/project/');
-    await contentRepository.init();
+    const contentRepository = await getInstance();  // Use the `getInstance` function
     const projects = await contentRepository.sortedContent.projects;
     const projectsFrontmatter = projects.map((project) => project.content.frontmatter);
     content.main.section__myProjects.content[0].children[0].content.list = projectsFrontmatter;

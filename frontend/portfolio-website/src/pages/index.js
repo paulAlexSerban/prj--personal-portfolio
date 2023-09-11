@@ -10,7 +10,7 @@ import content from '@/content/dist/pages/index.json';
 import SkillsShowcase from '@/core/library/organisms/SkillShowcase.organism';
 import SkillGallery from '@/core/library/organisms/SkillGallery.organism';
 import PostsOverview from '@/core/library/organisms/PostsOverview.organism';
-import ContentRepository from '@/core/utils/ContentRepository';
+import getInstance from '@/core/utils/ContentRepository';
 
 const HeroBanner = dynamic(() => import('@/core/library/organisms/HeroBanner.organism'));
 const Section = dynamic(() => import('@/core/library/organisms/Section.organism'));
@@ -94,8 +94,7 @@ export default function Index({ pageContent }) {
 
 // Fetch data at build time
 export async function getStaticProps() {
-    const contentRepository = new ContentRepository();
-    await contentRepository.init();
+    const contentRepository = await getInstance();  // Use the `getInstance` function
     const projects = await contentRepository.pinnedContent.projects;
     const projectsFrontmatter = projects.map((project) => project.content.frontmatter);
     content.main.section__myProjects.content[1].children[0].content.list = projectsFrontmatter.slice(0, 6);
@@ -107,3 +106,4 @@ export async function getStaticProps() {
         },
     };
 }
+

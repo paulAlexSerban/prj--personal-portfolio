@@ -29,21 +29,9 @@
             "isInternal": false
         },
         {
-            "label": "Codepaen",
-            "icon": "codepen",
-            "href": "https://codepen.io/jondoe",
-            "isInternal": false
-        },
-        {
             "label": "HackerRank",
             "icon": "hackerrank",
             "href": "https://www.hackerrank.com/jon_doe",
-            "isInternal": false
-        },
-        {
-            "label": "CodeWars",
-            "icon": "codewars",
-            "href": "https://www.codewars.com/users/jonDoe",
             "isInternal": false
         },
         {
