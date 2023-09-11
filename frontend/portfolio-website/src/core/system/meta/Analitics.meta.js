@@ -1,7 +1,7 @@
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { useEffect, useContext } from 'react';
-import * as gtag from '../../../lib/gtag';
+import { GA_MEASUREMENT_ID, pageViewEvent } from '../../../lib/gtag';
 import { CookieContext } from '@/context/CookieContext';
 
 export default function Analytics() {
@@ -14,7 +14,7 @@ export default function Analytics() {
         }
 
         const handleRouteChange = (url) => {
-            gtag.pageview(url);
+            pageViewEvent(url);
         };
 
         router.events.on('routeChangeComplete', handleRouteChange);
@@ -32,7 +32,7 @@ export default function Analytics() {
         <>
             <Script
                 strategy="afterInteractive"
-                src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
             />
             <Script id="google-analytics" strategy="afterInteractive">
                 {`
