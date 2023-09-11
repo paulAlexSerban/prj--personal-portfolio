@@ -1,3 +1,10 @@
+## [1.14.5](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.4...v1.14.5) (2023-09-11)
+
+
+### Bug Fixes
+
+* **analytics:** moved analytics to it's own file ([af323b4](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/af323b4edd0b177b2879e6fbefae911a35fc60ce))
+
 ## [1.14.4](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.3...v1.14.4) (2023-09-10)
 
 
