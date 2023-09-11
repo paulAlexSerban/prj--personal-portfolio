@@ -1,3 +1,10 @@
+## [1.14.6](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.5...v1.14.6) (2023-09-11)
+
+
+### Bug Fixes
+
+* **ga4:** improved google analytics implementation ([53b5b74](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/53b5b74af25784a68270257e5bc877794951bbb6))
+
 ## [1.14.5](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.4...v1.14.5) (2023-09-11)
 
 
