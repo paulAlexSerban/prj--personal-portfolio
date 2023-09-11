@@ -1,3 +1,10 @@
+## [1.14.8](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.7...v1.14.8) (2023-09-11)
+
+
+### Bug Fixes
+
+* modal issues fixed ([b684935](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/b68493514fb23b9cd1e2776713663340ac912a52))
+
 ## [1.14.7](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.6...v1.14.7) (2023-09-11)
 
 
