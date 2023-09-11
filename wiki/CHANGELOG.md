@@ -1,3 +1,10 @@
+## [1.14.7](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.6...v1.14.7) (2023-09-11)
+
+
+### Bug Fixes
+
+* **multiple fixes and added back to top button:** added ([ecc48dc](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/ecc48dc373e246a70dcb535710be5d65b167d88a))
+
 ## [1.14.6](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.5...v1.14.6) (2023-09-11)
 
 
