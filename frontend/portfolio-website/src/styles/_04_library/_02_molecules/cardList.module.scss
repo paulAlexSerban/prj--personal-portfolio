@@ -1,14 +1,14 @@
-@import "../../_00_abstracts/abstracts.scss";
+@import '../../_00_abstracts/abstracts.scss';
 $breakpoints: $column-grid-12;
 $useModules: true;
-$block: "cardList";
+$block: 'cardList';
 
 /* ------------------------------------ *\
  * CARD LIST MOLECULE
 \* ------------------------------------ */
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: $grid-gutter;
@@ -17,6 +17,10 @@ $block: "cardList";
 
         @include breakpoint($tablet) {
             grid-template-columns: repeat(2, 1fr);
-        };
+        }
+    }
+
+    @include e('listItem') {
+        grid-column: span 1;
     }
 }

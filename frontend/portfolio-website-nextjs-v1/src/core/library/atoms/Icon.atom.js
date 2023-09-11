@@ -13,7 +13,8 @@ import {
 	FaDocker,
 	FaGlobe,
 	FaFolderOpen,
-	FaLinux
+	FaLinux,
+	FaArrowCircleUp
 } from "react-icons/fa";
 import {
 	SiCodewars,
@@ -59,7 +60,8 @@ export default function Icon({
 		folder: <FaFolderOpen title="Read More" />,
 		linux: <FaLinux title="Linux"/>,
 		bash_shell: <SiGnubash title="Bash/Shell"/>,
-		leetcode: <SiLeetcode title="LeetCode"/>
+		leetcode: <SiLeetcode title="LeetCode"/>,
+		circleUp: <FaArrowCircleUp title="Back to Top" />,
 	};
 
 	const selectedIcon = icon[iconName] || <FaGlobe title="Globe" />;

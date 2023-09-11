@@ -1,0 +1,19 @@
+@import '../../_00_abstracts/abstracts.scss';
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: 'backToTopButton';
+
+/* ------------------------------------ *\
+ * BACK TO TOP BUTTON ORGANISM
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e('base') {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        color: #333;
+        font-size: 33px;
+        cursor: pointer;
+    }
+}

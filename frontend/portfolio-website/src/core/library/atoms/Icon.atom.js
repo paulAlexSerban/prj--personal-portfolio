@@ -14,6 +14,7 @@ import {
     FaFolderOpen,
     FaLinux,
     FaJava,
+    FaArrowCircleUp
 } from 'react-icons/fa';
 import {
     SiCodewars,
@@ -72,6 +73,7 @@ export default function Icon({ iconName = 'github', classNames = [], ...rest }) 
         typescript: <SiTypescript title="TypeScript" />,
         leetcode: <SiLeetcode title="LeetCode" />,
         checkmark: <BsCheck title="Check" />,
+        circleUp: <FaArrowCircleUp title="Back to Top" />,
     };
 
     const selectedIcon = icon[iconName] || <FaGlobe title="Globe" />;

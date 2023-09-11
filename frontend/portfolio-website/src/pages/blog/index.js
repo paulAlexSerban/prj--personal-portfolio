@@ -5,7 +5,7 @@ import useSiteProps from "@/core/hooks/useSiteProps";
 import { PageProvider } from "@/core/context/PageContext";
 import usePageProps from "@/core/hooks/usePageProps";
 import content from "@/content/dist/pages/blog/index.json";
-import ContentRepository from "@/core/utils/ContentRepository";
+import getInstance from '@/core/utils/ContentRepository';
 
 const GenericTemplate = dynamic(() => import("@/core/system/templates/Generic.template.js"));
 const HeroBanner = dynamic(() => import("@/core/library/organisms/HeroBanner.organism"));
@@ -94,8 +94,7 @@ export default function Portfolio({ pageContent }) {
 }
 
 export async function getStaticProps() {
-    const contentRepository = new ContentRepository('blog/');
-    await contentRepository.init();
+    const contentRepository = await getInstance();  // Use the `getInstance` function
 
     const posts = await contentRepository.pinnedContent.posts;
     const booknotes = await contentRepository.pinnedContent.booknotes;

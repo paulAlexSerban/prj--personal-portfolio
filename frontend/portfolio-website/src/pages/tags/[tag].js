@@ -7,7 +7,7 @@ import { PageProvider } from '@/core/context/PageContext';
 import usePageProps from '@/core/hooks/usePageProps';
 import content from '@/content/dist/pages/tags/[tag].json';
 
-import ContentRepository from '@/core/utils/ContentRepository';
+import getInstance from '@/core/utils/ContentRepository';
 
 const GenericTemplate = dynamic(() => import('@/core/system/templates/Generic.template.js'));
 const HeroBanner = dynamic(() => import('@/core/library/organisms/HeroBanner.organism'));
@@ -105,8 +105,7 @@ export default function Tags({ pageContent }) {
 }
 
 export async function getStaticPaths() {
-    const contentRepository = new ContentRepository();
-    await contentRepository.init();
+     const contentRepository = await getInstance();  // Use the `getInstance` function
     const tags = await contentRepository.tags;
     const paths = Object.entries(tags).map(([tag, name]) => ({
         params: {
@@ -122,8 +121,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { tag, name } }) {
-    const contentRepository = new ContentRepository();
-    await contentRepository.init();
+    const contentRepository = await getInstance();  // Use the `getInstance` function
     const tags = await contentRepository.tags;
     const tagName = tags[tag];
     const projects = await contentRepository.findByTag('projects', tagName);
@@ -131,6 +129,14 @@ export async function getStaticProps({ params: { tag, name } }) {
     const booknotes = await contentRepository.findByTag('booknotes', tagName);
     const snippets = await contentRepository.findByTag('snippets', tagName);
     const posts = await contentRepository.findByTag('posts', tagName);
+    // console.log({
+    //     tagName,
+    //     projects: projects.length,
+    //     coursework: coursework.length,
+    //     booknotes: booknotes.length,
+    //     snippets: snippets.length,
+    //     posts: posts.length,
+    // });
     content.excerpt = content.excerpt.replace('{0}', tagName);
     content.tags.push(tagName);
     content.main.heroBanner.content[0].pageTitle = `#${tagName}`;
