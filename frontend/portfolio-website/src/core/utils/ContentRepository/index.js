@@ -10,7 +10,6 @@ const TYPE_PATTERNS = /projects|coursework|posts|booknotes|snippets/;
 
 class ContentRepository {
     constructor(jsonContentPath = '') {
-
         if (!ContentRepository.instance) {
             this.contentFiles = [];
             this.parsedContent = {};
@@ -200,6 +199,21 @@ class ContentRepository {
         }, {});
     }
 
+    async setupGroupedByDateContent() {
+        return Object.keys(this.sortedContent).reduce((acc, type) => {
+            const groupedByDateContent = this.sortedContent[type].reduce((acc, item) => {
+                const { date } = item.content.frontmatter;
+                if (!acc[date]) {
+                    acc[date] = [];
+                }
+                acc[date].push(item.content.frontmatter.slug);
+                return acc;
+            }, {});
+            acc[type] = groupedByDateContent;
+            return acc;
+        }, {});
+    }
+
     async setupPinnedContent() {
         return Object.keys(this.sortedContent).reduce((acc, type) => {
             const pinnedContent = this.sortedContent[type].filter((item) => item.content.frontmatter.pinned === true);
@@ -216,6 +230,14 @@ class ContentRepository {
         this.categories = await this.setupCategories();
         this.publishedContent = await this.setupPublishedContent();
         this.sortedContent = await this.setupSortedContent();
+        this.groupedByDateContent = await this.setupGroupedByDateContent();
+        Object.entries(this.groupedByDateContent).forEach(([type, content]) => {
+            Object.entries(content).forEach(([date, slugs]) => {
+                if (slugs.length > 1) {
+                    console.log(`[ ${type} ] ${date} - ${slugs.length} items`);
+                }
+            });
+        });
         this.pinnedContent = await this.setupPinnedContent();
     }
 }
