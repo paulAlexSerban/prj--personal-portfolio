@@ -234,7 +234,7 @@ class ContentRepository {
         Object.entries(this.groupedByDateContent).forEach(([type, content]) => {
             Object.entries(content).forEach(([date, slugs]) => {
                 if (slugs.length > 1) {
-                    console.log(`[ ${type} ] ${date} - ${slugs.length} items`);
+                    console.log(`[ ${type} ] ${date} - ${slugs.length} items - ${slugs.join(', ')}`);
                 }
             });
         });
