@@ -1,3 +1,10 @@
+## [1.14.10](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.9...v1.14.10) (2023-09-16)
+
+
+### Bug Fixes
+
+* added resume url path ([9a5ba82](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/9a5ba82fee1977b02197065c6740b065ab9a0929))
+
 ## [1.14.9](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.8...v1.14.9) (2023-09-15)
 
 
