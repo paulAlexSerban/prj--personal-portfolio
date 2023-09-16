@@ -18,7 +18,7 @@ const date = new Date();
 const currentYear = date.getFullYear();
 
 export default function Footer() {
-    const { socialMediaLinks } = useSiteProps();
+    const { socialMediaLinks, resume } = useSiteProps();
     const hasSocialMediaLinks = socialMediaLinks.length > 0;
     const { setCookieSettingsVisible } = useContext(CookieContext);
 
@@ -27,16 +27,15 @@ export default function Footer() {
             <div className={container}>
                 {hasSocialMediaLinks && <SocialMediaList items={socialMediaLinks} position="footer" />}
                 <div className={footerNav}>
-
                     <LinkList
                         links={[
-                            // {
-                            //     label: 'Curriculum Vitae',
-                            //     href: '/path-to-pdf-file',
-                            //     isEncoded: false,
-                            //     isInternal: true,
-                            //     isDownload: true,
-                            // },
+                            {
+                                label: resume.label,
+                                href: resume.url,
+                                isEncoded: false,
+                                isInternal: true,
+                                isDownload: true,
+                            },
                             {
                                 label: 'Portfolio',
                                 href: '/portfolio',
@@ -55,6 +54,12 @@ export default function Footer() {
                                 isEncoded: false,
                                 isInternal: true,
                             },
+                            // {
+                            //     label: "Contact Me",
+                            //     href: "/contact-me",
+                            //     isEncoded: false,
+                            //     isInternal: true,
+                            // },
                         ]}
                     />
                     <LinkList
@@ -85,33 +90,21 @@ export default function Footer() {
                             },
                         ]}
                     />
-                                        <LinkList
+                    <LinkList
                         links={[
-                            // {
-                            //     label: "Curriculum Vitae",
-                            //     href: "/curriculum-vitae",
-                            //     isEncoded: false,
-                            //     isInternal: true,
-                            // },
-                            // {
-                            //     label: "Contact Me",
-                            //     href: "/contact-me",
-                            //     isEncoded: false,
-                            //     isInternal: true,
-                            // },
                             {
-                                label: "Cookie Settings",
-                                href: "#cookie-settings",
+                                label: 'Cookie Settings',
+                                href: '#cookie-settings',
                                 isEncoded: false,
                                 isInternal: true,
                                 handleClick: () => setCookieSettingsVisible(true),
                             },
                             {
-                                label: "Cookie Policy",
-                                href: "/cookie_policy",
+                                label: 'Cookie Policy',
+                                href: '/cookie_policy',
                                 isEncoded: false,
                                 isInternal: true,
-                            }
+                            },
                         ]}
                     />
                 </div>
