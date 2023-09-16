@@ -9,6 +9,10 @@
         "alt": "Go to home page link.",
         "ariaLabel": "Go to home page link."
     },
+    "resume": {
+        "label": "Curriculum Vitae",
+        "url": "https://paulserban.eu/assets/pdfs/Paul-Serban-Resume-Software-Engineer-2023-9-15.pdf"
+    },
     "socialMediaLinks": [
         {
             "label": "LinkedIn",
