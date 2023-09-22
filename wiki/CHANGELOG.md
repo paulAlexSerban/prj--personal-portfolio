@@ -1,3 +1,10 @@
+## [1.14.12](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.11...v1.14.12) (2023-09-22)
+
+
+### Bug Fixes
+
+* typo ([d6e4aa4](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/d6e4aa451f910e1cf14296ae9e123f35542a47a9))
+
 ## [1.14.11](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.10...v1.14.11) (2023-09-22)
 
 
