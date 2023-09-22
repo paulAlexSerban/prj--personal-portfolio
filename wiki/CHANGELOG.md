@@ -1,3 +1,10 @@
+## [1.14.13](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.12...v1.14.13) (2023-09-22)
+
+
+### Bug Fixes
+
+* **deps:** dev to prod ([8888f2e](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/8888f2e9b576efaf34cbdeb2d97555f1f8c223a6))
+
 ## [1.14.12](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.11...v1.14.12) (2023-09-22)
 
 
