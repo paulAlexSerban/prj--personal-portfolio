@@ -5,7 +5,7 @@
   "scripts": {
     "develop": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && node seo/indexnow",
     "start": "npx serve@latest out",
     "lint": "next lint"
   },
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "classnames": "^2.3.2",
+    "dotenv": "^16.3.1",
     "sass": "^1.63.4"
   }
 }
