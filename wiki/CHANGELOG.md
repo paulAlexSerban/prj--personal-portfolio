@@ -1,3 +1,19 @@
+## [1.14.12](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.11...v1.14.12) (2023-09-22)
+
+
+### Bug Fixes
+
+* typo ([d6e4aa4](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/d6e4aa451f910e1cf14296ae9e123f35542a47a9))
+
+## [1.14.11](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.10...v1.14.11) (2023-09-22)
+
+
+### Bug Fixes
+
+* added a guard ([98ed4c7](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/98ed4c70f39678d9d48bacd33557013428ee0fe9))
+* adjustments ([895b2d6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/895b2d6c239f574a392bb10f5e929dd4ca86a7d2))
+* **indexnow:** added initial implementation ([c33b946](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/c33b94691ad91f75ec82813cde7dc2663dd5d2f3))
+
 ## [1.14.10](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.9...v1.14.10) (2023-09-16)
 
 
