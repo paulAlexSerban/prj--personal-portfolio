@@ -103,5 +103,5 @@ const pages = getAllGeneratedPages(DIST_DIR);
 generateKeyLocationFile();
 
 for (const searchEngineHost of searchEngineHosts) {
-    notifySearchEngines(pages, searchEngineHost, process.argv[2] === '--dry-run');
+    notifySearchEngines(pages, searchEngineHost, process.argv[2] === '--dry-run' || INDEX_NOW_API_KEY.startsWith('test_'));
 }
