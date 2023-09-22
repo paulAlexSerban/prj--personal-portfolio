@@ -1,3 +1,10 @@
+## [1.14.15](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.14...v1.14.15) (2023-09-22)
+
+
+### Bug Fixes
+
+* **repots txt:** fix unrecognized syntax ([a62abf6](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/a62abf68080a66d76e85c9240b7aaf8231c5c3eb))
+
 ## [1.14.14](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.13...v1.14.14) (2023-09-22)
 
 
