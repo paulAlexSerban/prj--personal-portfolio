@@ -10,6 +10,9 @@ env:
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     SITE_URL: ${{ secrets.SITE_URL }}
     ASSETS_PATH: ${{ secrets.ASSETS_PATH }}
+    NODE_ENV: ${{ secrets.NODE_ENV }}
+    SITE_HOSTNAME: ${{ secrets.SITE_HOSTNAME }}
+    INDEX_NOW_API_KEY: ${{ secrets.INDEX_NOW_API_KEY }}
     
 jobs:
     prepare:

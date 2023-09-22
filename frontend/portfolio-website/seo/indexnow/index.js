@@ -4,6 +4,7 @@ const https = require('https');
 const dotenv = require('dotenv');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const DIST_DIR = DIST_DIR
 
 if (NODE_ENV === 'development') {
     dotenv.config({ path: path.resolve(__dirname, '../../.env.development') });
@@ -35,10 +36,13 @@ const getAllGeneratedPages = (dir) => {
         const fullPath = path.join(dir, file);
 
         if (fs.statSync(fullPath).isDirectory()) {
+            // recursively get all files in subdirectories
             fileList = [...fileList, ...getAllGeneratedPages(fullPath)];
         } else if (fullPath.endsWith('.html')) {
-            let urlPath = `${SITE_URL}${fullPath.replace('out', '').replace('.html', '').replace(/\\/g, '/')}`;
+            // remove dist dir and .html extension
+            let urlPath = `${SITE_URL}${fullPath.replace(DIST_DIR, '').replace('.html', '').replace(/\\/g, '/')}`;
             if (urlPath.endsWith('/index')) {
+                // remove /index.html from url path as it is not needed
                 urlPath = urlPath.substring(0, urlPath.length - 6); // remove /index
             }
             fileList.push(urlPath);
@@ -63,9 +67,9 @@ const generateKeyLocationFile = () => {
 const notifySearchEngines = (urls = [], searchEngineHost, dryRun = false) => {
     const searchEngine = `https://${searchEngineHost}/indexnow`;
     const payload = {
-        host: SITE_HOSTNAME, // Replace with the appropriate value or env variable
-        key: INDEX_NOW_API_KEY, // Replace with the appropriate value or env variable
-        keyLocation: `${SITE_URL}/${INDEX_NOW_API_KEY}.txt`, // Replace with the appropriate value or env variable
+        host: SITE_HOSTNAME,
+        key: INDEX_NOW_API_KEY,
+        keyLocation: `${SITE_URL}/${INDEX_NOW_API_KEY}.txt`,
         urlList: urls,
     };
 
@@ -95,7 +99,7 @@ const notifySearchEngines = (urls = [], searchEngineHost, dryRun = false) => {
     }
 };
 
-const pages = getAllGeneratedPages('out');
+const pages = getAllGeneratedPages(DIST_DIR);
 generateKeyLocationFile();
 
 for (const searchEngineHost of searchEngineHosts) {
