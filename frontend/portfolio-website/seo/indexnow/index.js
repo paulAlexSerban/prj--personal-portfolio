@@ -17,7 +17,6 @@ const searchEngineHosts = [
     'www.bing.com',
     'search.seznam.cz',
     'yandex.com',
-    'searchadvisor.naver.com',
 ];
 
 console.log({
