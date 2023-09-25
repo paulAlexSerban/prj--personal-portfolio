@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-if (NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
     const dotenv = require('dotenv');
     dotenv.config({ path: path.resolve(__dirname, '../../.env.development') });
 }
