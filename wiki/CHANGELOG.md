@@ -1,3 +1,45 @@
+## [1.15.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.15.0...v1.15.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* sed issues ([591e954](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/591e954bdd67d2ec179c33c8e3257b01288bae57))
+
+# [1.15.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.14...v1.15.0) (2023-09-25)
+
+
+### Bug Fixes
+
+* fix ([f3adf57](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/f3adf57408d67f5c54ff48fda823286d593a0eb3))
+* **robot.txt:** fix ([99898c7](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/99898c7c77ef4118c86b63ccb3cac89a5fc899f8))
+
+
+### Features
+
+* multiple fixes ([970fcf8](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/970fcf836c98c4e128e856acd28587c21596de77))
+
+## [1.14.15](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.14...v1.14.15) (2023-09-25)
+
+
+### Bug Fixes
+
+* fix ([f3adf57](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/f3adf57408d67f5c54ff48fda823286d593a0eb3))
+* **robot.txt:** fix ([99898c7](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/99898c7c77ef4118c86b63ccb3cac89a5fc899f8))
+
+## [1.14.15](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.14...v1.14.15) (2023-09-23)
+
+
+### Bug Fixes
+
+* **robot.txt:** fix ([99898c7](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/99898c7c77ef4118c86b63ccb3cac89a5fc899f8))
+
+## [1.14.15](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.14...v1.14.15) (2023-09-22)
+
+
+### Bug Fixes
+
+* **robot.txt:** fix ([99898c7](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/99898c7c77ef4118c86b63ccb3cac89a5fc899f8))
+
 ## [1.14.14](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.13...v1.14.14) (2023-09-22)
 
 

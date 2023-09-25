@@ -94,8 +94,7 @@ jobs:
                   echo \"Error: no integration-test specified\"
 
             - name: "Build"
-              run: |
-                  bash modulize.bash -e production -p build
+              run: bash modulize.bash -e production -p build
 
             - name: "Package"
               run: |
