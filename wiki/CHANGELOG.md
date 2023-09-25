@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.15.0...v1.15.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* sed issues ([591e954](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/591e954bdd67d2ec179c33c8e3257b01288bae57))
+
 # [1.15.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.14...v1.15.0) (2023-09-25)
 
 
