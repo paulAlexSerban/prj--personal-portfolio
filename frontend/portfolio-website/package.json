@@ -5,7 +5,7 @@
   "scripts": {
     "develop": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap && node seo/indexnow && sed -i '' '/^Host/d' ./out/robots.txt && sed -i '' '/^# Host/d' ./out/robots.txt",
+    "postbuild": "next-sitemap && node seo/indexnow && awk '!/^Host/' ./out/robots.txt > ./out/temp.txt && mv ./out/temp.txt ./out/robots.txt",
     "start": "npx serve@latest out",
     "lint": "next lint"
   },
