@@ -1,3 +1,11 @@
+## [1.14.15](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.14...v1.14.15) (2023-09-25)
+
+
+### Bug Fixes
+
+* fix ([f3adf57](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/f3adf57408d67f5c54ff48fda823286d593a0eb3))
+* **robot.txt:** fix ([99898c7](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/99898c7c77ef4118c86b63ccb3cac89a5fc899f8))
+
 ## [1.14.15](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.14.14...v1.14.15) (2023-09-23)
 
 
