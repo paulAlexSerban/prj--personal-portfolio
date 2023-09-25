@@ -20,6 +20,7 @@ const searchEngineHosts = [
     'searchadvisor.naver.com',
 ];
 
+
 console.log({
     SITE_HOSTNAME,
     SITE_URL,
