@@ -104,6 +104,7 @@ const pages = getAllGeneratedPages(DIST_DIR);
 generateKeyLocationFile();
 
 for (const searchEngineHost of searchEngineHosts) {
+    console.log(`NODE_ENV is ${NODE_ENV} - INDEX_NOW_API_KEY is ${INDEX_NOW_API_KEY} - notifying ${searchEngineHost}`)
     notifySearchEngines(
         pages,
         searchEngineHost,
