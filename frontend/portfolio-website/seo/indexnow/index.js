@@ -1,14 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const dotenv = require('dotenv');
+
+if (process.env.NODE_ENV === 'development') {
+    const dotenv = require('dotenv');
+    dotenv.config({ path: path.resolve(__dirname, '../../.env.development') });
+}
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const DIST_DIR = 'out';
-
-if (NODE_ENV === 'development') {
-    dotenv.config({ path: path.resolve(__dirname, '../../.env.development') });
-}
 
 const { SITE_HOSTNAME, SITE_URL, INDEX_NOW_API_KEY } = process.env; // example.eu
 const searchEngineHosts = [
@@ -104,9 +104,10 @@ const pages = getAllGeneratedPages(DIST_DIR);
 generateKeyLocationFile();
 
 for (const searchEngineHost of searchEngineHosts) {
+    console.log(`NODE_ENV is ${NODE_ENV} - INDEX_NOW_API_KEY is ${INDEX_NOW_API_KEY} - notifying ${searchEngineHost}`)
     notifySearchEngines(
         pages,
         searchEngineHost,
-        process.argv[2] === '--dry-run' || INDEX_NOW_API_KEY.startsWith('test_')
+        process.argv[2] === '--dry-run'
     );
 }

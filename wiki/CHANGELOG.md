@@ -1,3 +1,12 @@
+## [1.15.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.15.1...v1.15.2) (2023-09-25)
+
+
+### Bug Fixes
+
+* **ci:** another tryout ([5d96142](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/5d96142dcbe1f6c81495e97654b7e5f82d3246b6))
+* **ci:** another tryout ([c4df2c8](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/c4df2c81d6140824ced79c21d87d00703f373d41))
+* keys issues ([df06bbb](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/df06bbbe3155932424476f483107cdd9e890d56e))
+
 ## [1.15.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.15.0...v1.15.1) (2023-09-25)
 
 
