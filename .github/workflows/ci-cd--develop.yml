@@ -16,6 +16,8 @@ env:
     S3_BUCKET_REGION: ${{ secrets.S3_BUCKET_REGION }}
     SITE_URL: ${{ secrets.DEV_SITE_URL }}
     ASSETS_PATH: ${{ secrets.ASSETS_PATH }}
+    S3_CONTENT_PRODUCTION_BUCKET: ${{ secrets.S3_CONTENT_PRODUCTION_BUCKET }}
+    NODE_ENV: production
 
 jobs:
     deploy:

@@ -58,7 +58,7 @@ cleanDistFolder
 if [[ "$NODE_ENV" == 'production' ]]; then
   copyContent prod
 else
-  copyContent prod
+  copyContent test
 fi
 
 export GA_MEASUREMENT_ID

@@ -12,6 +12,15 @@ const LOCAL_DIRECTORY_PATH = path.resolve(__dirname, '..', 'content', 'prod');
 const CACHE_FILE_PATH = path.join(LOCAL_DIRECTORY_PATH, '.s3-object-cache-ttl.json');
 const TTL_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
+if(!REGION || !BUCKET_NAME) {
+    console.error('Missing env variables');
+    console.log({
+        REGION,
+        BUCKET_NAME,
+    });
+    process.exit(1);
+}
+
 // Create an S3 client
 const s3 = new S3Client({ region: REGION });
 
