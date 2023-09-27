@@ -66,5 +66,7 @@ export SITE_URL
 npm --prefix .. run build
 npm --prefix .. run sitemap
 node ../seo/indexnow
-awk '!/^Host/' ../out/robots.txt >../out/temp.txt
+# use awk to remove the line starting with Host
+awk '!/^Host/' ../out/robots.txt > ../out/temp.txt
+# use mv to rename the file
 mv ../out/temp.txt ../out/robots.txt
