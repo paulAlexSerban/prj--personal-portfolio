@@ -80,7 +80,7 @@ jobs:
 
             - name: "🔧  Install project modules dependencies"
               run: |
-                  bash modulize.bash -e production -p install
+                  bash modulize -e production -p install
 
             - name: "Check code linting"
               run: |
@@ -99,11 +99,11 @@ jobs:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
               run: |
-                  bash modulize.bash -e production -p build
+                  bash modulize -e production -p build
 
             - name: "Package"
               run: |
-                  bash modulize.bash -e production -p package
+                  bash modulize -e production -p package
 
             - name: "Upload Artifact"
               uses: actions/upload-artifact@v3

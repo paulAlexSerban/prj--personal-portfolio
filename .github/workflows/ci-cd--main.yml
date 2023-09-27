@@ -79,7 +79,7 @@ jobs:
 
             - name: "🔧  Install project modules dependencies"
               run: |
-                  bash modulize.bash -e production -p install
+                  bash modulize -e production -p install
 
             - name: "Check code linting"
               run: |
@@ -98,11 +98,11 @@ jobs:
                 S3_BUCKET_REGION:  ${{ secrets.S3_BUCKET_REGION }}
                 S3_CONTENT_PRODUCTION_BUCKET: ${{ secrets.S3_CONTENT_PRODUCTION_BUCKET }}
               run: |
-                  bash modulize.bash -e production -p build
+                  bash modulize -e production -p build
 
             - name: "Package"
               run: |
-                  bash modulize.bash -e production -p package
+                  bash modulize -e production -p package
 
             - name: Deploy
               uses: reggionick/s3-deploy@v3

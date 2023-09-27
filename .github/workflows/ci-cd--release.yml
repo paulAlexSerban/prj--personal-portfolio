@@ -79,7 +79,7 @@ jobs:
 
             - name: "🔧  Install project modules dependencies"
               run: |
-                  bash modulize.bash -e production -p install
+                  bash modulize -e production -p install
 
             - name: "Check code linting"
               run: |
@@ -94,11 +94,11 @@ jobs:
                   echo \"Error: no integration-test specified\"
 
             - name: "Build"
-              run: bash modulize.bash -e production -p build
+              run: bash modulize -e production -p build
 
             - name: "Package"
               run: |
-                  bash modulize.bash -e production -p package
+                  bash modulize -e production -p package
 
             - name: Deploy
               uses: reggionick/s3-deploy@v3
