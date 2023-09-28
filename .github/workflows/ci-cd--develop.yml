@@ -32,7 +32,7 @@ env:
 
 jobs:
     deploy:
-        name: Deploy
+        name: 'Deploy to DEVELOP'
         runs-on: ubuntu-latest
 
         steps:

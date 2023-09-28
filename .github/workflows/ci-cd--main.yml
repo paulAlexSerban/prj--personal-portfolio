@@ -31,8 +31,8 @@ env:
     NODE_ENV: production
 
 jobs:
-    prepare:
-        name: Prepare
+    deploy:
+        name: 'Deploy To STAGE'
         runs-on: ubuntu-latest
   
         steps:

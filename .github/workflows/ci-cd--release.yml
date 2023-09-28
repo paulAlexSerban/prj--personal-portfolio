@@ -31,8 +31,8 @@ env:
     NODE_ENV: production
 
 jobs:
-    prepare:
-        name: Prepare
+    deploy:
+        name: 'Deploy To TEST'
         runs-on: ubuntu-latest
 
         steps:
@@ -109,7 +109,7 @@ jobs:
                   bash modulize -e production -p package
 
             - name: Deploy
-              uses: reggionick/s3-deploy@v3
+              uses: reggionick/s3-deploy@v4
               with:
                   folder: package/prj--portfolio-website
                   bucket: ${{ secrets.S3_TEST_BUCKET }}
