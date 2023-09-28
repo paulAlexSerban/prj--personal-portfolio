@@ -1,3 +1,15 @@
+# [1.16.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.15.2...v1.16.0) (2023-09-28)
+
+
+### Bug Fixes
+
+* **cleanup:** move decomissioned modules outside of main packages ([3e2023c](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/3e2023c00584b1e67dc2f668fc62a1f4b38fa150))
+
+
+### Features
+
+* **mdz and seo scripts:** migrated to lates modulize and adjusted seo scripts ([a0cba5b](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/a0cba5bd17c7641f8f92c6a520b75fe4a59bceaa))
+
 ## [1.15.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.15.1...v1.15.2) (2023-09-25)
 
 
