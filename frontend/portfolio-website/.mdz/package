@@ -24,10 +24,10 @@ REPOSITORY_NAME=$(basename -s .git "$remote_url")
 print_info "Repository Name: $REPOSITORY_NAME"
 
 ## prepare the package folder
-mkdir -p ../../../package/$REPOSITORY_NAME
+mkdir -p ../../../package/prj--portfolio-website
 
 # copy the files to the package folder
-cp -rfv ../out/* ../../../package/$REPOSITORY_NAME
+cp -rfv ../out/* ../../../package/prj--portfolio-website
 
 # cp -rfv ../public/* ../../../package/$REPOSITORY_NAME
 
