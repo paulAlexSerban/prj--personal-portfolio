@@ -119,4 +119,4 @@ jobs:
                   delete-removed: true
                   no-cache: true
                   private: true
-                  filesToInclude: ".*/*,*/*,**"
+                  files-to-include: ".*/*,*/*,**"
