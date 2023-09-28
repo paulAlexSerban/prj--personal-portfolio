@@ -3,8 +3,6 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-source ../.env.development
-
 echo 'This script is not yet implemented.'
 
 echo 'this scrupt should publish the content .mdx files from the local content folder to AWS S3.'

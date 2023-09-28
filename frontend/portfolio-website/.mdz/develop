@@ -3,6 +3,5 @@
 cd "$(dirname "$0")" || exit
 
 source ../.env
-source ../.env.development
 
 export GA_MEASUREMENT_ID && export SITE_URL && npm --prefix .. run develop
