@@ -8,6 +8,17 @@ on:
         types: [synchronize]
     workflow_dispatch:
 
+# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+    group: 'develop'
+    cancel-in-progress: true
+
 env:
     NODE_VERSION: 18.17.1
     FE_NEXTJS_PROJECT_ROOT: frontend/portfolio-website
@@ -16,19 +27,14 @@ env:
     S3_BUCKET_REGION: ${{ secrets.S3_BUCKET_REGION }}
     SITE_URL: ${{ secrets.DEV_SITE_URL }}
     ASSETS_PATH: ${{ secrets.ASSETS_PATH }}
+    S3_CONTENT_PRODUCTION_BUCKET: ${{ secrets.S3_CONTENT_PRODUCTION_BUCKET }}
+    NODE_ENV: production
 
 jobs:
     deploy:
         name: Deploy
         runs-on: ubuntu-latest
-        permissions:
-            actions: read
-            contents: read
-            security-events: write
-        strategy:
-            fail-fast: false
-            matrix:
-                language: ["javascript"]
+
         steps:
             - name: "📥  Checkout repository"
               uses: actions/checkout@v3
@@ -40,6 +46,7 @@ jobs:
               id: changed-frontend-portfolio-website-files
               with:
                   files: ${{ env.FE_NEXTJS_PROJECT_ROOT }}/**/*
+
             - name: "Check code scanning"
               run: |
                   echo \"Error: no code scanning checks implemented\"
@@ -80,7 +87,7 @@ jobs:
 
             - name: "🔧  Install project modules dependencies"
               run: |
-                  bash modulize.bash -e production -p install
+                  bash modulize -e production -p install
 
             - name: "Check code linting"
               run: |
@@ -99,11 +106,11 @@ jobs:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
               run: |
-                  bash modulize.bash -e production -p build
+                  bash modulize -e production -p build
 
             - name: "Package"
               run: |
-                  bash modulize.bash -e production -p package
+                  bash modulize -e production -p package
 
             - name: "Upload Artifact"
               uses: actions/upload-artifact@v3

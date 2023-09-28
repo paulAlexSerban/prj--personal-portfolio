@@ -1,16 +1,25 @@
-const { S3Client, ListObjectsCommand, GetObjectCommand } = require("@aws-sdk/client-s3");
-const path = require("path");
-const fs = require("fs");
-require("dotenv").config();
-// const dotenv = require("dotenv");
-// dotenv.config({ path: path.resolve(__dirname, "..", "..", "..", ".env") });
+const { S3Client, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
+const path = require('path');
+const fs = require('fs');
+const dotenv = require('dotenv');
+const { NODE_ENV } = process.env;
+
+NODE_ENV === 'development' && dotenv.config({ path: path.resolve(__dirname, '..', '..', '..', '.env') });
+
 const REGION = process.env.S3_BUCKET_REGION;
 const BUCKET_NAME = process.env.S3_CONTENT_PRODUCTION_BUCKET;
-const LOCAL_DIRECTORY_PATH = path.resolve(__dirname, "..", "content", "prod");
-const CACHE_FILE_PATH = path.join(LOCAL_DIRECTORY_PATH, ".s3-object-cache-ttl.json");
+const LOCAL_DIRECTORY_PATH = path.resolve(__dirname, '..', 'content', 'prod');
+const CACHE_FILE_PATH = path.join(LOCAL_DIRECTORY_PATH, '.s3-object-cache-ttl.json');
 const TTL_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-console.log({ REGION, BUCKET_NAME, LOCAL_DIRECTORY_PATH, CACHE_FILE_PATH, TTL_DURATION });
+if(!REGION || !BUCKET_NAME) {
+    console.error('Missing env variables');
+    console.log({
+        REGION,
+        BUCKET_NAME,
+    });
+    process.exit(1);
+}
 
 // Create an S3 client
 const s3 = new S3Client({ region: REGION });
@@ -20,7 +29,7 @@ async function main() {
         // Load cache
         let cache;
         try {
-            cache = JSON.parse(fs.readFileSync(CACHE_FILE_PATH, "utf-8"));
+            cache = JSON.parse(fs.readFileSync(CACHE_FILE_PATH, 'utf-8'));
         } catch {
             cache = {};
         }
@@ -30,7 +39,7 @@ async function main() {
         // console.log({ objects });
         // Download each object to local directory
         for (const object of objects) {
-            const Key = object.Key;
+            const { Key } = object;
             const localFilePath = path.join(LOCAL_DIRECTORY_PATH, Key);
 
             // Check cache for TTL
