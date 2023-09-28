@@ -32,7 +32,7 @@ usage() {
 
 print_header() {
   echo "================================================"
-  echo -e "   Modulize Project Automation v1.7.0"
+  echo -e "   Modulize Project Automation v${PROJECT_VERSION}"
   echo -e "   Prj. Name: ${BLUE}${PORJECT_NAME}${NC}"
   echo -e "   Prj. Version: ${BLUE}${PROJECT_VERSION}${NC}"
   echo -e "   Prj. Author:  ${BLUE}${PORJECT_AUTHOR}${NC}"
@@ -58,7 +58,7 @@ if [[ -z $PHASE ]]; then
   usage
 fi
 if [[ -z $ENV ]]; then
-  ENV=dev
+  ENV=development
 fi
 
 # Set NODE_ENV to the specified environment
@@ -66,19 +66,15 @@ NODE_ENV=$ENV
 export $NODE_ENV
 print_info "Running in ${BLUE} ${NODE_ENV} ${NC} mode"
 
-# Get current git branch
-export GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-echo "Current branch: $GIT_BRANCH"
-
 init() {
   phase() {
     local PHASE_PATH=${1}
     local PHASE_NAME=${2}
     local PHASE_DIR=${3}
 
-    if [[ -f "${PHASE_PATH}/scripts/${PHASE_NAME}.bash" ]]; then
+    if [[ -f "${PHASE_PATH}/.mdz/${PHASE_NAME}" ]]; then
       print_info "${PHASE_NAME}ing ${BLUE}${PHASE_DIR}${NC}"
-      bash "${PHASE_PATH}/scripts/${PHASE_NAME}.bash" -e $ENV
+      bash "${PHASE_PATH}/.mdz/${PHASE_NAME}" -e $ENV
 
       # Print a message indicating that the module has been installed and how long it took
       print_info "${PHASE_NAME}ed ${BLUE}${PHASE_DIR}${NC}"
@@ -99,16 +95,16 @@ init() {
 
       # Loop through the array and print each directory
       for DIR in "${SUBMODULES[@]}"; do
-        if [[ "$DIR" == "scripts" ]]; then
+        if [[ "$DIR" == ".mdz" ]]; then
           phase ./${i} ${PHASE} ${i}
         fi
-        if [[ ! -f "./${i}/.env.development" ]]; then
+        if [[ ! -f "./${i}/.env" ]]; then
           phase ./${i}/${DIR} ${PHASE} ${DIR}
         fi
       done
 
-      if [[ -f "./${i}/.env.development" ]]; then
-        . "./${i}/.env.development"
+      if [[ -f "./${i}/.env" ]]; then
+        . "./${i}/.env"
 
         for j in "${INSTALL_MODULE_SUBPROJECTS[@]}"; do
           phase ./${i}/${j} ${PHASE} ${j}
