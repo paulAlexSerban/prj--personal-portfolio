@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.16.0...v1.16.1) (2023-09-28)
+
+
+### Bug Fixes
+
+* .env.development issue ([4f70e2b](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/4f70e2b8a56d13889b115eaf8bda1ae8f1e82279))
+
 # [1.16.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.15.2...v1.16.0) (2023-09-28)
 
 
