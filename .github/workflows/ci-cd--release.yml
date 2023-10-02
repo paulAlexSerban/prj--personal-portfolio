@@ -112,7 +112,7 @@ jobs:
             - name: Deploy
               uses: reggionick/s3-deploy@v4
               with:
-                  folder: package/prj--portfolio-website
+                  folder: package/prj--portfolio-website/
                   bucket: ${{ secrets.S3_TEST_BUCKET }}
                   bucket-region: ${{ secrets.S3_BUCKET_REGION }}
                   dist-id: ${{ secrets.CLOUDFRONT_TEST_DISTRIBUTION_ID }}
