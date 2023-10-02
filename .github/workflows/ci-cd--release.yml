@@ -107,6 +107,7 @@ jobs:
             - name: "Package"
               run: |
                   bash modulize -e production -p package
+                  ls -la package
 
             - name: Deploy
               uses: reggionick/s3-deploy@v4
