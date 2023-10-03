@@ -34,20 +34,20 @@ jobs:
     deploy:
         name: 'Deploy To STAGE'
         runs-on: ubuntu-latest
-  
+
         steps:
-            - name: "📥  Checkout repository"
+            - name: '📥  Checkout repository'
               uses: actions/checkout@v3
               with:
                   fetch-depth: 0
 
-            - name: "🔍  Verify Changed Files"
+            - name: '🔍  Verify Changed Files'
               uses: tj-actions/changed-files@v35
               id: changed-frontend-portfolio-website-files
               with:
                   files: ${{ env.FE_NEXTJS_PROJECT_ROOT }}/**/*
 
-            - name: "Check code scanning"
+            - name: 'Check code scanning'
               run: |
                   echo \"Error: no code scanning checks implemented\"
             # - name: "🚀 Initialize CodeQL"
@@ -64,63 +64,59 @@ jobs:
             # - name: Perform CodeQL Analysis
             #   uses: github/codeql-action/analyze@v2
 
-            - name: "🔄  Cache node_modules"
+            - name: '🔄  Cache node_modules'
               uses: actions/cache@v3
               with:
                   path: ~/.npm
                   key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
                   restore-keys: ${{ runner.os }}-node-
 
-            - name: "🔧  Setup NodeJS ${{ env.NODE_VERSION }}"
+            - name: '🔧  Setup NodeJS ${{ env.NODE_VERSION }}'
               uses: actions/setup-node@v3
               with:
                   node-version: ${{ env.NODE_VERSION }}
 
-            - name: "🔧  Install npm@latest & CI Deps"
+            - name: '🔧  Install npm@latest & CI Deps'
               run: |
-                 npm i -g npm@latest
-                 npm ci
+                  npm i -g npm@latest
+                  npm ci
 
-            - name: "Check code formatting"
+            - name: 'Check code formatting'
               run: |
                   echo \"Error: no format check specified\"
 
-            - name: "🔧  Install project modules dependencies"
+            - name: '🔧  Install project modules dependencies'
               run: |
                   bash modulize -e production -p install
 
-            - name: "Check code linting"
+            - name: 'Check code linting'
               run: |
                   echo \"Error: no lint specified\"
 
-            - name: "Run unit tests"
+            - name: 'Run unit tests'
               run: |
                   echo \"Error: no unit-test specified\"
 
-            - name: "Run integration tests"
+            - name: 'Run integration tests'
               run: |
                   echo \"Error: no integration-test specified\"
 
-            - name: "Build"
-              env:
-                S3_BUCKET_REGION:  ${{ secrets.S3_BUCKET_REGION }}
-                S3_CONTENT_PRODUCTION_BUCKET: ${{ secrets.S3_CONTENT_PRODUCTION_BUCKET }}
-              run: |
-                  bash modulize -e production -p build
+            - name: 'Build'
+              run: bash modulize -e production -p build
 
-            - name: "Package"
+            - name: 'Package'
               run: |
                   bash modulize -e production -p package
 
-            - name: Deploy
-              uses: reggionick/s3-deploy@v3
+            - name: 'Configure AWS Credentials'
+              uses: aws-actions/configure-aws-credentials@v1
               with:
-                  folder: package/prj--portfolio-website
-                  bucket: ${{ secrets.S3_STAGE_BUCKET }}
-                  bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-                  dist-id: ${{ secrets.CLOUDFRONT_STAGE_DISTRIBUTION_ID }}
-                  invalidation: /
-                  delete-removed: true
-                  no-cache: true
-                  private: true
-                  filesToInclude: ".*/*,*/*,**"
+                  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  aws-region: ${{ secrets.S3_BUCKET_REGION }}
+
+            - name: 'Deploy  to bucket'
+              run: aws s3 sync ./package/prj--portfolio-website/ s3://${{ secrets.S3_STAGE_BUCKET }} --delete
+
+            - name: 'Invalidate  cloudfront'
+              run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_STAGE_DISTRIBUTION_ID }} --paths "/"
