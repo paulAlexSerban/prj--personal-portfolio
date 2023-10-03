@@ -2,8 +2,6 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-source ../.env.development
-
 while getopts ":e:" opt; do
   case $opt in
   e) ENV="$OPTARG" ;;
@@ -52,10 +50,10 @@ function copyContent() {
 
 export NODE_ENV=$ENV
 print_info "Building from $GIT_BRANCH branch"
-pullS3Content
 cleanDistFolder
 
 if [[ "$NODE_ENV" == 'production' ]]; then
+  pullS3Content
   copyContent prod
 else
   copyContent test
@@ -67,6 +65,6 @@ npm --prefix .. run build
 npm --prefix .. run sitemap
 node ../seo/indexnow
 # use awk to remove the line starting with Host
-awk '!/^Host/' ../out/robots.txt > ../out/temp.txt
+awk '!/^Host/' ../out/robots.txt >../out/temp.txt
 # use mv to rename the file
 mv ../out/temp.txt ../out/robots.txt
