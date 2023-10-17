@@ -1,3 +1,10 @@
+## [1.16.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.16.1...v1.16.2) (2023-10-17)
+
+
+### Bug Fixes
+
+* remove user select css rule ([e280f91](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/e280f91d66cbe264176f2353eb0420eaa4f18e91))
+
 ## [1.16.1](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.16.0...v1.16.1) (2023-09-28)
 
 
