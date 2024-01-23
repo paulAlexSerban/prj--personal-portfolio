@@ -48,7 +48,7 @@ function TagsPage() {
             <GenericTemplate>
                 <HeroBanner
                     pageTitle={main.heroBanner.content[0].pageTitle}
-                    subheading={main.heroBanner.content[1].subheading}
+                    // subheading={main.heroBanner.content[1].subheading}
                 />
                 {main.section__projects.content[1].children[0].content.list.length > 0 && (
                     <Section headingTitle={main.section__projects.content[0].title.main}>
