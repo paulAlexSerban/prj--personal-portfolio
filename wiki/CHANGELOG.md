@@ -1,3 +1,11 @@
+## [1.16.3](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.16.2...v1.16.3) (2024-01-24)
+
+
+### Bug Fixes
+
+* **fix tag in subheading issue:** fixed ([6f25434](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/6f25434b79fa192342bacdd248cf2308bf37999e))
+* **tag subheading:** removed as it does not work propoerly ([1a95949](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/1a9594999f3f51b4fe07c7b565baba041314f8db))
+
 ## [1.16.2](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.16.1...v1.16.2) (2023-10-17)
 
 
