@@ -141,10 +141,10 @@ export async function getStaticProps({ params: { tag, name } }) {
     content.excerpt = content.excerpt.replace('{0}', tagName);
     content.tags.push(tagName);
     content.main.heroBanner.content[0].pageTitle = `#${tagName}`;
-    content.main.heroBanner.content[1].subheading = content.main.heroBanner.content[1].subheading.replace(
-        '{0}',
-        tagName
-    );
+    // content.main.heroBanner.content[1].subheading = content.main.heroBanner.content[1].subheading.replace(
+    //     '{0}',
+    //     tagName
+    // );
     content.url = content.url.replace('{0}', tag);
 
     const projectsFrontmatter = projects.map((project) => project.content.frontmatter);
