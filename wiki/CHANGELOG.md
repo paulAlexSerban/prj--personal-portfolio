@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.16.4...v1.17.0) (2024-01-30)
+
+
+### Features
+
+* remove resume from footer ([7162834](https://github.com/paulAlexSerban/prj--personal-portfolio/commit/71628342b0a8c470d86b1ba4ae378da480901c3c))
+
 ## [1.16.4](https://github.com/paulAlexSerban/prj--personal-portfolio/compare/v1.16.3...v1.16.4) (2024-01-25)
 
 
